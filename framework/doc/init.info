@@ -1,0 +1,20 @@
+things that the application can do for you
+
+cache control headers
+setting up the session for you
+set the encoding header for the browser (latin1 or utf-8 etc)
+set up $sGlobals or $session for you
+set up all the variables used for logging and stuff
+set up auto prepend append stuff???
+set up language stuff?
+initialize sequence stuff
+
+first set the globals stuff
+set default params for each module
+the app should alert users if contants are not set, not just throw bad errors
+set up default db connection
+
+perform an necessary module init stuff
+
+list files for inclusion (php5)
+include files (php4)
