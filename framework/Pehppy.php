@@ -18,11 +18,17 @@ class Pehppy
 			case 'utils':
 				include(pehppy_dir . '/utils/Utils.php');
 				break;
+			case 'gui':
+				include(pehppy_dir . "/smarty/Smarty.class.php");
+				include(pehppy_dir . '/gui/gui.php');
+				break;
 			case 'zone':
 				$this->loadLib('app');
 				include(pehppy_dir . '/zone/Zone.php');
 				include(pehppy_dir . '/zone/ZoneApplication.php');
-				break;			
+				break;
+			default:	
+				trigger_error('unknown module: ' . $name);
 		}
 	}
 	

@@ -18,8 +18,6 @@ class gui extends Smarty
    		
    		//	set the standard template directory and any others registerd with pehppy
    		$this->addTemplateDir(gui_template_dir);
-		foreach(pehppy::getTemplateDirList() as $templateDir)
-			$this->addTemplateDir($templateDir);
 		
 		//	set the compile directory
 		$this->setCompileDir(app_temp_dir . "/gui");
@@ -35,8 +33,8 @@ class gui extends Smarty
 		$this->addPluginDir(dirname(__file__) . '/plugins');	//	one for plugins added into gui
 		$this->addPluginDir(app_dir . "/guiplugins");			//	one or plugins specific to the app
 		
-		$smarty->debugging = app_status == 'dev' ? true : false;
-		$smarty->compile_check = app_status == 'dev' ? true : false;
+		$smarty->debugging = defined('app_status') && app_status == 'dev' ? true : false;
+		$smarty->compile_check = defined('app_status') && app_status == 'dev' ? true : false;
 		
 		//	we want to run this filter on every single smarty script that we execute
 		//	it finds all places where we echo out a simple variable and escapes the html
