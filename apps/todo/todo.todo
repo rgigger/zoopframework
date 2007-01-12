@@ -1,0 +1,4 @@
+-	create some todos in the proper format
+-	implement the parse code
+-	allow you to browse / edit via html/http
+-	have some sort of email interface so that so I can edit / read it via email (apache james?)
