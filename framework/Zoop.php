@@ -22,6 +22,7 @@ class Zoop
 				$this->loadLib('utils');
 				include(zoop_dir . '/app/Globals.php');
 				include(zoop_dir . '/app/Application.php');
+				include(zoop_dir . '/app/Error.php');
 				break;
 			case 'utils':
 				include(zoop_dir . '/utils/Utils.php');
