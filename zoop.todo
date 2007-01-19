@@ -1,0 +1,30 @@
+-	get the web interface working
+	-	let you choose a todo file
+	-	when you click on a todo file display the file
+	-	for each todo item have the following buttons
+		-	done
+		-	delete
+		-	move up
+		-	move down
+		-	move to today
+-	check in the code and make a blog entry
+-	start the google code clone
+-	as part of the google code clone complete
+	-	full zone support
+	-	gui support
+-	release 1.50.01
+-	zone / gui integration?
+-	google code site
+	-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
+	-	same for design goals
+	-	relatinship to stable zoop
+	-	make the front page really short with just some links to other wiki pages
+-	sample applications
+	-	***duplicate google code?
+		-	wiki
+		-	bug tracker
+		-	improvements
+			-	manual creator
+	-	manual creator
+	-	tool for generating .term files for terminal.app
+		-	have color schemes for each of the control tower defaults as well as some of your own
