@@ -1,15 +1,30 @@
 <?php
 class TodoListCollection
 {
-	function TodoListCollection()
+	var $dir;
+	
+	function TodoListCollection($dir)
 	{
-		
+		$this->dir = $dir;
 	}
 	
-	function getTodoLists()
+	function getTodoListNames()
 	{
-		//	somewhere we need to get a directory where the todo lists are kept (mayb in the constructor)
-		//	scan the directory and parse every file with the .todo extention (maybe we shouldn't parse them just yet, just store the names)
-		//	create a todolist object for each one and return an array of all of them
+		//$parser = new TodoListParser();
+		//$lists = array();
+		
+		$listNames = array();
+		
+		$d = dir($this->dir);
+		while(false !== ($entry = $d->read()))
+		{
+			$parts = explode('.', $entry);
+			if(array_pop($parts) == 'todo')
+				//$lists[] = $parser->parseFile($this->dir . '/' . $entry);
+				$listNames[] = $entry;
+		}
+		$d->close();
+		
+		return $listNames;
 	}
 }

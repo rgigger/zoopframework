@@ -1,0 +1,14 @@
+-	get error handling working properly
+	-	spit out a nicely formated backtrace
+-	implement the parse code
+	+	parse the file
+	-	update the status flags
+	-	write the file back out
+-	allow you to browse / edit via html/http
+	-	scan the directory for a list of todo files
+	-	list those files like tabs at the top
+	-	list each file when you click on it
+	-	pageView with on param : todo file name
+-	have some sort of email interface so that so I can edit / read it via email (apache james?)
+-	figure out a way to handle recurring todo items
+-	deadlines with some sort of periodic reminders!

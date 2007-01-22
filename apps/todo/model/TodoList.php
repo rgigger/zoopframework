@@ -3,15 +3,13 @@ class TodoList
 {
 	var $root;
 	
-	function parseFile()
+	function TodoList(&$root)
 	{
-		//	parse and traverse the xml
-		//	create the tree of todo objects
-		//	assign the $this->root to the root node of the tree
+		$this->root = $root;
 	}
 	
-	function getRoot()
+	function &getRoot()
 	{
-		
+		return $this->root;
 	}
 }

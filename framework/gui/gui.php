@@ -81,5 +81,4 @@ class gui extends Smarty
 	{
 		$this->plugins_dir[] = $inDir;
 	}
-};
-?>
+}

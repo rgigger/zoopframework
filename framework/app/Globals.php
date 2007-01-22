@@ -22,4 +22,4 @@ $virtualPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
 
 define('script_url', $protocol . $host . $realPath);
 define('virtual_path', $virtualPath);
-define('virtual_url', script_url . $virtualPath);
+define('virtual_url', script_url . virtual_path);

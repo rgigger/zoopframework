@@ -13,6 +13,7 @@ class TodoListParser
 		$this->root = new TodoListItem($dummy = NULL, '*', '');
 		$this->stack = array();
 		$this->stack[0] = &$this->root;
+		$this->lookAheadLine = NULL;
 		
 		while(!$this->done())
 		{
@@ -21,7 +22,9 @@ class TodoListParser
 		
 		fclose($this->file);
 		
-		return $this->root;
+		$todoList = new TodoList($this->root);
+		
+		return $todoList;
 	}
 	
 	function getNextItem()

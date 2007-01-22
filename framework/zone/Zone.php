@@ -89,13 +89,26 @@ class Zone
 	*/
 //	var $Alias = array();
 	
-	function Zone()
+	var	$requestInfo;
+	
+	function Zone($requestInfo = NULL)
 	{
+		if(!$requestInfo)
+		{
+			$this->requestInfo = array();
+			$this->requestInfo[] = array('zone' => '');
+		}
+		else
+		{
+			$this->requestInfo = CloneObject($requestInfo);
+			$this->requestInfo[] = array('zone' => strtolower(substr(get_class($this), 4)));
+		}
 	}
 
 	function handleRequest($pathParts)
 	{
 		$thisPart = array_shift($pathParts);
+		
 		$zoneName = "zone_$thisPart";
 		$pageName = "page$thisPart";
 		$postName = "post$thisPart";
@@ -104,7 +117,7 @@ class Zone
 		//	first check for an existing zone
 		if( class_exists($zoneName) )
 		{
-			$newZone = new $zoneName();
+			$newZone = new $zoneName($this->requestInfo);
 			$newZone->handleRequest($pathParts);
 		}
 		else
@@ -133,7 +146,30 @@ class Zone
 			}
 			else
 				trigger_error("no valid page for $thisPart in " . get_class($this));			
-		}	
+		}
+	}
+	
+	function getRequestPath()
+	{
+		$path = '';
+		foreach($this->requestInfo as $thisZoneInfo)
+		{
+			$path .= $thisZoneInfo['zone'];
+		}
+		
+		return $path;
+	}
+	
+	function redirect($extra)
+	{
+		$url = script_url;
+		if($this->getRequestPath())
+			$url .= '/' . $this->getRequestPath();
+		
+		if($extra)
+			$url .= '/' . $extra;
+		
+		Redirect($url);
 	}
 
 /*
@@ -607,4 +643,3 @@ function GetGuiVars()
 	return $gGuiVars;
 }
 */
-?>

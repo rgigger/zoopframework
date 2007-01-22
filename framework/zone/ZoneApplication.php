@@ -4,6 +4,7 @@
 if(!defined('app_dir'))
 	trigger_error('Please define the constant "app_dir" before continuing.  It should point to the base directory of your application code');
 
+//	todo:	I think that this should extend Application.  If sessions aren't working that's why
 class ZoneApplication
 {
 	function loadZone($name)

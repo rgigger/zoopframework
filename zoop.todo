@@ -1,13 +1,14 @@
--	get the web interface working
-	-	let you choose a todo file
-	-	when you click on a todo file display the file
-	-	for each todo item have the following buttons
-		-	done
-		-	delete
-		-	move up
-		-	move down
-		-	move to today
--	check in the code and make a blog entry
+-	todo
+	-	get the web interface working
+		-	let you choose a todo file
+		-	when you click on a todo file display the file
+		-	for each todo item have the following buttons
+			-	done
+			-	delete
+			-	move up
+			-	move down
+			-	move to today
+	-	check in the code and make a blog entry
 -	start the google code clone
 -	as part of the google code clone complete
 	-	full zone support
