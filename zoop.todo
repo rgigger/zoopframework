@@ -29,3 +29,5 @@
 	-	manual creator
 	-	tool for generating .term files for terminal.app
 		-	have color schemes for each of the control tower defaults as well as some of your own
+-	some concept of depencencies
+	-	for instance guizone depends on gui and zone.  how should me make sure that these thigns are loaded?

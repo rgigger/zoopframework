@@ -160,7 +160,7 @@ class Zone
 		return $path;
 	}
 	
-	function redirect($extra)
+	function getUrl($extra)
 	{
 		$url = script_url;
 		if($this->getRequestPath())
@@ -169,6 +169,12 @@ class Zone
 		if($extra)
 			$url .= '/' . $extra;
 		
+		return $url;
+	}
+	
+	function redirect($extra)
+	{
+		$url = $this->getUrl($extra);
 		Redirect($url);
 	}
 
@@ -576,70 +582,5 @@ class Zone
 		
 		return SCRIPT_URL . $this->getPath($depth);
 	}
-	
-	//	Here we have some methods to help out with creating template (smarty, gui) objects 
-	//		and also to help out with the management of assigning data to those objects
-	//		whether or not this belongs in zone is questionble.  they may be more analagous
-	//		to the sql_* functions that simply manage one default instance of a class
-
-	function guiAssign($name, $value)
-	{
-		GuiAssign($name, $value);
-	}
-	
-	function guiDisplay($templateName, $guiType = NULL)
-	{
-		global $gGuiVars;
-		
-		$gui = &$this->guiChoose($guiType);
-		
-		foreach($gGuiVars as $name => $value)
-		{
-			$gui->assign($name, $value);
-		}
-		
-		$gui->assign('scriptUrl', $this->guiGetScriptUrl());
-		
-		$dirName = $this->guiGetTemplateBaseDir();
-		
-		$gui->display($dirName . '/'. $templateName);
-	}
-	
-	function guiGetScriptUrl()
-	{
-		return SCRIPT_URL;
-	}
-	
-	//	get the directory where the templates are stored for this zone
-	//		override this to get the templates from a different directory
-	function guiGetTemplateBaseDir()
-	{
-		$className = get_class($this);
-		$parts = explode('_', $className);
-		array_shift($parts);
-		return implode('_', $parts);
-	}
-	
-	function &guiChoose($guiType)
-	{
-		assert($guiType === NULL);
-		$tmp = &new gui();
-		return $tmp;
-	}
 	*/
 }
-
-/*
-function GuiAssign($name, $value)
-{
-	global $gGuiVars;
-	
-	$gGuiVars[$name] = $value;
-}
-
-function GetGuiVars()
-{
-	global $gGuiVars;
-	return $gGuiVars;
-}
-*/

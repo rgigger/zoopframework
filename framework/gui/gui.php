@@ -81,4 +81,20 @@ class gui extends Smarty
 	{
 		$this->plugins_dir[] = $inDir;
 	}
+	
+	//	static functions
+	
+	//	often we want to assign the variables before we know what type of gui we want so store the assigns
+	//		in a global array until we create the gui 
+	function assign($name, $value)
+	{
+		global $gGuiVars;
+		$gGuiVars[$name] = $value;
+	}
+	
+	function getAssigns()
+	{
+		global $gGuiVars;
+		return $gGuiVars;
+	}
 }
