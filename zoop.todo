@@ -31,3 +31,61 @@
 		-	have color schemes for each of the control tower defaults as well as some of your own
 -	some concept of depencencies
 	-	for instance guizone depends on gui and zone.  how should me make sure that these thigns are loaded?
+-	future modules
+	-	db
+		-	a base class showing what needs to go into it
+		-	subclassess for
+			-	pear mdb2
+			-	pdo
+			-	native bindings for postgres, etc
+		-	a default object and the Sql* functions
+		-	dbobject
+		-	make it easy to escape paramaters and hard not too
+		-	methods
+			-	SqlQuery
+			-	SqlInsert
+			-	SqlUpdate
+			-	SqlFetchOneCell
+			-	SqlFetchRow
+			-	SqlFetchRows
+			-	SqlFetchColumn
+			-	SqlFetchSimpleMap
+			-	SqlFetchMap
+			-	SqlFetchComplexMap
+			-	SqlFetchParent
+			-	SqlFetchChildren
+	-	mail
+		-	Message
+		-	SmartMessage
+	-	session
+		-	files
+		-	mysql
+		-	pgsql
+		-	msession?
+		-	my daemon?
+		-	that other guys daemon
+	-	translate
+	-	xml
+		-	works with both php4 and php5
+	-	sequence
+	-	storage
+	-	fpdf
+	-	rospdf
+	-	spell
+	-	cli
+	-	server
+		-	smtp
+		-	http
+		-	session
+		-	sql???
+	-	some sort of guicontrols like thing
+	-	graphic
+		-	contexts for gd, imagemagic, fpdf, rospdf, flash, svg, etc.
+	-	graph
+	-	auth???
+	-	todo???
+	-	nested sets???
+-	work on existing modules
+	-	zone
+		-	automatically display templates?
+		-	automatically determine file output type?
