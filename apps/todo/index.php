@@ -1,8 +1,9 @@
 <?php
-header("Content-type: text/html; charset=utf-8");
-
 include('config.php');
+include(zoop_dir . '/Zoop.php');
+
+Zoop::loadLib('zone');
+
 include(dirname(__file__) . "/includes.php");
 
-$zoneDefault = new zone_default();
-$zoneDefault->handleRequest($PATH_ARRAY);
+ZoneApplication::handleRequest();
