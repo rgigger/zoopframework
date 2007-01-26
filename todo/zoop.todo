@@ -1,0 +1,85 @@
+-	some concept of depencencies
+	-	for instance guizone depends on gui and zone.  how should me make sure that these thigns are loaded?
+-	future modules
+	-	db
+		-	a base class showing what needs to go into it
+		-	subclassess for
+			-	pear mdb2
+			-	pdo
+			-	native bindings for postgres, etc
+		-	a default object and the Sql* functions
+		-	dbobject
+		-	make it easy to escape paramaters and hard not too
+		-	methods
+			-	SqlQuery
+			-	SqlInsert
+			-	SqlUpdate
+			-	SqlFetchOneCell
+			-	SqlFetchRow
+			-	SqlFetchRows
+			-	SqlFetchColumn
+			-	SqlFetchSimpleMap
+			-	SqlFetchMap
+			-	SqlFetchComplexMap
+			-	SqlFetchParent
+			-	SqlFetchChildren
+	-	zoop textmate bundle
+	-	mail
+		-	Message
+		-	SmartMessage
+	-	session
+		-	files
+		-	mysql
+		-	pgsql
+		-	msession?
+		-	my daemon?
+		-	that other guys daemon
+	-	translate
+	-	xml
+		-	works with both php4 and php5
+	-	sequence
+	-	storage
+	-	fpdf
+	-	rospdf
+	-	spell
+	-	cli
+	-	server
+		-	smtp
+		-	http
+		-	session
+		-	sql???
+	-	zap
+	-	some sort of guicontrols like thing
+	-	graphic
+		-	contexts for gd, imagemagic, fpdf, rospdf, flash, svg, etc.
+	-	graph
+	-	auth???
+	-	todo???
+	-	nested sets???
+	-	a package/module/bundle manager (like unto gems)
+		-	maybe use the pear module manager
+		-	or rpm
+		-	or apt-get/deb
+		-	roll your own?
+	-	wiki
+		-	have code for translating complicated wiki style formatting into:
+			-	html
+			-	graphic/xml
+	-	filter
+		-	look at the GetPost* functions in pehppy and also see what they have done with the php filtering extension
+	-	ajax
+		-	dojo?
+	-	rad/"scaffolding"
+		-	edit actual files or just produce code for you to copy and paste
+		-	cli first - open in textmate?
+-	work on existing modules
+	-	app
+		-	error
+			-	convert all errors to exceptions
+			-	figure out what is up with the sqlite pdo exception stack traces
+	-	zone
+		-	automatically display templates?
+		-	automatically determine file output type?
+-	apps to port
+	-	translate
+	-	directory

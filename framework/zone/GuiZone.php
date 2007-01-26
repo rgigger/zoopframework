@@ -32,10 +32,12 @@ class GuiZone extends Zone
 		}
 		
 		$gui->assign();
+		
 		//	we may want to do some assigns here
 		//	script_url
 		//	virtual_url
 		//	zone_url
+		//	request_uri
 		
 		$dirName = $this->getTemplateDir();
 		
