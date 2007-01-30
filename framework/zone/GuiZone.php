@@ -3,7 +3,7 @@ class GuiZone extends Zone
 {
 	function chooseGui($type)
 	{
-		assert($guiType === NULL);	//	if they want something different they need to extend this class
+		assert($type === NULL);	//	if they want something different they need to extend this class
 		$tmp = new gui();
 		return $tmp;
 	}
@@ -11,7 +11,7 @@ class GuiZone extends Zone
 	function getTemplateDir()
 	{
 		$className = get_class($this);
-		$zoneName = substr($className, 4));
+		$zoneName = strtolower(substr($className, 4));
 		return $zoneName;
 	}
 	
@@ -20,18 +20,16 @@ class GuiZone extends Zone
 		gui::assign($name, $value);
 	}
 	
-	function display($templateName, $guiType)
+	function display($templateName, $guiType = NULL)
 	{
 		$guiAssigns = gui::getAssigns();
 		
-		$gui = &$this->guiChoose($guiType);
+		$gui = $this->chooseGui($guiType);
 		
 		foreach($guiAssigns as $name => $value)
 		{
 			$gui->assign($name, $value);
 		}
-		
-		$gui->assign();
 		
 		//	we may want to do some assigns here
 		//	script_url
@@ -41,6 +39,6 @@ class GuiZone extends Zone
 		
 		$dirName = $this->getTemplateDir();
 		
-		$gui->display($dirName . '/'. $templateName);
+		$gui->display($dirName . '/'. $templateName . '.tpl');
 	}
 }

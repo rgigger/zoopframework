@@ -1,7 +1,5 @@
 <?php
 
-//require_once("Date.php");
-
 class gui extends Smarty
 {
 	var $languageId;
@@ -20,10 +18,10 @@ class gui extends Smarty
    		$this->addTemplateDir(gui_template_dir);
 		
 		//	set the compile directory
-		$this->setCompileDir(app_temp_dir . "/gui");
+		$this->setCompileDir(app_tmp_dir . "/gui");
 		
-		//	set the compile directory
-		$this->setCacheDir(app_temp_dir . "/guicache");
+		//	set the cache_dir directory
+		$this->setCacheDir(app_tmp_dir . "/guicache");
 		
 		//	set the config directory
 		$this->setConfigDir(app_dir . "/guiconfig");
@@ -88,13 +86,15 @@ class gui extends Smarty
 	//		in a global array until we create the gui 
 	function assign($name, $value)
 	{
-		global $gGuiVars;
-		$gGuiVars[$name] = $value;
+		global $GuiVars;
+		$GuiVars[$name] = $value;
 	}
 	
 	function getAssigns()
 	{
-		global $gGuiVars;
-		return $gGuiVars;
+		global $GuiVars;
+		if(!$GuiVars)
+			$GuiVars = array();
+		return $GuiVars;
 	}
 }

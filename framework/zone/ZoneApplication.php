@@ -28,10 +28,10 @@ class ZoneApplication
 	function handleRequest()
 	{
 		global $app;
+		$app->loadZone('default');
 		$app->run();
 	}
 }
 
 global $app;
 $app = new ZoneApplication();
-$app->loadZone('default');

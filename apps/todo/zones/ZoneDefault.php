@@ -1,5 +1,5 @@
 <?php
-class ZoneDefault extends zone
+class ZoneDefault extends GuiZone
 {
 	function pageDefault()
 	{

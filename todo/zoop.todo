@@ -49,6 +49,15 @@
 		-	session
 		-	sql???
 	-	zap
+		-	configuration
+			-	method and paramaters for setting directories that should be writable to the web server
+		-	local directory functions
+			-	create tmp directory
+			 	-	create tmp
+				-	create sub directories such as tmp/gui
+				-	set permissions on tmp direcotory to be writable to the web server
+			-	create storage directories
+				-	set permissions make them writable to the web server
 	-	some sort of guicontrols like thing
 	-	graphic
 		-	contexts for gd, imagemagic, fpdf, rospdf, flash, svg, etc.
