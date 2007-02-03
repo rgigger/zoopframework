@@ -13,7 +13,14 @@ class ZoneDefault extends GuiZone
 	{
 		$todoListCollection = new TodoListCollection(app_todo_dir);
 		$fileNames = $todoListCollection->getTodoListNames();
-		echo_r($fileNames);
+		$this->assign('fileNames', $fileNames);
 		$this->display('list');
+	}
+	
+	function pageView($p)
+	{
+		$file = $p[1];
+		$this->assign('filename', $file);
+		$this->display('view');
 	}
 }

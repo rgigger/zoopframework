@@ -1,0 +1,12 @@
+-	todo
+	-	get the web interface working
+		-	let you choose a todo file
+		-	when you click on a todo file display the file
+		-	have an "all" option that lets makes each todo file a top level item
+		-	online editing
+			-	for each todo item have the following buttons
+				-	done
+				-	delete
+				-	move up
+				-	move down
+				-	move to today

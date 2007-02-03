@@ -22,23 +22,22 @@ class GuiZone extends Zone
 	
 	function display($templateName, $guiType = NULL)
 	{
-		$guiAssigns = gui::getAssigns();
-		
 		$gui = $this->chooseGui($guiType);
 		
+		$guiAssigns = gui::getAssigns();
 		foreach($guiAssigns as $name => $value)
 		{
 			$gui->assign($name, $value);
 		}
 		
 		//	we may want to do some assigns here
-		//	script_url
 		//	virtual_url
 		//	zone_url
 		//	request_uri
+		if(defined('script_url'))
+			$this->assign('scriptUrl', script_url);
 		
 		$dirName = $this->getTemplateDir();
-		
 		$gui->display($dirName . '/'. $templateName . '.tpl');
 	}
 }

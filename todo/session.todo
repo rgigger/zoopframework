@@ -1,0 +1,9 @@
+-	write your own session code
+	-	start_session_read_only
+	-	write_session_unsafe
+	-	start_session_for_writing
+	-	write_session
+	-	method for determining which way to start a session on a default + per/page or zone config basis
+	-	api for structured session data
+		-	rotating request log
+		-	sequence info

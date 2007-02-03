@@ -1,9 +1,4 @@
 <?php
-//	we rely on this all over the place.  there is no point in trying to do
-//	anything until we've got this assigned
-if(!defined('app_dir'))
-	trigger_error('Please define the constant "app_dir" before continuing.  It should point to the base directory of your application code');
-
 //	todo:	I think that this should extend Application.  If sessions aren't working that's why
 class ZoneApplication
 {

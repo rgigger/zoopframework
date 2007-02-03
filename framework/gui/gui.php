@@ -38,16 +38,16 @@ class gui extends Smarty
 		//	it finds all places where we echo out a simple variable and escapes the html
 		$this->autoload_filters = array('pre' => array("strip_html"));
 		
-		$this->assign("template_root", gui_template_dir);
+//		$this->assign("template_root", gui_template_dir);
 		
 		//	it should probably only do this if they are defined so you can use it
 		//	without using the zone stuff
-		if(defined("SCRIPT_URL") || defined("SCRIPT_REF") || defined("ORIG_PATH"))
-		{
-			$this->assign("VIRTUAL_URL", SCRIPT_URL . ORIG_PATH);
-			$this->assign("BASE_HREF", SCRIPT_REF);
-			$this->assign("SCRIPT_URL", SCRIPT_URL);
-		}
+//		if(defined("SCRIPT_URL") || defined("SCRIPT_REF") || defined("ORIG_PATH"))
+//		{
+//			$this->assign("VIRTUAL_URL", SCRIPT_URL . ORIG_PATH);
+//			$this->assign("BASE_HREF", SCRIPT_REF);
+//			$this->assign("SCRIPT_URL", SCRIPT_URL);
+//		}
 	}
 	
 	function setLanguageId($languageId)
@@ -80,16 +80,24 @@ class gui extends Smarty
 		$this->plugins_dir[] = $inDir;
 	}
 	
-	//	static functions
+	//	static and pseudo-static functions
 	
 	//	often we want to assign the variables before we know what type of gui we want so store the assigns
 	//		in a global array until we create the gui 
 	function assign($name, $value)
 	{
-		global $GuiVars;
-		$GuiVars[$name] = $value;
+		if(!(isset($this) && is_a($this,__CLASS__)))
+		{
+			global $GuiVars;
+			$GuiVars[$name] = $value;
+			return;
+		}
+		
+		parent::assign($name, $value);
 	}
 	
+	
+	//	static
 	function getAssigns()
 	{
 		global $GuiVars;

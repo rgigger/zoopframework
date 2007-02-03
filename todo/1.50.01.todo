@@ -1,6 +1,6 @@
 -	app::todo
 	-	get the web interface working
-		-	let you choose a todo file
+		+	let you choose a todo file
 		-	when you click on a todo file display the file
 		-	for each todo item have the following buttons
 			-	done

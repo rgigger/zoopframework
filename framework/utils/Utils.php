@@ -16,6 +16,13 @@ function Redirect($url)
 	header("location: $url");
 }
 
+function EchoBacktrace($value='')
+{
+	echo '<pre>';
+	debug_print_backtrace();
+	echo '</pre>';
+}
+
 if(version_compare(PHP_VERSION, '5.0', '<'))
 {
 	include_once(dirname(__FILE__) . '/Utils4.php');
