@@ -45,6 +45,7 @@ class Zoop
 				break;
 			case 'db':
 				include(zoop_dir . '/db/DbConnection.php');
+				include(zoop_dir . '/db/DbPgResult.php');
 				include(zoop_dir . '/db/DbPgsql.php');
 				break;
 			default:	

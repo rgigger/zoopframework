@@ -3,9 +3,11 @@ class DbConnection
 {
 	var $params;
 	var $types;
+	var $conn;
 	
 	function query($sql, $params)
 	{
+		//	do all of the variable replacements
 		foreach($params as $key => $value)
 		{
 			$parts = explode(':', $key);
@@ -14,8 +16,12 @@ class DbConnection
 				$this->types[$parts[0]] = $parts[1];
 		}
 		$sql = preg_replace_callback("/:([[:alpha:]]+):([[:alpha:]]+)|:([[:alpha:]]+)/", array($this, 'queryCallback'), $sql);
+		
+		//	actually do the query
+		return $this->_query($sql);
 	}
 	
+	//	callback passed to preg_replace_callback for doing the variable substitutions
 	function queryCallback($matches)
 	{
 		if(isset($matches[3]))
@@ -46,4 +52,65 @@ class DbConnection
 		return $replaceString;
 	}
 	
+	function fetchRow($sql, $params)
+	{
+		$res = $this->query($sql, $params);
+		if($num = $res->numRows() != 1)
+			trigger_error("1 row expected: $num returned");
+		
+		return $res->current();
+	}
+	
+	function fetchCell($sql, $params)
+	{
+		$row = $this->fetchRow($sql, $params);
+		return current($row);
+	}
+	
+	function fetchRows($sql, $params)
+	{
+		$rows = array();
+		$res = $this->query($sql, $params);
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			$rows[] = $row;
+		}
+		
+		return $rows;
+	}
+	
+	function fetchSimpleMap($sql, $params)
+	{
+		
+	}
+	
+	function fetchMap($sql, $mapFields, $params)
+	{
+		
+	}
+	
+	function fetchComplexMap($sql, $mapFields, $params)
+	{
+		
+	}
+	
+	function insertRow()
+	{
+		
+	}
+	
+	function insertRows()
+	{
+		
+	}
+	
+	function updateRow()
+	{
+		
+	}
+	
+	function updateRows()
+	{
+		
+	}
 }

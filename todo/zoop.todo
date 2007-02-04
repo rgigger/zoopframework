@@ -1,3 +1,8 @@
+-	class Zoop
+	-	fix how it loads classes, make it use the dynamic loading stuff
+-	check for ini options that are not secure or in bad form
+	-	register globals
+	-	magic quotes
 -	start the google code clone
 -	as part of the google code clone complete
 	-	full zone support
