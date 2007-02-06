@@ -22,6 +22,7 @@ class DbConnection
 	}
 	
 	//	callback passed to preg_replace_callback for doing the variable substitutions
+	//	private
 	function queryCallback($matches)
 	{
 		if(isset($matches[3]))
@@ -79,19 +80,101 @@ class DbConnection
 		return $rows;
 	}
 	
-	function fetchSimpleMap($sql, $params)
+	function fetchSimpleMap($sql, $keyFields, $valueField, $params)
 	{
+		$map = array();
+		$res = $this->query($sql, $params);
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			$cur = &$map;
+			if(is_array($keyFields))
+			{
+				foreach($keyFields as $key)
+				{
+					$cur = &$cur[$row[$key]];
+					$lastKey = $row[$key];
+				}
+			}
+			else
+			{
+				$cur = &$cur[$row[$keyFields]];
+				$lastKey = $row[$keyFields];
+			}
+			
+			if(isset($cur) && !empty($lastKey))
+				trigger_error("db::fetchSimpleMap : duplicate key in query: \n $inQuery \n");
+			
+			$cur = $row[ $inValueField ];
+		}
 		
+		return $map;
 	}
 	
 	function fetchMap($sql, $mapFields, $params)
 	{
+		$map = array();
+		$res = $this->query($sql, $params);
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			if(is_array($mapFields))
+			{
+				$cur = &$map;
+
+				foreach($mapFields as $val)
+				{
+					$curKey = $row[$val];
+					
+					if(!isset($cur[$curKey]))
+						$cur[$curKey] = array();
+
+					$cur = &$cur[$curKey];
+				}
+				
+				if(count($cur))
+					trigger_error("db::fetchSimpleMap : duplicate key $curKey (would silently destroy data) in query: \n $inQuery \n");
+
+				$cur = $row;
+			}
+			else
+			{				
+				$mapKey = $row[$mapFields];
+				$map[$mapKey] = $row;
+			}
+		}
 		
+		return $map;
 	}
 	
 	function fetchComplexMap($sql, $mapFields, $params)
 	{
-		
+		$map = array();
+		$res = $this->query($sql, $params);
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			if(is_array($mapFields))
+			{
+				$cur = &$map;
+
+				foreach($mapFields as $val)
+				{
+					$curKey = $row[$val];
+
+					if(!isset($cur[$curKey]))
+						$cur[$curKey] = array();
+
+					$cur = &$cur[$curKey];
+				}
+
+				$cur[] = $row;
+			}
+			else
+			{
+				$mapKey = $row[$mapFields];
+				$map[$mapKey][] = $row;
+			}
+		}
+
+		return $map;
 	}
 	
 	function insertRow()
