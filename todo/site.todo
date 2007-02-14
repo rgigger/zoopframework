@@ -14,4 +14,4 @@
 	-	link both to and from a topic on the users mailing list for people to discuss 
 -	have a "magic" section for every place we use convention over configuration - try to have the best of both worlds
 -	design goals page
-	-	provide a clear migration path to PHP 5
+	-	provide a clear migration path to PHP 5>>>>>>> .r47
