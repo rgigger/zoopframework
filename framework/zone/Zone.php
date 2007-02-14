@@ -160,7 +160,7 @@ class Zone
 		return $path;
 	}
 	
-	function getUrl($extra)
+	function getUrl($extra = NULL)
 	{
 		$url = script_url;
 		if($this->getRequestPath())

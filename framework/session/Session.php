@@ -24,6 +24,14 @@ class Session
 		global $SessionEngine;
 		$SessionEngine->set($value, $key);
 	}
+	
+	function saveChangesUnsafe()
+	{
+		global $SessionEngine;
+		$SessionEngine->saveChangesUnsafe();
+	}
+	
 }
 
+global $SessionEngine;
 $SessionEngine = SessionFactory('pgsql');

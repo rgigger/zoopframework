@@ -33,6 +33,7 @@ class GuiZone extends Zone
 			$gui->assign('scriptUrl', script_url);
 		if(defined('virtual_url'))
 			$gui->assign('virtualUrl', virtual_url);
+		$gui->assign('zoneUrl', $this->getUrl());
 		
 		$dirName = $this->getTemplateDir();
 		$gui->display($dirName . '/'. $templateName . '.tpl');

@@ -3,6 +3,8 @@ class SessionPgsql
 {
 	var $db;
 	var $saveChanges;
+	var $sessionName;
+	var $sessionId;
 	
 	//	user functions
 	function start()
@@ -14,10 +16,10 @@ class SessionPgsql
 	
 	function get($key = '__default__')
 	{
-		$row = $this->db->selsertRow('session_data', array('data'), array('session_id' => $sessionId, 'key' => $key));
+		$row = $this->db->selsertRow('session_data', array('value'), array('session_id' => $this->sessionId, 'key' => $key));
 		
-		if($row['data'])
-			return unserialize($row['data']);
+		if($row['value'])
+			return $row['value'];
 		else
 			return NULL;
 	}
@@ -29,7 +31,7 @@ class SessionPgsql
 	
 	function set($value, $key = '__default__')
 	{
-		
+		$this->db->upsertRow('session_data', array('session_id' => $this->sessionId, 'key' => $key), array('value' => $value));
 	}
 	
 	function saveChanges()
@@ -41,15 +43,17 @@ class SessionPgsql
 	
 	function saveChangesUnsafe()
 	{
-		if(session_style != 'write_manaul')
+		if(session_style != 'write_manual')
 			trigger_error("this function is only used with session_style = 'write_manaual'");
 		$this->saveChanges = 1;
 	}
 	
 	//	callbacks
-	function open($savePath, $sessionId)
+	function open($savePath, $sessionName)
 	{
-		$this->db = new DbPgsql();
+		//	we need to set up the config stuff for sessions
+		$this->db = DbFactory::getDefaultConnection();
+		$this->sessionName = $sessionName;
 		return true;
 	}
 	
@@ -60,11 +64,16 @@ class SessionPgsql
 	
 	function read($sessionId)
 	{
+//		echo 'one<br>';
+//		echo_r($sessionId);
+		$this->sessionId = $sessionId;
 		//	make sure the session_base record is in there
-		$this->db->upsertRow('session_base', array('session_id' => $sessionId), array('last_active' => 'CURRENT_TIMESTAMP'));
+		$this->db->upsertRow('session_base', array('session_id' => $sessionId), array('last_active:keyword' => 'CURRENT_TIMESTAMP'));
+		
+		$data = $this->get();
 		
 		//	get the default row
-		return $this->get();
+		return $data;
 	}
 	
 	function write($sessionId, $sessionData)
@@ -80,14 +89,17 @@ class SessionPgsql
 				trigger_error("session style '" . session_style . "' not yet implemented");
 				break;
 		}
+		
+		return true;
 	}
 	
-	function destory($sessionId)
+	function destroy($sessionId)
 	{
 		$this->db->beginTransaction();
 		$this->db->deleteRows("delete from session_data where session_id = :session_id", array('session_id' => $sessionId));
 		$this->db->deleteRow("delete from session_base where session_id = :session_id", array('session_id' => $sessionId));
 		$this->db->commitTransaction();
+		return true;
 	}
 	
 	function gc($maxLifetime)
@@ -95,6 +107,7 @@ class SessionPgsql
 		$this->db->beginTransaction();
 		$this->db->deleteRow("delete from session_base where CURRENT_TIMESTAMP - extract(epoch from timestamp with time zone last_active) < :maxLifetime", array('maxLifetime' => $maxLifetime));
 		$this->db->deleteRows("delete from session_data left outer join session_base on session_date.session_id = session_base.session_id where session_base.session_id is null", array());
-		$this->db->commitTransaction();		
+		$this->db->commitTransaction();
+		return true;
 	}
 }

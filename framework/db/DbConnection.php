@@ -15,7 +15,7 @@ class DbConnection
 			if(isset($parts[1]))
 				$this->types[$parts[0]] = $parts[1];
 		}
-		$sql = preg_replace_callback("/:([[:alpha:]]+):([[:alpha:]]+)|:([[:alpha:]]+)/", array($this, 'queryCallback'), $sql);
+		$sql = preg_replace_callback("/:([[:alpha:]_]+):([[:alpha:]_]+)|:([[:alpha:]_]+)/", array($this, 'queryCallback'), $sql);
 		
 		//	actually do the query
 		return $this->_query($sql);
@@ -44,6 +44,9 @@ class DbConnection
 				break;
 			case 'int':
 				$replaceString = (int)$this->params[$name];
+				break;
+			case 'keyword':
+				$replaceString = $this->params[$name];
 				break;
 			default:
 				trigger_error("unknown param type: " . $type);
@@ -187,9 +190,9 @@ class DbConnection
 		return $res->affectedRows();
 	}
 	
-	function modifyRow()
+	function modifyRow($sql, $params)
 	{
-		$affected = $this->updateRows();
+		$affected = $this->modify($sql, $params);
 		if($affected > 1)
 			trigger_error("$affected rows were changed.  Only one was expected");
 		return $affected;
@@ -231,20 +234,20 @@ class DbConnection
 		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
 		
 		//	update the row if it's there
-		$num = $db->updateRow($updateInfo['updateSql'], $updateInfo['updateParams']);
+		$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
 		if(!$num)
 		{
 			//	generate the insert query info
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
 			
 			//	if it wasn't there insert it
-			$num = $db->insertRow($insertInfo['insertSql'], $insertInfo['insertParams']);
+			$num = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
 			if(!$num)
 			{
 				//	race condition
 				//	if another thread inserted it first then we we should check again
 				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
-				$num = $db->updateRow($updateInfo['updateSql'], $updateInfo['updateParams']);
+				$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
 				if(!$num)
 				{
 					//	I'm pretty sure that this should actually never happen
@@ -260,7 +263,7 @@ class DbConnection
 		$selectInfo = self::generateSelectInfo($tableName, $fieldNames, $conditions, $lock);
 		
 		//	select the row if it's there
-		$row = $db->fetchRow($selectInfo['sql'], $selectInfo['params']);
+		$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
 		if(!$row)
 		{
 			//	generate the insert query info
@@ -268,20 +271,20 @@ class DbConnection
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
 			
 			//	if it wasn't there insert it
-			$num = $db->insertRow($insertInfo['sql'], $insertInfo['params']);
-			if(!$num)
+			$num = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			//	you may have a race condition here
+			//	if another thread inserted it first then we need to supress the error in PHP4
+			//	we should probably try to use exceptions in PHP5
+
+			$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
+			if(!$row)
 			{
-				//	race condition
-				//	if another thread inserted it first then we we should check again
-				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
-				$row = $db->fetchRow($selectInfo['sql'], $selectInfo['params']);
-				if(!$row)
-				{
-					//	I'm pretty sure that this should actually never happen
-					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
-				}
+				//	I'm pretty sure that this should actually never happen
+				trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
 			}
 		}
+		
+		return $row;
 	}
 	
 	//	static
@@ -291,7 +294,7 @@ class DbConnection
 		
 		//	create the field clause
 		if($fieldsNames == '*')
-			$fieldClause = = '*';
+			$fieldClause == '*';
 		else
 			$fieldClause = implode(', ', $fieldsNames);
 		
@@ -311,7 +314,7 @@ class DbConnection
 			$lockClause = '';
 		
 		//	now put it all together
-		$selectSql = "SELECT $fieldClause FROM :tableName WHERE $conditionClause $lockClause";
+		$selectSql = "SELECT $fieldClause FROM :tableName:keyword WHERE $conditionClause $lockClause";
 		$selectParams['tableName'] = $tableName;
 		
 		return array('sql' => $selectSql, 'params' => $selectParams);
@@ -335,16 +338,21 @@ class DbConnection
 		$setParts = array();
 		foreach($values as $fieldName => $value)
 		{
-			$setParts[] = "$fieldName = :$fieldName";
-			$updateParams[$fieldName] = $value;
+			$fieldNameParts = explode(':', $fieldName);
+			$realFieldName = $fieldNameParts[0];
+			if(isset($fieldType))
+				$fieldType = $fieldNameParts[1];
+			
+			$setParts[] = "$realFieldName = :$fieldName";
+			$updateParams[$realFieldName] = $value;
 		}
-		$setClause = implode(', ', $conditionParts);
+		$setClause = implode(', ', $setParts);
 		
 		//	now put it all together
-		$updateSql = "UPDATE :tableName SET $setClause WHERE $conditionClause";
+		$updateSql = "UPDATE :tableName:keyword SET $setClause WHERE $conditionClause";
 		$updateParams['tableName'] = $tableName;
 		
-		return array('updateSql' => $updateSql, 'updateParams' => $updateParams);
+		return array('sql' => $updateSql, 'params' => $updateParams);
 	}
 	
 	//	static
@@ -357,17 +365,22 @@ class DbConnection
 		$valuesParts = array();
 		foreach($values as $fieldName => $value)
 		{
-			$fieldParts[] = $fieldName;
+			$fieldNameParts = explode(':', $fieldName);
+			$realFieldName = $fieldNameParts[0];
+			if(isset($fieldType))
+				$fieldType = $fieldNameParts[1];
+			
+			$fieldParts[] = $realFieldName;
 			$valuesParts[] = ':' . $fieldName;
-			$insertParams[$fieldName] = $value;
+			$insertParams[$realFieldName] = $value;
 		}
 		$fieldClause = implode(', ', $fieldParts);
 		$valuesClause = implode(', ', $valuesParts);
 		
 		//	now put it all together
-		$insertSql = "INSERT INTO :tableName ($fieldClause) VALUES ($valuesClause)";
+		$insertSql = "INSERT INTO :tableName:keyword ($fieldClause) VALUES ($valuesClause)";
 		$insetParams['tableName'] = $tableName;
 		
-		return array('insertSql' => $insertSql, 'insertParams' => $insertParams);
+		return array('sql' => $insertSql, 'params' => $insertParams);
 	}
 }

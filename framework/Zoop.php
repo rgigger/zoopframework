@@ -82,9 +82,17 @@ class Zoop
 				include(zoop_dir . '/zone/GuiZone.php');
 				break;
 			case 'db':
+				include(zoop_dir . '/db/config.php');
+				include(zoop_dir . '/db/DbFactory.php');
 				include(zoop_dir . '/db/DbConnection.php');
 				include(zoop_dir . '/db/DbPgResult.php');
 				include(zoop_dir . '/db/DbPgsql.php');
+				break;
+			case 'session':
+				include(zoop_dir . '/session/config.php');
+				include(zoop_dir . '/session/SessionPgsql.php');
+				include(zoop_dir . '/session/SessionFactory.php');
+				include(zoop_dir . '/session/Session.php');
 				break;
 			default:	
 				trigger_error('unknown module: ' . $name);
