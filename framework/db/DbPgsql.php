@@ -3,7 +3,7 @@ class DbPgsql extends DbConnection
 {
 	function DbPgsql()
 	{
-		$this->conn = pg_connect("dbname=todo user=postgres", PGSQL_CONNECT_FORCE_NEW);
+		$this->conn = pg_connect("dbname=social user=postgres", PGSQL_CONNECT_FORCE_NEW);
 	}
 	
 	function escapeString($string)

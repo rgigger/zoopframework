@@ -56,8 +56,12 @@ class DbConnection
 	function fetchRow($sql, $params)
 	{
 		$res = $this->query($sql, $params);
-		if($num = $res->numRows() != 1)
+		$num = $res->numRows();
+		if($num > 1)
 			trigger_error("1 row expected: $num returned");
+		
+		if($num == 0)
+			return false;
 		
 		return $res->current();
 	}
@@ -177,23 +181,193 @@ class DbConnection
 		return $map;
 	}
 	
-	function insertRow()
+	function modify($sql, $params)
 	{
-		
+		$res = $this->query($sql, $params);
+		return $res->affectedRows();
 	}
 	
-	function insertRows()
+	function modifyRow()
 	{
-		
+		$affected = $this->updateRows();
+		if($affected > 1)
+			trigger_error("$affected rows were changed.  Only one was expected");
+		return $affected;
 	}
 	
-	function updateRow()
+	function insertRow($sql, $params)
 	{
-		
+		return $this->modifyRow($sql, $params);
 	}
 	
-	function updateRows()
+	function insertRows($sql, $params)
 	{
+		return $this->modify($sql, $params);
+	}
+	
+	function updateRow($sql, $params)
+	{
+		return $this->modifyRow($sql, $params);
+	}
+	
+	function updateRows($sql, $params)
+	{
+		return $this->modify($sql, $params);
+	}
+	
+	function deleteRow($sql, $params)
+	{
+		return $this->modifyRow($sql, $params);
+	}
+	
+	function deleteRows($sql, $params)
+	{
+		return $this->modify($sql, $params);
+	}
+	
+	function upsertRow($tableName, $conditions, $values)
+	{
+		//	generate the update query info
+		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
 		
+		//	update the row if it's there
+		$num = $db->updateRow($updateInfo['updateSql'], $updateInfo['updateParams']);
+		if(!$num)
+		{
+			//	generate the insert query info
+			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
+			
+			//	if it wasn't there insert it
+			$num = $db->insertRow($insertInfo['insertSql'], $insertInfo['insertParams']);
+			if(!$num)
+			{
+				//	race condition
+				//	if another thread inserted it first then we we should check again
+				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
+				$num = $db->updateRow($updateInfo['updateSql'], $updateInfo['updateParams']);
+				if(!$num)
+				{
+					//	I'm pretty sure that this should actually never happen
+					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
+				}
+			}
+		}
+	}
+	
+	function selsertRow($tableName, $fieldNames, $conditions, $defaults = NULL, $lock = 0)
+	{
+		//	generate the sqlect query info
+		$selectInfo = self::generateSelectInfo($tableName, $fieldNames, $conditions, $lock);
+		
+		//	select the row if it's there
+		$row = $db->fetchRow($selectInfo['sql'], $selectInfo['params']);
+		if(!$row)
+		{
+			//	generate the insert query info
+			$allInsertFields = $defaults ? array_merge($conditions, $defaults) : $conditions;
+			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
+			
+			//	if it wasn't there insert it
+			$num = $db->insertRow($insertInfo['sql'], $insertInfo['params']);
+			if(!$num)
+			{
+				//	race condition
+				//	if another thread inserted it first then we we should check again
+				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
+				$row = $db->fetchRow($selectInfo['sql'], $selectInfo['params']);
+				if(!$row)
+				{
+					//	I'm pretty sure that this should actually never happen
+					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
+				}
+			}
+		}
+	}
+	
+	//	static
+	function generateSelectInfo($tableName, $fieldsNames, $conditions, $lock)
+	{
+		$selectParams = array();
+		
+		//	create the field clause
+		if($fieldsNames == '*')
+			$fieldClause = = '*';
+		else
+			$fieldClause = implode(', ', $fieldsNames);
+		
+		//	create the condition clause
+		$conditionParts = array();
+		foreach($conditions as $fieldName => $value)
+		{
+			$conditionParts[] = "$fieldName = :$fieldName";
+			$selectParams[$fieldName] = $value;
+		}
+		$conditionClause = implode(' AND ', $conditionParts);
+		
+		//	create the lock clause
+		if($lock)
+			$lockClause = 'for update';
+		else
+			$lockClause = '';
+		
+		//	now put it all together
+		$selectSql = "SELECT $fieldClause FROM :tableName WHERE $conditionClause $lockClause";
+		$selectParams['tableName'] = $tableName;
+		
+		return array('sql' => $selectSql, 'params' => $selectParams);
+	}
+	
+	//	static
+	function generateUpdateInfo($tableName, $conditions, $values)
+	{
+		$updateParams = array();
+		
+		//	create the condition part
+		$conditionParts = array();
+		foreach($conditions as $fieldName => $value)
+		{
+			$conditionParts[] = "$fieldName = :$fieldName";
+			$updateParams[$fieldName] = $value;
+		}
+		$conditionClause = implode(' AND ', $conditionParts);
+		
+		//	create the set part
+		$setParts = array();
+		foreach($values as $fieldName => $value)
+		{
+			$setParts[] = "$fieldName = :$fieldName";
+			$updateParams[$fieldName] = $value;
+		}
+		$setClause = implode(', ', $conditionParts);
+		
+		//	now put it all together
+		$updateSql = "UPDATE :tableName SET $setClause WHERE $conditionClause";
+		$updateParams['tableName'] = $tableName;
+		
+		return array('updateSql' => $updateSql, 'updateParams' => $updateParams);
+	}
+	
+	//	static
+	function generateInsertInfo($tableName, $values)
+	{
+		$insertParams = array();
+		
+		//	create the set part
+		$fieldParts = array();
+		$valuesParts = array();
+		foreach($values as $fieldName => $value)
+		{
+			$fieldParts[] = $fieldName;
+			$valuesParts[] = ':' . $fieldName;
+			$insertParams[$fieldName] = $value;
+		}
+		$fieldClause = implode(', ', $fieldParts);
+		$valuesClause = implode(', ', $valuesParts);
+		
+		//	now put it all together
+		$insertSql = "INSERT INTO :tableName ($fieldClause) VALUES ($valuesClause)";
+		$insetParams['tableName'] = $tableName;
+		
+		return array('insertSql' => $insertSql, 'insertParams' => $insertParams);
 	}
 }

@@ -49,4 +49,8 @@ class DbPgResult
 		return true;
 	}
 	
+	function affectedRows()
+	{
+		return pg_affected_rows($this->res);
+	}
 }

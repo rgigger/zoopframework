@@ -1,6 +1,6 @@
 <?php
 
-class gui extends Smarty
+class Gui extends Smarty
 {
 	var $languageId;
 	
@@ -79,30 +79,21 @@ class gui extends Smarty
 	{
 		$this->plugins_dir[] = $inDir;
 	}
-	
-	//	static and pseudo-static functions
-	
-	//	often we want to assign the variables before we know what type of gui we want so store the assigns
-	//		in a global array until we create the gui 
-	function assign($name, $value)
-	{
-		if(!(isset($this) && is_a($this,__CLASS__)))
-		{
-			global $GuiVars;
-			$GuiVars[$name] = $value;
-			return;
-		}
-		
-		parent::assign($name, $value);
-	}
-	
-	
-	//	static
-	function getAssigns()
-	{
-		global $GuiVars;
-		if(!$GuiVars)
-			$GuiVars = array();
-		return $GuiVars;
-	}
+}
+
+//	often we want to assign the variables before we know what type of gui we want so store the assigns
+//		in a global array until we create the gui 
+function GuiAssign($name, $value)
+{
+	global $GuiVars;
+	$GuiVars[$name] = $value;
+	return;	
+}
+
+function GuiGetAssigns()
+{
+	global $GuiVars;
+	if(!$GuiVars)
+		$GuiVars = array();
+	return $GuiVars;
 }

@@ -8,10 +8,47 @@ include(zoop_dir . '/app/Error.php');
 
 class Zoop
 {
+	var $classList;
+	
 	function Zoop()
 	{
+		$this->classList = array();
+		
 		$this->loadLib('utils');
 		DefineOnce('app_tmp_dir', app_dir . '/tmp');
+	}
+	
+	function _registerClass($className, $fullPath)
+	{
+		$this->classList[strtolower($className)] = $fullPath;
+		
+		if(version_compare(phpversion(), '5.0.0', '<'))
+		{
+			require_once($fullPath);
+		}
+	}
+	
+	function _getClassPath($className)
+	{
+		$className = strtolower($className);
+		if(isset($this->classList[$className]))
+			return $this->classList[$className];
+		
+		return false;
+	}
+	
+	//	static - singleton
+	function registerClass($className, $fullPath)
+	{
+		global $zoop;
+		$zoop->_registerClass($className, $fullPath);
+	}
+	
+	//	static - singleton
+	function getClassPath($className)
+	{
+		global $zoop;
+		return $zoop->_getClassPath($className);
 	}
 	
 	function loadLib($name)
@@ -23,6 +60,7 @@ class Zoop
 			$zoop->loadLib($name);
 			return;
 		}
+		
 		switch($name)
 		{
 			case 'app':
@@ -55,3 +93,14 @@ class Zoop
 }
 
 $zoop = new Zoop();
+
+function __autoload($className)
+{
+	$classPath = Zoop::getClassPath($className);
+	if($classPath)
+		require_once($classPath);
+	
+	//	if this is a zone and we haven't found it yet look in the default location
+	if(substr($classPath, 0, 4) == 'Zone')
+		require_once(app_dir . '/' . $className); 
+}

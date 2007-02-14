@@ -15,27 +15,24 @@ class GuiZone extends Zone
 		return $zoneName;
 	}
 	
-	function assign($name, $value)
-	{
-		gui::assign($name, $value);
-	}
-	
 	function display($templateName, $guiType = NULL)
 	{
 		$gui = $this->chooseGui($guiType);
 		
-		$guiAssigns = gui::getAssigns();
+		$guiAssigns = GuiGetAssigns();
 		foreach($guiAssigns as $name => $value)
 		{
 			$gui->assign($name, $value);
 		}
 		
 		//	we may want to do some assigns here
-		//	virtual_url
 		//	zone_url
 		//	request_uri
+		
 		if(defined('script_url'))
-			$this->assign('scriptUrl', script_url);
+			$gui->assign('scriptUrl', script_url);
+		if(defined('virtual_url'))
+			$gui->assign('virtualUrl', virtual_url);
 		
 		$dirName = $this->getTemplateDir();
 		$gui->display($dirName . '/'. $templateName . '.tpl');
