@@ -6,6 +6,7 @@ function RequestIsPost()
 
 function echo_r($var)
 {
+	//EchoBacktrace();
 	echo '<pre>';
 	print_r($var);
 	echo '</pre>';

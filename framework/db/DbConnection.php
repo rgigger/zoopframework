@@ -5,9 +5,26 @@ class DbConnection
 	var $types;
 	var $conn;
 	
+	//	transaction stuff
+	function beginTransaction()
+	{
+		$this->_query('begin');
+	}
+	
+	function commitTransaction()
+	{
+		$this->_query('commit');
+	}
+	
+	function rollbackTransaction()
+	{
+		$this->_query('rollback');
+	}
+	
 	function query($sql, $params)
 	{
 		//	do all of the variable replacements
+		$this->params = array();
 		foreach($params as $key => $value)
 		{
 			$parts = explode(':', $key);
@@ -15,7 +32,7 @@ class DbConnection
 			if(isset($parts[1]))
 				$this->types[$parts[0]] = $parts[1];
 		}
-		$sql = preg_replace_callback("/:([[:alpha:]_]+):([[:alpha:]_]+)|:([[:alpha:]_]+)/", array($this, 'queryCallback'), $sql);
+		$sql = preg_replace_callback("/:([[:alpha:]_\d]+):([[:alpha:]_]+)|:([[:alpha:]_\d]+)/", array($this, 'queryCallback'), $sql);
 		
 		//	actually do the query
 		return $this->_query($sql);
@@ -79,6 +96,10 @@ class DbConnection
 	{
 		$rows = array();
 		$res = $this->query($sql, $params);
+		
+		if(!$res->valid())
+			return array();
+		
 		for($row = $res->current(); $res->valid(); $row = $res->next())
 		{
 			$rows[] = $row;
@@ -200,7 +221,8 @@ class DbConnection
 	
 	function insertRow($sql, $params)
 	{
-		return $this->modifyRow($sql, $params);
+		$this->modifyRow($sql, $params);
+		return $this->getLastInsertId();
 	}
 	
 	function insertRows($sql, $params)
@@ -241,7 +263,7 @@ class DbConnection
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
 			
 			//	if it wasn't there insert it
-			$num = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			$num = $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
 			if(!$num)
 			{
 				//	race condition
@@ -271,7 +293,7 @@ class DbConnection
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
 			
 			//	if it wasn't there insert it
-			$num = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			$num = $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
 			//	you may have a race condition here
 			//	if another thread inserted it first then we need to supress the error in PHP4
 			//	we should probably try to use exceptions in PHP5
@@ -294,7 +316,7 @@ class DbConnection
 		
 		//	create the field clause
 		if($fieldsNames == '*')
-			$fieldClause == '*';
+			$fieldClause = '*';
 		else
 			$fieldClause = implode(', ', $fieldsNames);
 		
@@ -346,6 +368,7 @@ class DbConnection
 			$setParts[] = "$realFieldName = :$fieldName";
 			$updateParams[$realFieldName] = $value;
 		}
+		
 		$setClause = implode(', ', $setParts);
 		
 		//	now put it all together
@@ -379,7 +402,7 @@ class DbConnection
 		
 		//	now put it all together
 		$insertSql = "INSERT INTO :tableName:keyword ($fieldClause) VALUES ($valuesClause)";
-		$insetParams['tableName'] = $tableName;
+		$insertParams['tableName'] = $tableName;
 		
 		return array('sql' => $insertSql, 'params' => $insertParams);
 	}

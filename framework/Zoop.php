@@ -83,10 +83,12 @@ class Zoop
 				break;
 			case 'db':
 				include(zoop_dir . '/db/config.php');
-				include(zoop_dir . '/db/DbFactory.php');
 				include(zoop_dir . '/db/DbConnection.php');
 				include(zoop_dir . '/db/DbPgResult.php');
 				include(zoop_dir . '/db/DbPgsql.php');
+				include(zoop_dir . '/db/DbObject.php');
+				include(zoop_dir . '/db/DbFactory.php');
+				include(zoop_dir . '/db/functions.php');
 				break;
 			case 'session':
 				include(zoop_dir . '/session/config.php');
@@ -107,8 +109,4 @@ function __autoload($className)
 	$classPath = Zoop::getClassPath($className);
 	if($classPath)
 		require_once($classPath);
-	
-	//	if this is a zone and we haven't found it yet look in the default location
-	if(substr($classPath, 0, 4) == 'Zone')
-		require_once(app_dir . '/' . $className); 
 }

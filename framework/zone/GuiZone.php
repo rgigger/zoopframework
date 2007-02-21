@@ -15,6 +15,11 @@ class GuiZone extends Zone
 		return $zoneName;
 	}
 	
+	function assign($key, $value)
+	{
+		GuiAssign($key, $value);
+	}
+	
 	function display($templateName, $guiType = NULL)
 	{
 		$gui = $this->chooseGui($guiType);

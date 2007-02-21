@@ -1,5 +1,7 @@
 -	class Zoop
 	-	fix how it loads classes, make it use the dynamic loading stuff
+		+	add in the auto include stuff
+		-	use if for all of the zoop modules
 -	check for ini options that are not secure or in bad form
 	-	register globals
 	-	magic quotes
@@ -8,7 +10,7 @@
 	-	full zone support
 	-	gui support
 -	release 1.50.01
--	zone / gui integration?
++	zone / gui integration?
 -	google code site
 	-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
 	-	same for design goals
@@ -27,25 +29,25 @@
 	-	for instance guizone depends on gui and zone.  how should me make sure that these thigns are loaded?
 -	future modules
 	-	db
-		-	a base class showing what needs to go into it
+		+	a base class showing what needs to go into it
 		-	subclassess for
 			-	pear mdb2
 			-	pdo
-			-	native bindings for postgres, etc
-		-	a default object and the Sql* functions
+			+	native bindings for postgres, etc
+		+	a default object and the Sql* functions
 		-	dbobject
-		-	make it easy to escape paramaters and hard not too
-		-	methods
-			-	SqlQuery
-			-	SqlInsert
-			-	SqlUpdate
-			-	SqlFetchOneCell
-			-	SqlFetchRow
-			-	SqlFetchRows
+		+	make it easy to escape paramaters and hard not too
+		/	methods
+			+	SqlQuery
+			+	SqlInsert
+			+	SqlUpdate
+			+	SqlFetchOneCell
+			+	SqlFetchRow
+			+	SqlFetchRows
 			-	SqlFetchColumn
-			-	SqlFetchSimpleMap
-			-	SqlFetchMap
-			-	SqlFetchComplexMap
+			+	SqlFetchSimpleMap
+			+	SqlFetchMap
+			+	SqlFetchComplexMap
 			-	SqlFetchParent
 			-	SqlFetchChildren
 	-	zoop textmate bundle
@@ -53,12 +55,20 @@
 		-	Message
 		-	SmartMessage
 	-	session
-		-	files
-		-	mysql
-		-	pgsql
-		-	msession?
-		-	my daemon?
-		-	that other guys daemon
+		-	drivers
+			-	files
+			-	mysql
+			+	pgsql
+			-	msession?
+			-	my daemon?
+			-	that other guys daemon
+			-	pear
+			-	pdo
+		-	modes
+			-	serialize
+			-	serialize_manual
+			-	write_unsafe
+			+	write_manual (default)
 	-	translate
 	-	xml
 		-	works with both php4 and php5

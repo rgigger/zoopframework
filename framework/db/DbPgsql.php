@@ -26,4 +26,8 @@ class DbPgsql extends DbConnection
 		return new DbPgResult($result);
 	}
 	
+	function getLastInsertId()
+	{
+		return $this->fetchCell("select lastval()", array());
+	}
 }

@@ -36,7 +36,7 @@ class Gui extends Smarty
 		
 		//	we want to run this filter on every single smarty script that we execute
 		//	it finds all places where we echo out a simple variable and escapes the html
-		$this->autoload_filters = array('pre' => array("strip_html"));
+//		$this->autoload_filters = array('pre' => array("strip_html"));
 		
 //		$this->assign("template_root", gui_template_dir);
 		

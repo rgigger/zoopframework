@@ -51,5 +51,10 @@ class DbFactory
 global $DbFactoryClassMap;
 $DbFactoryClassMap = array();
 
+
 global $DefaultDb;
-$DefaultDb = NULL;
+if(db_use_default_connection)
+	$DefaultDb = DbFactory::getDefaultConnection();
+else
+	$DefaultDb = NULL;
+	

@@ -64,8 +64,6 @@ class SessionPgsql
 	
 	function read($sessionId)
 	{
-//		echo 'one<br>';
-//		echo_r($sessionId);
 		$this->sessionId = $sessionId;
 		//	make sure the session_base record is in there
 		$this->db->upsertRow('session_base', array('session_id' => $sessionId), array('last_active:keyword' => 'CURRENT_TIMESTAMP'));

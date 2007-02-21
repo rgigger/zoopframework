@@ -1,5 +1,5 @@
 <?php
-//	todo:	I think that this should extend Application.  If sessions aren't working that's why
+//	todo:	I think that this should extend Application.
 class ZoneApplication
 {
 	function loadZone($name)
