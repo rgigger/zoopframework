@@ -1,0 +1,10 @@
+-	zap functions
+	-	create new project
+	-	create new app module
+	-	create new zone
+	-	create new view
+	-	create new domain object
+	-	set tmp directories
+	-	setup pub directory
+	-	setup svn/code directories???
+		-	rotate stable/dev stuff

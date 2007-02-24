@@ -14,9 +14,17 @@ class ZoneApplication
 		$pathParts = explode('/', virtual_path);
 		array_shift($pathParts);
 		
-		//	handle the request
-		$zoneDefault = new ZoneDefault();
-		$zoneDefault->handleRequest($pathParts);
+		//	special case: see if we need to dish out a static page from a zoop module
+		if($pathParts[0] == 'modpub')
+		{
+			$this->handleStaticFile($pathParts);
+		}
+		else
+		{
+			//	handle the request
+			$zoneDefault = new ZoneDefault();
+			$zoneDefault->handleRequest($pathParts);
+		}
 	}
 	
 	//static
@@ -25,6 +33,15 @@ class ZoneApplication
 		global $app;
 		$app->loadZone('default');
 		$app->run();
+	}
+	
+	function handleStaticFile($pathParts)
+	{
+		array_shift($pathParts);
+		$modName = str_replace('..', '', array_shift($pathParts));
+		$staticPath = str_replace('..', '', implode('/', $pathParts));
+		$filePath = zoop_dir . "/$modName/public/" . $staticPath;
+		EchoStaticFile($filePath);
 	}
 }
 
