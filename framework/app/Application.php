@@ -1,4 +1,10 @@
 <?php
+/**
+ * class Application
+ *
+ * @package app
+ * @author Rick Gigger
+ **/
 class Application
 {
 	function Application()

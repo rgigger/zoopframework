@@ -1,4 +1,13 @@
 <?php
+/**
+ * app::config.php
+ *
+ * @author Rick Gigger
+ * @version $Id$
+ * @copyright __MyCompanyName__, 16 February, 2007
+ * @package app
+ **/
+
 //////////////////////////////////////////////
 //
 //	What we really want here is to define the following contants:

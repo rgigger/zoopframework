@@ -1,4 +1,11 @@
 <?php
+/**
+ * class Error Handler
+ *
+ * @package app
+ * @author Rick Gigger
+ **/
+
 error_reporting(E_ALL);
 
 class ErrorHandler
