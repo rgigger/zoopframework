@@ -15,7 +15,7 @@ class ZoneApplication
 		array_shift($pathParts);
 		
 		//	special case: see if we need to dish out a static page from a zoop module
-		if($pathParts[0] == 'modpub')
+		if(isset($pathParts[0]) && $pathParts[0] == 'modpub')
 		{
 			$this->handleStaticFile($pathParts);
 		}
