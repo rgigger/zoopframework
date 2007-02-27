@@ -1,4 +1,28 @@
 <?php
+function SqlEchoOn()
+{
+	global $DefaultDb;
+	return $DefaultDb->echoOn();
+}
+
+function SqlEchoOff()
+{
+	global $DefaultDb;
+	return $DefaultDb->echoOff();
+}
+
+function SqlBeginTransaction()
+{
+	global $DefaultDb;
+	return $DefaultDb->beginTransaction();
+}
+
+function SqlCommitTransaction()
+{
+	global $DefaultDb;
+	return $DefaultDb->commitTransaction();
+}
+
 function SqlFetchCell($sql, $params)
 {
 	global $DefaultDb;
@@ -39,4 +63,10 @@ function SqlUpsertRow($tableName, $conditions, $values)
 {
 	global $DefaultDb;
 	return $DefaultDb->upsertRow($tableName, $conditions, $values);
+}
+
+function SqlDeleteRows($sql, $params)
+{
+	global $DefaultDb;
+	return $DefaultDb->deleteRows($sql, $params);
 }

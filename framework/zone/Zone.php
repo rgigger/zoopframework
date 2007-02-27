@@ -32,7 +32,8 @@ class Zone
 	//	the main functionality of zone
 	function handleRequest($pathParts)
 	{
-		$thisPart = ucfirst(array_shift($pathParts));
+		$originalPart = array_shift($pathParts);
+		$thisPart = ucfirst($originalPart);
 		
 		$zoneName = "Zone$thisPart";
 		$pageName = "page$thisPart";
@@ -79,15 +80,19 @@ class Zone
 		//	if we found a page then run it
 		if( isset($foundPage) )
 		{
-			$pageParams = array_merge(array(0 => $foundPage), $pathParts);
+			$postfix = $originalPart ? $originalPart : 'default';
+			$pageParams = array_merge(array(0 => $postfix), $pathParts);
 			
 			if( method_exists($this, 'initPages') )
-				$this->initPages($pageParams);
+				$this->initPages($pageParams, $this->params);
 			
 			$this->$foundPage($pageParams, $this->params);
 			
+			if( RequestIsGet() && method_exists($this, 'closePages') )
+				$this->closePages($pageParams, $this->params);
+			
 			if( RequestIsPost() && method_exists($this, 'closePosts') )
-				$this->closePosts($pageParams);
+				$this->closePosts($pageParams, $this->params);
 		}
 		
 	}

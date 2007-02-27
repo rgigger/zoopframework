@@ -1,6 +1,8 @@
 <?php
 class GuiZone extends Zone
 {
+	var $displayed = false;
+	
 	function chooseGui($type)
 	{
 		assert($type === NULL);	//	if they want something different they need to extend this class
@@ -18,6 +20,11 @@ class GuiZone extends Zone
 	function assign($key, $value)
 	{
 		GuiAssign($key, $value);
+	}
+	
+	function displayed()
+	{
+		return $this->displayed;
 	}
 	
 	function display($templateName, $guiType = NULL)
@@ -42,5 +49,6 @@ class GuiZone extends Zone
 		
 		$dirName = $this->getTemplateDir();
 		$gui->display($dirName . '/'. $templateName . '.tpl');
+		$this->displayed = true;
 	}
 }

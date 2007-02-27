@@ -4,6 +4,22 @@ class DbConnection
 	var $params;
 	var $types;
 	var $conn;
+	var $echo;
+	
+	function DbConnection()
+	{
+		$echo = false;
+	}
+	
+	function echoOn()
+	{
+		$this->echo = true;
+	}
+	
+	function echoOff()
+	{
+		$this->echo = false;
+	}
 	
 	//	transaction stuff
 	function beginTransaction()
@@ -33,6 +49,9 @@ class DbConnection
 				$this->types[$parts[0]] = $parts[1];
 		}
 		$sql = preg_replace_callback("/:([[:alpha:]_\d]+):([[:alpha:]_]+)|:([[:alpha:]_\d]+)/", array($this, 'queryCallback'), $sql);
+		
+		if($this->echo)
+			echo $sql . '<br>';
 		
 		//	actually do the query
 		return $this->_query($sql);

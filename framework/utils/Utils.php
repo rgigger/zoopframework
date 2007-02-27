@@ -1,4 +1,9 @@
 <?php
+function RequestIsGet()
+{
+	return $_SERVER['REQUEST_METHOD'] == 'GET' ? 1 : 0;
+}
+
 function RequestIsPost()
 {
 	return $_SERVER['REQUEST_METHOD'] == 'POST' ? 1 : 0;
