@@ -108,6 +108,8 @@ class DbConnection
 	function fetchCell($sql, $params)
 	{
 		$row = $this->fetchRow($sql, $params);
+		if(!$row)
+			return NULL;
 		return current($row);
 	}
 	
