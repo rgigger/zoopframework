@@ -2,3 +2,6 @@
 -	use smarty->default_modifiers to automatically escape all html by default
 	-	make sure it also applies to smarty functions and not just variables
 	-	make sure it runs it after it applies all other modifiers
+-	smarty resources
+	-	possibly use resource paths (http://smarty.php.net/manual/en/template.resources.php) to handle module templates
+	-	use the default template handler to present a pleasant error message when you can't find a template in development - or create it for you on the fly!
