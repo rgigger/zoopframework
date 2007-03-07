@@ -1,6 +1,4 @@
 <?php
-
-
 class DbPgsql extends DbConnection
 {
 	function DbPgsql($params)

@@ -108,5 +108,15 @@ function __autoload($className)
 {
 	$classPath = Zoop::getClassPath($className);
 	if($classPath)
+	{
 		require_once($classPath);
+		if(get_parent_class($className) == 'DbObject')
+		{
+			//	another terrible hack to make up for not having late static binding
+			$evalString = 'function ' . "Get$className" . '($id) { return new ' . $className . '($id); }';
+			eval($evalString);
+			//echo $evalString . '<br>';
+		}
+	}
+		
 }
