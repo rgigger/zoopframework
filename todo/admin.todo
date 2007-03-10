@@ -1,0 +1,5 @@
+-	library for automating stuff
+	-	command line interface (zap?)
+	-	web interface (might only work if running a web server as the user)
+-	build system
+	-	setting perms to make stuff writable to the web server

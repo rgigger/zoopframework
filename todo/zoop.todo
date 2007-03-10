@@ -118,6 +118,7 @@
 	-	rad/"scaffolding"
 		-	edit actual files or just produce code for you to copy and paste
 		-	cli first - open in textmate?
+	-	permissions
 -	work on existing modules
 	-	app
 		-	error
@@ -129,3 +130,11 @@
 -	apps to port
 	-	translate
 	-	directory
+-	server module
+	-	http server
+	-	zoop app server
+	-	db server
+	-	dns server
+	-	mail server
+-	differences
+	-	more advanced security system / controller / graphic system / translation system / session system / xml handling??? / workflows / storage system / spell checker / 

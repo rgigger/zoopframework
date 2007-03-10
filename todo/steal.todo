@@ -1,0 +1,24 @@
+-	gui
+	-	plugins to handle making links
+		-	link
+			-	just a "page" paramager links to another page in the zone (you can tack on params too)
+			-	add in a "zone" paramater switches zones
+		-	baseLink
+			-	starts from the base
+			-	requires a zone and/or paramater
+	-	auto include templates
+	-	layouts
+-	zone
+	-	routing
+	-	auto include zone files?
+-	auto generate files for people
+	-	zones (also have a zone inludes file that automatically gets an include tacked onto the end)
+	-	create a new application
+-	db
+	-	migrations
+	-	dbobject
+		-	find
+-	bundle a web server to get it started quickly
+	-	have a download for windows with the browser/server combo
+		-	have an interface for managing projects and updates to zoop
+-	yaml based config files???
