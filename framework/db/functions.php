@@ -41,6 +41,12 @@ function SqlFetchRows($sql, $params)
 	return $DefaultDb->fetchRows($sql, $params);
 }
 
+function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
+{
+	global $DefaultDb;
+	return $DefaultDb->fetchSimpleMap($sql, $keyFields, $valueField, $params);
+}
+
 function SqlInsertRow($sql, $params)
 {
 	global $DefaultDb;
