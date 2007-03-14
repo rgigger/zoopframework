@@ -153,7 +153,7 @@ class DbConnection
 			if(isset($cur) && !empty($lastKey))
 				trigger_error("db::fetchSimpleMap : duplicate key in query: \n $inQuery \n");
 			
-			$cur = $row[ $inValueField ];
+			$cur = $row[ $valueField ];
 		}
 		
 		return $map;
