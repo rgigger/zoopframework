@@ -96,6 +96,13 @@ class Zoop
 				include(zoop_dir . '/session/SessionFactory.php');
 				include(zoop_dir . '/session/Session.php');
 				break;
+			case 'mail':
+				require(zoop_dir . '/phpmailer/class.phpmailer.php');
+				require(zoop_dir . '/mail/config.php');
+				require(zoop_dir . '/mail/Mail.php');
+				require(zoop_dir . '/mail/Mailer.php');
+				require(zoop_dir . '/mail/Message.php');
+				break;
 			default:	
 				trigger_error('unknown module: ' . $name);
 		}
