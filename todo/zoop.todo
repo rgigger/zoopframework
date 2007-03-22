@@ -9,8 +9,8 @@
 -	start the google code clone
 	-	first make a bug tracker for it
 -	as part of the google code clone complete
-	-	full zone support
-	-	ful gui support
+	+	full zone support
+	+	ful gui support
 -	release 1.50.01
 +	zone / gui integration?
 -	google code site
@@ -29,6 +29,11 @@
 		-	have color schemes for each of the control tower defaults as well as some of your own
 -	some concept of depencencies
 	-	for instance guizone depends on gui and zone.  how should me make sure that these thigns are loaded?
+-	zoop class
+	-	modules
+		-	public files
+			+	make them work (accessible from with the application with no configuration)
+			-	make it so you can concat multiple so if you have a bunch of modules with tiny css or js files you can just download one consolidated file
 -	future modules
 	-	db
 		+	a base class showing what needs to go into it
@@ -120,13 +125,19 @@
 		-	cli first - open in textmate?
 	-	permissions
 -	work on existing modules
-	-	app
-		-	error
-			-	convert all errors to exceptions
-			-	figure out what is up with the sqlite pdo exception stack traces
 	-	zone
 		-	automatically display templates?
 		-	automatically determine file output type?
+		-	change the way zone params are handled
+			-	no more "function getParamNames..."
+			-	instead use $this->addZoneParam($paramName, $paramType, $extra)
+				-	$paramType is one of {int, identifier, regex, ...}
+					-	maybe default to identifier
+					-	also maybe put a limit on the length (like maybe 20 chars or so)
+		-	change the way page params are handled
+			-	allow you to have a paramsxxx function that corresponds to the pagexxx and postxxx functions
+				-	it will allow you to assign names, validation types and length limits as with zone params above
+				-	they will be optional but will default to using numric indicies for names as it does now, with type identifier and the same default length limit as the zone params above
 -	apps to port
 	-	translate
 	-	directory
@@ -136,5 +147,8 @@
 	-	db server
 	-	dns server
 	-	mail server
--	differences
-	-	more advanced security system / controller / graphic system / translation system / session system / xml handling??? / workflows / storage system / spell checker / 
+-	design goal
+	-	keep global configurations global and local configurations local (and close to what they affect)
+		-	for example zone params go in the zone not in some big master config file
+-	security
+	-	make sure you always do all validation 

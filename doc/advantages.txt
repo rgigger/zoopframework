@@ -1,0 +1,11 @@
+-	differences
+	-	more advanced security system
+	-	more advanced controller
+	-	graphic system
+	-	translation system
+	-	better session system
+	-	xml handling???
+	-	workflows
+	-	storage system
+	-	spell checker
+	-	page functions not accessible to the web automatically

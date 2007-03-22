@@ -35,9 +35,50 @@ class ErrorHandler
 	
 	function handleDevError($errno, $errstr, $errfile, $errline, $context)
 	{
-		echo '<pre>';
-		debug_print_backtrace();
-		echo '</pre>';
+		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context);
+		echo '<div>' . $errorLine . '</div>';
+		FormatBacktraceHtml(debug_backtrace());
+	}
+	
+	function formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context)
+	{
+		$line = '';
+		switch ($errno)
+		{
+			case E_ERROR:
+			case E_PARSE:
+			case E_CORE_ERROR:
+			case E_COMPILE_ERROR:
+				die('this should never happen');
+				break;
+			case E_USER_ERROR:
+			case E_CORE_WARNING:
+			case E_COMPILE_WARNING:
+			case E_USER_ERROR:
+			case E_USER_WARNING:
+			case E_USER_NOTICE:
+			case E_STRICT:
+			case E_RECOVERABLE_ERROR:
+				die('not yet handled');
+				break;
+			case E_WARNING:
+				$line .= '<strong>Warning:</strong>';
+				break;
+			case E_NOTICE:
+				$line .= '<strong>Notice:</strong>';
+				break;
+		   case E_USER_ERROR:
+		       break;
+		   default:
+				die("undefined error type");
+				break;
+		}
+		
+		$line .= ' "' . $errstr . '"';
+		$line .= ' in file ' . $errfile;
+		$line .= ' ( on line  ' . $errline . ')';
+		
+		return $line;
 	}
 }
 

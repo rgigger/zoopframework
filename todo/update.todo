@@ -1,0 +1,9 @@
+-	module for keeping an instalation of a project up to date
+	-	database updates
+		-	handle
+			-	robust versioning
+			-	different branches of code???
+			-	flat or with deep directory structures
+			-	schema vs data changes vs mixed changes
+			-	if data then text (translation) vs non text data
+			-	deployment specific data, for example data that should only ever go into test vs. data that needs to go into all install

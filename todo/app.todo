@@ -1,0 +1,22 @@
+-	error
+	-	convert all errors to exceptions
+	-	figure out what is up with the sqlite pdo exception stack traces
+	-	make it handle links to php docs work correctly
+	-	make links to zoop apis???
+	-	backtrace
+		-	format html function
+			+	basic file, line, function
+			-	add in parmamters
+			-	add in OOP info
+				-	classes
+				-	objects
+				-	full object context information
+			-	add some js magic to the parmaters to you can see what you want when and only when you want
+			-	make it capture the result and return it
+		-	format cli function
+	-	limit the number of errors that we display
+		-	when we hit the limit just terminate the script
+	-	make the backtrace formater into a backtrace class, put it into the error module
+		-	allow for popping of rows in the backtrace
+		-	html formatting
+		-	cli formatting
