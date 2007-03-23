@@ -6,6 +6,7 @@
 		-	colspan
 		-	rowspan
 		-	breaking across pages
+		-	widow / orphan support
 	-	divs
 		-	vertical centering
 		-	borders
@@ -17,3 +18,19 @@
 			-	the produced xml file
 			-	a tree representing the object structrure that was created
 			-	maybe just make it something you can add into the url???
+	-	parser
+		-	try to conform as best you can to the html/css specs
+		-	modulerize the parser so that each element is part of some module, keep core parser very modular
+	-	user svg for other graphics
+		-	shapes, lines, etc
+		-	make sure you can have point level precision with anything you might want to draw
+-	first divs
+	-get all features and styles of div working
+	-	make sure that it breaks properly across pages (with proper widow orphan support)
+	-	make sure borders, margins, padding, backgrounds etc work
+	-	float????
+-	then tables
+	-	borders, padding, margins, backgrounds, etc
+-	then???
+...
+-	charts and graphs???
