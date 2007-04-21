@@ -103,6 +103,9 @@ class Zoop
 				require(zoop_dir . '/mail/Mailer.php');
 				require(zoop_dir . '/mail/Message.php');
 				break;
+			case 'cli':
+				require(zoop_dir . '/cli/CliApplication.php');
+				break;
 			default:	
 				trigger_error('unknown module: ' . $name);
 		}

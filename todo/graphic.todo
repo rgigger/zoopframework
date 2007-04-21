@@ -21,16 +21,20 @@
 	-	parser
 		-	try to conform as best you can to the html/css specs
 		-	modulerize the parser so that each element is part of some module, keep core parser very modular
-	-	user svg for other graphics
+	-	use svg for other graphics
 		-	shapes, lines, etc
 		-	make sure you can have point level precision with anything you might want to draw
--	first divs
-	-get all features and styles of div working
-	-	make sure that it breaks properly across pages (with proper widow orphan support)
-	-	make sure borders, margins, padding, backgrounds etc work
-	-	float????
--	then tables
-	-	borders, padding, margins, backgrounds, etc
--	then???
-...
--	charts and graphs???
+	-	page breaks
+-	steps
+	-	import the pdf module from zend framework
+	-	write a zpdf graphic context
+	-	implement GraphicDiv
+		-get all features and styles of div working
+		-	make sure that it breaks properly across pages (with proper widow orphan support)
+		-	make sure borders, margins, padding, backgrounds etc work
+		-	float????
+	-	then tables
+		-	borders, padding, margins, backgrounds, etc
+	-	column sets, document, 
+	...
+	-	charts and graphs???

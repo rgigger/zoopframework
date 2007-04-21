@@ -8,6 +8,7 @@
 			-	requires a zone and/or paramater
 	-	auto include templates
 	-	layouts
+		-	maybe have a way to insert multiple files, if they exist into multiple parts of the template
 -	zone
 	-	routing
 	-	auto include zone files?
@@ -16,9 +17,52 @@
 	-	create a new application
 -	db
 	-	migrations
+		-	make it heirarchical so that you can insert migrations into old versions and still have them get applied to both dbs
+			-	use a decimal system type versioning (1, 1.1, 1.1.1, 1.1.2 etc)
+			-	always scan the entire list of migrations and figure out any that haven't been applied
+		-	allow applying or removing specific migrations
+		-	allow you to force the application of certain migrations even if they have already been applied??? (maybe it's best to always just remove the specific migration and then reapply it)
+		-	allow you to tell the db that a specific migration hasn't really been applied or needs to be reapplied???
+		-	have a way to separate: ddl, dml, or text (schema, data, text)
+		-	have a way to consolidate migrations???
+		-	indicate which data migrations are part of a specific install (project) and which are key to the app functionging (product)
+			-	this should alow you to create all of the data necessary for a test install without developers ever having production data
+				-	this should also facilitate setting up test cases
+		-	allow you to take an existing database and reverse engineer the schema and put it into migration syntax
+			-	this will allow us to port existing schemas to other databases
+			-	we will still need to extract product data however if we are to get it really working
+		-	list which migrations haven't been applied
 	-	dbobject
 		-	find
 -	bundle a web server to get it started quickly
 	-	have a download for windows with the browser/server combo
 		-	have an interface for managing projects and updates to zoop
 -	yaml based config files???
+-	figure out a way to be able to move stuff around without breaking all of our links and redirects but without using routes
+	-	the first thing you need to do hear is figure out some legit use cases to test against
+		-	implement the routes examples in the book
+		-	implement the store example in the book
+	-	how to handle nested zones
+-	rails seems to be built around a singular linear project with one live install, thus dev, test, and live are all it can handle well
+	-	it doesn't seem to be geared around a single product with lots of slightly different projects or installs, and it isn't designed to handle it well
+-	scaffolding
+	-	standard list, edit, view, delete
+	-	login
+-	convention over configuration
+	-	every coc features can be put into one of two categories
+		-	scaffolding
+			-	conform your domain to a restricted abstrated pattern in order to get started.  later we remove the scaffolding and fill in the real building elements later
+			-	we force to domain into our pattern so that we can "get something working"
+		-	genunine pattern matching
+			-	the domain actually matches the pattern and so generalized code can be used
+	-	maybe there is a flow moving from extrememly generalized to extremely customized, on demand, agile
+-	validation
+	-	put validation info into the model
+	-	how then do we get it into the form???
+-	testing
+	-	unit testing?
+	-	regression testing?
+	-	design by contract, preconditions, postconditions
+	-	all of this should be validated against the existing bug database to see what is worth the effort
+-	the flash
+	-	not sure we want this but we should probably think it through

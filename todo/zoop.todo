@@ -12,7 +12,7 @@
 	+	full zone support
 	+	ful gui support
 -	release 1.50.01
-+	zone / gui integration?
++	zone / gui integration
 -	google code site
 	-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
 	-	same for design goals
@@ -124,10 +124,30 @@
 		-	edit actual files or just produce code for you to copy and paste
 		-	cli first - open in textmate?
 	-	permissions
+	-	caching
+		-	template caching
+		-	url (virtual path) caching
+		-	data / object cache
+		-	query caching
+		-	app variables stored in shared memory
+		-	file (or memory or db) based caching of compiles resources
+	-	logging
+		-	performance logging
+			-	by page
+			-	with custom profile segments
+		-	error logging
+		-	assert / condition logging
+		-	audit logging
+	-	crawl
+		-	a way to crawl sites with a script and curl
+		-	can be used for testing or making an api to a website you don't control
 -	work on existing modules
 	-	zone
 		-	automatically display templates?
 		-	automatically determine file output type?
+-	skeleton
+	-	have more than one skeleton
+	-	autogenerate it
 		-	change the way zone params are handled
 			-	no more "function getParamNames..."
 			-	instead use $this->addZoneParam($paramName, $paramType, $extra)
@@ -147,8 +167,33 @@
 	-	db server
 	-	dns server
 	-	mail server
+-	differences
+	-	more advanced security system
+	-	controller
+	-	graphic system
+	-	translation system
+	-	session system
+	-	xml handling???
+	-	workflows
+	-	storage system
+	-	spell checker
+	-	routing mechanism
+	-		we don't have the overhead of complex pattern based routes : but we don't have the flexilibilty either : does it matter in practical terms
+	-	post functions
+		-	rails seems to separate out different actions in the controller whereas we make a switch statement in the post function
+		-	how do they handle the navigation???
+		-	they prevent the dreaded "do you want to post this data again" message
+	-	navigation, sequences, etc
+	-	smarty tags escaped by default, no h() required
+	-	find often equates to putting sql in your code, we try to do that less, also the late static binding issue is less of a problem when we wrap everything
+	-	post functions vs the alternatives
+		-	button_to
+			-	you have to include any data that it needs, often you are going to just want data from the form
+			-	it creates a div???, why does it do that.  then you need to make special style, mapped to every button to prevent it from doing that
+	-	error handling
+		-	we automatically never now anything in production (although it looks like it does this too)
 -	design goal
 	-	keep global configurations global and local configurations local (and close to what they affect)
 		-	for example zone params go in the zone not in some big master config file
 -	security
-	-	make sure you always do all validation 
+	-	make sure you always do all validation

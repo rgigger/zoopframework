@@ -1,17 +1,32 @@
--	differences betweenteen old zoop and new zoop page
-	-	differences
-		-	general naming conventions
-		-	include all outside dependencies
-		-	no pear
-		-	only support PHP 4.x.x and above
-		-	magic naming schemes
-			-	different magic naming conventions for zones and pages
-		-	api changes
-			-	and changes to class names and method names
-			-	new ways to access zone and page paramaters
-			-	new apis
-				-	view a colorized virtual path
-	-	link both to and from a topic on the users mailing list for people to discuss 
--	have a "magic" section for every place we use convention over configuration - try to have the best of both worlds
--	design goals page
-	-	provide a clear migration path to PHP 5
+-	google code site
+	-	differences betweenteen old zoop and new zoop page
+		-	differences
+			-	general naming conventions
+			-	include all outside dependencies
+			-	no pear
+			-	only support PHP 4.x.x and above
+			-	magic naming schemes
+				-	different magic naming conventions for zones and pages
+			-	api changes
+				-	and changes to class names and method names
+				-	new ways to access zone and page paramaters
+				-	new apis
+					-	view a colorized virtual path
+		-	link both to and from a topic on the users mailing list for people to discuss 
+	-	have a "magic" section for every place we use convention over configuration - try to have the best of both worlds
+	-	design goals page
+		-	provide a clear migration path to PHP 5
+-	external site
+	-	set up a server for it
+	-	have a place to browse the source
+		-	allow you to specify a version number
+		-	use a checked out version
+		-	use syntax hilighting
+		-	maybe have a way to view just snippets of code
+			-	by line number
+			-	by by classs
+			-	by function
+			-	allow you to specify a version number
+		-	nice looking directory listings
+	-	set up all of the examples and example apps so that they work
+	-	eventually we may need to move the documentation there so we can add more structure to it
