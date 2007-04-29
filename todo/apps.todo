@@ -8,7 +8,7 @@
 	-	have color schemes for each of the control tower defaults as well as some of your own
 -	bachelor
 	-	food module
-		-	recipies
+		-	recipes
 		-	restaurants
 			-	ratings [1-5]
 				-	healthy
@@ -20,3 +20,5 @@
 			-	special food tobuy list
 	-	simple budgeting?
 -	a group scheduling application
+-	port translate to use zoop, then when we complete the translation module it can be an admin tool for it
+-	a language aware diff tool that understands classes, functions etc

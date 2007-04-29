@@ -1,0 +1,7 @@
+-	make it subsitiute "_"s for "."s when creating the class name
+-	init the db
+	-	just have an init.sql file or whatever else the other modules do
+-	apply migrations
+	-	have it scan the migrations directory for all available migrations
+	-	scan the db for applied migrations
+	-	apply anything that hasn't been done yet, in the proper order

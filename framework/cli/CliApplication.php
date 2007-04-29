@@ -49,7 +49,7 @@ class CliApplication
 		}
 		
 		$zoneName = 'Zone' . $params[1];
-		$pageName = 'page' . $params[2];
+		$pageName = 'sub' . $params[2];
 		$zone = new $zoneName();
 		$zone->$pageName($params, $switches);
 	}

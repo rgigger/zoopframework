@@ -18,17 +18,20 @@
 //
 //////////////////////////////////////////////
 
-if( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' )
-	$protocol = 'https://';
-else
-	$protocol = 'http://';
+if(php_sapi_name() != "cli")
+{
+	if( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' )
+		$protocol = 'https://';
+	else
+		$protocol = 'http://';
 
-$host = $_SERVER['SERVER_NAME'];
+	$host = $_SERVER['SERVER_NAME'];
 
-$realPath = $_SERVER['SCRIPT_NAME'];
+	$realPath = $_SERVER['SCRIPT_NAME'];
 
-$virtualPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
+	$virtualPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
 
-define('script_url', $protocol . $host . $realPath);
-define('virtual_path', $virtualPath);
-define('virtual_url', script_url . virtual_path);
+	define('script_url', $protocol . $host . $realPath);
+	define('virtual_path', $virtualPath);
+	define('virtual_url', script_url . virtual_path);
+}

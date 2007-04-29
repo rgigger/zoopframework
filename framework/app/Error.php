@@ -51,15 +51,12 @@ class ErrorHandler
 			case E_COMPILE_ERROR:
 				die('this should never happen');
 				break;
-			case E_USER_ERROR:
 			case E_CORE_WARNING:
 			case E_COMPILE_WARNING:
-			case E_USER_ERROR:
-			case E_USER_WARNING:
 			case E_USER_NOTICE:
 			case E_STRICT:
 			case E_RECOVERABLE_ERROR:
-				die('not yet handled');
+				$line .= '<strong>Error type not yet handled: ' . $errno . '</strong>';
 				break;
 			case E_WARNING:
 				$line .= '<strong>Warning:</strong>';
@@ -68,6 +65,10 @@ class ErrorHandler
 				$line .= '<strong>Notice:</strong>';
 				break;
 		   case E_USER_ERROR:
+				$line .= '<strong>User Error:</strong>';
+		       break;
+		   case E_USER_WARNING:
+				$line .= '<strong>User Warning:</strong>';
 		       break;
 		   default:
 				die("undefined error type");
