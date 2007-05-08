@@ -11,12 +11,12 @@ error_reporting(E_ALL);
 class ErrorHandler
 {
 	//	static
-	function handleError($errno, $errstr, $errfile, $errline, $context)
+	function handleError($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
 		switch(app_status)
 		{
 			case 'dev':
-				ErrorHandler::handleDevError($errno, $errstr, $errfile, $errline, $context);
+				ErrorHandler::handleDevError($errno, $errstr, $errfile, $errline, $context, $backtrace);
 				break;
 			
 			case 'test':
@@ -33,11 +33,12 @@ class ErrorHandler
 		}
 	}
 	
-	function handleDevError($errno, $errstr, $errfile, $errline, $context)
+	function handleDevError($errno, $errstr, $errfile, $errline, $context, $backtrace)
 	{
-		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context);
+		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context, $backtrace);
 		echo '<div>' . $errorLine . '</div>';
-		FormatBacktraceHtml(debug_backtrace());
+		$backTrace = $backtrace ? $backtrace : debug_backtrace();
+		FormatBacktraceHtml(debug_backtrace($backTrace));
 	}
 	
 	function formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context)
@@ -64,15 +65,18 @@ class ErrorHandler
 			case E_NOTICE:
 				$line .= '<strong>Notice:</strong>';
 				break;
-		   case E_USER_ERROR:
+			case E_USER_ERROR:
 				$line .= '<strong>User Error:</strong>';
-		       break;
-		   case E_USER_WARNING:
-				$line .= '<strong>User Warning:</strong>';
-		       break;
-		   default:
-				die("undefined error type");
 				break;
+			case E_USER_WARNING:
+				$line .= '<strong>User Warning:</strong>';
+				break;
+			case 0:
+				$line .= '<strong>Exception:</strong>';
+				break;
+			default:
+				die("undefined error type");
+			break;
 		}
 		
 		$line .= ' "' . $errstr . '"';
@@ -80,6 +84,12 @@ class ErrorHandler
 		$line .= ' ( on line  ' . $errline . ')';
 		
 		return $line;
+	}
+	
+	function exceptHandler($exception)
+	{
+		echo_r($exception);
+		self::handleError(0, $exception->getMessage(), $exception->getFile(), $exception->getLine(), NULL, $exception->getTrace());
 	}
 }
 
@@ -89,5 +99,7 @@ if(version_compare(PHP_VERSION, '5.0', '<'))
 }
 else
 {
-	include_once(dirname(__FILE__) . '/ZoopException.php');
+	//include_once(dirname(__FILE__) . '/ZoopException.php');
+	set_error_handler(array("ErrorHandler", "handleError"), E_ALL);
+	set_exception_handler(array("ErrorHandler", "exceptHandler"));
 }

@@ -9,5 +9,3 @@ class ZoopException extends Exception
 		throw $e;
 	}
 }
-
-set_error_handler(array("ErrorHandler", "handleError"), E_ALL);
