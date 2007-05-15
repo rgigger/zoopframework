@@ -56,7 +56,7 @@ class ErrorHandler
 			case E_COMPILE_WARNING:
 			case E_USER_NOTICE:
 			case E_STRICT:
-			case E_RECOVERABLE_ERROR:
+//			case E_RECOVERABLE_ERROR:
 				$line .= '<strong>Error type not yet handled: ' . $errno . '</strong>';
 				break;
 			case E_WARNING:
@@ -75,7 +75,7 @@ class ErrorHandler
 				$line .= '<strong>Exception:</strong>';
 				break;
 			default:
-				die("undefined error type");
+				$line .= '<strong>Undefined error type: ' . $errno . '</strong>';
 			break;
 		}
 		
