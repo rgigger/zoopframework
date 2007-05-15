@@ -1,5 +1,0 @@
--	finish db object
--	create a pdo driver
--	switch all of examples/app to sqlite
--	make sure all of the examples/app work out of box
--	release 1.50.01
