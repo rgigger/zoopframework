@@ -2,6 +2,14 @@
 -	init the db
 	-	just have an init.sql file or whatever else the other modules do
 -	apply migrations
-	-	have it scan the migrations directory for all available migrations
-	-	scan the db for applied migrations
-	-	apply anything that hasn't been done yet, in the proper order
+	+	have it scan the migrations directory for all available migrations
+	+	scan the db for applied migrations
+	+	apply anything that hasn't been done yet, in the proper order
+	-	allow you to selectively apply a specific migration
+	-	allow you to selectively apply a specific range of migration
+-	removing migrations
+	-	allow you to selectively remove a specific migration
+	-	allow you to selectively remove a specific range of migration
+	-	allow you to remove the last set of migrations done
+-	testing migrations
+	-	allow you to 

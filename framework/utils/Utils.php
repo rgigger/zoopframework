@@ -114,6 +114,38 @@ function EchoStaticFile($filename)
 	fpassthru($fp);
 }
 
+
+function ListDir($path, $params)
+{
+	$entries = array();
+	$d = dir($path);
+	while (false !== ($entry = $d->read()))
+	{
+		$keep = 1;
+		if(isset($params['extentions']))
+		{
+			$keep = 0;
+			$extention = GetFileExtention($entry);
+			
+			if(in_array($extention, $params['extentions']))
+				//echo $extention . "\n";
+				$keep = 1;
+		}
+		
+		if($keep)
+			$entries[] = $entry;
+	}
+	$d->close();
+	
+	return $entries;
+}
+
+function GetFileExtention($filename)
+{
+	$parts = explode('.', $filename);
+	return array_pop($parts);
+}
+
 if(version_compare(PHP_VERSION, '5.0', '<'))
 {
 	include_once(dirname(__FILE__) . '/Utils4.php');

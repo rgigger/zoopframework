@@ -8,6 +8,6 @@ class ZoneTest
 
 		$array = Spyc::YAMLLoad($_SERVER['HOME'] . '/.zoop/install.yaml');
 		
-		print_R($array);
+		print_r($array);
 	}
 }

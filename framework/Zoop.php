@@ -91,6 +91,8 @@ class Zoop
 				include(zoop_dir . '/db/DbObject.php');
 				include(zoop_dir . '/db/DbFactory.php');
 				include(zoop_dir . '/db/functions.php');
+				include(zoop_dir . '/db/DbSchema.php');
+				include(zoop_dir . '/db/DbTable.php');
 				break;
 			case 'session':
 				include(zoop_dir . '/session/config.php');

@@ -23,6 +23,24 @@ function SqlCommitTransaction()
 	return $DefaultDb->commitTransaction();
 }
 
+function SqlQuery($sql, $params)
+{
+	global $DefaultDb;
+	return $DefaultDb->query($sql, $params);
+}
+
+function SqlGetSchema($name = 'public')
+{
+	global $DefaultDb;
+	return $DefaultDb->getSchema($name);
+}
+
+function SqlAlterSchema($sql)
+{
+	global $DefaultDb;
+	return $DefaultDb->alterSchema($sql);
+}
+
 function SqlFetchCell($sql, $params)
 {
 	global $DefaultDb;
@@ -33,6 +51,12 @@ function SqlFetchRow($sql, $params)
 {
 	global $DefaultDb;
 	return $DefaultDb->fetchRow($sql, $params);
+}
+
+function SqlFetchColumn($sql, $params)
+{
+	global $DefaultDb;
+	return $DefaultDb->fetchColumn($sql, $params);
 }
 
 function SqlFetchRows($sql, $params)

@@ -37,6 +37,17 @@ class DbConnection
 		$this->_query('rollback');
 	}
 	
+	
+	function getSchema($name = 'public')
+	{
+		return new DbSchema($this);
+	}
+	
+	function alterSchema($sql)
+	{
+		return $this->_query($sql);
+	}
+	
 	function query($sql, $params)
 	{
 		//	do all of the variable replacements
@@ -124,6 +135,22 @@ class DbConnection
 		for($row = $res->current(); $res->valid(); $row = $res->next())
 		{
 			$rows[] = $row;
+		}
+		
+		return $rows;
+	}
+	
+	function fetchColumn($sql, $params)
+	{
+		$rows = array();
+		$res = $this->query($sql, $params);
+		
+		if(!$res->valid())
+			return array();
+		
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			$rows[] = current($row);
 		}
 		
 		return $rows;
