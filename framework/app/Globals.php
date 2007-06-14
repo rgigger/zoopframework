@@ -31,7 +31,8 @@ if(php_sapi_name() != "cli")
 
 	$virtualPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
 
-	define('script_url', $protocol . $host . $realPath);
+	define('root_url', $protocol . $host);
+	define('script_url', root_url . $realPath);
 	define('virtual_path', $virtualPath);
 	define('virtual_url', script_url . virtual_path);
 }
