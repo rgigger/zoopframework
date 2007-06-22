@@ -25,7 +25,7 @@ if(php_sapi_name() != "cli")
 	else
 		$protocol = 'http://';
 
-	$host = $_SERVER['SERVER_NAME'];
+	$host = $_SERVER['HTTP_HOST'];
 
 	$realPath = $_SERVER['SCRIPT_NAME'];
 
