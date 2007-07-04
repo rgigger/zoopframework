@@ -94,6 +94,10 @@ class Zoop
 				include(zoop_dir . '/db/DbSchema.php');
 				include(zoop_dir . '/db/DbTable.php');
 				break;
+			case 'migration':
+				$this->loadLib('db');
+				include(zoop_dir . '/migration/Migration.php');
+				break;
 			case 'session':
 				include(zoop_dir . '/session/config.php');
 				include(zoop_dir . '/session/SessionPgsql.php');

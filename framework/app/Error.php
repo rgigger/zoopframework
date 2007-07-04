@@ -37,8 +37,8 @@ class ErrorHandler
 	{
 		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context, $backtrace);
 		echo '<div>' . $errorLine . '</div>';
-		$backTrace = $backtrace ? $backtrace : debug_backtrace();
-		FormatBacktraceHtml(debug_backtrace($backTrace));
+		$backtrace = $backtrace ? $backtrace : debug_backtrace();
+		FormatBacktraceHtml($backtrace);
 	}
 	
 	function formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context)

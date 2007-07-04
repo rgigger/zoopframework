@@ -39,6 +39,7 @@ function FormatBacktraceHtml($backtraceInfo)
 		<th>File</th><th>Line</th><th>Function</th>
 	</tr>
 	<?php foreach($backtraceInfo as $thisRow): 
+		//echo_r($thisRow);
 		$lineInfo = FormateBacktraceLineHtml($thisRow);
 	?><tr>
 		<td><?php echo $lineInfo['file']; ?></td>
@@ -62,6 +63,9 @@ function FormateBacktraceLineHtml($lineInfo)
 
 function FormatBacktraceFunctionCellHtml($lineInfo)
 {
+//	echo "here we are<br>";
+//	var_dump($lineInfo);
+//	echo_r($lineInfo);
 	$call = '';
 	$call .= isset($lineInfo['class']) ? ($lineInfo['class'] . $lineInfo['type']) : '';
 	$call .= $lineInfo['function'] . '(';
@@ -87,6 +91,9 @@ function FormatBacktraceFunctionCellHtml($lineInfo)
 				break;
 			case 'boolean':
 				$argStrings[] = 'boolean: -' . $thisArg . '-';
+				break;
+			case 'NULL':
+				$argStrings[] = 'NULL';
 				break;
 			default:
 				die('unhandled type ' . gettype($thisArg));

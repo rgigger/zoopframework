@@ -13,3 +13,6 @@
 	-	allow you to remove the last set of migrations done
 -	testing migrations
 	-	allow you to 
+-	namespacing
+	-	tablename prefix
+	-	schema prefix

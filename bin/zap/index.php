@@ -8,5 +8,6 @@ include_once(dirname(__file__) . "/ZoneApply.php");
 Zoop::loadLib('cli');
 Zoop::loadLib('gui');
 Zoop::loadLib('db');
+Zoop::loadLib('migration');
 CliApplication::handleRequest();
 

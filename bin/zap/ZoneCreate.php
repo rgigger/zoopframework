@@ -17,7 +17,6 @@ class ZoneCreate
 		$version = $p[3];
 		$name = $p[4];
 		
-		
 		$gui = new Gui();
 		$gui->left_delimiter = '[[';
 		$gui->right_delimiter = ']]';
