@@ -1,0 +1,5 @@
+<table>
+	<? foreach($list as $item) { ?>
+		<tr><td><? echo $item; ?></td></tr>
+	<? } ?>
+</table>
