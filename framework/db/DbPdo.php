@@ -3,23 +3,42 @@ class DbPdo extends DbConnection
 {
 	function DbPdo($params)
 	{
-		$this->conn = new PDO('sqlite:' . $params['file']);
+		try {
+			$this->conn = new PDO('sqlite:' . $params['file']);
+		}
+		catch(PDOException $e)
+		{
+			die('pdoexception');
+		}
 	}
 	
 	function escapeString($string)
 	{
-		return "'$string'";
+		return $this->conn->quote($string);
+		//return "'$string'";
 	}
 	
 	function _query($sql)
 	{
-		$result = $this->conn->query($sql);
+//		echo $sql . '<br>';
+		$result = $this->conn->query($sql);		
+//		var_dump($result);
+		
+		$code = (int)$this->conn->errorCode();
+		if($code)
+		{
+			$info = $this->conn->errorInfo();
+//			echo_r($info);
+			trigger_error($info[2]);
+		}
+		
+		
 		return new DbPdoResult($result);
 	}
 	
 	function getLastInsertId()
 	{
-		return $this->fetchCell("select lastval()", array());
+		return $this->conn->lastInsertId();
 	}
 }
 

@@ -12,6 +12,9 @@ class DbObject
 		if($init == 'static')
 			return;
 		
+		if(is_numeric($init))
+			$init = (int)$init;
+		
 		if($defaults)
 		{
 			assert(is_array($defaults));
@@ -184,6 +187,9 @@ class DbObject
 		$tableName = $dummy->getTableName();
 		
 		$sql = "select * from $tableName where $foreignKey = :id";
+		
+		// echo_r($sql);
+		// echo_r($this->id);
 		$rows = SqlFetchRows($sql, array('id' => $this->id));
 		$objects = array();
 		foreach($rows as $thisRow)

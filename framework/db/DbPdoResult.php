@@ -4,12 +4,18 @@ class DbPdoResult
 	var $res;
 	var $cur;
 	var $max;
+	private $rows;
 	
 	function DbPdoResult($res)
 	{
 		$this->res = $res;
 		$this->cur = 0;
-		$this->max = $this->res->rowCount();
+//		EchoBacktrace();
+		if(!$this->res)
+			$this->rows = array();
+		else
+			$this->rows = $this->res->fetchAll();
+		$this->max = count($this->rows) - 1;
 	}
 	
 	function numRows()
@@ -25,7 +31,7 @@ class DbPdoResult
 	
 	function current()
 	{
-		return $this->res->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $this->cur);
+		return $this->rows[$this->cur];
 	}
 	
 	function key()
@@ -38,7 +44,7 @@ class DbPdoResult
 		$this->cur++;
 		if($this->cur > $this->max)
 			return false;
-		return $this->res->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $this->cur);
+		return $this->rows[$this->cur];
 	}
 	
 	function valid()
@@ -51,6 +57,8 @@ class DbPdoResult
 	
 	function affectedRows()
 	{
-		return pg_affected_rows($this->res);
+		if(!$this->res)
+			return 0;
+		return $this->res->rowCount();
 	}
 }
