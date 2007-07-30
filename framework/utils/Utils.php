@@ -9,6 +9,23 @@ function RequestIsPost()
 	return $_SERVER['REQUEST_METHOD'] == 'POST' ? 1 : 0;
 }
 
+function GetPostDate($name)
+{
+	//echo_r($_POST);
+	$name = "{$name}_";
+	$month = $_POST[$name . 'Month'];
+	$day = $_POST[$name . 'Day'];
+	$year = $_POST[$name . 'Year'];
+	$hour = $_POST[$name . 'Hour'];
+	$minute = $_POST[$name . 'Minute'];
+	$second = $_POST[$name . 'Second'];
+	$meridian = $_POST[$name . 'Meridian'];
+	
+	$hour = $meridian == 'pm' ? ($hour + 12) : $hour;
+	
+	return "$year-$month-$day $hour:$minute:$second -7:00";
+}
+
 function echo_r($var)
 {
 	//EchoBacktrace();
@@ -32,6 +49,8 @@ function EchoBacktrace($value='')
 
 function FormatBacktraceHtml($backtraceInfo)
 {
+	// debug_print_backtrace();
+	// return;
 	//echo_r($backtraceInfo);
 ?>
 <table border="1">
@@ -39,7 +58,6 @@ function FormatBacktraceHtml($backtraceInfo)
 		<th>File</th><th>Line</th><th>Function</th>
 	</tr>
 	<?php foreach($backtraceInfo as $thisRow): 
-		//echo_r($thisRow);
 		$lineInfo = FormateBacktraceLineHtml($thisRow);
 	?><tr>
 		<td><?php echo $lineInfo['file']; ?></td>
@@ -53,7 +71,7 @@ function FormatBacktraceHtml($backtraceInfo)
 
 function FormateBacktraceLineHtml($lineInfo)
 {
-	//echo_r($lineInfo);
+	// echo_r($lineInfo);
 	$result = array();
 	$result['file'] = isset($lineInfo['file']) ? $lineInfo['file'] : 'php function';
 	$result['line'] = isset($lineInfo['line']) ? $lineInfo['line'] : 'na';

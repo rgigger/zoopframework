@@ -6,6 +6,7 @@ class Migration
 	{
 		//	create the migration table if it does not exist
 		$schema = SqlGetSchema();
+		
 		if(!$schema->tableExists('migration'))
 		{
 			$sql = "create table migration (
@@ -34,11 +35,11 @@ class Migration
 	//	static
 	function getAllAppiedMigrationNames()
 	{
-		return SqlFetchColumn("select name from migrations where applied = 1", array());
+		return SqlFetchColumn("select name from migration where applied = 1", array());
 	}
 	
 	//	static
-	function apply($name)
+	function apply($key, $name)
 	{
 		include_once(getcwd() . '/migrations/' . $key);
 		$className = 'Migration_' . str_replace('.', '_', $name);
@@ -46,7 +47,7 @@ class Migration
 		$migration->up();
 		
 		//	mark it as applied
-		SqlUpsertRow('migrations', array('name' => $name), array('applied' => 1));
+		SqlUpsertRow('migration', array('name' => $name), array('applied' => 1));
 		
 		print_r($migration);
 	}
@@ -60,7 +61,7 @@ class Migration
 		$migration->down();
 		
 		//	mark it as applied
-		SqlUpsertRow('migrations', array('name' => $name), array('applied' => 0));
+		SqlUpsertRow('migration', array('name' => $name), array('applied' => 0));
 		
 		print_r($migration);
 	}

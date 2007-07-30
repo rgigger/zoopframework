@@ -36,8 +36,9 @@ class ErrorHandler
 	function handleDevError($errno, $errstr, $errfile, $errline, $context, $backtrace)
 	{
 		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context, $backtrace);
-		echo '<div>' . $errorLine . '</div>';
+		echo '<p>' . $errorLine . '</p>';
 		$backtrace = $backtrace ? $backtrace : debug_backtrace();
+		array_shift($backtrace);
 		FormatBacktraceHtml($backtrace);
 	}
 	
@@ -54,7 +55,6 @@ class ErrorHandler
 				break;
 			case E_CORE_WARNING:
 			case E_COMPILE_WARNING:
-			case E_USER_NOTICE:
 			case E_STRICT:
 //			case E_RECOVERABLE_ERROR:
 				$line .= '<strong>Error type not yet handled: ' . $errno . '</strong>';
@@ -64,6 +64,9 @@ class ErrorHandler
 				break;
 			case E_NOTICE:
 				$line .= '<strong>Notice:</strong>';
+				break;
+			case E_USER_NOTICE:
+				$line .= '<strong>User Notice:</strong>';
 				break;
 			case E_USER_ERROR:
 				$line .= '<strong>User Error:</strong>';

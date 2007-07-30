@@ -61,6 +61,9 @@ class Zoop
 			return;
 		}
 		
+		include(zoop_dir . "/$name/module.php");
+		
+		/*
 		switch($name)
 		{
 			case 'app':
@@ -117,6 +120,7 @@ class Zoop
 			default:	
 				trigger_error('unknown module: ' . $name);
 		}
+		*/
 	}
 }
 
