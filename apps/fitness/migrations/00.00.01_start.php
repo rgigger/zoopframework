@@ -3,6 +3,13 @@ class Migration_00_00_01 extends Migration
 {
 	function up()
 	{
+		$sql = "create table person (
+					id serial primary key, 
+					firstname text,
+					lastname text
+				)";
+		SqlAlterSchema($sql);
+		
 		$sql = "create table exercise (
 					id serial primary key, 
 					short text,
@@ -12,7 +19,14 @@ class Migration_00_00_01 extends Migration
 		
 		$sql = "create table session (
 					id serial primary key, 
-					date timestamp with time zone,
+					person_id int4 references person(id),
+					date timestamp with time zone
+				)";
+		SqlAlterSchema($sql);
+		
+		$sql = "create table unit (
+					id serial primary key, 
+					name text
 				)";
 		SqlAlterSchema($sql);
 		
@@ -24,7 +38,6 @@ class Migration_00_00_01 extends Migration
 					unit_count int4 not null default 0
 				)";
 		SqlAlterSchema($sql);
-		
 	}
 	
 	function down()
