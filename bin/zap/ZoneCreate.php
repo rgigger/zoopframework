@@ -9,7 +9,9 @@ class ZoneCreate
 		else
 			$projectName = $stationaryName;
 		
-		passthru("svn export http://zoop.googlecode.com/svn/trunk/stationary/$stationaryName $projectName");
+		$command = "svn export http://zoop.googlecode.com/svn/trunk/stationary/$stationaryName $projectName";
+		echo $command . "\n";
+		passthru($command);
 	}
 	
 	function subMigration($p, $s)

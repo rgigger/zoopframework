@@ -4,6 +4,7 @@ include(zoop_dir . '/Zoop.php');
 include_once(dirname(__file__) . "/ZoneCreate.php");
 include_once(dirname(__file__) . "/ZoneTest.php");
 include_once(dirname(__file__) . "/ZoneApply.php");
+include_once(dirname(__file__) . "/ZoneRedo.php");
 
 Zoop::loadLib('cli');
 Zoop::loadLib('gui');

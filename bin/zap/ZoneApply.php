@@ -3,6 +3,8 @@ class ZoneApply
 {
 	function subMigrations($p, $s)
 	{
+		SqlBeginTransaction();
+		
 		//	make sure the migrations table exists
 		Migration::initDB();
 		
@@ -15,11 +17,11 @@ class ZoneApply
 		//	apply anything that hasn't been done yet, in the proper order
 		$unapplied = array_diff($versions, $applied);
 		
-		print_r($unapplied);
-		
 		foreach($unapplied as $key => $needsApplied)
 		{
-			Migration::apply($needsApplied);
+			Migration::apply($key, $needsApplied);
 		}
+		
+		SqlCommitTransaction();
 	}
 }
