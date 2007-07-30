@@ -1,0 +1,22 @@
++	Come up with a reasonable name for it
+-	implement the compiler
+	-	extract code segments
+	-	compile code segements into php code
+		-	allow some syntax for controlling whitespace around tags
+	-	insert php code back into the file
+-	set up a system for caching the compiled code
+-	finish up the object to do assign and display
+-	start using it
+-	create a plugin system
+	-	make sure it can do includes
+	-	offer different types of plugins
+		-	smarty style paramater plugins
+		-	plugins where you just get a raw string from the tag
+		-	compiler plugins
+		-	content plugins
+		-	filter plugins
+			-	pre filter for the orginal file
+			-	filters for the tag generated content
+			-	filters for the static content
+			-	post filters for the result text
+-	a translation system
