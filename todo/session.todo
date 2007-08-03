@@ -7,3 +7,17 @@
 	-	api for structured session data
 		-	rotating request log
 		-	sequence info
+-	drivers
+	-	files
+	-	mysql
+	+	pgsql
+	-	msession?
+	-	my daemon?
+	-	that other guys daemon
+	-	pear
+	-	pdo
+-	modes
+	-	serialize
+	-	serialize_manual
+	-	write_unsafe
+	+	write_manual (default)

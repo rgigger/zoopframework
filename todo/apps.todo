@@ -14,6 +14,10 @@
 		-	bug tracker
 		-	improvements
 			-	manual creator
+		-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
+		-	same for design goals
+		-	relationship to stable zoop
+		-	make the front page really short with just some links to other wiki pages
 	-	manual creator
 	-	tool for generating .term files for terminal.app
 		-	have color schemes for each of the control tower defaults as well as some of your own

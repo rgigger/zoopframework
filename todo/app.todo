@@ -23,3 +23,9 @@
 	-	logging
 		-	log to a file
 		-	add in full context information, including post variables
+-	other
+	-	check for ini options that are not secure or in bad form
+		-	register globals
+		-	magic quotes
+			-	if magic quotes is on we need to warn them that their stuff will be double escaped when they try to put it into the database
+	
