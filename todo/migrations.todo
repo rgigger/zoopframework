@@ -1,3 +1,4 @@
+-	make sure that reverse migrations don't work without at least a very, very clear warning, etc
 -	make it subsitiute "_"s for "."s when creating the class name
 -	init the db
 	-	just have an init.sql file or whatever else the other modules do

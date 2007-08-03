@@ -1,0 +1,18 @@
+-	lazy connections to the database
+-	support for sequences
+-	paginated result sets
+-	pre-loading of data for many objects at a time
+	-	run a sql statement, possibly excluding the field info
+	-	look up the field info if necessary (if we used our own query language )
+	-	create objects from the results
+-	enhance db object to handle one-to-one, one-to-many, many-to-one, and many-to-many relationships
+	-	have a way to indicate that you want to pre-load the objects from these relationships
+	-	have a way to create them automatically if you want
+-	evaluate doctrine
+	-	doctrine query language
+	-	how it handles prepared statements vs paramater escaping
+	-	connection management - how do we want to do it?
+-	support for options fields, you give it the table, the mapped field, and a list of options
+	-	add the field to the table
+	-	create the options table (you could combine many into one table, then you could skip this step it the table exists)
+	-	insert all the options into the table
