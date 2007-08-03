@@ -5,9 +5,41 @@
 	-	run a sql statement, possibly excluding the field info
 	-	look up the field info if necessary (if we used our own query language )
 	-	create objects from the results
--	enhance db object to handle one-to-one, one-to-many, many-to-one, and many-to-many relationships
-	-	have a way to indicate that you want to pre-load the objects from these relationships
-	-	have a way to create them automatically if you want
+-	enhance DbObject
+	-	relationships
+		-	one-to-one
+		-	one-to-many
+		-	many-to-one
+		-	and many-to-many
+		-	distinguish between aggregate, ownership, and mapped relationships
+		-	have a way to indicate that you want to pre-load the objects from these relationships
+	-	figure out how to handle multiple database connections
+		-	map by class
+		-	map by function(classname, id) - returns connection
+	-	static functions
+		-	functions
+			-	findOne
+			-	findMany
+			-	findAll???
+			-	createOne
+			-	createMany
+			-	getOne
+			-	getMany
+		-	handling
+			-	pass the name of the class name you are dealing with
+			-	have zap create stubs in each new subclass to let you call SubClassName::staticFunction(...);
+				-	use __classname__ or whatever it is so it can be identical in every subclass file
+				-	discontinue these if we have late static binding
+			-	try in every way to keep SQL out of the controllers and views
+				-	always create wrapper relationships, refiners, and wraper methods in the domain objects to keep SQL where it belongs
+	-	have a facility for creating often used queries within DbObject subclasses
+		-	a names set of paramaters to add to the where clause
+			-	examples
+			 	-	'currentManagerReview' => array('type' => self::managerType, 'period_id' => $gCurrentPeriod)
+				-	'currentManagerReview => "<this>.type = " . self::managerType . " and <this>.period_id = $gCurrentPeriod";
+	-	set up abstract methods called with DbObject::__construct
+		-	relate: use this to set up relationships
+		-	refine: use this to set up named queries
 -	evaluate doctrine
 	-	doctrine query language
 	-	how it handles prepared statements vs paramater escaping

@@ -20,3 +20,6 @@
 		-	allow for popping of rows in the backtrace
 		-	html formatting
 		-	cli formatting
+	-	logging
+		-	log to a file
+		-	add in full context information, including post variables

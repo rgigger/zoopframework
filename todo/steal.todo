@@ -10,11 +10,14 @@
 	-	layouts
 		-	maybe have a way to insert multiple files, if they exist into multiple parts of the template
 -	zone
-	-	routing
-	-	auto include zone files?
+	-	routing???
+	-	auto include zone files???
 -	auto generate files for people
 	-	zones (also have a zone inludes file that automatically gets an include tacked onto the end)
-	-	create a new application
+	+	create a new application
+	-	migrations
+	-	templates
+	-	DbObject sublcasses
 -	db
 	-	migrations
 		-	make it heirarchical so that you can insert migrations into old versions and still have them get applied to both dbs

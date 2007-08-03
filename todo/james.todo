@@ -1,6 +1,6 @@
--	I3 Layouts
--	destroy session
--	do security checks
--	support for file uploads
--	calendaring
--	integration with google maps
+-	DbObject
+	-	static::findMany
+	-	handing of empty objects
+		-	if you pass in an id of 0
+			-	don't perform any database operations
+			-	return NULL for all requests for scalars

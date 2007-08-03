@@ -1,24 +1,35 @@
--	duplicate google code?
-	-	wiki
-	-	bug tracker
-	-	improvements
-		-	manual creator
--	manual creator
--	tool for generating .term files for terminal.app
-	-	have color schemes for each of the control tower defaults as well as some of your own
--	bachelor
-	-	food module
-		-	recipes
-		-	restaurants
-			-	ratings [1-5]
-				-	healthy
-				-	expensive
-				-	travel time
-				-	inside time
-		-	supermarket
-			-	standard food stock management
-			-	special food tobuy list
-	-	simple budgeting?
--	a group scheduling application
--	port translate to use zoop, then when we complete the translation module it can be an admin tool for it
--	a language aware diff tool that understands classes, functions etc
+-	the new hotness
+	-	fitness
+	-	todo
+		-	add in support for linking to other todo files so this can link to todo.todo
+	-	time
+		-	editing and deleting of items
+		-	projects
+		-	clients
+	-	issues
+		-	integrate with the time tracker you you can easily record where you are spending all of your time
+-	old and busted
+	-	duplicate google code?
+		-	wiki
+		-	bug tracker
+		-	improvements
+			-	manual creator
+	-	manual creator
+	-	tool for generating .term files for terminal.app
+		-	have color schemes for each of the control tower defaults as well as some of your own
+	-	bachelor
+		-	food module
+			-	recipes
+			-	restaurants
+				-	ratings [1-5]
+					-	healthy
+					-	expensive
+					-	travel time
+					-	inside time
+			-	supermarket
+				-	standard food stock management
+				-	special food tobuy list
+		-	simple budgeting?
+	-	a group scheduling application
+	-	port translate to use zoop, then when we complete the translation module it can be an admin tool for it
+	-	a language aware diff tool that understands classes, functions etc

@@ -4,7 +4,7 @@
 			-	general naming conventions
 			-	include all outside dependencies
 			-	no pear
-			-	only support PHP 4.x.x and above
+			-	only support PHP 5.1.x and above
 			-	magic naming schemes
 				-	different magic naming conventions for zones and pages
 			-	api changes

@@ -11,7 +11,6 @@
 -	as part of the google code clone complete
 	+	full zone support
 	+	ful gui support
--	release 1.50.01
 +	zone / gui integration
 -	google code site
 	-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
@@ -38,11 +37,10 @@
 	-	db
 		+	a base class showing what needs to go into it
 		-	subclassess for
-			-	pear mdb2
-			-	pdo
+			+	pdo
 			+	native bindings for postgres, etc
 		+	a default object and the Sql* functions
-		-	dbobject
+		+	dbobject
 		+	make it easy to escape paramaters and hard not too
 		/	methods
 			+	SqlQuery
@@ -182,10 +180,11 @@
 	-	post functions
 		-	rails seems to separate out different actions in the controller whereas we make a switch statement in the post function
 		-	how do they handle the navigation???
-		-	they prevent the dreaded "do you want to post this data again" message
+		-	do they prevent the dreaded "do you want to post this data again" message?
 	-	navigation, sequences, etc
-	-	smarty tags escaped by default, no h() required
-	-	find often equates to putting sql in your code, we try to do that less, also the late static binding issue is less of a problem when we wrap everything
+	-	smarty / mizithra tags escaped by default, no h() required
+	-	find often equates to putting sql in your code, we try to do that less
+	-	also the late static binding issue is less of a problem when we wrap everything
 	-	post functions vs the alternatives
 		-	button_to
 			-	you have to include any data that it needs, often you are going to just want data from the form

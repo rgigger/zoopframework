@@ -17,3 +17,10 @@
 -	namespacing
 	-	tablename prefix
 	-	schema prefix
+-	complete schema info
+	-	dump the entire schema from the existing database after migrations are applied
+	-	implement creating sql snapshot files
+		-	create a blank tmp database
+		-	run all schema and data migrations on it
+		-	dump it to a sql file
+		-	drop tmp database
