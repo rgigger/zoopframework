@@ -40,6 +40,11 @@ function Redirect($url)
 	die();
 }
 
+function BaseRedirect($virtualPath)
+{
+	Redirect(script_url . '/' . $virtualPath);
+}
+
 function EchoBacktrace($value='')
 {
 	echo '<pre>';
