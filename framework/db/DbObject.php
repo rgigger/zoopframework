@@ -7,6 +7,48 @@ class DbObject
 	var $autoSave;
 	var $bound;
 	
+	
+	//	static functions
+	
+	static function _getTableName($className)
+	{
+		//	work around lack of "late static binding"
+		$dummy = new $className(0);
+		return $dummy->getTableName();
+	}
+	
+	static function _find($className, $conditions = NULL)
+	{
+		$tableName = $this->_getTableName($className);
+		
+		if(is_numeric($conditions))
+			$conditions = (int)$conditions;
+		
+		switch(gettype($conditions))
+		{
+			case 'integer':
+				trigger_error('not yet implemented');
+				break;
+			case 'array':
+				trigger_error('not yet implemented');
+				break;
+			case 'NULL':
+				$sql = "select * from $tableName";
+				$rows = SqlFetchMap($sql, 'id');
+				$objects = array();
+				foreach($rows as $id => $row)
+				{
+					$objects[$id] = new $className($row);
+				}
+				break;
+			default:
+				trigger_error('unhandled conditions type');
+				break;
+		}
+	}
+	
+	
+	//	constructor
 	function DbObject($init = NULL, $defaults = NULL)
 	{	
 		$this->bound = false;
