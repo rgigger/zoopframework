@@ -34,7 +34,7 @@ class DbObject
 				break;
 			case 'NULL':
 				$sql = "select * from $tableName";
-				$rows = SqlFetchMap($sql, 'id');
+				$rows = SqlFetchMap($sql, 'id', array());
 				$objects = array();
 				foreach($rows as $id => $row)
 				{
