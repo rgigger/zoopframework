@@ -19,7 +19,7 @@ class DbObject
 	
 	static function _find($className, $conditions = NULL)
 	{
-		$tableName = $this->_getTableName($className);
+		$tableName = self::getTableName($className);
 		
 		if(is_numeric($conditions))
 			$conditions = (int)$conditions;
