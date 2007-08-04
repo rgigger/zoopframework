@@ -1,5 +1,6 @@
 -	configuration
 	-	get a yaml engine into the bootstrap process and move all configs to it
+-	make all classes in all modules DYNAMICALLY LOADED!!!
 -	future modules
 	-	mail
 		-	Message

@@ -1,4 +1,8 @@
 <?php
+// 
+// This page is now obsolete and depricated
+// 
+
 //
 //	sets all the default settings for config constants that are used across Zoop modules
 //

@@ -4,6 +4,7 @@
 	+	compile basic code segements into php code
 	-	allow some syntax for controlling whitespace around tags
 	+	insert php code back into the file
+	-	plugins
 -	set up a system for caching the compiled code
 	-	write them to a file some place instead of just evaling it
 	-	include this file in the view

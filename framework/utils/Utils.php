@@ -133,6 +133,8 @@ function FormatBacktraceFunctionCellHtml($lineInfo)
 	return $call;
 }
 
+
+
 function EchoStaticFile($filename)
 {
 	$fp = fopen($filename, 'rb');

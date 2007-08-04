@@ -1,0 +1,6 @@
+zoop:
+    db:
+      default:
+          driver: php_pgsql
+          database: fitness
+          username: postgres

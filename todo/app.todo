@@ -1,5 +1,7 @@
 -	error
 	-	convert all errors to exceptions
+		-	create an error handler that throws an exception will all relevent info it in it
+		-	create a handler for any exception that doesn't get handled elsewhere that is the same as our current error handler
 	-	figure out what is up with the sqlite pdo exception stack traces
 	-	make it handle links to php docs work correctly
 	-	make links to zoop apis???
@@ -13,10 +15,14 @@
 				-	full object context information
 			-	add some js magic to the parmaters to you can see what you want when and only when you want
 			-	make it capture the result and return it
+			-	convert to use the same class format as the cli version, abstract logic out into a base class
 		-	format cli function
+			-	basic display
+			-	add color, bold, etc, to make it more easily readable
+			-	use a curses interface if it is available
 	-	limit the number of errors that we display
 		-	when we hit the limit just terminate the script
-	-	make the backtrace formater into a backtrace class, put it into the error module
+	-	make the backtrace formatter into a backtrace class, put it into the error module
 		-	allow for popping of rows in the backtrace
 		-	html formatting
 		-	cli formatting

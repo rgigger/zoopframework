@@ -9,8 +9,6 @@ class Mizithra
         $rdq = preg_quote('?>', '~');
 		preg_match_all("~{$ldq}\s*(.*?)\s*{$rdq}~s", $content, $match);
 		$text_blocks = preg_split("~{$ldq}.*?{$rdq}~s", $content);
-		// echo_r($match);
-		// echo_r($text_blocks);
 		
 		// Interleave the compiled contents and text blocks to get the final result. 
 		$compiled_content = '';

@@ -1,0 +1,7 @@
+-	make a ConfigException for handling problems with configuraion
+	-	DbConfig exception???
+-	Configurable interface
+	-	methods
+		-	getRequireds
+		-	getDefaults
+	-	any object in your module that needs to use configuration information should implement this interface

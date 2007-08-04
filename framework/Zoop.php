@@ -1,10 +1,10 @@
 <?php
 //	now we load the default config for zoop
-include(zoop_dir . '/config.php');
+include(zoop_dir . '/config.php');	//	this file is now obsolete and depricated, in favor of the new config module
+include(zoop_dir . '/ZoopModule.php');
 
 //	we want to load this before we do anything else so that everything else is easier to debug
 include(zoop_dir . '/app/Error.php');
-
 
 class Zoop
 {
@@ -21,11 +21,6 @@ class Zoop
 	function _registerClass($className, $fullPath)
 	{
 		$this->classList[strtolower($className)] = $fullPath;
-		
-		if(version_compare(phpversion(), '5.0.0', '<'))
-		{
-			require_once($fullPath);
-		}
 	}
 	
 	function _getClassPath($className)
@@ -61,66 +56,15 @@ class Zoop
 			return;
 		}
 		
-		include(zoop_dir . "/$name/module.php");
-		
-		/*
-		switch($name)
+		//	temporary meausre so I can test without having to convert all of the modules over to the new format right away
+		if(file_exists(zoop_dir . "/$name/module.php"))
+			include(zoop_dir . "/$name/module.php");
+		else
 		{
-			case 'app':
-				include(zoop_dir . '/app/Globals.php');
-				include(zoop_dir . '/app/Application.php');
-				break;
-			case 'utils':
-				include(zoop_dir . '/utils/Utils.php');
-				break;
-			case 'gui':
-				include(zoop_dir . "/smarty/Smarty.class.php");
-				include(zoop_dir . '/gui/gui.php');
-				break;
-			case 'zone':
-				$this->loadLib('app');
-				$this->loadLib('gui');
-				include(zoop_dir . '/zone/Zone.php');
-				include(zoop_dir . '/zone/ZoneApplication.php');
-				include(zoop_dir . '/zone/GuiZone.php');
-				break;
-			case 'db':
-				include(zoop_dir . '/db/config.php');
-				include(zoop_dir . '/db/DbConnection.php');
-				include(zoop_dir . '/db/DbPgResult.php');
-				include(zoop_dir . '/db/DbPgsql.php');
-				include(zoop_dir . '/db/DbPdo.php');
-				include(zoop_dir . '/db/DbPdoResult.php');
-				include(zoop_dir . '/db/DbObject.php');
-				include(zoop_dir . '/db/DbFactory.php');
-				include(zoop_dir . '/db/functions.php');
-				include(zoop_dir . '/db/DbSchema.php');
-				include(zoop_dir . '/db/DbTable.php');
-				break;
-			case 'migration':
-				$this->loadLib('db');
-				include(zoop_dir . '/migration/Migration.php');
-				break;
-			case 'session':
-				include(zoop_dir . '/session/config.php');
-				include(zoop_dir . '/session/SessionPgsql.php');
-				include(zoop_dir . '/session/SessionFactory.php');
-				include(zoop_dir . '/session/Session.php');
-				break;
-			case 'mail':
-				require(zoop_dir . '/phpmailer/class.phpmailer.php');
-				require(zoop_dir . '/mail/config.php');
-				require(zoop_dir . '/mail/Mail.php');
-				require(zoop_dir . '/mail/Mailer.php');
-				require(zoop_dir . '/mail/Message.php');
-				break;
-			case 'cli':
-				require(zoop_dir . '/cli/CliApplication.php');
-				break;
-			default:	
-				trigger_error('unknown module: ' . $name);
+			$moduleName = strtoupper($name) . 'Module';
+			include(zoop_dir . "/$name/$moduleName.php");
+			$module = new $moduleName();
 		}
-		*/
 	}
 }
 
@@ -132,13 +76,7 @@ function __autoload($className)
 	if($classPath)
 	{
 		require_once($classPath);
-		if(get_parent_class($className) == 'DbObject')
-		{
-			//	another terrible hack to make up for not having late static binding
-			$evalString = 'function ' . "Get$className" . '($id) { return new ' . $className . '($id); }';
-			eval($evalString);
-			//echo $evalString . '<br>';
-		}
 	}
-		
 }
+
+Zoop::loadLib('config');

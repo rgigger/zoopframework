@@ -2,27 +2,19 @@
 //	this all needs to be thought out better and redone
 class DbFactory
 {
-	//	static
-	function getClassMap()
-	{
-		global $DbFactoryClassMap;
-		$DbFactoryClassMap['pgsql_php'] = 'DbPgsql';
-		$DbFactoryClassMap['pdo'] = 'DbPdo';
-		return $DbFactoryClassMap;
-	}
+	private static $classMap = array('php_pgsql' => 'DbPgsql', 'pdo' => 'DbPdo');
 	
-	//	static
-	function getConnection($params)
+	static function getConnection($params, $name)
 	{
-		$map = self::getClassMap();
-		if(!isset($map[$params['driver']]))
+		if(!isset(self::$classMap[$params['driver']]))
 			trigger_error("unknown driver type: " . $params['driver']);
 		else
-			$className = $map[$params['driver']];
+			$className = self::$classMap[$params['driver']];
 		
-		return new $className($params);
+		return new $className($params, $name);
 	}
 	
+	/*
 	function getDefaultConnection()
 	{
 		global $DefaultDb;
@@ -54,14 +46,15 @@ class DbFactory
 				}
 			}
 			
-
 			$DefaultDb = self::getConnection($params);
 		}
 		
 		return $DefaultDb;
 	}
+	*/
 }
 
+/*
 global $DbFactoryClassMap;
 $DbFactoryClassMap = array();
 
@@ -71,4 +64,4 @@ if(db_use_default_connection)
 	$DefaultDb = DbFactory::getDefaultConnection();
 else
 	$DefaultDb = NULL;
-	
+*/

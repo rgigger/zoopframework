@@ -1,0 +1,4 @@
+<?php
+$this->loadLib('spyc');
+include(zoop_dir . '/config/Yaml.php');
+include(zoop_dir . '/config/Config.php');

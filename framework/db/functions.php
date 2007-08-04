@@ -62,7 +62,7 @@ function SqlFetchColumn($sql, $params)
 function SqlFetchRows($sql, $params)
 {
 	global $DefaultDb;
-	return $DefaultDb->fetchRows($sql, $params);
+	return DbModule::getDefaultConnection()->fetchRows($sql, $params);
 }
 
 function SqlFetchMap($sql, $mapFields, $params)

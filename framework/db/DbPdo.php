@@ -3,13 +3,13 @@ class DbPdo extends DbConnection
 {
 	function DbPdo($params)
 	{
-		try {
+		// try {
 			$this->conn = new PDO('sqlite:' . $params['file']);
-		}
-		catch(PDOException $e)
-		{
-			die('pdoexception');
-		}
+		// }
+		// catch(PDOException $e)
+		// {
+			// die('pdoexception');
+		// }
 	}
 	
 	function escapeString($string)

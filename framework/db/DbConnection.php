@@ -1,14 +1,48 @@
 <?php
-class DbConnection
+abstract class DbConnection
 {
 	var $params;
 	var $types;
 	var $conn;
 	var $echo;
 	
-	function DbConnection()
+	function __construct($params, $connectionName)
 	{
+		$this->validateParams($params, $connectionName);
 		$echo = false;
+	}
+	
+	function validateParams($params, $connectionName)
+	{
+		//	handle the required fields
+		$missing = array();
+		foreach($this->getRequireds() as $thisRequired)
+		{
+			if(!isset($params[$thisRequired]))
+				$missing[] = $thisRequired;
+		}		
+		
+		if(!empty($missing))
+			throw new ConfigException('db', $missing, "for connection $connectionName");
+		
+		//	handle the defaults
+		foreach($this->getDefaults() as $name => $value)
+		{
+			if(!isset($params[$name]))
+				$params[$name] = $value;
+		}
+		
+		return $params;
+	}
+	
+	function getRequireds()
+	{
+		return array();
+	}
+	
+	function getDefaults()
+	{
+		return array();
 	}
 	
 	function echoOn()

@@ -1,4 +1,5 @@
 <?php
+/*
 DefineOnce('db_use_default_connection', 1);
 
 if(db_use_default_connection)
@@ -19,3 +20,4 @@ switch(db_driver)
 		//	do nothing.  we want to allow them to create their own drivers to use as the default
 		break;
 }
+*/

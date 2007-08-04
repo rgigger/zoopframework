@@ -1,3 +1,20 @@
 -	get the todo project working
 -	host it somewhere
 -	get the fitness project working
+-	front page
+	-	Zoop 1.50 is changing very quickly.  
+		-	We have no issues with legacy support 
+		-	We are generally interested in coming up with new ways to do things
+			-	these ideas are new to Zoop, and may be entirely original or may be adopted from other frameworks
+		-	Because of this Zoop 1.50 is diverging sharply from the mainline Zoop distribution
+		-	The API is also changing quickly and for the time being applications will break without notice
+		-	When the API becomes stable one of the following will happen
+			-	All major advantages of Zoop 1.50 will be merged into the Zoop mainline branch
+			-	or Zoop 1.50 will branch off into it's own project with stable releases
+				-	this will probably necesitate a name change
+				-	the timeframe for this decision is years, not months
+					-	there are a lot of ambitions ideas out there and we we want to implement and revise them without having to worrya bout backwards compatibility issues
+				-	it's possible that at this time we will port it to ruby
+-	standards
+	-	develop, document and enforce coding and documentation standards
+	-	support these with textmate snippets
