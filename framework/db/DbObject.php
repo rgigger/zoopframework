@@ -40,6 +40,7 @@ class DbObject
 				{
 					$objects[$id] = new $className($row);
 				}
+				return $objects;
 				break;
 			default:
 				trigger_error('unhandled conditions type');
