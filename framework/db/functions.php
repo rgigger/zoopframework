@@ -68,7 +68,7 @@ function SqlFetchRows($sql, $params)
 function SqlFetchMap($sql, $mapFields, $params)
 {
 	global $DefaultDb;
-	return $DefaultDb->fetchSimpleMap($sql, $mapFields, $params);
+	return $DefaultDb->fetchMap($sql, $mapFields, $params);
 }
 
 function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
