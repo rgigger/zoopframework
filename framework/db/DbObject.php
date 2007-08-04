@@ -74,7 +74,7 @@ class DbObject
 	
 	function createRow($values)
 	{
-		$info = DbConnection::generateInsertInfo($this->tableName, $values);
+		$info = DbConnection::generateInsertInfo($this->getTableName(), $values);
 		$this->setId(SqlInsertRow($info['sql'], $info['params']));
 	}
 	
