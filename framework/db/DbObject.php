@@ -9,7 +9,7 @@ class DbObject
 	
 	function DbObject($init = NULL, $defaults = NULL)
 	{	
-		$bound = false;
+		$this->bound = false;
 
 		if(is_numeric($init))
 			$init = (int)$init;
@@ -27,13 +27,13 @@ class DbObject
 		switch(gettype($init))
 		{
 			case 'integer':
-				$this->id = $init;
+				$this->setId($init);
 				$this->scalars = array();
 				break;
 			case 'array':
 				if(isset($init['id']))
 				{
-					$this->id = $init['id'];
+					$this->setId($init['id']);
 					$this->scalars = $init;
 				}
 				else
@@ -48,12 +48,9 @@ class DbObject
 				//	we just need to create a new blank object, bound to a new row in the database
 				$tableName = $this->getTableName();
 				if(!$defaults)
-					$this->id = SqlInsertRow("insert into $tableName default values", array());
+					$this->setId(SqlInsertRow("insert into $tableName default values", array()));
 				else
-				{
-					$info = DbConnection::generateInsertInfo($tableName, $defaults);
-					$this->id = SqlInsertRow($info['sql'], $info['params']);
-				}
+					$this->createRow($defaults);
 				break;
 			default:
 				trigger_error('object not initialized');
@@ -62,6 +59,23 @@ class DbObject
 		
 		$this->hasMany = array();
 		$this->autoSave = true;
+	}
+	
+	function setId($id)
+	{
+		$this->id = $id;
+		$this->bound = true;
+	}
+	
+	function getId()
+	{
+		return $this->id;
+	}
+	
+	function createRow($values)
+	{
+		$info = DbConnection::generateInsertInfo($this->tableName, $values);
+		$this->setId(SqlInsertRow($info['sql'], $info['params']));
 	}
 	
 	function getTableName()
@@ -74,10 +88,6 @@ class DbObject
 		return 'id';
 	}
 	
-	function getId()
-	{
-		return $this->id;
-	}
 	
 	//
 	//	the scalar handlers
@@ -113,25 +123,32 @@ class DbObject
 		
 		if($this->autoSave || $force)
 		{
-			$tableName = $this->getTableName();
-			
-			$this->assignScalars($data);
-			
-			$updateFields = array();
-			$updateValues = array();
-			foreach($data as $member => $value)
+			if($this->bound)
 			{
-				if($value === null)
-					$updateFields[] = "$member = NULL";
-				else
+				$tableName = $this->getTableName();
+
+				$this->assignScalars($data);
+
+				$updateFields = array();
+				$updateValues = array();
+				foreach($data as $member => $value)
 				{
-					$updateFields[] = "$member = :$member";
-					$updateValues[$member] = $value;
+					if($value === null)
+						$updateFields[] = "$member = NULL";
+					else
+					{
+						$updateFields[] = "$member = :$member";
+						$updateValues[$member] = $value;
+					}
 				}
+				$updateFields = implode(", ", $updateFields);
+
+				SqlUpdateRow("update $tableName set $updateFields where $idFieldName = $this->id", $updateValues);
 			}
-			$updateFields = implode(", ", $updateFields);
-			
-			SqlUpdateRow("update $tableName set $updateFields where $idFieldName = $this->id", $updateValues);
+			else
+			{
+				$this->createRow($data);
+			}
 		}
 		else
 		{
@@ -164,7 +181,6 @@ class DbObject
 	
 	function save()
 	{
-		echo_r($this->scalars);
 		$this->setScalars($this->scalars, true);
 	}
 	
