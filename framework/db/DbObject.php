@@ -5,15 +5,17 @@ class DbObject
 	var $scalars;
 	var $hasMany;
 	var $autoSave;
+	var $bound;
 	
 	function DbObject($init = NULL, $defaults = NULL)
-	{
-		//	terrible terrible hack.  Alas if only we had late static binding
-		if($init == 'static')
-			return;
-		
+	{	
+		$bound = false;
+
 		if(is_numeric($init))
 			$init = (int)$init;
+		
+		if($init === 0)
+			return;
 		
 		if($defaults)
 		{
@@ -38,11 +40,12 @@ class DbObject
 				{
 					//	do a selsert on the lookup fields
 					//	retrieve all of them
+					//	if there is more than one throw an error
 					trigger_error('not yet implemented');
 				}
 				break;
 			case 'NULL':
-				//	we just need to create a new blank object
+				//	we just need to create a new blank object, bound to a new row in the database
 				$tableName = $this->getTableName();
 				if(!$defaults)
 					$this->id = SqlInsertRow("insert into $tableName default values", array());
@@ -82,6 +85,9 @@ class DbObject
 	
 	function getScalar($field)
 	{
+		if(!$this->bound)
+			return NULL;
+		
 		if(!isset($this->scalars[$field]))
 			$this->loadScalars();
 		
@@ -182,14 +188,12 @@ class DbObject
 		$className = $this->hasMany[$name]['className'];
 		$foreignKey = $this->hasMany[$name]['foreignKey'];
 		
-		//	hack to get around phps lack of decent static function handling
-		$dummy = new $className('static');		
+		//	work around lack of "late static binding"
+		$dummy = new $className(0);
 		$tableName = $dummy->getTableName();
 		
 		$sql = "select * from $tableName where $foreignKey = :id";
 		
-		// echo_r($sql);
-		// echo_r($this->id);
 		$rows = SqlFetchRows($sql, array('id' => $this->id));
 		$objects = array();
 		foreach($rows as $thisRow)
