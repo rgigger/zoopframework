@@ -1,108 +1,90 @@
 <?php
 function SqlEchoOn()
 {
-	global $DefaultDb;
-	return $DefaultDb->echoOn();
+	return DbModule::getDefaultConnection()->echoOn();
 }
 
 function SqlEchoOff()
 {
-	global $DefaultDb;
-	return $DefaultDb->echoOff();
+	return DbModule::getDefaultConnection()->echoOff();
 }
 
 function SqlBeginTransaction()
 {
-	global $DefaultDb;
-	return $DefaultDb->beginTransaction();
+	return DbModule::getDefaultConnection()->beginTransaction();
 }
 
 function SqlCommitTransaction()
 {
-	global $DefaultDb;
-	return $DefaultDb->commitTransaction();
+	return DbModule::getDefaultConnection()->commitTransaction();
 }
 
 function SqlQuery($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->query($sql, $params);
+	return DbModule::getDefaultConnection()->query($sql, $params);
 }
 
 function SqlGetSchema($name = 'public')
 {
-	global $DefaultDb;
-	return $DefaultDb->getSchema($name);
+	return DbModule::getDefaultConnection()->getSchema($name);
 }
 
 function SqlAlterSchema($sql)
 {
-	global $DefaultDb;
-	return $DefaultDb->alterSchema($sql);
+	return DbModule::getDefaultConnection()->alterSchema($sql);
 }
 
 function SqlFetchCell($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->fetchCell($sql, $params);
+	return DbModule::getDefaultConnection()->fetchCell($sql, $params);
 }
 
 function SqlFetchRow($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->fetchRow($sql, $params);
+	return DbModule::getDefaultConnection()->fetchRow($sql, $params);
 }
 
 function SqlFetchColumn($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->fetchColumn($sql, $params);
+	return DbModule::getDefaultConnection()->fetchColumn($sql, $params);
 }
 
 function SqlFetchRows($sql, $params)
 {
-	global $DefaultDb;
 	return DbModule::getDefaultConnection()->fetchRows($sql, $params);
 }
 
 function SqlFetchMap($sql, $mapFields, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->fetchMap($sql, $mapFields, $params);
+	return DbModule::getDefaultConnection()->fetchMap($sql, $mapFields, $params);
 }
 
 function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->fetchSimpleMap($sql, $keyFields, $valueField, $params);
+	return DbModule::getDefaultConnection()->fetchSimpleMap($sql, $keyFields, $valueField, $params);
 }
 
 function SqlInsertRow($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->insertRow($sql, $params);
+	return DbModule::getDefaultConnection()->insertRow($sql, $params);
 }
 
 function SqlUpdateRow($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->updateRow($sql, $params);
+	return DbModule::getDefaultConnection()->updateRow($sql, $params);
 }
 
 function SqlSelsertRow($tableName, $fieldNames, $conditions, $defaults = NULL, $lock = 0)
 {
-	global $DefaultDb;
-	return $DefaultDb->selsertRow($tableName, $fieldNames, $conditions, $defaults, $lock);
+	return DbModule::getDefaultConnection()->selsertRow($tableName, $fieldNames, $conditions, $defaults, $lock);
 }
 
 function SqlUpsertRow($tableName, $conditions, $values)
 {
-	global $DefaultDb;
-	return $DefaultDb->upsertRow($tableName, $conditions, $values);
+	return DbModule::getDefaultConnection()->upsertRow($tableName, $conditions, $values);
 }
 
 function SqlDeleteRows($sql, $params)
 {
-	global $DefaultDb;
-	return $DefaultDb->deleteRows($sql, $params);
+	return DbModule::getDefaultConnection()->deleteRows($sql, $params);
 }

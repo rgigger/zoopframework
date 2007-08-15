@@ -4,7 +4,11 @@ class Zone
 	var	$requestInfo;
 	var $params;
 	
-	function Zone($requestInfo = NULL, $params = array())
+	function __construct()
+	{
+	}
+	
+	function init($requestInfo = NULL, $params = array())
 	{
 		if(!$requestInfo)
 		{
@@ -54,14 +58,15 @@ class Zone
 		{
 			if( $thisPart && class_exists($zoneName) )
 			{
-				$newZone = new $zoneName($this->requestInfo, $this->params);
+				$newZone = new $zoneName();
+				$newZone->init($this->requestInfo, $this->params);
 
 				//	grab the zone params from $pathParts
 				foreach($newZone->getParamNames() as $thisParamName)
 				{
 					assert(count($pathParts) > 0);
 					$paramValue = array_shift($pathParts);
-					$newZone->requestInfo[count($newZone->requestInfo) - 1]['params'][$thisParamName] = $paramValue;
+					$newZone->requestInfo[count($newZone->requestInfo) - 1]['params'][] = $thisParamName;
 					$newZone->params[$thisParamName] = $paramValue;
 				}
 
@@ -102,6 +107,11 @@ class Zone
 	//	path manipulation functions
 	//
 	
+	function setParam($name, $value)
+	{
+		$this->params[$name] = $value;
+	}
+	
 	function getRequestPath($numLevels = 0)
 	{
 		$path = '';
@@ -110,13 +120,16 @@ class Zone
 		if($numLevels < 0)
 			$maxLevel += $numLevels;
 		
+		// echo_r($this->requestInfo);
+		// echo_r($this->params);
 		foreach($this->requestInfo as $index => $thisZoneInfo)
 		{
-				
 			$path .= $thisZoneInfo['zone'];
 			if(isset($thisZoneInfo['params']))
-				foreach($thisZoneInfo['params'] as $paramValue)
-					$path .= '/' . $paramValue;
+			{
+				foreach($thisZoneInfo['params'] as $paramName)
+					$path .= '/' . $this->params[$paramName];
+			}
 			
 			if($maxLevel == $index)
 				break;

@@ -23,6 +23,7 @@ class ZoneApplication
 		{
 			//	handle the request
 			$zoneDefault = new ZoneDefault();
+			$zoneDefault->init();
 			$zoneDefault->handleRequest($pathParts);
 		}
 	}

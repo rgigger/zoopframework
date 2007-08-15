@@ -1,4 +1,5 @@
 <?php
+EchoBacktrace();
   /**
    * Spyc -- A Simple PHP YAML Class
    * @version 0.2.(5) -- 2006-12-31

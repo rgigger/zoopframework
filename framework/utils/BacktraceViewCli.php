@@ -23,7 +23,12 @@ class BacktraceViewCli
 				$padside = $thisField == 'file' ? STR_PAD_LEFT : STR_PAD_RIGHT;
 				$padding = $thisField == 'function' ? '' : str_pad('', $this->padding, ' ');
 				if(isset($thisRow[$thisField]))
-					$parts[] = str_pad($thisRow[$thisField], $maxLengths[$thisField], ' ', $padside) . $padding;
+				{
+					if($thisField == 'function')
+						$parts[] = $thisRow[$thisField];
+					else
+						$parts[] = str_pad($thisRow[$thisField], $maxLengths[$thisField], ' ', $padside) . $padding;
+				}
 			}
 			
 			echo implode('', $parts) . "\n";

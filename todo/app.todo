@@ -34,4 +34,6 @@
 		-	register globals
 		-	magic quotes
 			-	if magic quotes is on we need to warn them that their stuff will be double escaped when they try to put it into the database
-	
+-	debugging
+	-	the cool thing that formats things all nice
+	-	some sort of generalized echo_r substitute that formats stuff all nice according to the output device (terminal, browser, graphic, etc)

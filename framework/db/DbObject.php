@@ -1,11 +1,12 @@
 <?php
-class DbObject
+class DbObject implements Iterator
 {
-	var $id;
-	var $scalars;
-	var $hasMany;
-	var $autoSave;
-	var $bound;
+	public $id;
+	
+	private $scalars;
+	private $hasMany;
+	private $autoSave;
+	private $bound;
 	
 	
 	//	static functions
@@ -176,6 +177,10 @@ class DbObject
 	{
 		$idFieldName = $this->getIdFieldName();
 		
+		//	
+		//	most of this should be replaced by a call to DbConnection::generateUpdateInfo() or something
+		//
+		
 		//	if they passed in an id we don't need to reset it just verify that it is the right one
 		if(isset($data[$idFieldName]))
 		{
@@ -297,5 +302,35 @@ class DbObject
 	{
 		$this->autoSave = false;
 		$this->setScalar($varname, $value);
+	}
+	
+	//	iterator functions
+	public function rewind()
+	{
+		reset($this->scalars);
+	}
+
+	public function current()
+	{
+		$var = current($this->scalars);
+		return $var;
+	}
+
+	public function key()
+	{
+		$var = key($this->scalars);
+		return $var;
+	}
+
+	public function next()
+	{
+		$var = next($this->scalars);
+		return $var;
+	}
+
+	public function valid()
+	{
+		$var = $this->current() !== false;
+		return $var;
 	}
 }

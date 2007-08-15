@@ -80,3 +80,4 @@ function __autoload($className)
 }
 
 Zoop::loadLib('config');
+Config::load();

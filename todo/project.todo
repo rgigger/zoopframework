@@ -18,3 +18,8 @@
 -	standards
 	-	develop, document and enforce coding and documentation standards
 	-	support these with textmate snippets
+-	in order to test out some of the features we need a site to showcase what it can do
+	-	it must be a high traffic site so we can do performance profiling and make sure it scales
+		-	we can test this better by running on lots of cheap crappy hardware to make sure the software is robust and easily scalable
+	-	it must be be a large, complex, and sophisicated piece of code
+		-	not that the code has to be complex per se, but the problems must be complex

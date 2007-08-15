@@ -17,7 +17,6 @@ class DbPgResult
 		return $this->max + 1;
 	}
 	
-	
 	function rewind()
 	{
 		$this->cur = 0;
@@ -25,6 +24,8 @@ class DbPgResult
 	
 	function current()
 	{
+		if($this->max == -1)
+			return false;
 		return pg_fetch_assoc($this->res, $this->cur);
 	}
 	

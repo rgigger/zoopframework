@@ -17,3 +17,4 @@
 		-	set permissions on tmp direcotory to be writable to the web server
 	-	create storage directories
 		-	set permissions make them writable to the web server
+-	make it have it's own yaml config file but load the yaml config of the project directory to use for making db connections

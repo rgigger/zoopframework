@@ -3,22 +3,48 @@ class ZoneRedo
 {
 	function subMigrations($p, $s)
 	{
+		SqlBeginTransaction();
+		
 		//	make sure the migrations table exists
 		Migration::initDB();
 		
 		//	have it scan the migrations directory for all available migrations
 		$versions = Migration::getAllMigrationNames();
-		print_r($versions);
-		//	query the db for applied migrations
+		// print_r($versions);
+		$flipped = array_flip($versions);
+		
+		//	query the db for applied migrations in reverse order
 		$applied = Migration::getAllAppiedMigrationNames();
+		// print_r($applied);
+		
+		print_r($versions);
 		print_r($applied);
-		//	apply anything that hasn't been done yet, in the proper order
-		$unapplied = array_diff($versions, $applied);
-		print_r($unapplied);die();
-		foreach($unapplied as $key => $needsApplied)
+		
+		//	undo all of the migrations
+		foreach($applied as $key => $migration)
 		{
-			Migration::apply($key, $needsApplied);
+			Migration::undo($flipped[$migration], $migration);
 		}
+		
+		//	now, reapply all of them
+		foreach($versions as $key => $migration)
+		{
+			Migration::apply($key, $migration);
+		}
+		
+		SqlCommitTransaction();
+		
+		
+		
+		
+		//	apply anything that hasn't been done yet, in the proper order
+		// $unapplied = array_diff($versions, $applied);
+		// print_r($unapplied);die();
+		
+		// foreach($unapplied as $key => $needsApplied)
+		// {
+		// 	Migration::apply($key, $needsApplied);
+		// }
 		
 		/*
 		//	make sure the migrations table exists

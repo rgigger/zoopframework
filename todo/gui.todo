@@ -6,3 +6,7 @@
 	-	possibly use resource paths (http://smarty.php.net/manual/en/template.resources.php) to handle module templates
 	-	use the default template handler to present a pleasant error message when you can't find a template in development - or create it for you on the fly!
 -	experiment with non smarty drivers such as wrapping php templates in some sort of class
+-	controls we need to have
+	-	button that just goes to an url
+		-	use onclick to set document.location
+		-	post an action to the post page and redirect to the new location

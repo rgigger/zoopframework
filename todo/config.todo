@@ -5,3 +5,4 @@
 		-	getRequireds
 		-	getDefaults
 	-	any object in your module that needs to use configuration information should implement this interface
+-	make it possible to have multiple config files with one default config file

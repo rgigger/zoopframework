@@ -26,9 +26,10 @@ function GetPostDate($name)
 	return "$year-$month-$day $hour:$minute:$second -7:00";
 }
 
-function echo_r($var)
+function echo_r($var, $supressBacktrace = 0)
 {
-	//EchoBacktrace();
+	if(!$supressBacktrace)
+		EchoBacktrace();
 	echo '<pre>';
 	print_r($var);
 	echo '</pre>';
@@ -47,9 +48,7 @@ function BaseRedirect($virtualPath)
 
 function EchoBacktrace($value='')
 {
-	echo '<pre>';
-	debug_print_backtrace();
-	echo '</pre>';
+	echo FormatBacktraceHtml(debug_backtrace());
 }
 
 function FormatBacktraceHtml($backtraceInfo)
@@ -62,7 +61,7 @@ function FormatBacktraceHtml($backtraceInfo)
 	<tr>
 		<th>File</th><th>Line</th><th>Function</th>
 	</tr>
-	<?php foreach($backtraceInfo as $thisRow): 
+	<?php  foreach($backtraceInfo as $thisRow): 
 		$lineInfo = FormateBacktraceLineHtml($thisRow);
 	?><tr>
 		<td><?php echo $lineInfo['file']; ?></td>
@@ -108,6 +107,9 @@ function FormatBacktraceFunctionCellHtml($lineInfo)
 				break;
 			case 'array':
 				$argStrings[] = '&lt;array&gt;';
+				break;
+			case 'object':
+				$argStrings[] = '&lt;object&gt;';
 				break;
 			case 'resource':
 				$argStrings[] = 'resource: ' . $thisArg;

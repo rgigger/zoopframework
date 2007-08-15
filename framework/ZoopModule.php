@@ -19,7 +19,7 @@ abstract class ZoopModule
 				Zoop::registerClass($thisClass, zoop_dir . '/' . $this->name . '/' . $thisClass . '.php');
 		
 		//	handle configuration
-		$this->configure();
+		$this->configure();		
 	}
 	
 	function createName()

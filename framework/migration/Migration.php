@@ -53,7 +53,7 @@ class Migration
 	}
 	
 	//	static
-	function remove($name)
+	function undo($key, $name)
 	{
 		include_once(getcwd() . '/migrations/' . $key);
 		$className = 'Migration_' . str_replace('.', '_', $name);

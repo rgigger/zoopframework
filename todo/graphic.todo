@@ -38,3 +38,6 @@
 	-	column sets, document, 
 	...
 	-	charts and graphs???
+-	controlled rendering
+	-	parse xml, yaml, html etc, but whitelist what tags/attributes will be preserved
+	-	then sent the results back to original form to be rendered by a browser or render them as is

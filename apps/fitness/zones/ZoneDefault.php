@@ -1,8 +1,9 @@
-<?
-class ZoneDefault extends zone
+<?php
+class ZoneDefault extends Zone
 {
 	function pageDefault()
 	{
+		/*
 		$sql = "select
 					*
 				from
@@ -11,5 +12,8 @@ class ZoneDefault extends zone
 					inner join person p on s.person_id = p.id";
 		$data = SqlFetchRows($sql, array());
 		echo_r($data);
+		*/
+		
+		$this->switchZone('person');
 	}
 }

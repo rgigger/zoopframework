@@ -424,8 +424,7 @@ abstract class DbConnection
 		return array('sql' => $selectSql, 'params' => $selectParams);
 	}
 	
-	//	static
-	function generateUpdateInfo($tableName, $conditions, $values)
+	static function generateUpdateInfo($tableName, $conditions, $values)
 	{
 		$updateParams = array();
 		

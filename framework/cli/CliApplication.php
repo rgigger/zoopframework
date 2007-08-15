@@ -13,12 +13,7 @@ class CliApplication
 	function run()
 	{
 		global $argv;
-		
-		//	we really need do this right and to set up a yaml module that abstracts away the underlying yaml engine
-		include_once(zoop_dir . '/spyc/spyc.php');
-
-		$array = Spyc::YAMLLoad(app_dir . '/params.yaml');
-		
+				
 		//	parse the flags
 		$switches = array();
 		$params = array();
@@ -46,6 +41,13 @@ class CliApplication
 					$params[] = $thisArg;
 				}
 			}
+		}
+		
+		if(!isset($params[1]))
+		{
+			echo "usages:\n";
+			echo "zap apply migrations:\n";
+			die();
 		}
 		
 		$zoneName = 'Zone' . $params[1];
