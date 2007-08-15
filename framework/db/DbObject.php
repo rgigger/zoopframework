@@ -30,7 +30,26 @@ class DbObject
 				trigger_error('not yet implemented');
 				break;
 			case 'array':
-				trigger_error('not yet implemented');
+				$sql = "select * from $tableName";
+				
+				if(count($conditions) > 0)
+				{
+					$sql .= ' where ';
+					$parts = array();
+					foreach($conditions as $fieldname, $value)
+					{
+						$parts[] = "$fieldname = $value";
+					}
+					$sql .= implode(' and ', $parts);
+				}
+				
+				$rows = SqlFetchMap($sql, 'id', array());
+				$objects = array();
+				foreach($rows as $id => $row)
+				{
+					$objects[$id] = new $className($row);
+				}
+				return $objects;
 				break;
 			case 'NULL':
 				$sql = "select * from $tableName";
@@ -276,9 +295,6 @@ class DbObject
 
 	function __set($varname, $value)
 	{
-//		if(isset($this->$varname))
-//			return;
-		
 		$this->autoSave = false;
 		$this->setScalar($varname, $value);
 	}
