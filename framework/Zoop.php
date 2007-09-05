@@ -61,7 +61,7 @@ class Zoop
 			include(zoop_dir . "/$name/module.php");
 		else
 		{
-			$moduleName = strtoupper($name) . 'Module';
+			$moduleName = ucfirst($name) . 'Module';
 			include(zoop_dir . "/$name/$moduleName.php");
 			$module = new $moduleName();
 		}
