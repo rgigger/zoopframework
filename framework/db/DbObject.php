@@ -37,7 +37,7 @@ class DbObject implements Iterator
 				{
 					$sql .= ' where ';
 					$parts = array();
-					foreach($conditions as $fieldname, $value)
+					foreach($conditions as $fieldname => $value)
 					{
 						$parts[] = "$fieldname = $value";
 					}
