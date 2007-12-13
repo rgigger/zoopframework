@@ -64,7 +64,8 @@ class Zone
 				//	grab the zone params from $pathParts
 				foreach($newZone->getParamNames() as $thisParamName)
 				{
-					assert(count($pathParts) > 0);
+					if(count($pathParts) == 0)
+						trigger_error("$zoneName requires more paramaters than are available");
 					$paramValue = array_shift($pathParts);
 					$newZone->requestInfo[count($newZone->requestInfo) - 1]['params'][] = $thisParamName;
 					$newZone->params[$thisParamName] = $paramValue;

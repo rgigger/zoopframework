@@ -3,11 +3,6 @@ class XmlDom
 {
 	var $xmlTree;
 	
-	function XmlDom()
-	{
-		
-	}
-	
 	//	returns the root node
 	function parseText($xml)
 	{

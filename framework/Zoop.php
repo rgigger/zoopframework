@@ -49,12 +49,15 @@ class Zoop
 	function loadLib($name)
 	{
 		//	allow static calls to use the singleton object
+		//	this is not the way to do this
 		if(!isset($this))
 		{
 			global $zoop;
 			$zoop->loadLib($name);
 			return;
 		}
+		
+		// print_r($name. '<br>');
 		
 		//	temporary meausre so I can test without having to convert all of the modules over to the new format right away
 		if(file_exists(zoop_dir . "/$name/module.php"))
@@ -77,6 +80,14 @@ function __autoload($className)
 	{
 		require_once($classPath);
 	}
+	
+	if(substr($className, 0, 5) == 'Zend_')
+	{
+		$parts = explode('_', $className);
+		$modName = $parts[1];
+		require_once(zoop_dir . "/zend/$modName.php");
+	}
+	
 }
 
 Zoop::loadLib('config');

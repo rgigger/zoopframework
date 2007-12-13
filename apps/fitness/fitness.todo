@@ -1,3 +1,8 @@
--	break the sql out of the controller and put it into the model
--	create ORM stuff to automatically write the sql and create the objects so we don't have to write any sql ourself
--	make it capable of handling more than one user
+-	sections
+	-	person
+		-	adding
+		-	editing
+	-	units
+	-	exercises
+	-	sessions
+-	break the sql out of the controller and put it into the model (the sql commented out of zone default???)

@@ -3,10 +3,15 @@ abstract class ZoopModule
 {
 	private $name;
 	
-	function __construct()
+	final function __construct()
 	{
 		//	get the module name
 		$this->name = $this->createName();
+		
+		//	register any class files
+		if($this->getDepends())
+			foreach($this->getDepends() as $thisDepends)
+				Zoop::loadLib($thisDepends);
 		
 		//	include any normal files that need to be included
 		if($this->getIncludes())
@@ -43,6 +48,11 @@ abstract class ZoopModule
 	}
 	
 	function getClasses()
+	{
+		return false;
+	}
+	
+	function getDepends()
 	{
 		return false;
 	}

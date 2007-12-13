@@ -1,5 +1,5 @@
 <?php
-class XmlNodeList
+class XmlNodeList implements Iterator
 {
 	var $nodeList;
 	

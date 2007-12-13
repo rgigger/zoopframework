@@ -1,4 +1,10 @@
 -	focus on the weaknesses of the current implementation
+	-	divs
+		-	vertical centering
+		-	borders
+		-	spacing
+		-	background colors/patterns/images
+		-	breaking across pages
 	-	tables
 		-	borders
 		-	padding
@@ -7,12 +13,6 @@
 		-	rowspan
 		-	breaking across pages
 		-	widow / orphan support
-	-	divs
-		-	vertical centering
-		-	borders
-		-	spacing
-		-	background colors/patterns/images
-		-	breaking across pages
 	-	debugging
 		-	make it easy to spit out:
 			-	the produced xml file
@@ -26,13 +26,60 @@
 		-	make sure you can have point level precision with anything you might want to draw
 	-	page breaks
 -	steps
-	-	import the pdf module from zend framework
-	-	write a zpdf graphic context
-	-	implement GraphicDiv
-		-get all features and styles of div working
-		-	make sure that it breaks properly across pages (with proper widow orphan support)
-		-	make sure borders, margins, padding, backgrounds etc work
-		-	float????
+	+	import the pdf module from zend framework
+	-	implement wrapped rich text processing
+		+	parser module
+		+	get ZendPdfContext working
+		+	create an example with an html string that is just some lorum ipsum text with a few <br>s in it
+		+	implement the following as necessary to parse the string
+			+	GraphicDocument extends GraphicDiv
+			+	GraphicDiv
+			+	GraphicTextRun
+		+	verify that the DOM tree is created properly
+		+	write a Zend_Pdf graphic context
+		-	render the div
+			+	impement the following as needed
+				+	GraphicHardBrokenLine
+				+	GraphicSoftBrokenLine
+				+	GraphicTextStyle
+			+	figure out the best way to specify the canvas size
+			+	give the document a size and have have it pass the width down to it's children
+			+	make it actually draw the basic text
+				+	figure out why its drawing the last segment 3 times
+			+	now make it draw correct
+				+	in ZendPdfContext put 0,0 in the upper left corner
+				-	make the measuring stuff actually work so that hard broken line can break into softbrokenlines
+					-	make the example have more text and in a smaller area for testing this					
+			-	make sure it is wrapping properly with the default styles
+			-	handle left/right whitespace issues properly
+			-	figure out how to map raw xhtml style onto the attributes for the various GraphicObject descendants
+	-	more advanced text features
+		-	alignment (left, center, right)
+		-	make all kinds of text styles work
+	-	release a new version for the Zend_Pdf people
+		-	update the front page to also refer people to Zend Framework
+		-	document our inclusion of some parts of Zend Framework
+		-	add a copyright notice
+		-	choose a licence that is compatible with Zend_Pdf (new bsd?)
+		-	build new api docs
+		-	build a new tarball
+		-	post it to the google code site
+		-	possibly set up a site showing the code and the results
+		-	maybe even set up a demo where they can type in their text and have it generate a pdf
+		-	notify the zend framework mailing list
+	-	create GuiGraphic and GuiPdf
+		-	extend Gui and get the xml
+		-	fully modular parser
+			-	doesn't understand any tags
+			-	each tag tag type must load a parser module
+			-	creates DOM objects
+	-	enhance GraphicDiv
+		-	breaking across pages (with proper widow/orphan support)
+		-	make sure borders, margins, padding, backgrounds etc work (use dompdf test to check yourself)
+		-	float attributes???
+	-	css
+		-	parse css info in the header
+		-	apply styles to the DOM
 	-	then tables
 		-	borders, padding, margins, backgrounds, etc
 	-	column sets, document, 
@@ -41,3 +88,6 @@
 -	controlled rendering
 	-	parse xml, yaml, html etc, but whitelist what tags/attributes will be preserved
 	-	then sent the results back to original form to be rendered by a browser or render them as is
+-	performance
+	-	are HardBrokenLines broken into SoftBroken lines over and over again?  If so can you do it once and cache the results?
+	-	how intensive is calcing the char widths? can that be cached?

@@ -180,11 +180,8 @@ function GetFileExtention($filename)
 	return array_pop($parts);
 }
 
-if(version_compare(PHP_VERSION, '5.0', '<'))
+
+function str_prefix($string, $prefix)
 {
-	include_once(dirname(__FILE__) . '/Utils4.php');
-}
-else
-{
-	include_once(dirname(__FILE__) . '/Utils5.php');
+	return substr($string, 0, strlen($prefix)) == $prefix ? 1 : 0;
 }

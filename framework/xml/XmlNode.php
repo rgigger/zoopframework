@@ -1,4 +1,4 @@
-<?
+<?php
 class XmlNode
 {
 	var $nodeData;
@@ -8,39 +8,30 @@ class XmlNode
 		$this->nodeData = $inNodeData;
 	}
 	
-	function &getChildren()
+	function getChildren()
 	{
 		$nodeList = &new XmlNodeList($this->nodeData);
-//		print_r($nodeList);
 		$nodeList->rewind();
 		return $nodeList;
 	}
 	
 	function getName()
 	{
-//		if($this->nodeData->nodeType !== XML_TEXT_NODE)
-			return $this->nodeData->nodeName;
-//		else
-//			return 'TEXT';
+		return $this->nodeData->nodeName;
+	}
+	
+	function isText()
+	{
+		return $this->nodeData->nodeType === XML_TEXT_NODE ? true : false;
 	}
 	
 	function hasContent()
 	{
-		/*
-		$content = trim(ereg_replace('&#([0-9]*);', '', $this->nodeData->textContent));
-		*/
 		if($this->nodeData->nodeType === XML_TEXT_NODE)
 			return true;
 		
 		return false;
-		//$content = ereg_replace('&#([0-9]*);', '', $this->nodeData->textContent);
-		//$content = html_entity_decode($content);
 		
-//		var_dump($content);
-		
-		//$content = trim(str_replace('&#160;', '', $this->nodeData->content));
-		//$content = trim(str_replace('&#160;', '', $this->nodeData->content));
-
 		return $content ? 1 : 0;
 	}
 	
@@ -143,5 +134,10 @@ class XmlNode
 		
 		return $atts;
 	}
+	
+	function __get($name)
+	{
+		if($name == 'children')
+			return $this->getChildren();
+	}
 }
-?>

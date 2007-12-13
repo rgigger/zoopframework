@@ -10,7 +10,7 @@ class DbObject implements Iterator
 	
 	
 	//	static functions
-	
+		
 	static function _getTableName($className)
 	{
 		//	work around lack of "late static binding"

@@ -1,0 +1,35 @@
+-	get a better dictionary
+	-	reimport data to eliminate duplicates
+	-	always add all the words from all the games you play
+	-	search online for other wordlists
+	-	if they are huge then check them against the website, then add them to a legit list somewhere for later importing
+-	interface and AI
+	-	create a page where you paste the url for your game
+	-	create a post function to take the url, parse it, and redirect you to your board
+	+	model board
+	-	render board
+	-	import board information
+		-	add all words played in that game to the database
+		+	populate the board
+		+	poulate your rack
+	-	loop through each row and column on the board
+		-	do a query for each word and combination of words for that row or column
+			+	words
+			-	combination of words 
+		-	use the first letter of the first word to place up each result word on the board in each position that lines up that letter
+		-	allow you to click on a link for each match and see how it would be added to the board, were it to be added
+		-	check the following rules
+			-	does the word fit onto the board
+			-	do any of the new tiles collide with any existing tiles
+			-	do any of the new tiles border other tiles, not from the words being chcked
+				-	if yes then check each word formed by the bordering tiles for validity
+					-	log all failed words and check them later against the website
+		-	if the word passes all tests, score it, and add it to a list with it's score
+	-	do one more search with just the pieces from our rack
+		-	check each open spot on the board that each of those words can fit into
+			-	check all of the rules
+		-	if the word passes all tests, score it, and add it to the list with it's score
+	-	list the words in order of highest to lowest score
+	-	add in hints for rack management
+	-	do something about blank tiles
+	-	add support for coming up with a good opening move with no tiles on the board 
