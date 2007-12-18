@@ -43,6 +43,7 @@ class Zone
 		$pageName = "page$thisPart";
 		$postName = "post$thisPart";
 		$defaultName = "pageDefault";
+		$defaultPostName = "postDefault";
 		
 		//	first try to find a matching page
 		if( RequestIsPost() && method_exists($this, $postName) )
@@ -75,11 +76,19 @@ class Zone
 			}
 			else
 			{
-				//	finally look for a defaultpage
-				if( method_exists($this, $defaultName) )
-					$foundPage = $defaultName;
+				//	now look for a default post page
+				if( RequestIsPost() && method_exists($this, $defaultPostName) )
+				{
+					$foundPage = $defaultPostName;
+				}
 				else
-					trigger_error("no valid page for $thisPart in " . get_class($this));
+				{
+					//	finally look for a defaultpage
+					if( method_exists($this, $defaultName) )
+						$foundPage = $defaultName;
+					else
+						trigger_error("no valid page for $thisPart in " . get_class($this));
+				}
 			}
 		}
 		
