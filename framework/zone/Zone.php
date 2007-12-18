@@ -1,8 +1,8 @@
 <?php
 class Zone
 {
-	var	$requestInfo;
-	var $params;
+	private	$requestInfo;
+	private $params;
 	
 	function __construct()
 	{
@@ -86,7 +86,7 @@ class Zone
 		//	if we found a page then run it
 		if( isset($foundPage) )
 		{
-			$postfix = $originalPart ? $originalPart : 'default';
+			$postfix = $foundPage == 'pageDefault' ? 'default' : $originalPart;
 			$pageParams = array_merge(array(0 => $postfix), $pathParts);
 			
 			if( method_exists($this, 'initPages') )
