@@ -8,7 +8,7 @@ class ZoneDefault extends GuiZone
 	
 	function pageImportWords()
 	{
-		$handle = fopen("/home/rick/Sites/test/scrabble_dictionary.txt", "r");
+		$handle = fopen("/path/to/scrabble_dictionary.txt", "r");
 		$words = array();
 		if($handle)
 		{
@@ -159,11 +159,11 @@ class ZoneDefault extends GuiZone
 		$denominator = rand(51, 100);
 		$rnd = $numerator/$denominator;
 		
-		$url = "http://www.scrabulousemail.com/email_scrabble/xmlv3.php?showGameOver=&gid=$gid&pid=$pid&password=$password&notify_fb=y&fb_sig_time=1192504105.5726&fb_sig_user=17824732&fb_sig_profile_update_time=1192431482&fb_sig_session_key=da16691e70ac3f1d7230f47e-17824732&fb_sig_expires=0&fb_sig_api_key=f9aad7bfa944cb308c2afac2cc1ded9c&fb_sig_added=1&fb_sig=2068649216054d7e691f57d67a0422c1&action=gameinfo&rnd=$rnd";
+		$url = "this no longer works";
 		$gameInfo = simplexml_load_file($url);
 		
 		
-		$url = "http://www.scrabulousemail.com/email_scrabble/postv3.php?gid=$gid&pid=$gid&password=$password&notify_fb=y&fb_sig_time=1192504105.5726&fb_sig_user=17824732&fb_sig_profile_update_time=1192431482&fb_sig_session_key=da16691e70ac3f1d7230f47e-17824732&fb_sig_expires=0&fb_sig_api_key=f9aad7bfa944cb308c2afac2cc1ded9c&fb_sig_added=1&fb_sig=2068649216054d7e691f57d67a0422c1&action=CHECKNEW&lastmoveid=85088268&lastmsgid=4041812&rnd=$rnd";
+		$url = "this no longer works";
 		$boardInfo = simplexml_load_file($url);
 		// echo_r($boardInfo);
 		$rack = (string)$gameInfo->info->myrack[0];
