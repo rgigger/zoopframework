@@ -1,0 +1,13 @@
+-	questions
+	-	should standard allow for for storing more than one kind of password
+	-	should we allow for password migration
+
+
+-	account creation
+-	Upon successful auth store token
+	-	Session
+	-	Cookie
+	-	URL
+-	Check auth token
+-	Request http authentication
+-	way to detect  password strength and upgrade it if better encryption is available

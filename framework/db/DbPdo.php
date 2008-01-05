@@ -3,12 +3,16 @@ class DbPdo extends DbConnection
 {
 	function DbPdo($params)
 	{
+		if($params['file'][0] != '/')
+			$params['file'] = app_dir . '/' . $params['file'];
+		
+		$this->conn = new PDO('sqlite:' . $params['file']);
 		// try {
-			$this->conn = new PDO('sqlite:' . $params['file']);
+		// 	$this->conn = new PDO('sqlite:' . $params['file']);
 		// }
 		// catch(PDOException $e)
 		// {
-			// die('pdoexception');
+		// 		die('pdoexception');
 		// }
 	}
 	

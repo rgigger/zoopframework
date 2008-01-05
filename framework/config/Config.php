@@ -26,7 +26,13 @@ class Config
 		$cur = self::$info;
 		// print_r($cur);
 		foreach($parts as $thisPart)
-			$cur = $cur[$thisPart];
+		{
+			if(isset($cur[$thisPart]))
+				$cur = $cur[$thisPart];
+			else
+				return false;
+		}
+			
 		
 		return $cur;
 	}
