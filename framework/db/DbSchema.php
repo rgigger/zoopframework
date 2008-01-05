@@ -15,6 +15,7 @@ class DbSchema
 				WHERE table_type = 'BASE TABLE'
 					AND table_schema NOT IN ('pg_catalog', 'information_schema')
 					AND table_name = :name";
+		
 		return SqlFetchCell($sql, array('name' => $name)) ? 1 : 0;
 	}
 }

@@ -1,30 +1,3 @@
--	focus on the weaknesses of the current implementation
-	-	divs
-		-	vertical centering
-		-	borders
-		-	spacing
-		-	background colors/patterns/images
-		-	breaking across pages
-	-	tables
-		-	borders
-		-	padding
-		-	spacing
-		-	colspan
-		-	rowspan
-		-	breaking across pages
-		-	widow / orphan support
-	-	debugging
-		-	make it easy to spit out:
-			-	the produced xml file
-			-	a tree representing the object structrure that was created
-			-	maybe just make it something you can add into the url???
-	-	parser
-		-	try to conform as best you can to the html/css specs
-		-	modulerize the parser so that each element is part of some module, keep core parser very modular
-	-	use svg for other graphics
-		-	shapes, lines, etc
-		-	make sure you can have point level precision with anything you might want to draw
-	-	page breaks
 -	steps
 	+	import the pdf module from zend framework
 	-	implement wrapped rich text processing
@@ -91,3 +64,30 @@
 -	performance
 	-	are HardBrokenLines broken into SoftBroken lines over and over again?  If so can you do it once and cache the results?
 	-	how intensive is calcing the char widths? can that be cached?
+-	focus on the weaknesses of the current implementation
+	-	divs
+		-	vertical centering
+		-	borders
+		-	spacing
+		-	background colors/patterns/images
+		-	breaking across pages
+	-	tables
+		-	borders
+		-	padding
+		-	spacing
+		-	colspan
+		-	rowspan
+		-	breaking across pages
+		-	widow / orphan support
+	-	debugging
+		-	make it easy to spit out:
+			-	the produced xml file
+			-	a tree representing the object structrure that was created
+			-	maybe just make it something you can add into the url???
+	-	parser
+		-	try to conform as best you can to the html/css specs
+		-	modulerize the parser so that each element is part of some module, keep core parser very modular
+	-	use svg for other graphics
+		-	shapes, lines, etc
+		-	make sure you can have point level precision with anything you might want to draw
+	-	page breaks

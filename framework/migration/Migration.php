@@ -6,7 +6,6 @@ class Migration
 	{
 		//	create the migration table if it does not exist
 		$schema = SqlGetSchema();
-		
 		if(!$schema->tableExists('migration'))
 		{
 			$sql = "create table migration (
@@ -33,15 +32,32 @@ class Migration
 	}
 	
 	//	static
+	function filenameFromVersion($version)
+	{
+		$filenames = ListDir(getcwd() . '/migrations', array('extentions' => array('php')));
+		
+		foreach($filenames as $thisFilename)
+		{
+			$parts = explode('_', $thisFilename);
+			$thisVersion = $parts[0];
+			if($version == $thisVersion)
+				return $thisFilename;
+		}
+		
+		trigger_error("version not found: " . $version);
+	}
+	
+	//	static
 	function getAllAppiedMigrationNames()
 	{
 		return SqlFetchColumn("select name from migration where applied = 1", array());
 	}
 	
 	//	static
-	function apply($key, $name)
+	function apply($filename, $name)
 	{
-		include_once(getcwd() . '/migrations/' . $key);
+		include_once(getcwd() . '/migrations/' . $filename);
+		
 		$className = 'Migration_' . str_replace('.', '_', $name);
 		$migration = new $className();
 		$migration->up();
@@ -53,9 +69,9 @@ class Migration
 	}
 	
 	//	static
-	function undo($key, $name)
+	function undo($filename, $name)
 	{
-		include_once(getcwd() . '/migrations/' . $key);
+		include_once(getcwd() . '/migrations/' . $filename);
 		$className = 'Migration_' . str_replace('.', '_', $name);
 		$migration = new $className();
 		$migration->down();

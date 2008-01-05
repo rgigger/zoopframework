@@ -37,9 +37,9 @@ abstract class ZoopModule
 		return $this->name;
 	}
 	
-	function getConfigInfo()
+	function getConfig($path = '')
 	{
-		return Config::get('zoop.' . $this->getConfigPath());
+		return Config::get('zoop.' . $this->getConfigPath() . $path);
 	}
 	
 	function getIncludes()

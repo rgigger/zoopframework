@@ -1,0 +1,36 @@
+-	first priorities
+	-	get rid of the homestar runner pic
+	-	use exceptions to help people get set up, don't automatically run schema changes
+	-	god solution for form validation
+	-	set up config.yaml in all stationary
+	-	include examples in stationary and tutorials explaining the following
+		-	check out from code.google.com
+		-	including modules
+		-	register class
+		-	setting up the tmp directory, should we have it automatically create sub dirs?
+		-	adding new zones, have ZoneDefault plus two other, document how to add new ones
+		-	better default main.tpl, fix the float problems
+		-	multiple layouts, per app, per zone, per page
+		-	non-default pages, set up several pages in multiple zones
+		-	db, how it get it set up right away
+		-	how to prevent sql injection
+		-	how to prevent script injection
+		-	session
+		-	dbobject
+-	second prioities
+	-	creating new projects automatically
+		-	command line tool
+	-	creating zones automatically
+		-	command line tool to do it
+		-	auto configure the includes
+	-	migrations
+		-	create them automatically
+		-	apply all migrations
+		-	apply single migration
+		-	apply latest migratin
+		-	re-apply single / latest migration
+	-	retool zap
+		-	"zones" are identified by the object type, allow for aliases
+		-	an object type can supply code for a list of verbs
+		-	a verb / type can have any number of objects
+		-	capture and pass along flag information

@@ -1,6 +1,16 @@
 <?php
 class ZoneRedo
 {
+	function subMigration($p, $s)
+	{
+		$version = $p[3];
+		SqlBeginTransaction();
+		$filename = Migration::filenameFromVersion($version);
+		Migration::undo($filename, $version);
+		Migration::apply($filename, $version);
+		SqlCommitTransaction();
+	}
+	
 	function subMigrations($p, $s)
 	{
 		SqlBeginTransaction();

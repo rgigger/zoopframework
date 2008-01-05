@@ -8,69 +8,8 @@ class DbObject implements Iterator
 	private $autoSave;
 	private $bound;
 	
-	
-	//	static functions
-		
-	static function _getTableName($className)
-	{
-		//	work around lack of "late static binding"
-		$dummy = new $className(0);
-		return $dummy->getTableName();
-	}
-	
-	static function _find($className, $conditions = NULL)
-	{
-		$tableName = self::_getTableName($className);
-		
-		if(is_numeric($conditions))
-			$conditions = (int)$conditions;
-		
-		switch(gettype($conditions))
-		{
-			case 'integer':
-				trigger_error('not yet implemented');
-				break;
-			case 'array':
-				$sql = "select * from $tableName";
-				
-				if(count($conditions) > 0)
-				{
-					$sql .= ' where ';
-					$parts = array();
-					foreach($conditions as $fieldname => $value)
-					{
-						$parts[] = "$fieldname = $value";
-					}
-					$sql .= implode(' and ', $parts);
-				}
-				
-				$rows = SqlFetchMap($sql, 'id', array());
-				$objects = array();
-				foreach($rows as $id => $row)
-				{
-					$objects[$id] = new $className($row);
-				}
-				return $objects;
-				break;
-			case 'NULL':
-				$sql = "select * from $tableName";
-				$rows = SqlFetchMap($sql, 'id', array());
-				$objects = array();
-				foreach($rows as $id => $row)
-				{
-					$objects[$id] = new $className($row);
-				}
-				return $objects;
-				break;
-			default:
-				trigger_error('unhandled conditions type');
-				break;
-		}
-	}
-	
-	
 	//	constructor
-	function DbObject($init = NULL, $defaults = NULL)
+	function __construct($init = NULL, $defaults = NULL)
 	{	
 		$this->bound = false;
 
@@ -109,11 +48,14 @@ class DbObject implements Iterator
 				break;
 			case 'NULL':
 				//	we just need to create a new blank object, bound to a new row in the database
-				$tableName = $this->getTableName();
-				if(!$defaults)
-					$this->setId(SqlInsertRow("insert into $tableName default values", array()));
-				else
-					$this->createRow($defaults);
+				if($defaults)
+				{
+					$tableName = $this->getTableName();
+					if(!$defaults)
+						$this->setId(SqlInsertRow("insert into $tableName default values", array()));
+					else
+						$this->createRow($defaults);
+				}
 				break;
 			default:
 				trigger_error('object not initialized');
@@ -139,6 +81,7 @@ class DbObject implements Iterator
 	{
 		$info = DbConnection::generateInsertInfo($this->getTableName(), $values);
 		$this->setId(SqlInsertRow($info['sql'], $info['params']));
+		return $this->id;
 	}
 	
 	function getTableName()
@@ -190,6 +133,7 @@ class DbObject implements Iterator
 		
 		if($this->autoSave || $force)
 		{
+			//	this should probably all be abstracted into some 
 			if($this->bound)
 			{
 				$tableName = $this->getTableName();
@@ -333,4 +277,61 @@ class DbObject implements Iterator
 		$var = $this->current() !== false;
 		return $var;
 	}
+	
+	static function _getTableName($className)
+	{
+		//	work around lack of "late static binding"
+		$dummy = new $className(0);
+		return $dummy->getTableName();
+	}
+	
+	static function _find($className, $conditions = NULL)
+	{
+		$tableName = self::_getTableName($className);
+		
+		if(is_numeric($conditions))
+			$conditions = (int)$conditions;
+		
+		switch(gettype($conditions))
+		{
+			case 'integer':
+				trigger_error('not yet implemented');
+				break;
+			case 'array':
+				$sql = "select * from $tableName";
+				
+				if(count($conditions) > 0)
+				{
+					$sql .= ' where ';
+					$parts = array();
+					foreach($conditions as $fieldname => $value)
+					{
+						$parts[] = "$fieldname = $value";
+					}
+					$sql .= implode(' and ', $parts);
+				}
+				
+				$rows = SqlFetchMap($sql, 'id', array());
+				$objects = array();
+				foreach($rows as $id => $row)
+				{
+					$objects[$id] = new $className($row);
+				}
+				return $objects;
+				break;
+			case 'NULL':
+				$sql = "select * from $tableName";
+				$rows = SqlFetchMap($sql, 'id', array());
+				$objects = array();
+				foreach($rows as $id => $row)
+				{
+					$objects[$id] = new $className($row);
+				}
+				return $objects;
+				break;
+			default:
+				trigger_error('unhandled conditions type');
+				break;
+		}
+	}	
 }

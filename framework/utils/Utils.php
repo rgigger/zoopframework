@@ -35,8 +35,10 @@ function echo_r($var, $supressBacktrace = 0)
 	echo '</pre>';
 }
 
-function Redirect($url)
+function Redirect($url = NULL)
 {
+	if(!$url)
+		$url = virtual_url;
 	header("location: $url");
 	die();
 }

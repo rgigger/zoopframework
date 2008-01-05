@@ -26,7 +26,7 @@ class DbModule extends ZoopModule
 	
 	function configure()
 	{
-		$connections = $this->getConfigInfo();
+		$connections = $this->getConfig();
 		foreach($connections as $name => $params)
 		{
 			self::$connections[$name] = DbFactory::getConnection($params, $name);

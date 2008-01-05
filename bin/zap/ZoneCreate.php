@@ -23,10 +23,13 @@ class ZoneCreate
 		$gui->left_delimiter = '[[';
 		$gui->right_delimiter = ']]';
 		$stationaryFile = 'file:' . getcwd() . '/stationary/migration.tpl';
-		$gui->assign('version', $version);
+		$gui->assign('version', str_replace('.', '_', $version));
 		$contents = $gui->fetch($stationaryFile);
 		
-		$newFilename = getcwd() . '/migrations/' . $version . '_' . $name . '.php';
+		$dir = getcwd() . '/migrations';
+		$newFilename = $dir . '/' . $version . '_' . $name . '.php';
+		if(!file_exists($dir))
+			mkdir($dir, 0775, true);
 		file_put_contents($newFilename, $contents);
 	}
 }

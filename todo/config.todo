@@ -5,4 +5,14 @@
 		-	getRequireds
 		-	getDefaults
 	-	any object in your module that needs to use configuration information should implement this interface
--	make it possible to have multiple config files with one default config file
+-	make it possible to have multiple config files with
+	-	priority
+		-	first come first served policy.  whoever defines it first decides what is used
+		-	or somehow define who has priority when the config file is imported into the general config space
+	-	possible scenarios
+		-	each module has a config with default settings
+		-	each application has a config with application defaults which may override module settings
+		-	each installation has a config that may override the application or module defaults
+		-	other more compelex scenarios
+-	caching
+	-	take the final array and store it to a file for quick loading

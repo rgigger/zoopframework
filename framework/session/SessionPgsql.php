@@ -52,7 +52,7 @@ class SessionPgsql
 	function open($savePath, $sessionName)
 	{
 		//	we need to set up the config stuff for sessions
-		$this->db = DbFactory::getDefaultConnection();
+		$this->db = DbModule::getDefaultConnection();
 		$this->sessionName = $sessionName;
 		return true;
 	}

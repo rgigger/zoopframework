@@ -64,6 +64,11 @@ function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
 	return DbModule::getDefaultConnection()->fetchSimpleMap($sql, $keyFields, $valueField, $params);
 }
 
+function SqlInsertArray($tableName, $values)
+{
+	return DbModule::getDefaultConnection()->insertArray($tableName, $fieldInfo);
+}
+
 function SqlInsertRow($sql, $params)
 {
 	return DbModule::getDefaultConnection()->insertRow($sql, $params);

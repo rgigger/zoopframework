@@ -24,4 +24,14 @@ class ZoneApply
 		
 		SqlCommitTransaction();
 	}
+	
+	function subMigration($p, $s)
+	{
+		$version = $p[3];
+		SqlBeginTransaction();
+		$filename = Migration::filenameFromVersion($version);
+		Migration::apply($filename, $version);
+		SqlCommitTransaction();
+	}
+	
 }
