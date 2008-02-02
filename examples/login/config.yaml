@@ -1,0 +1,6 @@
+zoop:
+    db:
+        default:
+            driver: pdo
+            file: data.db
+        
