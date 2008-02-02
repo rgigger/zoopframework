@@ -1,5 +1,9 @@
 <?php
-function SessionFactory()
+class SessionFactory
 {
-	return new SessionPgsql();
+	static function getEngine($params)
+	{
+		return new SessionDb($params);
+	}
+	
 }

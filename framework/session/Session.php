@@ -3,35 +3,39 @@ class Session
 {
 	function start()
 	{
-		global $SessionEngine;
-		$SessionEngine->start();
+		SessionModule::getEngine()->start();
 	}
 	
 	function get($key = '__default__')
 	{
-		global $SessionEngine;
-		return $SessionEngine->get($key);
+		SessionModule::getEngine()->get($key);
 	}
 	
 	function getWithLock($key = '__default__')
 	{
-		global $SessionEngine;
-		return $SessionEngine->getWithLock($key);
+		SessionModule::getEngine()->getWithLock($key);
 	}
 	
 	function set($value, $key = '__default__')
 	{
-		global $SessionEngine;
-		$SessionEngine->set($value, $key);
+		SessionModule::getEngine()->set($value, $key);
 	}
 	
 	function saveChangesUnsafe()
 	{
-		global $SessionEngine;
-		$SessionEngine->saveChangesUnsafe();
+		SessionModule::getEngine()->saveChangesUnsafe();
 	}
 	
-}
+	public function destroy()
+	{
+		// Unset all of the session variables.
+		$_SESSION = array();
 
-global $SessionEngine;
-$SessionEngine = SessionFactory('pgsql');
+		// delete the session cookie
+		if (isset($_COOKIE[session_name()]))
+		    setcookie(session_name(), '', time()-42000, '/');
+
+		// Finally, destroy the session.
+		session_destroy();		
+	}
+}

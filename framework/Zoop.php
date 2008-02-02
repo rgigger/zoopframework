@@ -57,9 +57,7 @@ class Zoop
 			return;
 		}
 		
-		// print_r($name. '<br>');
-		
-		//	temporary meausre so I can test without having to convert all of the modules over to the new format right away
+		//	temporary measure so I can test without having to convert all of the modules over to the new format right away
 		if(file_exists(zoop_dir . "/$name/module.php"))
 			include(zoop_dir . "/$name/module.php");
 		else

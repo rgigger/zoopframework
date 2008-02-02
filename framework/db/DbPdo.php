@@ -4,7 +4,7 @@ class DbPdo extends DbConnection
 	function DbPdo($params)
 	{
 		if($params['file'][0] != '/')
-			$params['file'] = app_dir . '/' . $params['file'];
+			$params['file'] = app_dir . '/var/' . $params['file'];
 		
 		$this->conn = new PDO('sqlite:' . $params['file']);
 		// try {
@@ -24,19 +24,9 @@ class DbPdo extends DbConnection
 	
 	function _query($sql)
 	{
-//		echo $sql . '<br>';
-		$result = $this->conn->query($sql);		
-//		var_dump($result);
-		
-		$code = (int)$this->conn->errorCode();
-		if($code)
-		{
-			$info = $this->conn->errorInfo();
-//			echo_r($info);
-			trigger_error($info[2]);
-		}
-		
-		
+		// echo $sql . '<br>';
+		$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+		$result = $this->conn->query($sql);			
 		return new DbPdoResult($result);
 	}
 	

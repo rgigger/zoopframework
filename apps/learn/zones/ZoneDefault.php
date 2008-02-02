@@ -32,29 +32,7 @@ class ZoneDefault extends GuiZone
 	
 	function pageGenerateWordLetters()
 	{
-		$words = SqlFetchRows("select * from word", array());
-		SqlEchoOn();
-		foreach($words as $thisWord)
-		{
-			$letters = array();
-			// echo $thisWord['word'] . '<br>';
-			for($i = 0; $i < $thisWord['len']; $i++)
-			{
-				if(isset($letters[$thisWord['word'][$i]]))
-					$letters[$thisWord['word'][$i]]++;
-				else
-					$letters[$thisWord['word'][$i]] = 1;
-			}
-			// echo_r($thisWord);
-			// echo_r($letters, 1);
-			
-			foreach($letters as $letter => $count)
-			{
-				$sql = "insert into word_letter (word_id, letter, count) values (:wordId, :letter, :count)";
-				SqlInsertRow($sql, array('wordId' => $thisWord['id'], 'letter' => $letter, 'count' => $count));
-			}
-		}
-		// echo_r($words);
+		Learn::regenerateAllWordLetters();
 	}
 	
 	function pageGetSuggestions($p, $z)
@@ -151,49 +129,68 @@ class ZoneDefault extends GuiZone
 	
 	function pageBoard($p, $z)
 	{
-		$gid = $p[1];
-		$pid = $p[2];
-		$password = $p[3];
+		// $gid = $p[1];
+		// $pid = $p[2];
+		// $password = $p[3];
 		
-		$numerator = rand(1, 50);
-		$denominator = rand(51, 100);
-		$rnd = $numerator/$denominator;
+		// $numerator = rand(1, 50);
+		// $denominator = rand(51, 100);
+		// $rnd = $numerator/$denominator;
 		
-		$url = "this no longer works";
-		$gameInfo = simplexml_load_file($url);
+		// $url = "this no longer works";
+		// $gameInfo = simplexml_load_file($url);
 		
 		
-		$url = "this no longer works";
-		$boardInfo = simplexml_load_file($url);
+		// $url = "this no longer works";
+		// $boardInfo = simplexml_load_file($url);
 		// echo_r($boardInfo);
-		$rack = (string)$gameInfo->info->myrack[0];
+		// $rack = (string)$gameInfo->info->myrack[0];
 		
-		$board = new Board();
+		$boards = DbObject::_find('Board', array('name' => 'default'));
+		$board = $boards[1];
 		
-		foreach($boardInfo->t as $thisTile)
-		{
-			$board->setCellLetter($thisTile->r + 1, $thisTile->c + 1, $thisTile->t);
-		}
+		$board->loadCells();
 		
-		$sets = $board->getSets();
+		// foreach($boardInfo->t as $thisTile)
+		// {
+		// 	$board->setCellLetter($thisTile->r + 1, $thisTile->c + 1, $thisTile->t);
+		// }
+		
+		// $sets = $board->getSets();
 		// echo_r($sets);
+		// 
+		// foreach($sets as $direction => $rowcols)
+		// {
+		// 	foreach($rowcols as $thisRowcol)
+		// 	{
+		// 		foreach($thisRowcol as $thisWord)
+		// 		{
+		// 			echo "<br><br><strong>test = $thisWord</strong><br>";
+		// 			$matches = $this->getMatches($rack, $thisWord);
+		// 			
+		// 			foreach($matches as $thisMatch)
+		// 			{
+		// 				echo $thisMatch . '<br>';
+		// 			}
+		// 		}
+		// 	}
+		// }
 		
-		foreach($sets as $direction => $rowcols)
-		{
-			foreach($rowcols as $thisRowcol)
-			{
-				foreach($thisRowcol as $thisWord)
-				{
-					echo "<br><br><strong>test = $thisWord</strong><br>";
-					$matches = $this->getMatches($rack, $thisWord);
-					
-					foreach($matches as $thisMatch)
-					{
-						echo $thisMatch . '<br>';
-					}
-				}
-			}
-		}
+		$board->draw();
+		$board->getWords();
+	}
+	
+	public function postBoard()
+	{
+		$boards = DbObject::_find('Board', array('name' => 'default'));
+		$board = $boards[1];
+		$board->saveCells($_POST['cell']);
+		Redirect(virtual_url);
+	}
+	
+	public function pageClear()
+	{
+		SqlDeleteRows("delete from board_cell", array());
 	}
 	
 	function getMatches($tray, $test)

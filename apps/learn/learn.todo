@@ -4,14 +4,17 @@
 	-	search online for other wordlists
 	-	if they are huge then check them against the website, then add them to a legit list somewhere for later importing
 -	interface and AI
-	-	create a page where you paste the url for your game
-	-	create a post function to take the url, parse it, and redirect you to your board
+	\	create a page where you paste the url for your game
+	\	create a post function to take the url, parse it, and redirect you to your board
 	+	model board
-	-	render board
-	-	import board information
-		-	add all words played in that game to the database
-		+	populate the board
-		+	poulate your rack
+	-	render board as a from
+	-	post function to update the board from the form
+	-	database
+		-	save the board to the db
+		-	load the board from the database
+	\	import board information
+		\	populate the board
+		\	poulate your rack
 	-	loop through each row and column on the board
 		-	do a query for each word and combination of words for that row or column
 			+	words

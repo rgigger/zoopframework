@@ -5,6 +5,8 @@ class DbModule extends ZoopModule
 	
 	function getConnection($name)
 	{
+		if(!isset(self::$connections[$name]))
+			trigger_error("connection '$name' does not exist");
 		return self::$connections[$name];
 	}
 	
@@ -27,9 +29,12 @@ class DbModule extends ZoopModule
 	function configure()
 	{
 		$connections = $this->getConfig();
-		foreach($connections as $name => $params)
+		if($connections)
 		{
-			self::$connections[$name] = DbFactory::getConnection($params, $name);
+			foreach($connections as $name => $params)
+			{
+				self::$connections[$name] = DbFactory::getConnection($params, $name);
+			}
 		}
 	}	
 }

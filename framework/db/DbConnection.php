@@ -340,18 +340,25 @@ abstract class DbConnection
 	
 	function upsertRow($tableName, $conditions, $values)
 	{
+		// echo_r($conditions);
+		// echo_r($values);
 		//	generate the update query info
 		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
-		
+		// echo_r($updateInfo);
 		//	update the row if it's there
 		$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
+		// var_dump($num);
 		if(!$num)
 		{
 			//	generate the insert query info
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
+			// echo_r($insertInfo);
 			
 			//	if it wasn't there insert it
 			$num = $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
+			// echo_r($this->fetchRows("select * from session_base", array()));
+			// var_dump($num);
+			// die('here');
 			if(!$num)
 			{
 				//	race condition

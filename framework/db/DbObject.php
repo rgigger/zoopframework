@@ -306,7 +306,7 @@ class DbObject implements Iterator
 					$parts = array();
 					foreach($conditions as $fieldname => $value)
 					{
-						$parts[] = "$fieldname = $value";
+						$parts[] = "$fieldname = '$value'";
 					}
 					$sql .= implode(' and ', $parts);
 				}

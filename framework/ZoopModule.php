@@ -2,9 +2,13 @@
 abstract class ZoopModule
 {
 	private $name;
+	protected $hasConfig = false;
 	
 	final function __construct()
 	{
+		//	second stage (module specific) construction
+		$this->init();
+		
 		//	get the module name
 		$this->name = $this->createName();
 		
@@ -23,9 +27,15 @@ abstract class ZoopModule
 			foreach($this->getClasses() as $thisClass)
 				Zoop::registerClass($thisClass, zoop_dir . '/' . $this->name . '/' . $thisClass . '.php');
 		
+		if($this->hasConfig)
+			$this->loadConfig();
+		
 		//	handle configuration
 		$this->configure();		
 	}
+	
+	protected function init() {}
+	protected function configure() {}
 	
 	function createName()
 	{
@@ -37,12 +47,19 @@ abstract class ZoopModule
 		return $this->name;
 	}
 	
-	function getConfig($path = '')
+	private function loadConfig()
 	{
-		return Config::get('zoop.' . $this->getConfigPath() . $path);
+		Config::suggest(zoop_dir . '/' . $this->name . '/' . 'config.yaml', 'zoop.' . $this->getConfigPath());
 	}
 	
-	function getIncludes()
+	function getConfig($path = '')
+	{
+		$config = Config::get('zoop.' . $this->getConfigPath() . $path);
+		// echo_r($config);
+		return $config;
+	}
+	
+	protected function getIncludes()
 	{
 		return false;
 	}

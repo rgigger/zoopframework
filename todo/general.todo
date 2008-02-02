@@ -1,7 +1,20 @@
 -	first priorities
 	-	get rid of the homestar runner pic
 	-	use exceptions to help people get set up, don't automatically run schema changes
-	-	god solution for form validation
+	-	good solution for form validation
+		-	check fields on the client
+		-	check fields on the server that can't be checked on the client and return results
+		-	check fields on the server to see if they've been tampered with and throw and error if there's a problem
+		-	hilight fields that need to be fixed and give reasons
+		-	assign field names like _autosave[$classname][$id][$fieldname]
+		-	store the allowed autosave info in the session under a random token name
+		-	store the token in the form
+		-	create a Form::autosave function to be called on post
+			-	foreach _autosave field
+				-	verfify that it's an authorized field
+				-	create the object if necessary
+				-	save the field to the object
+			-	save object that you created
 	-	set up config.yaml in all stationary
 	-	include examples in stationary and tutorials explaining the following
 		-	check out from code.google.com

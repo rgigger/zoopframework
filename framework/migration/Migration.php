@@ -39,7 +39,7 @@ class Migration
 		foreach($filenames as $thisFilename)
 		{
 			$parts = explode('_', $thisFilename);
-			$thisVersion = $parts[0];
+			$thisVersion = str_replace('.', '_', $parts[0]);
 			if($version == $thisVersion)
 				return $thisFilename;
 		}
