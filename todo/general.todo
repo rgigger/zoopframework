@@ -1,5 +1,5 @@
 -	first priorities
-	-	get rid of the homestar runner pic
+	-	get rid of the homestar runner pic in the stationary
 	-	use exceptions to help people get set up, don't automatically run schema changes
 	-	good solution for form validation
 		-	check fields on the client

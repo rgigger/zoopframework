@@ -5,6 +5,7 @@ class DbObject implements Iterator
 	
 	private $scalars;
 	private $hasMany;
+	private $belongsTo;
 	private $autoSave;
 	private $bound;
 	
@@ -64,6 +65,12 @@ class DbObject implements Iterator
 		
 		$this->hasMany = array();
 		$this->autoSave = true;
+		$this->init();
+	}
+
+	protected function init()
+	{
+		//	override this function to setup relationships without having to handle the constructor chaining
 	}
 	
 	function setId($id)
@@ -231,13 +238,34 @@ class DbObject implements Iterator
 		return $objects;
 	}
 	
+	function belongsTo($name, $params = NULL)
+	{
+		//	determine the name of the class we belong to
+		$className = isset($params['class']) ? $params['class'] : $name;
+		
+		$tableName = DbObject::_getTableName($className);
+		
+		//	get the name of the foreign key in this table
+		$localKey = isset($params['key']) ? $params['key'] : $tableName . '_id';
+		
+		$this->belongsTo[$name] = array('className' => $className, 'localKey' => $localKey);
+	}
+	
+	function getOwner($name)
+	{
+		$className = $this->belongsTo[$name]['className'];
+		$localKey = $this->belongsTo[$name]['localKey'];
+		$tableName = DbObject::_getTableName($className);
+		return new $className($this->getScalar($localKey));
+	}
+	
 	function __get($varname)
 	{
-//		if(isset($this->$value))
-//			return $this->$value;
-		
 		if(isset($this->hasMany[$varname]))
 			return $this->getMany($varname);
+		
+		if(isset($this->belongsTo[$varname]))
+			return $this->getOwner($varname);
 		
 		return $this->getScalar($varname);
 	}
@@ -281,6 +309,7 @@ class DbObject implements Iterator
 	static function _getTableName($className)
 	{
 		//	work around lack of "late static binding"
+		// EchoBacktrace();
 		$dummy = new $className(0);
 		return $dummy->getTableName();
 	}
