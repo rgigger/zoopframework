@@ -47,16 +47,14 @@ class DbObject implements Iterator
 					trigger_error('not yet implemented');
 				}
 				break;
-			case 'NULL':
+			case 'NULL':				
 				//	we just need to create a new blank object, bound to a new row in the database
-				if($defaults)
-				{
-					$tableName = $this->getTableName();
-					if(!$defaults)
-						$this->setId(SqlInsertRow("insert into $tableName default values", array()));
-					else
-						$this->createRow($defaults);
-				}
+				$tableName = $this->getTableName();
+				if(!$defaults)
+					$this->setId(SqlInsertRow("insert into $tableName default values", array()));
+				else
+					$this->createRow($defaults);
+				
 				break;
 			default:
 				trigger_error('object not initialized');
@@ -93,7 +91,13 @@ class DbObject implements Iterator
 	
 	function getTableName()
 	{
-		return strtolower(get_class($this));
+		$name = get_class($this);
+
+		//      if there are any capitals after the firstone insert and underscore
+		$name = $name[0] . preg_replace('/[A-Z]/', '_$0', substr($name, 1));
+
+		//      lowercase everything and return it
+		return strtolower($name);		
 	}
 	
 	function getIdFieldName()

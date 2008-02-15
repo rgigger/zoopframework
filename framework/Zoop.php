@@ -32,11 +32,15 @@ class Zoop
 		return false;
 	}
 	
-	//	static - singleton
-	function registerClass($className, $fullPath)
+	static function registerClass($className, $fullPath)
 	{
 		global $zoop;
 		$zoop->_registerClass($className, $fullPath);
+	}
+	
+	static public function registerDomain($className)
+	{
+		self::registerClass($className, app_dir . '/domain/' . $className . '.php');
 	}
 	
 	//	static - singleton
