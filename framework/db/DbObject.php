@@ -310,6 +310,13 @@ class DbObject implements Iterator
 		return $var;
 	}
 	
+	static public function _create($className, $values)
+	{
+		$tableName = DbObject::_getTableName($className);
+		SqlInsertRowValues($tableName, $values);
+		$object = new $className($values);
+	}
+	
 	static function _getTableName($className)
 	{
 		//	work around lack of "late static binding"

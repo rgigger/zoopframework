@@ -79,6 +79,11 @@ function SqlInsertRow($sql, $params)
 	return DbModule::getDefaultConnection()->insertRow($sql, $params);
 }
 
+function SqlInsertRowValues($tableName, $values)
+{
+	return DbModule::getDefaultConnection()->insertRowValues($tableName, $values);
+}
+
 function SqlUpdateRow($sql, $params)
 {
 	return DbModule::getDefaultConnection()->updateRow($sql, $params);
