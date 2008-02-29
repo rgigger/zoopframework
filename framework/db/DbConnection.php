@@ -301,6 +301,13 @@ abstract class DbConnection
 		return $affected;
 	}
 	
+	public function modifyRowValues($tableName, $values)
+	{
+		//	generate the insert query info
+		$insertInfo = self::generateInsertInfo($tableName, $values);
+		return $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
+	}
+	
 	function insertArray($tableName, $values)
 	{
 		$info = DbConnection::generateInsertInfo($tableName, $fieldInfo);

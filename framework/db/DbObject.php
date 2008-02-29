@@ -314,7 +314,7 @@ class DbObject implements Iterator
 	static public function _create($className, $values)
 	{
 		$tableName = DbObject::_getTableName($className);
-		SqlInsertRowValues($tableName, $values);
+		SqlModifyRowValues($tableName, $values);
 		$object = new $className($values);
 		return $object;
 	}
