@@ -47,7 +47,7 @@ class DbObject implements Iterator
 					trigger_error('not yet implemented');
 				}
 				break;
-			case 'NULL':				
+			case 'NULL':
 				//	we just need to create a new blank object, bound to a new row in the database
 				$tableName = $this->getTableName();
 				if(!$defaults)
@@ -164,8 +164,9 @@ class DbObject implements Iterator
 					}
 				}
 				$updateFields = implode(", ", $updateFields);
-
-				SqlUpdateRow("update $tableName set $updateFields where $idFieldName = $this->id", $updateValues);
+				
+				$updateValues['id'] = $this->id;
+				SqlUpdateRow("update $tableName set $updateFields where $idFieldName = :id", $updateValues);
 			}
 			else
 			{

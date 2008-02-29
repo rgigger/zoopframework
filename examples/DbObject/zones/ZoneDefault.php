@@ -13,8 +13,13 @@ class ZoneDefault extends GuiZone
 		$ps->lastname = 'Person';
 		echo_r($ps);
 		
-		$values = array('id' => md5('disco'), 'firstname' => 'Unique', 'lastname' => 'Person');
+		$values = array('id' => md5(time()), 'firstname' => 'Unique', 'lastname' => 'Person');
 		$gp = DbObject::_create('GuidPerson', $values);
+		echo_r($gp);
+		
+		$gp->firstname = 'changed';
+		$gp->save();
+		
 		echo_r($gp);
 	}	
 }
