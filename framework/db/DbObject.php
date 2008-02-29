@@ -375,5 +375,26 @@ class DbObject implements Iterator
 				trigger_error('unhandled conditions type');
 				break;
 		}
-	}	
+	}
+	
+	
+	/**
+	 * Retrieve one object from the database
+	 * @param string $className The name of the class corresponding to the table in the database 
+	 * @param array $conditions Key value pair for the fields you want to look up
+	 * @return DbObject
+	 */	
+	static function _findOne($className, $conditions = NULL)
+	{
+		echo_r($conditions);
+		$a = DbObject::_find($className, $conditions);
+		echo_r($a);
+		if(!$a)
+			return false;
+		
+		assert(is_array($a));
+		assert(count($a) == 1);
+		
+		return current($a);
+	}
 }

@@ -26,6 +26,7 @@ class DbPdo extends DbConnection
 	{
 		// echo $sql . '<br>';
 		$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+		$this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_NAMED);
 		$result = $this->conn->query($sql);			
 		return new DbPdoResult($result);
 	}
