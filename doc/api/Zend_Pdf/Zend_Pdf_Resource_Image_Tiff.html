@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Resource_Image_Tiff</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Resource_Image_Tiff</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">TIFF image</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Resource---Image---Tiff.php.html">/zend/Pdf/Resource/Image/Tiff.php</a> (line <span class="field">41</span>)
+		</p>
+		
+				
+		<pre><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a>
+   |
+   --<a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a>
+      |
+      --Zend_Pdf_Resource_Image_Tiff</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_CCITT1D" title="details" class="const-name">TIFF_COMPRESSION_CCITT1D</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_FLATE" title="details" class="const-name">TIFF_COMPRESSION_FLATE</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_FLATE_OBSOLETE_CODE" title="details" class="const-name">TIFF_COMPRESSION_FLATE_OBSOLETE_CODE</a> = 					<span class="var-type"> 32946</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_GROUP_3_FAX" title="details" class="const-name">TIFF_COMPRESSION_GROUP_3_FAX</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_GROUP_4_FAX" title="details" class="const-name">TIFF_COMPRESSION_GROUP_4_FAX</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_JPEG" title="details" class="const-name">TIFF_COMPRESSION_JPEG</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_LZW" title="details" class="const-name">TIFF_COMPRESSION_LZW</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_PACKBITS" title="details" class="const-name">TIFF_COMPRESSION_PACKBITS</a> = 					<span class="var-type"> 32773</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_COMPRESSION_UNCOMPRESSED" title="details" class="const-name">TIFF_COMPRESSION_UNCOMPRESSED</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_ENDIAN_BIG" title="details" class="const-name">TIFF_ENDIAN_BIG</a> = 					<span class="var-type">0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_ENDIAN_LITTLE" title="details" class="const-name">TIFF_ENDIAN_LITTLE</a> = 					<span class="var-type">1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_FIELD_TYPE_ASCII" title="details" class="const-name">TIFF_FIELD_TYPE_ASCII</a> = 					<span class="var-type">2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_FIELD_TYPE_BYTE" title="details" class="const-name">TIFF_FIELD_TYPE_BYTE</a> = 					<span class="var-type">1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_FIELD_TYPE_LONG" title="details" class="const-name">TIFF_FIELD_TYPE_LONG</a> = 					<span class="var-type">4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_FIELD_TYPE_RATIONAL" title="details" class="const-name">TIFF_FIELD_TYPE_RATIONAL</a> = 					<span class="var-type">5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_FIELD_TYPE_SHORT" title="details" class="const-name">TIFF_FIELD_TYPE_SHORT</a> = 					<span class="var-type">3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO</a> = 					<span class="var-type">1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB</a> = 					<span class="var-type">8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_CMYK" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_CMYK</a> = 					<span class="var-type">5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_RGB" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_RGB</a> = 					<span class="var-type">2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED</a> = 					<span class="var-type">3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO</a> = 					<span class="var-type">0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR" title="details" class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR</a> = 					<span class="var-type">6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_BITS_PER_SAMPLE" title="details" class="const-name">TIFF_TAG_BITS_PER_SAMPLE</a> = 					<span class="var-type">258</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_COMPRESSION" title="details" class="const-name">TIFF_TAG_COMPRESSION</a> = 					<span class="var-type">259</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_IMAGE_LENGTH" title="details" class="const-name">TIFF_TAG_IMAGE_LENGTH</a> = 					<span class="var-type">257</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_IMAGE_WIDTH" title="details" class="const-name">TIFF_TAG_IMAGE_WIDTH</a> = 					<span class="var-type">256</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_PHOTOMETRIC_INTERPRETATION" title="details" class="const-name">TIFF_TAG_PHOTOMETRIC_INTERPRETATION</a> = 					<span class="var-type">262</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_SAMPLES_PER_PIXEL" title="details" class="const-name">TIFF_TAG_SAMPLES_PER_PIXEL</a> = 					<span class="var-type">277</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_STRIP_BYTE_COUNTS" title="details" class="const-name">TIFF_TAG_STRIP_BYTE_COUNTS</a> = 					<span class="var-type">279</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TIFF_TAG_STRIP_OFFSETS" title="details" class="const-name">TIFF_TAG_STRIP_OFFSETS</a> = 					<span class="var-type">273</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#UNPACK_TYPE_BYTE" title="details" class="const-name">UNPACK_TYPE_BYTE</a> = 					<span class="var-type">0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#UNPACK_TYPE_LONG" title="details" class="const-name">UNPACK_TYPE_LONG</a> = 					<span class="var-type">2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#UNPACK_TYPE_RATIONAL" title="details" class="const-name">UNPACK_TYPE_RATIONAL</a> = 					<span class="var-type">3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#UNPACK_TYPE_SHORT" title="details" class="const-name">UNPACK_TYPE_SHORT</a> = 					<span class="var-type">1</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_bitsPerSample" title="details" class="var-name">$_bitsPerSample</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_blackIsZero" title="details" class="var-name">$_blackIsZero</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_colorCode" title="details" class="var-name">$_colorCode</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_colorSpace" title="details" class="var-name">$_colorSpace</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_compression" title="details" class="var-name">$_compression</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_endianType" title="details" class="var-name">$_endianType</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_fileSize" title="details" class="var-name">$_fileSize</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_filter" title="details" class="var-name">$_filter</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_height" title="details" class="var-name">$_height</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_imageDataLength" title="details" class="var-name">$_imageDataLength</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_imageDataOffset" title="details" class="var-name">$_imageDataOffset</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_imageProperties" title="details" class="var-name">$_imageProperties</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_whiteIsZero" title="details" class="var-name">$_whiteIsZero</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_width" title="details" class="var-name">$_width</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPixelHeight" title="details" class="method-name">getPixelHeight</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPixelWidth" title="details" class="method-name">getPixelWidth</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getProperties" title="details" class="method-name">getProperties</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">Zend_Pdf_Resource_Image_Tiff</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$imageFileName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#unpackBytes" title="details" class="method-name">unpackBytes</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$bytes</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_bitsPerSample" id="$_bitsPerSample"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_bitsPerSample</span>
+						(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_blackIsZero" id="$_blackIsZero"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_blackIsZero</span>
+						(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_colorCode" id="$_colorCode"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_colorCode</span>
+						(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_colorSpace" id="$_colorSpace"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_colorSpace</span>
+						(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_compression" id="$_compression"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_compression</span>
+						(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_endianType" id="$_endianType"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_endianType</span>
+						(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_fileSize" id="$_fileSize"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_fileSize</span>
+						(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_filter" id="$_filter"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_filter</span>
+						(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_height" id="$_height"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_height</span>
+						(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_imageDataLength" id="$_imageDataLength"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_imageDataLength</span>
+						(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_imageDataOffset" id="$_imageDataOffset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_imageDataOffset</span>
+						(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_imageProperties" id="$_imageProperties"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_imageProperties</span>
+						(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_whiteIsZero" id="$_whiteIsZero"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_whiteIsZero</span>
+						(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_width" id="$_width"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_width</span>
+						(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#var$_objectFactory">Zend_Pdf_Resource::$_objectFactory</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#var$_resource">Zend_Pdf_Resource::$_resource</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodgetPixelHeight" id="getPixelHeight"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPixelHeight</span> (line <span class="line-number">420</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image height (defined in Zend_Pdf_Resource_Image_Interface)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPixelHeight
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelHeight">Zend_Pdf_Resource_Image::getPixelHeight()</a></dt>
+						<dd>get the height in pixels of the image</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPixelWidth" id="getPixelWidth"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPixelWidth</span> (line <span class="line-number">413</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image width (defined in Zend_Pdf_Resource_Image_Interface)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPixelWidth
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelWidth">Zend_Pdf_Resource_Image::getPixelWidth()</a></dt>
+						<dd>get the width in pixels of the image</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetProperties" id="getProperties"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getProperties</span> (line <span class="line-number">427</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image properties (defined in Zend_Pdf_Resource_Image_Interface)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getProperties
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetProperties">Zend_Pdf_Resource_Image::getProperties()</a></dt>
+						<dd>gets an associative array of information about an image</dd>
+					</dl>
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">142</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_Resource_Image_Tiff</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$imageFileName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$imageFileName</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#method__construct">Zend_Pdf_Resource_Image::__construct()</a></dt>
+						<dd>Object constructor.</dd>
+					</dl>
+			
+	</div>
+<a name="methodunpackBytes" id="unpackBytes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">unpackBytes</span> (line <span class="line-number">108</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Byte unpacking function</p>
+<p class="description"><p>Makes it possible to unpack bytes in one statement for enhanced logic readability.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			unpackBytes
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$bytes</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$type</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$bytes</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#method__construct">Zend_Pdf_Resource_Image::__construct()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelHeight">Zend_Pdf_Resource_Image::getPixelHeight()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelWidth">Zend_Pdf_Resource_Image::getPixelWidth()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetProperties">Zend_Pdf_Resource_Image::getProperties()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#method__construct">Zend_Pdf_Resource::__construct()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#methodgetFactory">Zend_Pdf_Resource::getFactory()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#methodgetResource">Zend_Pdf_Resource::getResource()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constTIFF_COMPRESSION_CCITT1D" id="TIFF_COMPRESSION_CCITT1D"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_CCITT1D</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_FLATE" id="TIFF_COMPRESSION_FLATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_FLATE</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_FLATE_OBSOLETE_CODE" id="TIFF_COMPRESSION_FLATE_OBSOLETE_CODE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_FLATE_OBSOLETE_CODE</span>
+			 = <span class="const-default"> 32946</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_GROUP_3_FAX" id="TIFF_COMPRESSION_GROUP_3_FAX"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_GROUP_3_FAX</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_GROUP_4_FAX" id="TIFF_COMPRESSION_GROUP_4_FAX"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_GROUP_4_FAX</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_JPEG" id="TIFF_COMPRESSION_JPEG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_JPEG</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_LZW" id="TIFF_COMPRESSION_LZW"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_LZW</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_PACKBITS" id="TIFF_COMPRESSION_PACKBITS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_PACKBITS</span>
+			 = <span class="const-default"> 32773</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_COMPRESSION_UNCOMPRESSED" id="TIFF_COMPRESSION_UNCOMPRESSED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_COMPRESSION_UNCOMPRESSED</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_ENDIAN_BIG" id="TIFF_ENDIAN_BIG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_ENDIAN_BIG</span>
+			 = <span class="const-default">0</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_ENDIAN_LITTLE" id="TIFF_ENDIAN_LITTLE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_ENDIAN_LITTLE</span>
+			 = <span class="const-default">1</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_FIELD_TYPE_ASCII" id="TIFF_FIELD_TYPE_ASCII"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_FIELD_TYPE_ASCII</span>
+			 = <span class="const-default">2</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_FIELD_TYPE_BYTE" id="TIFF_FIELD_TYPE_BYTE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_FIELD_TYPE_BYTE</span>
+			 = <span class="const-default">1</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_FIELD_TYPE_LONG" id="TIFF_FIELD_TYPE_LONG"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_FIELD_TYPE_LONG</span>
+			 = <span class="const-default">4</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_FIELD_TYPE_RATIONAL" id="TIFF_FIELD_TYPE_RATIONAL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_FIELD_TYPE_RATIONAL</span>
+			 = <span class="const-default">5</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_FIELD_TYPE_SHORT" id="TIFF_FIELD_TYPE_SHORT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_FIELD_TYPE_SHORT</span>
+			 = <span class="const-default">3</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO" id="TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO</span>
+			 = <span class="const-default">1</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_CIELAB" id="TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB</span>
+			 = <span class="const-default">8</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_CMYK" id="TIFF_PHOTOMETRIC_INTERPRETATION_CMYK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_CMYK</span>
+			 = <span class="const-default">5</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_RGB" id="TIFF_PHOTOMETRIC_INTERPRETATION_RGB"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_RGB</span>
+			 = <span class="const-default">2</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED" id="TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED</span>
+			 = <span class="const-default">3</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO" id="TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO</span>
+			 = <span class="const-default">0</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_PHOTOMETRIC_INTERPRETATION_YCBCR" id="TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR</span>
+			 = <span class="const-default">6</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_BITS_PER_SAMPLE" id="TIFF_TAG_BITS_PER_SAMPLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_BITS_PER_SAMPLE</span>
+			 = <span class="const-default">258</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_COMPRESSION" id="TIFF_TAG_COMPRESSION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_COMPRESSION</span>
+			 = <span class="const-default">259</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_IMAGE_LENGTH" id="TIFF_TAG_IMAGE_LENGTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_IMAGE_LENGTH</span>
+			 = <span class="const-default">257</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_IMAGE_WIDTH" id="TIFF_TAG_IMAGE_WIDTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_IMAGE_WIDTH</span>
+			 = <span class="const-default">256</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_PHOTOMETRIC_INTERPRETATION" id="TIFF_TAG_PHOTOMETRIC_INTERPRETATION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_PHOTOMETRIC_INTERPRETATION</span>
+			 = <span class="const-default">262</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_SAMPLES_PER_PIXEL" id="TIFF_TAG_SAMPLES_PER_PIXEL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_SAMPLES_PER_PIXEL</span>
+			 = <span class="const-default">277</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_STRIP_BYTE_COUNTS" id="TIFF_TAG_STRIP_BYTE_COUNTS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_STRIP_BYTE_COUNTS</span>
+			 = <span class="const-default">279</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTIFF_TAG_STRIP_OFFSETS" id="TIFF_TAG_STRIP_OFFSETS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TIFF_TAG_STRIP_OFFSETS</span>
+			 = <span class="const-default">273</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constUNPACK_TYPE_BYTE" id="UNPACK_TYPE_BYTE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UNPACK_TYPE_BYTE</span>
+			 = <span class="const-default">0</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constUNPACK_TYPE_LONG" id="UNPACK_TYPE_LONG"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UNPACK_TYPE_LONG</span>
+			 = <span class="const-default">2</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constUNPACK_TYPE_RATIONAL" id="UNPACK_TYPE_RATIONAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UNPACK_TYPE_RATIONAL</span>
+			 = <span class="const-default">3</span>
+			(line <span class="line-number">97</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constUNPACK_TYPE_SHORT" id="UNPACK_TYPE_SHORT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UNPACK_TYPE_SHORT</span>
+			 = <span class="const-default">1</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:29 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

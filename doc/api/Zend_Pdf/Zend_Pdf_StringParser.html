@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_StringParser</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_StringParser</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PDF string parser</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---StringParser.php.html">/zend/Pdf/StringParser.php</a> (line <span class="field">77</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$data" title="details" class="var-name">$data</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$offset" title="details" class="var-name">$offset</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																				<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#isDelimiter" title="details" class="method-name">isDelimiter</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$chCode</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#isWhiteSpace" title="details" class="method-name">isWhiteSpace</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$chCode</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#parseIntFromStream" title="details" class="method-name">parseIntFromStream</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$stream</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$size</span>)
+									</div>
+																																																								
+												<div class="method-definition">
+											<span class="method-result">Zend_Pdf_StringParser</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$source</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>&nbsp;<span class="var-name">$factory</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$pdfString</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#cleanUp" title="details" class="method-name">cleanUp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getLength" title="details" class="method-name">getLength</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Object.html">Zend_Pdf_Element_Object</a></span>
+										<a href="#getObject" title="details" class="method-name">getObject</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getString" title="details" class="method-name">getString</a>
+										()
+									</div>
+																																								<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#readComment" title="details" class="method-name">readComment</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element.html">Zend_Pdf_Element</a></span>
+										<a href="#readElement" title="details" class="method-name">readElement</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$nextLexeme</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#readLexeme" title="details" class="method-name">readLexeme</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setContext" title="details" class="method-name">setContext</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#skipComment" title="details" class="method-name">skipComment</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#skipWhiteSpace" title="details" class="method-name">skipWhiteSpace</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skipComment</span> = <span class="var-default">true</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$data" id="$data"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$data</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Source PDF</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$offset" id="$offset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$offset</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Current position in a data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodisDelimiter" id="isDelimiter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method isDelimiter</span> (line <span class="line-number">155</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Character with code $chCode is a delimiter character</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isDelimiter
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$chCode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$chCode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisWhiteSpace" id="isWhiteSpace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method isWhiteSpace</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Character with code $chCode is white space</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isWhiteSpace
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$chCode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$chCode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseIntFromStream" id="parseIntFromStream"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method parseIntFromStream</span> (line <span class="line-number">672</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Parse integer value from a binary stream</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			parseIntFromStream
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$stream</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$stream</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$size</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">704</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor</p>
+<p class="description"><p>Note: PHP duplicates string, which is sent by value, only of it's updated.  Thus we don't need to care about overhead</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_StringParser</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$source</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>&nbsp;<span class="var-name">$factory</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$pdfString</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pdfString</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>
+				<span class="var-name">$factory</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$source</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcleanUp" id="cleanUp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">cleanUp</span> (line <span class="line-number">120</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clean up resources.</p>
+<p class="description"><p>Clear current state to remove cyclic object references</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			cleanUp
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLength" id="getLength"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLength</span> (line <span class="line-number">648</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get length of source string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getLength
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetObject" id="getObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getObject</span> (line <span class="line-number">532</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read inderect object from a PDF stream</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Object.html">Zend_Pdf_Element_Object</a></span>
+		<span class="method-name">
+			getObject
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>
+				<span class="var-name">$context</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetString" id="getString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getString</span> (line <span class="line-number">658</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get source string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreadComment" id="readComment"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readComment</span> (line <span class="line-number">217</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read comment line</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readComment
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreadElement" id="readElement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">readElement</span> (line <span class="line-number">284</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read elemental object from a PDF stream</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element.html">Zend_Pdf_Element</a></span>
+		<span class="method-name">
+			readElement
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$nextLexeme</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$nextLexeme</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreadLexeme" id="readLexeme"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">readLexeme</span> (line <span class="line-number">245</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns next lexeme from a pdf stream</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			readLexeme
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetContext" id="setContext"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setContext</span> (line <span class="line-number">690</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set current context</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setContext
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>
+				<span class="var-name">$context</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodskipComment" id="skipComment"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">skipComment</span> (line <span class="line-number">197</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Skip comment</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			skipComment
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodskipWhiteSpace" id="skipWhiteSpace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">skipWhiteSpace</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Skip white space</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			skipWhiteSpace
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skipComment</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$skipComment</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:28 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

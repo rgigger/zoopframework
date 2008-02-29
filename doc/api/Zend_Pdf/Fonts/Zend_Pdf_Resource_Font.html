@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Resource_Font</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Resource_Font</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Abstract class which manages PDF fonts.</p>
+<p class="description"><p>Defines the public interface and creates shared storage for concrete  subclasses which are responsible for generating the font's information  dictionaries, mapping characters to glyphs, and providing both overall font  and glyph-specific metric data.</p><p>Font objects should be normally be obtained from the factory methods  Zend_Pdf_Font::fontWithName and Zend_Pdf_Font::fontWithPath.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Resource---Font.php.html">/zend/Pdf/Resource/Font.php</a> (line <span class="field">47</span>)
+		</p>
+		
+				
+		<pre><a href="../../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a>
+   |
+   --Zend_Pdf_Resource_Font</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_OpenType.html">Zend_Pdf_Resource_Font_OpenType</a></td>
+					<td>
+											OpenType fonts implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard.html">Zend_Pdf_Resource_Font_Standard</a></td>
+					<td>
+											Abstract class definition for the standard 14 Type 1 PDF fonts.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																																<div class="var-title">
+					<span class="var-type"><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Cmap.html">Zend_Pdf_Cmap</a></span>
+					<a href="#$cmap" title="details" class="var-name">$cmap</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_ascent" title="details" class="var-name">$_ascent</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_descent" title="details" class="var-name">$_descent</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_fontNames" title="details" class="var-name">$_fontNames</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_fontType" title="details" class="var-name">$_fontType</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_glyphMaxIndex" title="details" class="var-name">$_glyphMaxIndex</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_glyphWidths" title="details" class="var-name">$_glyphWidths</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_isBold" title="details" class="var-name">$_isBold</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_isItalic" title="details" class="var-name">$_isItalic</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_isMonospace" title="details" class="var-name">$_isMonospace</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_lineGap" title="details" class="var-name">$_lineGap</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_strikePosition" title="details" class="var-name">$_strikePosition</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_strikeThickness" title="details" class="var-name">$_strikeThickness</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_underlinePosition" title="details" class="var-name">$_underlinePosition</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_underlineThickness" title="details" class="var-name">$_underlineThickness</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_unitsPerEm" title="details" class="var-name">$_unitsPerEm</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">Zend_Pdf_Resource_Font</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$embeddingOptions</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#decodeString" title="details" class="method-name">decodeString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encodeString" title="details" class="method-name">encodeString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getAscent" title="details" class="method-name">getAscent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">float</span>
+										<a href="#getCoveredPercentage" title="details" class="method-name">getCoveredPercentage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getDescent" title="details" class="method-name">getDescent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getFontName" title="details" class="method-name">getFontName</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$nameType</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$language</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$characterSet</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getFontType" title="details" class="method-name">getFontType</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getLineGap" title="details" class="method-name">getLineGap</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getLineHeight" title="details" class="method-name">getLineHeight</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getStrikePosition" title="details" class="method-name">getStrikePosition</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getStrikeThickness" title="details" class="method-name">getStrikeThickness</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getUnderlinePosition" title="details" class="method-name">getUnderlinePosition</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getUnderlineThickness" title="details" class="method-name">getUnderlineThickness</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getUnitsPerEm" title="details" class="method-name">getUnitsPerEm</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#widthForGlyph" title="details" class="method-name">widthForGlyph</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$glyphNumber</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#widthsForGlyphs" title="details" class="method-name">widthsForGlyphs</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">&$glyphNumbers</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_isEmbeddingOptionSet" title="details" class="method-name">_isEmbeddingOptionSet</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$embeddingOption</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#_toEmSpace" title="details" class="method-name">_toEmSpace</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$cmap" id="$cmap"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Cmap.html">Zend_Pdf_Cmap</a></span>
+			<span class="var-name">$cmap</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object representing the font's cmap (character to glyph map).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_ascent" id="$_ascent"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_ascent</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Typographical ascent. See getAscent().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_descent" id="$_descent"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_descent</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">128</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Typographical descent. See getDescent().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_fontNames" id="$_fontNames"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_fontNames</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array containing descriptive names for the font. See fontName().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_fontType" id="$_fontType"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_fontType</span>
+			 = <span class="var-default"> Zend_Pdf_Font::TYPE_UNKNOWN</span>			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The type of font. Use TYPE_ constants defined in <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html">Zend_Pdf_Font</a>.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_glyphMaxIndex" id="$_glyphMaxIndex"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_glyphMaxIndex</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">146</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The highest integer index in the glyph widths array.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_glyphWidths" id="$_glyphWidths"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_glyphWidths</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">140</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array containing the widths of each of the glyphs contained in the font.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_isBold" id="$_isBold"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_isBold</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Flag indicating whether or not this font is bold.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_isItalic" id="$_isItalic"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_isItalic</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Flag indicating whether or not this font is italic.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_isMonospace" id="$_isMonospace"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_isMonospace</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Flag indicating whether or not this font is monospaced.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_lineGap" id="$_lineGap"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_lineGap</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">134</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Typographical line gap. See getLineGap().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_strikePosition" id="$_strikePosition"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_strikePosition</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The position above the text baseline of the strikethrough (in glyph units).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_strikeThickness" id="$_strikeThickness"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_strikeThickness</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The thickness of the strikethrough (in glyph units).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_underlinePosition" id="$_underlinePosition"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_underlinePosition</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The position below the text baseline of the underline (in glyph units).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_underlineThickness" id="$_underlineThickness"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_underlineThickness</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The thickness of the underline (in glyph units).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_unitsPerEm" id="$_unitsPerEm"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_unitsPerEm</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Number of glyph units per em. See getUnitsPerEm().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#var$_objectFactory">Zend_Pdf_Resource::$_objectFactory</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#var$_resource">Zend_Pdf_Resource::$_resource</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">172</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor.</p>
+<p class="description"><p>The $embeddingOptions parameter allows you to set certain flags related  to font embedding. You may combine options by OR-ing them together. See  the EMBED_ constants defined in <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html">Zend_Pdf_Font</a> for the list of  available options and their descriptions.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_Resource_Font</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$embeddingOptions</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$embeddingOptions</span><span class="var-description">: (optional) Options for font embedding.    Only used for certain font types.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#method__construct">Zend_Pdf_Resource::__construct()</a></dt>
+						<dd>Object constructor.</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_OpenType.html#method__construct">Zend_Pdf_Resource_Font_OpenType::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_OpenType_TrueType.html#method__construct">Zend_Pdf_Resource_Font_OpenType_TrueType::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard.html#method__construct">Zend_Pdf_Resource_Font_Standard::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_Courier.html#method__construct">Zend_Pdf_Resource_Font_Standard_Courier::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_CourierBold.html#method__construct">Zend_Pdf_Resource_Font_Standard_CourierBold::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_CourierBoldOblique.html#method__construct">Zend_Pdf_Resource_Font_Standard_CourierBoldOblique::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_CourierOblique.html#method__construct">Zend_Pdf_Resource_Font_Standard_CourierOblique::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_Helvetica.html#method__construct">Zend_Pdf_Resource_Font_Standard_Helvetica::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_HelveticaBold.html#method__construct">Zend_Pdf_Resource_Font_Standard_HelveticaBold::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_HelveticaBoldOblique.html#method__construct">Zend_Pdf_Resource_Font_Standard_HelveticaBoldOblique::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_HelveticaOblique.html#method__construct">Zend_Pdf_Resource_Font_Standard_HelveticaOblique::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_Symbol.html#method__construct">Zend_Pdf_Resource_Font_Standard_Symbol::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_TimesBold.html#method__construct">Zend_Pdf_Resource_Font_Standard_TimesBold::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_TimesBoldItalic.html#method__construct">Zend_Pdf_Resource_Font_Standard_TimesBoldItalic::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_TimesItalic.html#method__construct">Zend_Pdf_Resource_Font_Standard_TimesItalic::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_TimesRoman.html#method__construct">Zend_Pdf_Resource_Font_Standard_TimesRoman::__construct()</a>
+								: Object constructor
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_ZapfDingbats.html#method__construct">Zend_Pdf_Resource_Font_Standard_ZapfDingbats::__construct()</a>
+								: Object constructor
+							</li>
+				</ul>
+	</div>
+<a name="methoddecodeString" id="decodeString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">decodeString</span> (line <span class="line-number">538</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert string from Windows ANSI encoding to local encoding.</p>
+<p class="description"><p>NOTE: This method may disappear in a future revision of the framework  once the font subsetting and Unicode support code is complete. At that  point, there may be multiple ways of encoding strings depending on  intended usage. You should treat this method as framework internal  use only.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			decodeString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charEncoding</span><span class="var-description">: Character encoding of resulting text.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_Symbol.html#methoddecodeString">Zend_Pdf_Resource_Font_Standard_Symbol::decodeString()</a>
+								: Convert string encoding from font encoding to local encoding. Overridden  to defeat the conversion behavior for this ornamental font.
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_ZapfDingbats.html#methoddecodeString">Zend_Pdf_Resource_Font_Standard_ZapfDingbats::decodeString()</a>
+								: Convert string encoding from font encoding to local encoding. Overridden  to defeat the conversion behavior for this ornamental font.
+							</li>
+				</ul>
+	</div>
+<a name="methodencodeString" id="encodeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">encodeString</span> (line <span class="line-number">516</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert string from local encoding to Windows ANSI encoding.</p>
+<p class="description"><p>NOTE: This method may disappear in a future revision of the framework  once the font subsetting and Unicode support code is complete. At that  point, there may be multiple ways of encoding strings depending on  intended usage. You should treat this method as framework internal  use only.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encodeString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charEncoding</span><span class="var-description">: Character encoding of source text.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_Symbol.html#methodencodeString">Zend_Pdf_Resource_Font_Standard_Symbol::encodeString()</a>
+								: Convert string encoding from local encoding to font encoding. Overridden  to defeat the conversion behavior for this ornamental font.
+							</li>
+					<li>
+				<a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font_Standard_ZapfDingbats.html#methodencodeString">Zend_Pdf_Resource_Font_Standard_ZapfDingbats::encodeString()</a>
+								: Convert string encoding from local encoding to font encoding. Overridden  to defeat the conversion behavior for this ornamental font.
+							</li>
+				</ul>
+	</div>
+<a name="methodgetAscent" id="getAscent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAscent</span> (line <span class="line-number">350</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the typographic ascent in font glyph units.</p>
+<p class="description"><p>The typographic ascent is the distance from the font's baseline to the  top of the text frame. It is frequently used to locate the initial  baseline for a paragraph of text inside a given rectangle.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getAscent
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCoveredPercentage" id="getCoveredPercentage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCoveredPercentage</span> (line <span class="line-number">422</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a number between 0 and 1 inclusive that indicates the percentage  of characters in the string which are covered by glyphs in this font.</p>
+<p class="description"><p>Since no one font will contain glyphs for the entire Unicode character  range, this method can be used to help locate a suitable font when the  actual contents of the string are not known.</p><p>Note that some fonts lie about the characters they support. Additionally,  fonts don't usually contain glyphs for control characters such as tabs  and line breaks, so it is rare that you will get back a full 1.0 score.  The resulting value should be considered informational only.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			getCoveredPercentage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charEncoding</span><span class="var-description">: (optional) Character encoding of source text.    If omitted, uses 'current locale'.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetDescent" id="getDescent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDescent</span> (line <span class="line-number">363</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the typographic descent in font glyph units.</p>
+<p class="description"><p>The typographic descent is the distance below the font's baseline to the  bottom of the text frame. It is always negative.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getDescent
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFontName" id="getFontName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFontName</span> (line <span class="line-number">253</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the specified descriptive name for the font.</p>
+<p class="description"><p>The font name type is usually one of the following:  <ul><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_FULL">Zend_Pdf_Font::NAME_FULL</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_FAMILY">Zend_Pdf_Font::NAME_FAMILY</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_PREFERRED_FAMILY">Zend_Pdf_Font::NAME_PREFERRED_FAMILY</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_STYLE">Zend_Pdf_Font::NAME_STYLE</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_PREFERRED_STYLE">Zend_Pdf_Font::NAME_PREFERRED_STYLE</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_DESCRIPTION">Zend_Pdf_Font::NAME_DESCRIPTION</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_SAMPLE_TEXT">Zend_Pdf_Font::NAME_SAMPLE_TEXT</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_ID">Zend_Pdf_Font::NAME_ID</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_VERSION">Zend_Pdf_Font::NAME_VERSION</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_POSTSCRIPT">Zend_Pdf_Font::NAME_POSTSCRIPT</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_CID_NAME">Zend_Pdf_Font::NAME_CID_NAME</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_DESIGNER">Zend_Pdf_Font::NAME_DESIGNER</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_DESIGNER_URL">Zend_Pdf_Font::NAME_DESIGNER_URL</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_MANUFACTURER">Zend_Pdf_Font::NAME_MANUFACTURER</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_VENDOR_URL">Zend_Pdf_Font::NAME_VENDOR_URL</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_COPYRIGHT">Zend_Pdf_Font::NAME_COPYRIGHT</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_TRADEMARK">Zend_Pdf_Font::NAME_TRADEMARK</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_LICENSE">Zend_Pdf_Font::NAME_LICENSE</a></li><li><a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html#constNAME_LICENSE_URL">Zend_Pdf_Font::NAME_LICENSE_URL</a></li></ul></p><p>Note that not all names are available for all fonts. In addition, some  fonts may contain additional names, whose indicies are in the range  256 to 32767 inclusive, which are used for certain font layout features.</p><p>If the preferred language translation is not available, uses the first  available translation for the name, which is usually English.</p><p>If the requested name does not exist, returns null.</p><p>All names are stored internally as Unicode strings, using UTF-16BE  encoding. You may optionally supply a different resulting character set.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getFontName
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$nameType</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$language</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$characterSet</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$nameType</span><span class="var-description">: Type of name requested.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$language</span><span class="var-description">: Preferred language (string) or array of languages    in preferred order. Use the ISO 639 standard 2-letter language codes.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$characterSet</span><span class="var-description">: (optional) Desired resulting character set.    You may use any character set supported by <a href="http://www.php.net/iconv">http://www.php.net/iconv</a>;</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFontType" id="getFontType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFontType</span> (line <span class="line-number">203</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the type of font.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> One of the TYPE_ constants defined in    <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Font.html">Zend_Pdf_Font</a>.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getFontType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLineGap" id="getLineGap"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLineGap</span> (line <span class="line-number">378</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the typographic line gap in font glyph units.</p>
+<p class="description"><p>The typographic line gap is the distance between the bottom of the text  frame of one line to the top of the text frame of the next. It is  typically combined with the typographical ascent and descent to determine  the font's total line height (or leading).</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getLineGap
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLineHeight" id="getLineHeight"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLineHeight</span> (line <span class="line-number">396</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the suggested line height (or leading) in font glyph units.</p>
+<p class="description"><p>This value is determined by adding together the values of the typographic  ascent, descent, and line gap. This value yields the suggested line  spacing as determined by the font developer.</p><p>It should be noted that this is only a guideline; layout engines will  frequently modify this value to achieve special effects such as double-  spacing.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getLineHeight
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetStrikePosition" id="getStrikePosition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStrikePosition</span> (line <span class="line-number">313</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the suggested position above the text baseline of the  strikethrough in glyph units.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getStrikePosition
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetStrikeThickness" id="getStrikeThickness"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStrikeThickness</span> (line <span class="line-number">323</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the suggested line thickness of the strikethrough in glyph units.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getStrikeThickness
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUnderlinePosition" id="getUnderlinePosition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUnderlinePosition</span> (line <span class="line-number">292</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the suggested position below the text baseline of the underline  in glyph units.</p>
+<p class="description"><p>This value is usually negative.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getUnderlinePosition
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUnderlineThickness" id="getUnderlineThickness"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUnderlineThickness</span> (line <span class="line-number">302</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the suggested line thickness of the underline in glyph units.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getUnderlineThickness
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUnitsPerEm" id="getUnitsPerEm"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUnitsPerEm</span> (line <span class="line-number">336</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of glyph units per em.</p>
+<p class="description"><p>Used to convert glyph space to user space. Frequently used in conjunction  with <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html#methodwidthsForGlyphs">widthsForGlyphs()</a> to calculate the with of a run of text.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getUnitsPerEm
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodwidthForGlyph" id="widthForGlyph"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">widthForGlyph</span> (line <span class="line-number">494</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the width of the glyph.</p>
+<p class="description"><p>Like <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html#methodwidthsForGlyphs">widthsForGlyphs()</a> but used for one glyph at a time.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			widthForGlyph
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$glyphNumber</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$glyphNumber</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwidthsForGlyphs" id="widthsForGlyphs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">widthsForGlyphs</span> (line <span class="line-number">472</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the widths of the glyphs.</p>
+<p class="description"><p>The widths are expressed in the font's glyph space. You are responsible  for converting to user space as necessary. See unitsPerEm().</p><p>Throws an exception if the glyph number is out of range.</p><p>See also <a href="../../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html#methodwidthForGlyph">widthForGlyph()</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Array of glyph widths (integers).</li>
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			widthsForGlyphs
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">&$glyphNumbers</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$glyphNumbers</span><span class="var-description">: Array of glyph numbers.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_isEmbeddingOptionSet" id="_isEmbeddingOptionSet"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_isEmbeddingOptionSet</span> (line <span class="line-number">573</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if the embedding option has been set for this font.</p>
+<p class="description"><p>The embedding options are stored as a bitfield. Multiple options may be  set at the same time.</p><p>This is only used by certain subclasses.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_isEmbeddingOptionSet
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$embeddingOption</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$embeddingOption</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_toEmSpace" id="_toEmSpace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_toEmSpace</span> (line <span class="line-number">554</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">If the font's glyph space is not 1000 units per em, converts the value.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			_toEmSpace
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">189</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the full name of the font in the encoding method of the current  locale. Transliterates any characters that cannot be naturally  represented in that character set.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#method__construct">Zend_Pdf_Resource::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#methodgetFactory">Zend_Pdf_Resource::getFactory()</a></span><br>
+													<span class="method-name"><a href="../../Zend_Pdf/Zend_Pdf_Resource.html#methodgetResource">Zend_Pdf_Resource::getResource()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:19 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Trailer_Keeper</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Trailer_Keeper</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PDF file trailer.</p>
+<p class="description"><p>Stores and provides access to the trailer parced from a PDF file</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Trailer---Keeper.php.html">/zend/Pdf/Trailer/Keeper.php</a> (line <span class="field">36</span>)
+		</p>
+		
+				
+		<pre><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a>
+   |
+   --Zend_Pdf_Trailer_Keeper</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">Zend_Pdf_Trailer_Keeper</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></span>&nbsp;<span class="var-name">$dict</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>, [<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span>&nbsp;<span class="var-name">$prev</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getLastFreeObject" title="details" class="method-name">getLastFreeObject</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPDFLength" title="details" class="method-name">getPDFLength</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPDFString" title="details" class="method-name">getPDFString</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span>
+										<a href="#getPrev" title="details" class="method-name">getPrev</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>
+										<a href="#getRefTable" title="details" class="method-name">getRefTable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setPrev" title="details" class="method-name">setPrev</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer_Keeper.html">Zend_Pdf_Trailer_Keeper</a></span>&nbsp;<span class="var-name">$prev</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">60</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_Trailer_Keeper</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></span>&nbsp;<span class="var-name">$dict</span>, <span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>&nbsp;<span class="var-name">$context</span>, [<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span>&nbsp;<span class="var-name">$prev</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></span>
+				<span class="var-name">$dict</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>
+				<span class="var-name">$context</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span>
+				<span class="var-name">$prev</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#method__construct">Zend_Pdf_Trailer::__construct()</a></dt>
+						<dd>Object constructor</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetLastFreeObject" id="getLastFreeObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLastFreeObject</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get header of free objects list  Returns object number of last free object</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getLastFreeObject
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetLastFreeObject">Zend_Pdf_Trailer::getLastFreeObject()</a></dt>
+						<dd>Get header of free objects list  Returns object number of last free object</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPDFLength" id="getPDFLength"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPDFLength</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get length of source PDF</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPDFLength
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetPDFLength">Zend_Pdf_Trailer::getPDFLength()</a></dt>
+						<dd>Get length of source PDF</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPDFString" id="getPDFString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPDFString</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get PDF String</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPDFString
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetPDFString">Zend_Pdf_Trailer::getPDFString()</a></dt>
+						<dd>Get PDF String</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPrev" id="getPrev"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrev</span> (line <span class="line-number">85</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Getter for $this-&gt;_prev</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span>
+		<span class="method-name">
+			getPrev
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRefTable" id="getRefTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRefTable</span> (line <span class="line-number">116</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get reference table, which corresponds to the trailer.</p>
+<p class="description"><p>Proxy to the $_context member methad call</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference_Context.html">Zend_Pdf_Element_Reference_Context</a></span>
+		<span class="method-name">
+			getRefTable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetPrev" id="setPrev"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPrev</span> (line <span class="line-number">75</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Setter for $this-&gt;_prev</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPrev
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer_Keeper.html">Zend_Pdf_Trailer_Keeper</a></span>&nbsp;<span class="var-name">$prev</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Trailer_Keeper.html">Zend_Pdf_Trailer_Keeper</a></span>
+				<span class="var-name">$prev</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html">Zend_Pdf_Trailer</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#method__construct">Zend_Pdf_Trailer::__construct()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetLastFreeObject">Zend_Pdf_Trailer::getLastFreeObject()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetPDFLength">Zend_Pdf_Trailer::getPDFLength()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodgetPDFString">Zend_Pdf_Trailer::getPDFString()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#methodtoString">Zend_Pdf_Trailer::toString()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#method__get">Zend_Pdf_Trailer::__get()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Trailer.html#method__set">Zend_Pdf_Trailer::__set()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:22 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

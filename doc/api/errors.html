@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>phpDocumentor Parser Errors and Warnings</title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<a href="#Post-parsing">Post-parsing</a><br>
+<a href="#Apc.php">Apc.php</a><br>
+<a href="#Application.php">Application.php</a><br>
+<a href="#AppModule.php">AppModule.php</a><br>
+<a href="#Array.php">Array.php</a><br>
+<a href="#AuthMethod.php">AuthMethod.php</a><br>
+<a href="#AuthMethodStandard.php">AuthMethodStandard.php</a><br>
+<a href="#AuthModule.php">AuthModule.php</a><br>
+<a href="#AuthStorageHandler.php">AuthStorageHandler.php</a><br>
+<a href="#AuthStorageHandlerDb.php">AuthStorageHandlerDb.php</a><br>
+<a href="#BacktraceViewCli.php">BacktraceViewCli.php</a><br>
+<a href="#block.for.php">block.for.php</a><br>
+<a href="#class.phpmailer.php">class.phpmailer.php</a><br>
+<a href="#class.smtp.php">class.smtp.php</a><br>
+<a href="#CliApplication.php">CliApplication.php</a><br>
+<a href="#CliErrorHandler.php">CliErrorHandler.php</a><br>
+<a href="#Cmyk.php">Cmyk.php</a><br>
+<a href="#Color.php">Color.php</a><br>
+<a href="#compiler.assign.php">compiler.assign.php</a><br>
+<a href="#Config.php">Config.php</a><br>
+<a href="#config.php">config.php</a><br>
+<a href="#ConfigException.php">ConfigException.php</a><br>
+<a href="#DbConnection.php">DbConnection.php</a><br>
+<a href="#DbFactory.php">DbFactory.php</a><br>
+<a href="#DbModule.php">DbModule.php</a><br>
+<a href="#DbObject.php">DbObject.php</a><br>
+<a href="#DbPdo.php">DbPdo.php</a><br>
+<a href="#DbPdoResult.php">DbPdoResult.php</a><br>
+<a href="#DbPgResult.php">DbPgResult.php</a><br>
+<a href="#DbPgsql.php">DbPgsql.php</a><br>
+<a href="#DbResultSet.php">DbResultSet.php</a><br>
+<a href="#DbSchema.php">DbSchema.php</a><br>
+<a href="#DbTable.php">DbTable.php</a><br>
+<a href="#dependency.php">dependency.php</a><br>
+<a href="#echo.php">echo.php</a><br>
+<a href="#Element.php">Element.php</a><br>
+<a href="#Error.php">Error.php</a><br>
+<a href="#examples.php">examples.php</a><br>
+<a href="#feed-proxy.php">feed-proxy.php</a><br>
+<a href="#function.constraint.php">function.constraint.php</a><br>
+<a href="#function.html_dboptions.php">function.html_dboptions.php</a><br>
+<a href="#function.html_select_time.php">function.html_select_time.php</a><br>
+<a href="#function.init.php">function.init.php</a><br>
+<a href="#function.input.php">function.input.php</a><br>
+<a href="#function.int_to_lower.php">function.int_to_lower.php</a><br>
+<a href="#function.json.php">function.json.php</a><br>
+<a href="#function.letter_counter.php">function.letter_counter.php</a><br>
+<a href="#function.popupwindow.php">function.popupwindow.php</a><br>
+<a href="#function.printclick.php">function.printclick.php</a><br>
+<a href="#function.printr.php">function.printr.php</a><br>
+<a href="#function.status.php">function.status.php</a><br>
+<a href="#functions.php">functions.php</a><br>
+<a href="#get-images.php">get-images.php</a><br>
+<a href="#get-nodes.php">get-nodes.php</a><br>
+<a href="#get-state.php">get-state.php</a><br>
+<a href="#Globals.php">Globals.php</a><br>
+<a href="#GraphicContainer.php">GraphicContainer.php</a><br>
+<a href="#GraphicContext.php">GraphicContext.php</a><br>
+<a href="#GraphicDiv.php">GraphicDiv.php</a><br>
+<a href="#GraphicDocument.php">GraphicDocument.php</a><br>
+<a href="#GraphicHardBrokenLine.php">GraphicHardBrokenLine.php</a><br>
+<a href="#GraphicModule.php">GraphicModule.php</a><br>
+<a href="#GraphicObject.php">GraphicObject.php</a><br>
+<a href="#GraphicParser.php">GraphicParser.php</a><br>
+<a href="#GraphicSoftBrokenLine.php">GraphicSoftBrokenLine.php</a><br>
+<a href="#GraphicStyle.php">GraphicStyle.php</a><br>
+<a href="#GraphicStyleStack.php">GraphicStyleStack.php</a><br>
+<a href="#GraphicTextRun.php">GraphicTextRun.php</a><br>
+<a href="#gui.php">gui.php</a><br>
+<a href="#GuiZone.php">GuiZone.php</a><br>
+<a href="#Mail.php">Mail.php</a><br>
+<a href="#Mailer.php">Mailer.php</a><br>
+<a href="#Message.php">Message.php</a><br>
+<a href="#Migration.php">Migration.php</a><br>
+<a href="#Mizithra.php">Mizithra.php</a><br>
+<a href="#modifier.jstring.php">modifier.jstring.php</a><br>
+<a href="#Module.php">Module.php</a><br>
+<a href="#module.php">module.php</a><br>
+<a href="#Pdf.php">Pdf.php</a><br>
+<a href="#PdfContext.php">PdfContext.php</a><br>
+<a href="#phpmailer.lang-br.php">phpmailer.lang-br.php</a><br>
+<a href="#phpmailer.lang-ca.php">phpmailer.lang-ca.php</a><br>
+<a href="#phpmailer.lang-cz.php">phpmailer.lang-cz.php</a><br>
+<a href="#phpmailer.lang-de.php">phpmailer.lang-de.php</a><br>
+<a href="#phpmailer.lang-dk.php">phpmailer.lang-dk.php</a><br>
+<a href="#phpmailer.lang-en.php">phpmailer.lang-en.php</a><br>
+<a href="#phpmailer.lang-es.php">phpmailer.lang-es.php</a><br>
+<a href="#phpmailer.lang-fi.php">phpmailer.lang-fi.php</a><br>
+<a href="#phpmailer.lang-fo.php">phpmailer.lang-fo.php</a><br>
+<a href="#phpmailer.lang-fr.php">phpmailer.lang-fr.php</a><br>
+<a href="#phpmailer.lang-hu.php">phpmailer.lang-hu.php</a><br>
+<a href="#phpmailer.lang-ja.php">phpmailer.lang-ja.php</a><br>
+<a href="#phpmailer.lang-nl.php">phpmailer.lang-nl.php</a><br>
+<a href="#phpmailer.lang-no.php">phpmailer.lang-no.php</a><br>
+<a href="#phpmailer.lang-pl.php">phpmailer.lang-pl.php</a><br>
+<a href="#phpmailer.lang-ru.php">phpmailer.lang-ru.php</a><br>
+<a href="#phpmailer.lang-se.php">phpmailer.lang-se.php</a><br>
+<a href="#phpmailer.lang-tr.php">phpmailer.lang-tr.php</a><br>
+<a href="#phpmailer_test.php">phpmailer_test.php</a><br>
+<a href="#phpunit.php">phpunit.php</a><br>
+<a href="#prefilter.strip_html.php">prefilter.strip_html.php</a><br>
+<a href="#PropertyList.php">PropertyList.php</a><br>
+<a href="#Role.php">Role.php</a><br>
+<a href="#save-dep.php">save-dep.php</a><br>
+<a href="#save-state.php">save-state.php</a><br>
+<a href="#Session.php">Session.php</a><br>
+<a href="#SessionDb.php">SessionDb.php</a><br>
+<a href="#SessionFactory.php">SessionFactory.php</a><br>
+<a href="#SessionModule.php">SessionModule.php</a><br>
+<a href="#SessionPgsql.php">SessionPgsql.php</a><br>
+<a href="#spyc.php">spyc.php</a><br>
+<a href="#test.php">test.php</a><br>
+<a href="#utils.php">utils.php</a><br>
+<a href="#Utils.php">Utils.php</a><br>
+<a href="#WebErrorHandler.php">WebErrorHandler.php</a><br>
+<a href="#XmlContainer.php">XmlContainer.php</a><br>
+<a href="#XmlDom.php">XmlDom.php</a><br>
+<a href="#XmlModule.php">XmlModule.php</a><br>
+<a href="#XmlNode.php">XmlNode.php</a><br>
+<a href="#XmlNodeList.php">XmlNodeList.php</a><br>
+<a href="#XmlParser.php">XmlParser.php</a><br>
+<a href="#yaml-dump.php">yaml-dump.php</a><br>
+<a href="#yaml-load.php">yaml-load.php</a><br>
+<a href="#Yaml.php">Yaml.php</a><br>
+<a href="#ZendModule.php">ZendModule.php</a><br>
+<a href="#ZendPdfContext.php">ZendPdfContext.php</a><br>
+<a href="#Zone.php">Zone.php</a><br>
+<a href="#ZoneApplication.php">ZoneApplication.php</a><br>
+<a href="#Zoop.php">Zoop.php</a><br>
+<a href="#ZoopException.php">ZoopException.php</a><br>
+<a href="#ZoopModule.php">ZoopModule.php</a><br>
+<a name="Post-parsing"></a>
+<h1>Post-parsing</h1>
+<h2>Warnings:</h2><br>
+<b>Warning</b> - 
+duplicate class element "AppModule" in file /Users/rick/code/lib/zoop/framework/Module.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.<br>
+<b>Warning</b> - 
+duplicate function element "formatBytes" in file /Users/rick/code/lib/zoop/framework/gui/public/ext/examples/tree/get-nodes.php will be ignored.
+Use an @ignore tag on the original if you want this case to be documented.<br>
+<a name="AccessController.php"></a>
+<h1>AccessController.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 21</b> - package default is already in category Zend, will now replace with category default<br>
+<a name="Apc.php"></a>
+<h1>Apc.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 25</b> - package default is already in category default, will now replace with category Zend<br>
+<a name="Application.php"></a>
+<h1>Application.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 8</b> - DocBlock would be page-level, but precedes class "Application", use another DocBlock to document the file<br>
+<a name="AppModule.php"></a>
+<h1>AppModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AppModule<br>
+<b>Warning on line 12</b> - File "/Users/rick/code/lib/zoop/framework/app/AppModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Array.php"></a>
+<h1>Array.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 21</b> - package default is already in category default, will now replace with category Zend<br>
+<b>Warning on line 38</b> - package Zend_Pdf is already in category default, will now replace with category Zend<br>
+<a name="AuthMethod.php"></a>
+<h1>AuthMethod.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AuthMethod<br>
+<b>Warning on line 4</b> - File "/Users/rick/code/lib/zoop/framework/auth/AuthMethod.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AuthMethodStandard.php"></a>
+<h1>AuthMethodStandard.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AuthMethodStandard<br>
+<b>Warning on line 39</b> - File "/Users/rick/code/lib/zoop/framework/auth/AuthMethodStandard.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AuthModule.php"></a>
+<h1>AuthModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AuthModule<br>
+<b>Warning on line 76</b> - File "/Users/rick/code/lib/zoop/framework/auth/AuthModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AuthStorageHandler.php"></a>
+<h1>AuthStorageHandler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for interface AuthStorageHandler<br>
+<b>Warning on line 5</b> - File "/Users/rick/code/lib/zoop/framework/auth/AuthStorageHandler.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AuthStorageHandlerDb.php"></a>
+<h1>AuthStorageHandlerDb.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AuthDbStorageDb<br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/auth/AuthStorageHandlerDb.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="BacktraceViewCli.php"></a>
+<h1>BacktraceViewCli.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class BacktraceViewCli<br>
+<b>Warning on line 111</b> - File "/Users/rick/code/lib/zoop/framework/utils/BacktraceViewCli.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="block.for.php"></a>
+<h1>block.for.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 26</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/block.for.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class.phpmailer.php"></a>
+<h1>class.phpmailer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 20</b> - DocBlock would be page-level, but precedes class "PHPMailer", use another DocBlock to document the file<br>
+<a name="class.smtp.php"></a>
+<h1>class.smtp.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 24</b> - DocBlock would be page-level, but precedes class "SMTP", use another DocBlock to document the file<br>
+<a name="CliApplication.php"></a>
+<h1>CliApplication.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class CliApplication<br>
+<b>Warning on line 100</b> - File "/Users/rick/code/lib/zoop/framework/cli/CliApplication.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="CliErrorHandler.php"></a>
+<h1>CliErrorHandler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class CliErrorHandler<br>
+<b>Warning on line 88</b> - File "/Users/rick/code/lib/zoop/framework/app/CliErrorHandler.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Cmyk.php"></a>
+<h1>Cmyk.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 21</b> - package default is already in category default, will now replace with category Zend<br>
+<b>Warning on line 40</b> - package Zend_Pdf is already in category default, will now replace with category Zend<br>
+<a name="Color.php"></a>
+<h1>Color.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 30</b> - package default is already in category Zend, will now replace with category default<br>
+<b>Warning on line 32</b> - package Zend_Pdf is already in category Zend, will now replace with category default<br>
+<a name="compiler.assign.php"></a>
+<h1>compiler.assign.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 20</b> - Unknown tag "@auther" used<br>
+<a name="config.php"></a>
+<h1>config.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 19</b> - File "/Users/rick/code/lib/zoop/framework/mail/config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/db/config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 30</b> - File "/Users/rick/code/lib/zoop/framework/config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Config.php"></a>
+<h1>Config.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Config<br>
+<b>Warning on line 67</b> - File "/Users/rick/code/lib/zoop/framework/config/Config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ConfigException.php"></a>
+<h1>ConfigException.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class ConfigException<br>
+<b>Warning on line 13</b> - File "/Users/rick/code/lib/zoop/framework/config/ConfigException.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbConnection.php"></a>
+<h1>DbConnection.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbConnection<br>
+<b>Warning on line 516</b> - File "/Users/rick/code/lib/zoop/framework/db/DbConnection.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbFactory.php"></a>
+<h1>DbFactory.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class DbFactory<br>
+<b>Warning on line 16</b> - File "/Users/rick/code/lib/zoop/framework/db/DbFactory.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbModule.php"></a>
+<h1>DbModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbModule<br>
+<b>Warning on line 39</b> - File "/Users/rick/code/lib/zoop/framework/db/DbModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbObject.php"></a>
+<h1>DbObject.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbObject<br>
+<b>Warning on line 399</b> - File "/Users/rick/code/lib/zoop/framework/db/DbObject.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbPdo.php"></a>
+<h1>DbPdo.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbPdo<br>
+<b>Warning on line 65</b> - File "/Users/rick/code/lib/zoop/framework/db/DbPdo.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbPdoResult.php"></a>
+<h1>DbPdoResult.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbPdoResult<br>
+<b>Warning on line 63</b> - File "/Users/rick/code/lib/zoop/framework/db/DbPdoResult.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbPgResult.php"></a>
+<h1>DbPgResult.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbPgResult<br>
+<b>Warning on line 56</b> - File "/Users/rick/code/lib/zoop/framework/db/DbPgResult.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbPgsql.php"></a>
+<h1>DbPgsql.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbPgsql<br>
+<b>Warning on line 57</b> - File "/Users/rick/code/lib/zoop/framework/db/DbPgsql.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbResultSet.php"></a>
+<h1>DbResultSet.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbResultSet<br>
+<b>Warning on line 4</b> - File "/Users/rick/code/lib/zoop/framework/db/DbResultSet.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbSchema.php"></a>
+<h1>DbSchema.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DbSchema<br>
+<b>Warning on line 20</b> - File "/Users/rick/code/lib/zoop/framework/db/DbSchema.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DbTable.php"></a>
+<h1>DbTable.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class DBTable<br>
+<b>Warning on line 4</b> - File "/Users/rick/code/lib/zoop/framework/db/DbTable.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="dependency.php"></a>
+<h1>dependency.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 45</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/dependency/dependency.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="echo.php"></a>
+<h1>echo.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 5</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/slider/echo.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Element.php"></a>
+<h1>Element.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 20</b> - package default is already in category Zend, will now replace with category default<br>
+<b>Warning on line 35</b> - package Zend_Pdf is already in category Zend, will now replace with category default<br>
+<a name="Error.php"></a>
+<h1>Error.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - Page-level DocBlock precedes "include zoop_dir.'/app/CliErrorHandler.php'", use another DocBlock to document the source element<br>
+<a name="examples.php"></a>
+<h1>examples.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 30</b> - File "/Users/rick/code/lib/zoop/framework/mizithra/examples.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="feed-proxy.php"></a>
+<h1>feed-proxy.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/feed-viewer/feed-proxy.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.constraint.php"></a>
+<h1>function.constraint.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.constraint.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.html_dboptions.php"></a>
+<h1>function.html_dboptions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.html_dboptions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.html_select_time.php"></a>
+<h1>function.html_select_time.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - Unknown tag "@credits" used<br>
+<a name="function.init.php"></a>
+<h1>function.init.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class GuiInit<br>
+<b>Warning on line 93</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.init.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.input.php"></a>
+<h1>function.input.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 37</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.input.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.int_to_lower.php"></a>
+<h1>function.int_to_lower.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 28</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.int_to_lower.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.json.php"></a>
+<h1>function.json.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 5</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.json.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.letter_counter.php"></a>
+<h1>function.letter_counter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 60</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.letter_counter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.popupwindow.php"></a>
+<h1>function.popupwindow.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 53</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.popupwindow.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.printclick.php"></a>
+<h1>function.printclick.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 63</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.printclick.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.printr.php"></a>
+<h1>function.printr.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 28</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.printr.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="function.status.php"></a>
+<h1>function.status.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 8</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/function.status.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="functions.php"></a>
+<h1>functions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 109</b> - File "/Users/rick/code/lib/zoop/framework/db/functions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="get-images.php"></a>
+<h1>get-images.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/view/get-images.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="get-nodes.php"></a>
+<h1>get-nodes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 43</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/tree/get-nodes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="get-state.php"></a>
+<h1>get-state.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 10</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/state/get-state.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Globals.php"></a>
+<h1>Globals.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - Page-level DocBlock precedes "define root_url", use another DocBlock to document the source element<br>
+<a name="GraphicContainer.php"></a>
+<h1>GraphicContainer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicContainer<br>
+<b>Warning on line 31</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicContainer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicContext.php"></a>
+<h1>GraphicContext.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicContext<br>
+<b>Warning on line 164</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicContext.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicDiv.php"></a>
+<h1>GraphicDiv.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicDiv<br>
+<b>Warning on line 226</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicDiv.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicDocument.php"></a>
+<h1>GraphicDocument.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicDocument<br>
+<b>Warning on line 7</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicDocument.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicHardBrokenLine.php"></a>
+<h1>GraphicHardBrokenLine.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicHardBrokenLine<br>
+<b>Warning on line 301</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicHardBrokenLine.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicModule.php"></a>
+<h1>GraphicModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicModule<br>
+<b>Warning on line 18</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicObject.php"></a>
+<h1>GraphicObject.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicObject<br>
+<b>Warning on line 199</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicObject.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicParser.php"></a>
+<h1>GraphicParser.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicParser<br>
+<b>Warning on line 146</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicParser.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicSoftBrokenLine.php"></a>
+<h1>GraphicSoftBrokenLine.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicSoftBrokenLine<br>
+<b>Warning on line 84</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicSoftBrokenLine.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicStyle.php"></a>
+<h1>GraphicStyle.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicStyle<br>
+<b>Warning on line 14</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicStyle.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicStyleStack.php"></a>
+<h1>GraphicStyleStack.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicStyleStack<br>
+<b>Warning on line 30</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicStyleStack.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GraphicTextRun.php"></a>
+<h1>GraphicTextRun.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GraphicTextRun<br>
+<b>Warning on line 324</b> - File "/Users/rick/code/lib/zoop/framework/graphic/GraphicTextRun.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="gui.php"></a>
+<h1>gui.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Gui<br>
+<b>Warning on line 98</b> - File "/Users/rick/code/lib/zoop/framework/gui/gui.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="GuiZone.php"></a>
+<h1>GuiZone.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class GuiZone<br>
+<b>Warning on line 49</b> - File "/Users/rick/code/lib/zoop/framework/zone/GuiZone.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Mail.php"></a>
+<h1>Mail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 4</b> - no @package tag was used in a DocBlock for class Mail<br>
+<b>Warning on line 72</b> - File "/Users/rick/code/lib/zoop/framework/mail/Mail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Mailer.php"></a>
+<h1>Mailer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Mailer<br>
+<b>Warning on line 24</b> - File "/Users/rick/code/lib/zoop/framework/mail/Mailer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Message.php"></a>
+<h1>Message.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Message<br>
+<b>Warning on line 41</b> - File "/Users/rick/code/lib/zoop/framework/mail/Message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Migration.php"></a>
+<h1>Migration.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Migration<br>
+<b>Warning on line 83</b> - File "/Users/rick/code/lib/zoop/framework/migration/Migration.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Mizithra.php"></a>
+<h1>Mizithra.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Mizithra<br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/mizithra/Mizithra.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="modifier.jstring.php"></a>
+<h1>modifier.jstring.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/modifier.jstring.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="module.php"></a>
+<h1>module.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - File "/Users/rick/code/lib/zoop/framework/migration/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "/Users/rick/code/lib/zoop/framework/spyc/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "/Users/rick/code/lib/zoop/framework/mizithra/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "/Users/rick/code/lib/zoop/framework/cli/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 2</b> - File "/Users/rick/code/lib/zoop/framework/app/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 2</b> - File "/Users/rick/code/lib/zoop/framework/gui/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 2</b> - File "/Users/rick/code/lib/zoop/framework/utils/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 5</b> - File "/Users/rick/code/lib/zoop/framework/zone/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - File "/Users/rick/code/lib/zoop/framework/config/module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Module.php"></a>
+<h1>Module.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class AppModule<br>
+<b>Warning on line 16</b> - File "/Users/rick/code/lib/zoop/framework/Module.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Pdf.php"></a>
+<h1>Pdf.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 21</b> - package default is already in category default, will now replace with category Zend<br>
+<b>Warning on line 96</b> - package Zend_Pdf is already in category default, will now replace with category Zend<br>
+<a name="PdfContext.php"></a>
+<h1>PdfContext.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class PdfContext<br>
+<b>Warning on line 11</b> - File "/Users/rick/code/lib/zoop/framework/graphic/PdfContext.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-br.php"></a>
+<h1>phpmailer.lang-br.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 20</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-br.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-ca.php"></a>
+<h1>phpmailer.lang-ca.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 21</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-ca.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-cz.php"></a>
+<h1>phpmailer.lang-cz.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-cz.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-de.php"></a>
+<h1>phpmailer.lang-de.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-de.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-dk.php"></a>
+<h1>phpmailer.lang-dk.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-dk.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-en.php"></a>
+<h1>phpmailer.lang-en.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-en.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-es.php"></a>
+<h1>phpmailer.lang-es.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-es.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-fi.php"></a>
+<h1>phpmailer.lang-fi.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-fi.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-fo.php"></a>
+<h1>phpmailer.lang-fo.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 24</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-fo.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-fr.php"></a>
+<h1>phpmailer.lang-fr.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-fr.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-hu.php"></a>
+<h1>phpmailer.lang-hu.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-hu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-ja.php"></a>
+<h1>phpmailer.lang-ja.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 24</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-ja.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-nl.php"></a>
+<h1>phpmailer.lang-nl.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-nl.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-no.php"></a>
+<h1>phpmailer.lang-no.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-no.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-pl.php"></a>
+<h1>phpmailer.lang-pl.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-pl.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-ru.php"></a>
+<h1>phpmailer.lang-ru.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-ru.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-se.php"></a>
+<h1>phpmailer.lang-se.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-se.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer.lang-tr.php"></a>
+<h1>phpmailer.lang-tr.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 24</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/language/phpmailer.lang-tr.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpmailer_test.php"></a>
+<h1>phpmailer_test.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - no @package tag was used in a DocBlock for class phpmailerTest<br>
+<b>Warning on line 22</b> - Unknown tag "@type" used<br>
+<b>Warning on line 29</b> - Unknown tag "@type" used<br>
+<b>Warning on line 36</b> - Unknown tag "@type" used<br>
+<b>Warning on line 43</b> - Unknown tag "@type" used<br>
+<b>Warning on line 571</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/test/phpmailer_test.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="phpunit.php"></a>
+<h1>phpunit.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 48</b> - no @package tag was used in a DocBlock for class Exception<br>
+<b>Warning on line 59</b> - no @package tag was used in a DocBlock for class Assert<br>
+<b>Warning on line 89</b> - no @package tag was used in a DocBlock for class TestCase<br>
+<b>Warning on line 179</b> - no @package tag was used in a DocBlock for class TestSuite<br>
+<b>Warning on line 247</b> - no @package tag was used in a DocBlock for class TestFailure<br>
+<b>Warning on line 267</b> - no @package tag was used in a DocBlock for class TestResult<br>
+<b>Warning on line 321</b> - no @package tag was used in a DocBlock for class TextTestResult<br>
+<b>Warning on line 366</b> - no @package tag was used in a DocBlock for class TestRunner<br>
+<b>Warning on line 375</b> - File "/Users/rick/code/lib/zoop/framework/phpmailer/test/phpunit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="prefilter.strip_html.php"></a>
+<h1>prefilter.strip_html.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - File "/Users/rick/code/lib/zoop/framework/gui/plugins/prefilter.strip_html.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="PropertyList.php"></a>
+<h1>PropertyList.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class PropertyList<br>
+<b>Warning on line 105</b> - File "/Users/rick/code/lib/zoop/framework/xml/PropertyList.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Role.php"></a>
+<h1>Role.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Role<br>
+<b>Warning on line 4</b> - File "/Users/rick/code/lib/zoop/framework/permission/Role.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save-dep.php"></a>
+<h1>save-dep.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/tree/save-dep.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save-state.php"></a>
+<h1>save-state.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - File "/Users/rick/code/lib/zoop/framework/gui/public/ext/examples/state/save-state.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Session.php"></a>
+<h1>Session.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Session<br>
+<b>Warning on line 40</b> - File "/Users/rick/code/lib/zoop/framework/session/Session.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SessionDb.php"></a>
+<h1>SessionDb.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class SessionDb<br>
+<b>Warning on line 115</b> - File "/Users/rick/code/lib/zoop/framework/session/SessionDb.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SessionFactory.php"></a>
+<h1>SessionFactory.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class SessionFactory<br>
+<b>Warning on line 8</b> - File "/Users/rick/code/lib/zoop/framework/session/SessionFactory.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SessionModule.php"></a>
+<h1>SessionModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class SessionModule<br>
+<b>Warning on line 30</b> - File "/Users/rick/code/lib/zoop/framework/session/SessionModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SessionPgsql.php"></a>
+<h1>SessionPgsql.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class SessionPgsql<br>
+<b>Warning on line 3</b> - File "/Users/rick/code/lib/zoop/framework/session/SessionPgsql.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="spyc.php"></a>
+<h1>spyc.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 869</b> - docblock template never terminated with /**#@-*/<br>
+<a name="test.php"></a>
+<h1>test.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 159</b> - File "/Users/rick/code/lib/zoop/framework/spyc/test.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Utils.php"></a>
+<h1>Utils.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 188</b> - File "/Users/rick/code/lib/zoop/framework/utils/Utils.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="utils.php"></a>
+<h1>utils.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "/Users/rick/code/lib/zoop/framework/cli/utils.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 18</b> - File "/Users/rick/code/lib/zoop/framework/xml/utils.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="WebErrorHandler.php"></a>
+<h1>WebErrorHandler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class WebErrorHandler<br>
+<b>Warning on line 86</b> - File "/Users/rick/code/lib/zoop/framework/app/WebErrorHandler.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlContainer.php"></a>
+<h1>XmlContainer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlContainer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlDom.php"></a>
+<h1>XmlDom.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class XmlDom<br>
+<b>Warning on line 23</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlDom.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlModule.php"></a>
+<h1>XmlModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class XmlModule<br>
+<b>Warning on line 17</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlNode.php"></a>
+<h1>XmlNode.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class XmlNode<br>
+<b>Warning on line 142</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlNode.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlNodeList.php"></a>
+<h1>XmlNodeList.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class XmlNodeList<br>
+<b>Warning on line 37</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlNodeList.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="XmlParser.php"></a>
+<h1>XmlParser.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class XmlParser<br>
+<b>Warning on line 62</b> - File "/Users/rick/code/lib/zoop/framework/xml/XmlParser.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="yaml-dump.php"></a>
+<h1>yaml-dump.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - File "/Users/rick/code/lib/zoop/framework/spyc/yaml-dump.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="yaml-load.php"></a>
+<h1>yaml-load.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "/Users/rick/code/lib/zoop/framework/spyc/yaml-load.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Yaml.php"></a>
+<h1>Yaml.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Yaml<br>
+<b>Warning on line 7</b> - File "/Users/rick/code/lib/zoop/framework/config/Yaml.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ZendModule.php"></a>
+<h1>ZendModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class ZendModule<br>
+<b>Warning on line 7</b> - File "/Users/rick/code/lib/zoop/framework/zend/ZendModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ZendPdfContext.php"></a>
+<h1>ZendPdfContext.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class ZendPdfContext<br>
+<b>Warning on line 291</b> - File "/Users/rick/code/lib/zoop/framework/graphic/ZendPdfContext.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Zone.php"></a>
+<h1>Zone.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Zone<br>
+<b>Warning on line 184</b> - File "/Users/rick/code/lib/zoop/framework/zone/Zone.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ZoneApplication.php"></a>
+<h1>ZoneApplication.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class ZoneApplication<br>
+<b>Warning on line 49</b> - File "/Users/rick/code/lib/zoop/framework/zone/ZoneApplication.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Zoop.php"></a>
+<h1>Zoop.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - no @package tag was used in a DocBlock for class Zoop<br>
+<b>Warning on line 95</b> - File "/Users/rick/code/lib/zoop/framework/Zoop.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ZoopException.php"></a>
+<h1>ZoopException.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class ZoopException<br>
+<b>Warning on line 10</b> - File "/Users/rick/code/lib/zoop/framework/app/ZoopException.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ZoopModule.php"></a>
+<h1>ZoopModule.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class ZoopModule<br>
+<b>Warning on line 75</b> - File "/Users/rick/code/lib/zoop/framework/ZoopModule.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:31 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>

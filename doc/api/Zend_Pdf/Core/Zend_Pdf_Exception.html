@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Exception</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Exception</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Exception class for Zend_Pdf.</p>
+<p class="description"><p>If you expect a certain type of exception to be caught and handled by the  caller, create a constant for it here and include it in the object being  thrown. Example:</p><p>throw new Zend_Pdf_Exception('foo() is not yet implemented',                                 Zend_Pdf_Exception::NOT_IMPLEMENTED);</p><p>This allows the caller to determine the specific type of exception that was  thrown without resorting to parsing the descriptive text.</p><p>IMPORTANT: Do not rely on numeric values of the constants! They are grouped  sequentially below for organizational purposes only. The numbers may come to  mean something in the future, but they are subject to renumbering at any  time. ALWAYS use the symbolic constant names, which are guaranteed never to  change, in logical checks! You have been warned.</p></p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Exception.php.html">/zend/Pdf/Exception.php</a> (line <span class="field">49</span>)
+		</p>
+		
+				
+		<pre><a href="../../default/Exception.html">Exception</a>
+   |
+   --<a href="../../Zend/Zend_Exception.html">Zend_Exception</a>
+      |
+      --Zend_Pdf_Exception</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-vars">Vars</a>
+				 
+				|
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_ATTRIBUTE_VALUE" title="details" class="const-name">BAD_ATTRIBUTE_VALUE</a> = 					<span class="var-type"> 0x0701</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_DATA_SOURCE" title="details" class="const-name">BAD_DATA_SOURCE</a> = 					<span class="var-type"> 0x0201</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_FILE_PATH" title="details" class="const-name">BAD_FILE_PATH</a> = 					<span class="var-type"> 0x0101</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_FIXED_POINT_SIZE" title="details" class="const-name">BAD_FIXED_POINT_SIZE</a> = 					<span class="var-type"> 0x0204</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_FONT_NAME" title="details" class="const-name">BAD_FONT_NAME</a> = 					<span class="var-type"> 0x0601</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_MAGIC_NUMBER" title="details" class="const-name">BAD_MAGIC_NUMBER</a> = 					<span class="var-type"> 0x0304</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_METHOD_SIGNATURE" title="details" class="const-name">BAD_METHOD_SIGNATURE</a> = 					<span class="var-type"> 0x0007</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_PARAMETER_TYPE" title="details" class="const-name">BAD_PARAMETER_TYPE</a> = 					<span class="var-type"> 0x0004</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_PARAMETER_VALUE" title="details" class="const-name">BAD_PARAMETER_VALUE</a> = 					<span class="var-type"> 0x0005</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#BAD_TABLE_COUNT" title="details" class="const-name">BAD_TABLE_COUNT</a> = 					<span class="var-type"> 0x0302</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_DETERMINE_FONT_TYPE" title="details" class="const-name">CANT_DETERMINE_FONT_TYPE</a> = 					<span class="var-type"> 0x0602</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_DETERMINE_IMAGE_TYPE" title="details" class="const-name">CANT_DETERMINE_IMAGE_TYPE</a> = 					<span class="var-type"> 0x0801</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_FIND_GOOD_CMAP" title="details" class="const-name">CANT_FIND_GOOD_CMAP</a> = 					<span class="var-type"> 0x0305</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_GET_FILE_POSITION" title="details" class="const-name">CANT_GET_FILE_POSITION</a> = 					<span class="var-type"> 0x0106</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_GET_FILE_SIZE" title="details" class="const-name">CANT_GET_FILE_SIZE</a> = 					<span class="var-type"> 0x010a</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_OPEN_FILE" title="details" class="const-name">CANT_OPEN_FILE</a> = 					<span class="var-type"> 0x0105</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_READ_STRING" title="details" class="const-name">CANT_READ_STRING</a> = 					<span class="var-type"> 0x0205</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CANT_SET_FILE_POSITION" title="details" class="const-name">CANT_SET_FILE_POSITION</a> = 					<span class="var-type"> 0x0107</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_FINAL_OFFSET_NOT_LENGTH" title="details" class="const-name">CMAP_FINAL_OFFSET_NOT_LENGTH</a> = 					<span class="var-type"> 0x0407</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_NOT_LANGUAGE_INDEPENDENT" title="details" class="const-name">CMAP_NOT_LANGUAGE_INDEPENDENT</a> = 					<span class="var-type"> 0x0406</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_TABLE_DATA_TOO_SMALL" title="details" class="const-name">CMAP_TABLE_DATA_TOO_SMALL</a> = 					<span class="var-type"> 0x0403</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_TYPE_UNSUPPORTED" title="details" class="const-name">CMAP_TYPE_UNSUPPORTED</a> = 					<span class="var-type"> 0x0401</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_UNKNOWN_TYPE" title="details" class="const-name">CMAP_UNKNOWN_TYPE</a> = 					<span class="var-type"> 0x0402</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_WRONG_ENTRY_COUNT" title="details" class="const-name">CMAP_WRONG_ENTRY_COUNT</a> = 					<span class="var-type"> 0x0408</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_WRONG_TABLE_LENGTH" title="details" class="const-name">CMAP_WRONG_TABLE_LENGTH</a> = 					<span class="var-type"> 0x0405</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CMAP_WRONG_TABLE_TYPE" title="details" class="const-name">CMAP_WRONG_TABLE_TYPE</a> = 					<span class="var-type"> 0x0404</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEPRECATED" title="details" class="const-name">DEPRECATED</a> = 					<span class="var-type"> 0x0002</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DONT_UNDERSTAND_TABLE_VERSION" title="details" class="const-name">DONT_UNDERSTAND_TABLE_VERSION</a> = 					<span class="var-type"> 0x0303</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ERROR_DURING_READ" title="details" class="const-name">ERROR_DURING_READ</a> = 					<span class="var-type"> 0x010b</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#ERROR_DURING_WRITE" title="details" class="const-name">ERROR_DURING_WRITE</a> = 					<span class="var-type"> 0x010c</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FILE_NOT_OPEN" title="details" class="const-name">FILE_NOT_OPEN</a> = 					<span class="var-type"> 0x0104</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#FONT_CANT_BE_EMBEDDED" title="details" class="const-name">FONT_CANT_BE_EMBEDDED</a> = 					<span class="var-type"> 0x0502</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#GLYPH_OUT_OF_RANGE" title="details" class="const-name">GLYPH_OUT_OF_RANGE</a> = 					<span class="var-type"> 0x0501</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#IMAGE_FILE_CORRUPT" title="details" class="const-name">IMAGE_FILE_CORRUPT</a> = 					<span class="var-type"> 0x0804</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INDEX_OUT_OF_RANGE" title="details" class="const-name">INDEX_OUT_OF_RANGE</a> = 					<span class="var-type"> 0x0008</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INSUFFICIENT_DATA" title="details" class="const-name">INSUFFICIENT_DATA</a> = 					<span class="var-type"> 0x010e</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INVALID_BYTE_ORDER" title="details" class="const-name">INVALID_BYTE_ORDER</a> = 					<span class="var-type"> 0x0202</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INVALID_INTEGER_SIZE" title="details" class="const-name">INVALID_INTEGER_SIZE</a> = 					<span class="var-type"> 0x0203</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INVALID_PAGE_SIZE" title="details" class="const-name">INVALID_PAGE_SIZE</a> = 					<span class="var-type"> 0x010d</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MOVE_BEFORE_START_OF_FILE" title="details" class="const-name">MOVE_BEFORE_START_OF_FILE</a> = 					<span class="var-type"> 0x0108</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#MOVE_BEYOND_END_OF_FILE" title="details" class="const-name">MOVE_BEYOND_END_OF_FILE</a> = 					<span class="var-type"> 0x0109</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NOT_IMPLEMENTED" title="details" class="const-name">NOT_IMPLEMENTED</a> = 					<span class="var-type"> 0x0001</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NOT_READABLE" title="details" class="const-name">NOT_READABLE</a> = 					<span class="var-type"> 0x0102</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#NOT_WRITEABLE" title="details" class="const-name">NOT_WRITEABLE</a> = 					<span class="var-type"> 0x0103</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PARAMETER_VALUE_OUT_OF_RANGE" title="details" class="const-name">PARAMETER_VALUE_OUT_OF_RANGE</a> = 					<span class="var-type"> 0x0006</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PARSED_OUT_OF_ORDER" title="details" class="const-name">PARSED_OUT_OF_ORDER</a> = 					<span class="var-type"> 0x0206</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#REQUIRED_TABLE_NOT_FOUND" title="details" class="const-name">REQUIRED_TABLE_NOT_FOUND</a> = 					<span class="var-type"> 0x0303</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TOO_FEW_PARAMETERS" title="details" class="const-name">TOO_FEW_PARAMETERS</a> = 					<span class="var-type"> 0x0003</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#UNSUPPORTED_IMAGE_ENCODING_OPTIONS" title="details" class="const-name">UNSUPPORTED_IMAGE_ENCODING_OPTIONS</a> = 					<span class="var-type"> 0x0803</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#WRONG_FONT_TYPE" title="details" class="const-name">WRONG_FONT_TYPE</a> = 					<span class="var-type"> 0x0301</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#WRONG_IMAGE_TYPE" title="details" class="const-name">WRONG_IMAGE_TYPE</a> = 					<span class="var-type"> 0x0802</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Vars</span>
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../default/Exception.html">Exception</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../default/Exception.html#var$message">Exception::$message</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../default/Exception.html">Exception</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../default/Exception.html#methodException">Exception::Exception()</a></span><br>
+													<span class="method-name"><a href="../../default/Exception.html#methodgetMessage">Exception::getMessage()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constBAD_ATTRIBUTE_VALUE" id="BAD_ATTRIBUTE_VALUE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_ATTRIBUTE_VALUE</span>
+			 = <span class="const-default"> 0x0701</span>
+			(line <span class="line-number">329</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The specified attribute value for the text object cannot be used.</p>
+	
+	
+</div>
+<a name="constBAD_DATA_SOURCE" id="BAD_DATA_SOURCE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_DATA_SOURCE</span>
+			 = <span class="const-default"> 0x0201</span>
+			(line <span class="line-number">184</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The file parser data source object was invalid or improperly initialized.</p>
+	
+	
+</div>
+<a name="constBAD_FILE_PATH" id="BAD_FILE_PATH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_FILE_PATH</span>
+			 = <span class="const-default"> 0x0101</span>
+			(line <span class="line-number">107</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The file path was unusable or invalid.</p>
+	
+	
+</div>
+<a name="constBAD_FIXED_POINT_SIZE" id="BAD_FIXED_POINT_SIZE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_FIXED_POINT_SIZE</span>
+			 = <span class="const-default"> 0x0204</span>
+			(line <span class="line-number">199</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An invalid fixed-point number size was specified.</p>
+	
+	
+</div>
+<a name="constBAD_FONT_NAME" id="BAD_FONT_NAME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_FONT_NAME</span>
+			 = <span class="const-default"> 0x0601</span>
+			(line <span class="line-number">316</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The font name did not match any previously instantiated font and is not  one of the standard 14 PDF fonts.</p>
+	
+	
+</div>
+<a name="constBAD_MAGIC_NUMBER" id="BAD_MAGIC_NUMBER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_MAGIC_NUMBER</span>
+			 = <span class="const-default"> 0x0304</span>
+			(line <span class="line-number">239</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The magic number in the font file is incorrect.</p>
+	
+	
+</div>
+<a name="constBAD_METHOD_SIGNATURE" id="BAD_METHOD_SIGNATURE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_METHOD_SIGNATURE</span>
+			 = <span class="const-default"> 0x0007</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The method that has multiple signatures could not understand the  number and/or types of parameters.</p>
+	
+	
+</div>
+<a name="constBAD_PARAMETER_TYPE" id="BAD_PARAMETER_TYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_PARAMETER_TYPE</span>
+			 = <span class="const-default"> 0x0004</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A parameter was of the wrong data type.</p>
+	
+	
+</div>
+<a name="constBAD_PARAMETER_VALUE" id="BAD_PARAMETER_VALUE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_PARAMETER_VALUE</span>
+			 = <span class="const-default"> 0x0005</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A parameter contained an unusable value.</p>
+	
+	
+</div>
+<a name="constBAD_TABLE_COUNT" id="BAD_TABLE_COUNT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">BAD_TABLE_COUNT</span>
+			 = <span class="const-default"> 0x0302</span>
+			(line <span class="line-number">224</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The number of tables contained in the font is outside the expected range.</p>
+	
+	
+</div>
+<a name="constCANT_DETERMINE_FONT_TYPE" id="CANT_DETERMINE_FONT_TYPE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_DETERMINE_FONT_TYPE</span>
+			 = <span class="const-default"> 0x0602</span>
+			(line <span class="line-number">321</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The factory method could not determine the type of the font file.</p>
+	
+	
+</div>
+<a name="constCANT_DETERMINE_IMAGE_TYPE" id="CANT_DETERMINE_IMAGE_TYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_DETERMINE_IMAGE_TYPE</span>
+			 = <span class="const-default"> 0x0801</span>
+			(line <span class="line-number">334</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCANT_FIND_GOOD_CMAP" id="CANT_FIND_GOOD_CMAP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_FIND_GOOD_CMAP</span>
+			 = <span class="const-default"> 0x0305</span>
+			(line <span class="line-number">244</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Could not locate a usable character map for this font.</p>
+	
+	
+</div>
+<a name="constCANT_GET_FILE_POSITION" id="CANT_GET_FILE_POSITION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_GET_FILE_POSITION</span>
+			 = <span class="const-default"> 0x0106</span>
+			(line <span class="line-number">133</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to obtain the current file  position.</p>
+	
+	
+</div>
+<a name="constCANT_GET_FILE_SIZE" id="CANT_GET_FILE_SIZE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_GET_FILE_SIZE</span>
+			 = <span class="const-default"> 0x010a</span>
+			(line <span class="line-number">155</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to obtain the file size.</p>
+	
+	
+</div>
+<a name="constCANT_OPEN_FILE" id="CANT_OPEN_FILE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_OPEN_FILE</span>
+			 = <span class="const-default"> 0x0105</span>
+			(line <span class="line-number">127</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to open the file.</p>
+	
+	
+</div>
+<a name="constCANT_READ_STRING" id="CANT_READ_STRING"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_READ_STRING</span>
+			 = <span class="const-default"> 0x0205</span>
+			(line <span class="line-number">204</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The string cannot be read.</p>
+	
+	
+</div>
+<a name="constCANT_SET_FILE_POSITION" id="CANT_SET_FILE_POSITION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CANT_SET_FILE_POSITION</span>
+			 = <span class="const-default"> 0x0107</span>
+			(line <span class="line-number">138</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to set a new file position.</p>
+	
+	
+</div>
+<a name="constCMAP_FINAL_OFFSET_NOT_LENGTH" id="CMAP_FINAL_OFFSET_NOT_LENGTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_FINAL_OFFSET_NOT_LENGTH</span>
+			 = <span class="const-default"> 0x0407</span>
+			(line <span class="line-number">285</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The final byte offset when reading the character map table data does not  match the reported length of the table.</p>
+	
+	
+</div>
+<a name="constCMAP_NOT_LANGUAGE_INDEPENDENT" id="CMAP_NOT_LANGUAGE_INDEPENDENT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_NOT_LANGUAGE_INDEPENDENT</span>
+			 = <span class="const-default"> 0x0406</span>
+			(line <span class="line-number">279</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This character map table is language-dependent. Character maps must be  language-independent.</p>
+	
+	
+</div>
+<a name="constCMAP_TABLE_DATA_TOO_SMALL" id="CMAP_TABLE_DATA_TOO_SMALL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_TABLE_DATA_TOO_SMALL</span>
+			 = <span class="const-default"> 0x0403</span>
+			(line <span class="line-number">263</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The character map table data is too small.</p>
+	
+	
+</div>
+<a name="constCMAP_TYPE_UNSUPPORTED" id="CMAP_TYPE_UNSUPPORTED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_TYPE_UNSUPPORTED</span>
+			 = <span class="const-default"> 0x0401</span>
+			(line <span class="line-number">253</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The character map type is currently unsupported.</p>
+	
+	
+</div>
+<a name="constCMAP_UNKNOWN_TYPE" id="CMAP_UNKNOWN_TYPE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_UNKNOWN_TYPE</span>
+			 = <span class="const-default"> 0x0402</span>
+			(line <span class="line-number">258</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The type of the character map is not understood.</p>
+	
+	
+</div>
+<a name="constCMAP_WRONG_ENTRY_COUNT" id="CMAP_WRONG_ENTRY_COUNT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_WRONG_ENTRY_COUNT</span>
+			 = <span class="const-default"> 0x0408</span>
+			(line <span class="line-number">290</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The character map subtable entry count does not match the expected value.</p>
+	
+	
+</div>
+<a name="constCMAP_WRONG_TABLE_LENGTH" id="CMAP_WRONG_TABLE_LENGTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_WRONG_TABLE_LENGTH</span>
+			 = <span class="const-default"> 0x0405</span>
+			(line <span class="line-number">273</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The character map table data contains in incorrect length.</p>
+	
+	
+</div>
+<a name="constCMAP_WRONG_TABLE_TYPE" id="CMAP_WRONG_TABLE_TYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CMAP_WRONG_TABLE_TYPE</span>
+			 = <span class="const-default"> 0x0404</span>
+			(line <span class="line-number">268</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The character map table data is for a different type of table.</p>
+	
+	
+</div>
+<a name="constDEPRECATED" id="DEPRECATED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEPRECATED</span>
+			 = <span class="const-default"> 0x0002</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The feature or option has been deprecated and will be removed in a future  revision of the framework. The descriptive text accompanying this  exception should explain how to use the replacement features or options.</p>
+	
+	
+</div>
+<a name="constDONT_UNDERSTAND_TABLE_VERSION" id="DONT_UNDERSTAND_TABLE_VERSION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DONT_UNDERSTAND_TABLE_VERSION</span>
+			 = <span class="const-default"> 0x0303</span>
+			(line <span class="line-number">234</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The parser does not understand this version of this table in the font.</p>
+	
+	
+</div>
+<a name="constERROR_DURING_READ" id="ERROR_DURING_READ"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERROR_DURING_READ</span>
+			 = <span class="const-default"> 0x010b</span>
+			(line <span class="line-number">160</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to read data from the file.</p>
+	
+	
+</div>
+<a name="constERROR_DURING_WRITE" id="ERROR_DURING_WRITE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERROR_DURING_WRITE</span>
+			 = <span class="const-default"> 0x010c</span>
+			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An error was encountered while attempting to write data to the file.</p>
+	
+	
+</div>
+<a name="constFILE_NOT_OPEN" id="FILE_NOT_OPEN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FILE_NOT_OPEN</span>
+			 = <span class="const-default"> 0x0104</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The file resource has been closed unexpectedly.</p>
+	
+	
+</div>
+<a name="constFONT_CANT_BE_EMBEDDED" id="FONT_CANT_BE_EMBEDDED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FONT_CANT_BE_EMBEDDED</span>
+			 = <span class="const-default"> 0x0502</span>
+			(line <span class="line-number">306</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This font program has copyright bits set which prevent it from being  embedded in the PDF file. You must specify the no-embed option to use  this font.</p>
+	
+	
+</div>
+<a name="constGLYPH_OUT_OF_RANGE" id="GLYPH_OUT_OF_RANGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">GLYPH_OUT_OF_RANGE</span>
+			 = <span class="const-default"> 0x0501</span>
+			(line <span class="line-number">299</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The specified glyph number is out of range for this font.</p>
+	
+	
+</div>
+<a name="constIMAGE_FILE_CORRUPT" id="IMAGE_FILE_CORRUPT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">IMAGE_FILE_CORRUPT</span>
+			 = <span class="const-default"> 0x0804</span>
+			(line <span class="line-number">337</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constINDEX_OUT_OF_RANGE" id="INDEX_OUT_OF_RANGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INDEX_OUT_OF_RANGE</span>
+			 = <span class="const-default"> 0x0008</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An array or string index was out of range.</p>
+	
+	
+</div>
+<a name="constINSUFFICIENT_DATA" id="INSUFFICIENT_DATA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INSUFFICIENT_DATA</span>
+			 = <span class="const-default"> 0x010e</span>
+			(line <span class="line-number">175</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">There is insufficient data to fulfill the read request.</p>
+	
+	
+</div>
+<a name="constINVALID_BYTE_ORDER" id="INVALID_BYTE_ORDER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INVALID_BYTE_ORDER</span>
+			 = <span class="const-default"> 0x0202</span>
+			(line <span class="line-number">189</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An unknown byte order was specified.</p>
+	
+	
+</div>
+<a name="constINVALID_INTEGER_SIZE" id="INVALID_INTEGER_SIZE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INVALID_INTEGER_SIZE</span>
+			 = <span class="const-default"> 0x0203</span>
+			(line <span class="line-number">194</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An invalid integer size was specified.</p>
+	
+	
+</div>
+<a name="constINVALID_PAGE_SIZE" id="INVALID_PAGE_SIZE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INVALID_PAGE_SIZE</span>
+			 = <span class="const-default"> 0x010d</span>
+			(line <span class="line-number">170</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An incompatible page size was specified for a buffered read operation.</p>
+	
+	
+</div>
+<a name="constMOVE_BEFORE_START_OF_FILE" id="MOVE_BEFORE_START_OF_FILE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MOVE_BEFORE_START_OF_FILE</span>
+			 = <span class="const-default"> 0x0108</span>
+			(line <span class="line-number">144</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An attempt was made to move the current file position before the start  of the file.</p>
+	
+	
+</div>
+<a name="constMOVE_BEYOND_END_OF_FILE" id="MOVE_BEYOND_END_OF_FILE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MOVE_BEYOND_END_OF_FILE</span>
+			 = <span class="const-default"> 0x0109</span>
+			(line <span class="line-number">150</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An attempt was made to move the current file position beyond the end of  the file.</p>
+	
+	
+</div>
+<a name="constNOT_IMPLEMENTED" id="NOT_IMPLEMENTED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NOT_IMPLEMENTED</span>
+			 = <span class="const-default"> 0x0001</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The feature or option is planned but has not yet been implemented. It  should be available in a future revision of the framework.</p>
+	
+	
+</div>
+<a name="constNOT_READABLE" id="NOT_READABLE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NOT_READABLE</span>
+			 = <span class="const-default"> 0x0102</span>
+			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The file is not readable by the current user.</p>
+	
+	
+</div>
+<a name="constNOT_WRITEABLE" id="NOT_WRITEABLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NOT_WRITEABLE</span>
+			 = <span class="const-default"> 0x0103</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The file is not writeable by the current user.</p>
+	
+	
+</div>
+<a name="constPARAMETER_VALUE_OUT_OF_RANGE" id="PARAMETER_VALUE_OUT_OF_RANGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAMETER_VALUE_OUT_OF_RANGE</span>
+			 = <span class="const-default"> 0x0006</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A parameter value was not within the expected range.</p>
+	
+	
+</div>
+<a name="constPARSED_OUT_OF_ORDER" id="PARSED_OUT_OF_ORDER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARSED_OUT_OF_ORDER</span>
+			 = <span class="const-default"> 0x0206</span>
+			(line <span class="line-number">210</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This file type must be parsed in a specific order and a parsing method  was called out-of-turn.</p>
+	
+	
+</div>
+<a name="constREQUIRED_TABLE_NOT_FOUND" id="REQUIRED_TABLE_NOT_FOUND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">REQUIRED_TABLE_NOT_FOUND</span>
+			 = <span class="const-default"> 0x0303</span>
+			(line <span class="line-number">229</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A required table was not present in the font.</p>
+	
+	
+</div>
+<a name="constTOO_FEW_PARAMETERS" id="TOO_FEW_PARAMETERS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TOO_FEW_PARAMETERS</span>
+			 = <span class="const-default"> 0x0003</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Not enough paramaters were supplied to the method.</p>
+	
+	
+</div>
+<a name="constUNSUPPORTED_IMAGE_ENCODING_OPTIONS" id="UNSUPPORTED_IMAGE_ENCODING_OPTIONS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UNSUPPORTED_IMAGE_ENCODING_OPTIONS</span>
+			 = <span class="const-default"> 0x0803</span>
+			(line <span class="line-number">336</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constWRONG_FONT_TYPE" id="WRONG_FONT_TYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">WRONG_FONT_TYPE</span>
+			 = <span class="const-default"> 0x0301</span>
+			(line <span class="line-number">219</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The font file type is incorrect.</p>
+	
+	
+</div>
+<a name="constWRONG_IMAGE_TYPE" id="WRONG_IMAGE_TYPE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">WRONG_IMAGE_TYPE</span>
+			 = <span class="const-default"> 0x0802</span>
+			(line <span class="line-number">335</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:17 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

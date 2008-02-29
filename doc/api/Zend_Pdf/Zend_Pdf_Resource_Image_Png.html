@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Resource_Image_Png</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Resource_Image_Png</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PNG image</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Resource---Image---Png.php.html">/zend/Pdf/Resource/Image/Png.php</a> (line <span class="field">44</span>)
+		</p>
+		
+				
+		<pre><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a>
+   |
+   --<a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a>
+      |
+      --Zend_Pdf_Resource_Image_Png</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_CHANNEL_GRAY" title="details" class="const-name">PNG_CHANNEL_GRAY</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_CHANNEL_GRAY_ALPHA" title="details" class="const-name">PNG_CHANNEL_GRAY_ALPHA</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_CHANNEL_INDEXED" title="details" class="const-name">PNG_CHANNEL_INDEXED</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_CHANNEL_RGB" title="details" class="const-name">PNG_CHANNEL_RGB</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_CHANNEL_RGB_ALPHA" title="details" class="const-name">PNG_CHANNEL_RGB_ALPHA</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_COMPRESSION_DEFAULT_STRATEGY" title="details" class="const-name">PNG_COMPRESSION_DEFAULT_STRATEGY</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_COMPRESSION_FILTERED" title="details" class="const-name">PNG_COMPRESSION_FILTERED</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_COMPRESSION_HUFFMAN_ONLY" title="details" class="const-name">PNG_COMPRESSION_HUFFMAN_ONLY</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_COMPRESSION_RLE" title="details" class="const-name">PNG_COMPRESSION_RLE</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_FILTER_AVERAGE" title="details" class="const-name">PNG_FILTER_AVERAGE</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_FILTER_NONE" title="details" class="const-name">PNG_FILTER_NONE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_FILTER_PAETH" title="details" class="const-name">PNG_FILTER_PAETH</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_FILTER_SUB" title="details" class="const-name">PNG_FILTER_SUB</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_FILTER_UP" title="details" class="const-name">PNG_FILTER_UP</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_INTERLACING_DISABLED" title="details" class="const-name">PNG_INTERLACING_DISABLED</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PNG_INTERLACING_ENABLED" title="details" class="const-name">PNG_INTERLACING_ENABLED</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_height" title="details" class="var-name">$_height</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_imageProperties" title="details" class="var-name">$_imageProperties</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_width" title="details" class="var-name">$_width</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPixelHeight" title="details" class="method-name">getPixelHeight</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPixelWidth" title="details" class="method-name">getPixelWidth</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getProperties" title="details" class="method-name">getProperties</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">Zend_Pdf_Resource_Image_Png</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$imageFileName</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_height" id="$_height"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_height</span>
+						(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_imageProperties" id="$_imageProperties"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_imageProperties</span>
+						(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_width" id="$_width"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_width</span>
+						(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#var$_objectFactory">Zend_Pdf_Resource::$_objectFactory</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#var$_resource">Zend_Pdf_Resource::$_resource</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodgetPixelHeight" id="getPixelHeight"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPixelHeight</span> (line <span class="line-number">349</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image height</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPixelHeight
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelHeight">Zend_Pdf_Resource_Image::getPixelHeight()</a></dt>
+						<dd>get the height in pixels of the image</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPixelWidth" id="getPixelWidth"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPixelWidth</span> (line <span class="line-number">342</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image width</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPixelWidth
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelWidth">Zend_Pdf_Resource_Image::getPixelWidth()</a></dt>
+						<dd>get the width in pixels of the image</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetProperties" id="getProperties"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getProperties</span> (line <span class="line-number">356</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Image properties</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getProperties
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetProperties">Zend_Pdf_Resource_Image::getProperties()</a></dt>
+						<dd>gets an associative array of information about an image</dd>
+					</dl>
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">82</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Add pre-compression filtering.</li>
+				<li><span class="field">todo:</span> Add compression conversions to support compression strategys other than PNG_COMPRESSION_DEFAULT_STRATEGY.</li>
+				<li><span class="field">todo:</span> Add interlaced image handling.</li>
+				<li><span class="field">todo:</span> Add support for 16-bit images. Requires PDF version bump to 1.5 at least.</li>
+				<li><span class="field">todo:</span> Fix tRNS chunk support for Indexed Images to a SMask.</li>
+				<li><span class="field">todo:</span> Add processing for all PNG chunks defined in the spec. gAMA etc.</li>
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_Resource_Image_Png</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$imageFileName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$imageFileName</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#method__construct">Zend_Pdf_Resource_Image::__construct()</a></dt>
+						<dd>Object constructor.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#method__construct">Zend_Pdf_Resource_Image::__construct()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelHeight">Zend_Pdf_Resource_Image::getPixelHeight()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetPixelWidth">Zend_Pdf_Resource_Image::getPixelWidth()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html#methodgetProperties">Zend_Pdf_Resource_Image::getProperties()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Zend_Pdf/Zend_Pdf_Resource.html">Zend_Pdf_Resource</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#method__construct">Zend_Pdf_Resource::__construct()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#methodgetFactory">Zend_Pdf_Resource::getFactory()</a></span><br>
+													<span class="method-name"><a href="../Zend_Pdf/Zend_Pdf_Resource.html#methodgetResource">Zend_Pdf_Resource::getResource()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constPNG_CHANNEL_GRAY" id="PNG_CHANNEL_GRAY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_CHANNEL_GRAY</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_CHANNEL_GRAY_ALPHA" id="PNG_CHANNEL_GRAY_ALPHA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_CHANNEL_GRAY_ALPHA</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_CHANNEL_INDEXED" id="PNG_CHANNEL_INDEXED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_CHANNEL_INDEXED</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_CHANNEL_RGB" id="PNG_CHANNEL_RGB"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_CHANNEL_RGB</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_CHANNEL_RGB_ALPHA" id="PNG_CHANNEL_RGB_ALPHA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_CHANNEL_RGB_ALPHA</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_COMPRESSION_DEFAULT_STRATEGY" id="PNG_COMPRESSION_DEFAULT_STRATEGY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_COMPRESSION_DEFAULT_STRATEGY</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_COMPRESSION_FILTERED" id="PNG_COMPRESSION_FILTERED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_COMPRESSION_FILTERED</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_COMPRESSION_HUFFMAN_ONLY" id="PNG_COMPRESSION_HUFFMAN_ONLY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_COMPRESSION_HUFFMAN_ONLY</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_COMPRESSION_RLE" id="PNG_COMPRESSION_RLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_COMPRESSION_RLE</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_FILTER_AVERAGE" id="PNG_FILTER_AVERAGE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_FILTER_AVERAGE</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_FILTER_NONE" id="PNG_FILTER_NONE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_FILTER_NONE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_FILTER_PAETH" id="PNG_FILTER_PAETH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_FILTER_PAETH</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_FILTER_SUB" id="PNG_FILTER_SUB"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_FILTER_SUB</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_FILTER_UP" id="PNG_FILTER_UP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_FILTER_UP</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_INTERLACING_DISABLED" id="PNG_INTERLACING_DISABLED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_INTERLACING_DISABLED</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPNG_INTERLACING_ENABLED" id="PNG_INTERLACING_ENABLED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PNG_INTERLACING_ENABLED</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:25 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

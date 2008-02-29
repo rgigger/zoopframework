@@ -1,0 +1,1693 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Zend_Pdf_Page</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Zend_Pdf_Page</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PDF Page</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2007 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_zend---Pdf---Page.php.html">/zend/Pdf/Page.php</a> (line <span class="field">58</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FILL_METHOD_EVEN_ODD" title="details" class="const-name">FILL_METHOD_EVEN_ODD</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FILL_METHOD_NON_ZERO_WINDING" title="details" class="const-name">FILL_METHOD_NON_ZERO_WINDING</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LINE_DASHING_SOLID" title="details" class="const-name">LINE_DASHING_SOLID</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SHAPE_DRAW_FILL" title="details" class="const-name">SHAPE_DRAW_FILL</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SHAPE_DRAW_FILL_AND_STROKE" title="details" class="const-name">SHAPE_DRAW_FILL_AND_STROKE</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SHAPE_DRAW_STROKE" title="details" class="const-name">SHAPE_DRAW_STROKE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SIZE_A4" title="details" class="const-name">SIZE_A4</a> = 					<span class="var-type"> '595:842:'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SIZE_A4_LANDSCAPE" title="details" class="const-name">SIZE_A4_LANDSCAPE</a> = 					<span class="var-type"> '842:595:'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SIZE_LETTER" title="details" class="const-name">SIZE_LETTER</a> = 					<span class="var-type"> '612:792:'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#SIZE_LETTER_LANDSCAPE" title="details" class="const-name">SIZE_LETTER_LANDSCAPE</a> = 					<span class="var-type"> '792:612:'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">Zend_Pdf_Page</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param1</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param2</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param3</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clipCircle" title="details" class="method-name">clipCircle</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$radius</span>, [<span class="var-type">float</span>&nbsp;<span class="var-name">$startAngle</span> = <span class="var-default">null</span>], [<span class="var-type">float</span>&nbsp;<span class="var-name">$endAngle</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clipEllipse" title="details" class="method-name">clipEllipse</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">float</span>&nbsp;<span class="var-name">$startAngle</span> = <span class="var-default">null</span>], [<span class="var-type">float</span>&nbsp;<span class="var-name">$endAngle</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clipPolygon" title="details" class="method-name">clipPolygon</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillMethod</span> = <span class="var-default">Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clipRectangle" title="details" class="method-name">clipRectangle</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawCircle" title="details" class="method-name">drawCircle</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$radius</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param4</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param5</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param6</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawContentStream" title="details" class="method-name">drawContentStream</a>
+											(<span class="var-type">ZPdfContentStream</span>&nbsp;<span class="var-name">$cs</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawEllipse" title="details" class="method-name">drawEllipse</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param5</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param6</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param7</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawImage" title="details" class="method-name">drawImage</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a></span>&nbsp;<span class="var-name">$image</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawLayoutBox" title="details" class="method-name">drawLayoutBox</a>
+											(<span class="var-type">Zend_Pdf_Element_LayoutBox</span>&nbsp;<span class="var-name">$box</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawLine" title="details" class="method-name">drawLine</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawPolygon" title="details" class="method-name">drawPolygon</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillType</span> = <span class="var-default">Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillMethod</span> = <span class="var-default">Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawRectangle" title="details" class="method-name">drawRectangle</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillType</span> = <span class="var-default">Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#drawText" title="details" class="method-name">drawText</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#flush" title="details" class="method-name">flush</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html">Zend_Pdf_Resource_Font</a></span>
+										<a href="#getFont" title="details" class="method-name">getFont</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">float</span>
+										<a href="#getFontSize" title="details" class="method-name">getFontSize</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">float</span>
+										<a href="#getHeight" title="details" class="method-name">getHeight</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></span>
+										<a href="#getPageDictionary" title="details" class="method-name">getPageDictionary</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Style.html">Zend_Pdf_Style</a>|null</span>
+										<a href="#getStyle" title="details" class="method-name">getStyle</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">float</span>
+										<a href="#getWidth" title="details" class="method-name">getWidth</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pathClose" title="details" class="method-name">pathClose</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pathLine" title="details" class="method-name">pathLine</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pathMove" title="details" class="method-name">pathMove</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#rawWrite" title="details" class="method-name">rawWrite</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#render" title="details" class="method-name">render</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>&nbsp;<span class="var-name">$objFactory</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#restoreGS" title="details" class="method-name">restoreGS</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#rotate" title="details" class="method-name">rotate</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$x</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$angle</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#saveGS" title="details" class="method-name">saveGS</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setFillColor" title="details" class="method-name">setFillColor</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>&nbsp;<span class="var-name">$color</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setFont" title="details" class="method-name">setFont</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html">Zend_Pdf_Resource_Font</a></span>&nbsp;<span class="var-name">$font</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$fontSize</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLineColor" title="details" class="method-name">setLineColor</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>&nbsp;<span class="var-name">$color</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLineDashingPattern" title="details" class="method-name">setLineDashingPattern</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$pattern</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$phase</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLineWidth" title="details" class="method-name">setLineWidth</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$width</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setStyle" title="details" class="method-name">setStyle</a>
+											(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Style.html">Zend_Pdf_Style</a></span>&nbsp;<span class="var-name">$style</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__clone" title="details" class="method-name">__clone</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Object constructor.</p>
+<p class="description"><p>Constructor signatures:</p><p><ol><li>Load PDF page from a parsed PDF file.
+    Object factory is created by PDF parser.</li></ol> ---------------------------------------------------------  new Zend_Pdf_Page(Zend_Pdf_Element_Dictionary       $pageDict,                    Zend_Pdf_ElementFactory_Interface $factory);  ---------------------------------------------------------</p><p>2. Clone PDF page.     New page is created in the same context as source page. Object factory is shared.     Thus it will be attached to the document, but need to be placed into Zend_Pdf::$pages array     to be included into output.  ---------------------------------------------------------  new Zend_Pdf_Page(Zend_Pdf_Page $page);  ---------------------------------------------------------</p><p>3. Create new page with a specified pagesize.     If $factory is null then it will be created and page must be attached to the document to be     included into output.  ---------------------------------------------------------  new Zend_Pdf_Page(string $pagesize, Zend_Pdf_ElementFactory_Interface $factory = null);  ---------------------------------------------------------</p><p>4. Create new page with a specified pagesize (in default user space units).     If $factory is null then it will be created and page must be attached to the document to be     included into output.  ---------------------------------------------------------  new Zend_Pdf_Page(numeric $width, numeric $height, Zend_Pdf_ElementFactory_Interface $factory = null);  ---------------------------------------------------------</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Zend_Pdf_Page</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param1</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param2</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param3</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param1</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param2</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param3</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclipCircle" id="clipCircle"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clipCircle</span> (line <span class="line-number">650</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Intersect current clipping area with a circle.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clipCircle
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$radius</span>, [<span class="var-type">float</span>&nbsp;<span class="var-name">$startAngle</span> = <span class="var-default">null</span>], [<span class="var-type">float</span>&nbsp;<span class="var-name">$endAngle</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$radius</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$startAngle</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$endAngle</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclipEllipse" id="clipEllipse"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">clipEllipse</span> (line <span class="line-number">673</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Intersect current clipping area with a polygon.</p>
+<p class="description"><p>Method signatures:  drawEllipse($x1, $y1, $x2, $y2);  drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> process special cases with $x2-$x1 == 0 or $y2-$y1 == 0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clipEllipse
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">float</span>&nbsp;<span class="var-name">$startAngle</span> = <span class="var-default">null</span>], [<span class="var-type">float</span>&nbsp;<span class="var-name">$endAngle</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$startAngle</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$endAngle</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclipPolygon" id="clipPolygon"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clipPolygon</span> (line <span class="line-number">753</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Intersect current clipping area with a polygon.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clipPolygon
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillMethod</span> = <span class="var-default">Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$x</span><span class="var-description">: <ul><li>array of float (the X co-ordinates of the vertices)</li></ul></span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$y</span><span class="var-description">: <ul><li>array of float (the Y co-ordinates of the vertices)</li></ul></span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fillMethod</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclipRectangle" id="clipRectangle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">clipRectangle</span> (line <span class="line-number">788</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Intersect current clipping area with a rectangle.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clipRectangle
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawCircle" id="drawCircle"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawCircle</span> (line <span class="line-number">838</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a circle centered on x, y with a radius of radius.</p>
+<p class="description"><p>Method signatures:  drawCircle($x, $y, $radius);  drawCircle($x, $y, $radius, $fillType);  drawCircle($x, $y, $radius, $startAngle, $endAngle);  drawCircle($x, $y, $radius, $startAngle, $endAngle, $fillType);</p><p>It's not a really circle, because PDF supports only cubic Bezier curves.  But _very_ good approximation.  It differs from a real circle on a maximum 0.00026 radiuses  (at PI/8, 3*PI/8, 5*PI/8, 7*PI/8, 9*PI/8, 11*PI/8, 13*PI/8 and 15*PI/8 angles).  At 0, PI/4, PI/2, 3*PI/4, PI, 5*PI/4, 3*PI/2 and 7*PI/4 it's exactly a tangent to a circle.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawCircle
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$radius</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param4</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param5</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param6</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$radius</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param4</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param5</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param6</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawContentStream" id="drawContentStream"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawContentStream</span> (line <span class="line-number">811</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a Zend_Pdf_ContentStream at the specified position on the page</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawContentStream
+		</span>
+					(<span class="var-type">ZPdfContentStream</span>&nbsp;<span class="var-name">$cs</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">ZPdfContentStream</span>
+				<span class="var-name">$cs</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawEllipse" id="drawEllipse"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawEllipse</span> (line <span class="line-number">864</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw an ellipse inside the specified rectangle.</p>
+<p class="description"><p>Method signatures:  drawEllipse($x1, $y1, $x2, $y2);  drawEllipse($x1, $y1, $x2, $y2, $fillType);  drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);  drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle, $fillType);</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> process special cases with $x2-$x1 == 0 or $y2-$y1 == 0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawEllipse
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param5</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param6</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$param7</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param5</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param6</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$param7</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawImage" id="drawImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawImage</span> (line <span class="line-number">981</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw an image at the specified position on the page.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawImage
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Resource_Image.html">Zend_Pdf_Resource_Image</a></span>&nbsp;<span class="var-name">$image</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Images/Zend_Pdf_Image.html">Zend_Pdf_Image</a></span>
+				<span class="var-name">$image</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawLayoutBox" id="drawLayoutBox"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawLayoutBox</span> (line <span class="line-number">1007</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a LayoutBox at the specified position on the page.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawLayoutBox
+		</span>
+					(<span class="var-type">Zend_Pdf_Element_LayoutBox</span>&nbsp;<span class="var-name">$box</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Zend_Pdf_Element_LayoutBox</span>
+				<span class="var-name">$box</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawLine" id="drawLine"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawLine</span> (line <span class="line-number">1019</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a line from x1,y1 to x2,y2.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawLine
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawPolygon" id="drawPolygon"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawPolygon</span> (line <span class="line-number">1045</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a polygon.</p>
+<p class="description"><p>If $fillType is Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE or  Zend_Pdf_Page::SHAPE_DRAW_FILL, then polygon is automatically closed.  See detailed description of these methods in a PDF documentation  (section 4.4.2 Path painting Operators, Filling)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawPolygon
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillType</span> = <span class="var-default">Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillMethod</span> = <span class="var-default">Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$x</span><span class="var-description">: <ul><li>array of float (the X co-ordinates of the vertices)</li></ul></span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$y</span><span class="var-description">: <ul><li>array of float (the Y co-ordinates of the vertices)</li></ul></span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fillType</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fillMethod</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawRectangle" id="drawRectangle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawRectangle</span> (line <span class="line-number">1103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a rectangle.</p>
+<p class="description"><p>Fill types:  Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)  Zend_Pdf_Page::SHAPE_DRAW_STROKE      - stroke rectangle  Zend_Pdf_Page::SHAPE_DRAW_FILL        - fill rectangle</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawRectangle
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y1</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x2</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y2</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$fillType</span> = <span class="var-default">Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y1</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x2</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y2</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fillType</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddrawText" id="drawText"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">drawText</span> (line <span class="line-number">1138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Draw a line of text at the specified position.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			drawText
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$charEncoding</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$text</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$charEncoding</span><span class="var-description">: (optional) Character encoding of source text.    Defaults to current locale.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodflush" id="flush"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">flush</span> (line <span class="line-number">414</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dump current drawing instructions into the content stream.</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Don't forget to close all current graphics operations (like path drawing)</li>
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			flush
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFont" id="getFont"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFont</span> (line <span class="line-number">585</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get current font.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html">Zend_Pdf_Resource_Font</a></span>
+		<span class="method-name">
+			getFont
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFontSize" id="getFontSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFontSize</span> (line <span class="line-number">595</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get current font size</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			getFontSize
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetHeight" id="getHeight"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getHeight</span> (line <span class="line-number">1161</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the height of this page in points.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			getHeight
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPageDictionary" id="getPageDictionary"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPageDictionary</span> (line <span class="line-number">402</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrive PDF file reference to the page</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></span>
+		<span class="method-name">
+			getPageDictionary
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetStyle" id="getStyle"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStyle</span> (line <span class="line-number">605</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the style, applied to the page.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Zend_Pdf/Zend_Pdf_Style.html">Zend_Pdf_Style</a>|null</span>
+		<span class="method-name">
+			getStyle
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetWidth" id="getWidth"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getWidth</span> (line <span class="line-number">1172</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the width of this page in points.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">float</span>
+		<span class="method-name">
+			getWidth
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpathClose" id="pathClose"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pathClose</span> (line <span class="line-number">1183</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Close the path by drawing a straight line back to it's beginning.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception    - if a path hasn't been started with pathMove()</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pathClose
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodpathLine" id="pathLine"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pathLine</span> (line <span class="line-number">1193</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Continue the open path in a straight line to the specified position.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pathLine
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span><span class="var-description">: <ul><li>the X co-ordinate to move to</li></ul></span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span><span class="var-description">: <ul><li>the Y co-ordinate to move to</li></ul></span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpathMove" id="pathMove"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">pathMove</span> (line <span class="line-number">1204</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Start a new path at the specified position. If a path has already been started,  move the cursor without drawing a line.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pathMove
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$x</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$y</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$x</span><span class="var-description">: <ul><li>the X co-ordinate to move to</li></ul></span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$y</span><span class="var-description">: <ul><li>the Y co-ordinate to move to</li></ul></span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrawWrite" id="rawWrite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rawWrite</span> (line <span class="line-number">1213</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write raw PDF commands to the page.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rawWrite
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrender" id="render"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">render</span> (line <span class="line-number">452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prepare page to be rendered into PDF.</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Don't forget to close all current graphics operations (like path drawing)</li>
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			render
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>&nbsp;<span class="var-name">$objFactory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_ElementFactory_Interface.html">Zend_Pdf_ElementFactory_Interface</a></span>
+				<span class="var-name">$objFactory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrestoreGS" id="restoreGS"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">restoreGS</span> (line <span class="line-number">632</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Restore the graphics state that was saved with the last call to saveGS().</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception   - if there is no previously saved state</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			restoreGS
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrotate" id="rotate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rotate</span> (line <span class="line-number">1222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rotate the page.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rotate
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$x</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$y</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$angle</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$angle</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$x</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$y</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsaveGS" id="saveGS"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">saveGS</span> (line <span class="line-number">619</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save the graphics state of this page.</p>
+<p class="description"><p>This takes a snapshot of the currently applied style, position, clipping area and  any rotation/translation/scaling that has been applied.</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> check for the open paths</li>
+				<li><span class="field">throws:</span> Zend_Pdf_Exception    - if a save is performed with an open path</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			saveGS
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetFillColor" id="setFillColor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setFillColor</span> (line <span class="line-number">484</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set fill color.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFillColor
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>&nbsp;<span class="var-name">$color</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>
+				<span class="var-name">$color</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFont" id="setFont"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setFont</span> (line <span class="line-number">549</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set current font.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFont
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html">Zend_Pdf_Resource_Font</a></span>&nbsp;<span class="var-name">$font</span>, <span class="var-type">float</span>&nbsp;<span class="var-name">$fontSize</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Fonts/Zend_Pdf_Resource_Font.html">Zend_Pdf_Resource_Font</a></span>
+				<span class="var-name">$font</span>			</li>
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$fontSize</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLineColor" id="setLineColor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLineColor</span> (line <span class="line-number">495</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set line color.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLineColor
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>&nbsp;<span class="var-name">$color</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Color.html">Zend_Pdf_Color</a></span>
+				<span class="var-name">$color</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLineDashingPattern" id="setLineDashingPattern"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLineDashingPattern</span> (line <span class="line-number">522</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set line dashing pattern</p>
+<p class="description"><p>Pattern is an array of floats: array(on_length, off_length, on_length, off_length, ...)  Phase is shift from the beginning of line.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLineDashingPattern
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$pattern</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$phase</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$pattern</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$phase</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLineWidth" id="setLineWidth"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLineWidth</span> (line <span class="line-number">506</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set line width.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLineWidth
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$width</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$width</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetStyle" id="setStyle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setStyle</span> (line <span class="line-number">567</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the style to use for future drawing operations on this page</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setStyle
+		</span>
+					(<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Style.html">Zend_Pdf_Style</a></span>&nbsp;<span class="var-name">$style</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Zend_Pdf/Zend_Pdf_Style.html">Zend_Pdf_Style</a></span>
+				<span class="var-name">$style</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__clone" id="__clone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__clone</span> (line <span class="line-number">331</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clone operator</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Pdf_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__clone
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constFILL_METHOD_EVEN_ODD" id="FILL_METHOD_EVEN_ODD"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FILL_METHOD_EVEN_ODD</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fill the path using the even-odd rule.</p>
+	
+	
+</div>
+<a name="constFILL_METHOD_NON_ZERO_WINDING" id="FILL_METHOD_NON_ZERO_WINDING"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FILL_METHOD_NON_ZERO_WINDING</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fill the path using the non-zero winding rule.</p>
+	
+	
+</div>
+<a name="constLINE_DASHING_SOLID" id="LINE_DASHING_SOLID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LINE_DASHING_SOLID</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">122</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Solid line dash.</p>
+	
+	
+</div>
+<a name="constSHAPE_DRAW_FILL" id="SHAPE_DRAW_FILL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SHAPE_DRAW_FILL</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fill the path only. Do not stroke.</p>
+	
+	
+</div>
+<a name="constSHAPE_DRAW_FILL_AND_STROKE" id="SHAPE_DRAW_FILL_AND_STROKE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SHAPE_DRAW_FILL_AND_STROKE</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fill and stroke the path.</p>
+	
+	
+</div>
+<a name="constSHAPE_DRAW_STROKE" id="SHAPE_DRAW_STROKE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SHAPE_DRAW_STROKE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stroke the path only. Do not fill.</p>
+	
+	
+</div>
+<a name="constSIZE_A4" id="SIZE_A4"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SIZE_A4</span>
+			 = <span class="const-default"> '595:842:'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Size representing an A4 page in portrait (tall) orientation.</p>
+	
+	
+</div>
+<a name="constSIZE_A4_LANDSCAPE" id="SIZE_A4_LANDSCAPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SIZE_A4_LANDSCAPE</span>
+			 = <span class="const-default"> '842:595:'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Size representing an A4 page in landscape (wide) orientation.</p>
+	
+	
+</div>
+<a name="constSIZE_LETTER" id="SIZE_LETTER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SIZE_LETTER</span>
+			 = <span class="const-default"> '612:792:'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Size representing a US Letter page in portrait (tall) orientation.</p>
+	
+	
+</div>
+<a name="constSIZE_LETTER_LANDSCAPE" id="SIZE_LETTER_LANDSCAPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SIZE_LETTER_LANDSCAPE</span>
+			 = <span class="const-default"> '792:612:'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Size representing a US Letter page in landscape (wide) orientation.</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 29 Feb 2008 15:26:24 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>
