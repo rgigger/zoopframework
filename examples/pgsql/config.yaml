@@ -1,0 +1,7 @@
+zoop:
+    db:
+        default:
+            driver: php_pgsql
+            database: pgsql_test
+            username: pgsql_test
+            

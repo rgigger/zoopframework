@@ -24,7 +24,10 @@ class DbPgsql extends DbConnection
 	
 	function escapeString($string)
 	{
-		return "'" . pg_escape_string($this->connection, $string) . "'";
+		if(version_compare(PHP_VERSION, "5.2", "<"))
+			return "'" . pg_escape_string($string) . "'";
+		else
+			return "'" . pg_escape_string($this->connection, $string) . "'";
 	}
 	
 	function _query($sql)
