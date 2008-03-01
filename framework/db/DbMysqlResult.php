@@ -1,15 +1,15 @@
 <?php
-class DbPgResult
+class DbMysqlResult
 {
 	var $res;
 	var $cur;
 	var $max;
 	
-	function DbPgResult($res)
+	function __construct($res)
 	{
 		$this->res = $res;
 		$this->cur = 0;
-		$this->max = pg_num_rows($this->res) - 1;
+		$this->max = mysql_num_rows($this->res) - 1;
 	}
 	
 	function numRows()
@@ -26,7 +26,8 @@ class DbPgResult
 	{
 		if($this->max == -1)
 			return false;
-		return pg_fetch_assoc($this->res, $this->cur);
+		mysql_data_seek($this->res, $this->cur);
+		return mysql_fetch_assoc($this->res);
 	}
 	
 	function key()
@@ -39,7 +40,8 @@ class DbPgResult
 		$this->cur++;
 		if($this->cur > $this->max)
 			return false;
-		return pg_fetch_assoc($this->res, $this->cur);
+		mysql_data_seek($this->res, $this->cur);
+		return mysql_fetch_assoc($this->res);
 	}
 	
 	function valid()
@@ -52,6 +54,6 @@ class DbPgResult
 	
 	function affectedRows()
 	{
-		return pg_affected_rows($this->res);
+		return mysql_affected_rows($this->res);
 	}
 }

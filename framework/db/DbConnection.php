@@ -1,24 +1,27 @@
 <?php
 abstract class DbConnection
 {
-	var $params;
-	var $types;
-	var $conn;
-	var $echo;
+	protected $params;
+	private $queryParams;
+	private $types;
+	private $conn;
+	private $echo;
 	
 	function __construct($params, $connectionName)
 	{
-		$this->validateParams($params, $connectionName);
+		$this->params = $params;
+		$this->validateParams($connectionName);
 		$echo = false;
+		$this->init();
 	}
 	
-	function validateParams($params, $connectionName)
+	function validateParams($connectionName)
 	{
 		//	handle the required fields
 		$missing = array();
 		foreach($this->getRequireds() as $thisRequired)
 		{
-			if(!isset($params[$thisRequired]))
+			if(!isset($this->params[$thisRequired]))
 				$missing[] = $thisRequired;
 		}		
 		
@@ -28,11 +31,13 @@ abstract class DbConnection
 		//	handle the defaults
 		foreach($this->getDefaults() as $name => $value)
 		{
-			if(!isset($params[$name]))
-				$params[$name] = $value;
+			if(!isset($this->params[$name]))
+				$this->params[$name] = $value;
 		}
-		
-		return $params;
+	}
+	
+	protected function init()
+	{
 	}
 	
 	function getRequireds()
@@ -85,11 +90,11 @@ abstract class DbConnection
 	function query($sql, $params)
 	{
 		//	do all of the variable replacements
-		$this->params = array();
+		$this->queryParams = array();
 		foreach($params as $key => $value)
 		{
 			$parts = explode(':', $key);
-			$this->params[$parts[0]] = $value;
+			$this->queryParams[$parts[0]] = $value;
 			if(isset($parts[1]))
 				$this->types[$parts[0]] = $parts[1];
 		}
@@ -121,13 +126,13 @@ abstract class DbConnection
 		switch($type)
 		{
 			case 'string':
-				$replaceString = $this->escapeString($this->params[$name]);
+				$replaceString = $this->escapeString($this->queryParams[$name]);
 				break;
 			case 'int':
-				$replaceString = (int)$this->params[$name];
+				$replaceString = (int)$this->queryParams[$name];
 				break;
 			case 'keyword':
-				$replaceString = $this->params[$name];
+				$replaceString = $this->queryParams[$name];
 				break;
 			default:
 				trigger_error("unknown param type: " . $type);

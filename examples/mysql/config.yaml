@@ -1,0 +1,7 @@
+zoop:
+    db:
+        default:
+            driver: php_mysql
+            database: mysql_test
+            username: mysql_test
+            

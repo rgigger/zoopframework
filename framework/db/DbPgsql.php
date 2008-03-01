@@ -4,41 +4,27 @@ class DbPgsql extends DbConnection
 	private $connectionString;
 	private $connection;
 	
-	function __construct($params, $name)
+	public function init()
 	{
-		//	the parent contructor will validate all of the paramaters 
-		//		inlcuding handling error messages to the user for missing config options
-		//		and filling in default params
-		parent::__construct($params, $name);
-		
 		//	create the connection string
-		$connString = 'dbname=' . $params['database'];
-		$connString .= ' user=' . $params['username'];
+		$connString = 'dbname=' . $this->params['database'];
+		$connString .= ' user=' . $this->params['username'];
 		if(isset($params['host']))
-			$connString .= ' host=' . $params['host'];
+			$connString .= ' host=' . $this->params['host'];
 		if(isset($params['port']))
-			$connString .= ' port=' . $params['port'];
+			$connString .= ' port=' . $this->params['port'];
 		
 		$this->connectionString = $connString;
 	}
-	/*
-
-	function DbPgsql($params)
+	
+	public function getRequireds()
 	{
-		$connString = 'dbname=' . $params['database'];
-		$connString .= ' user=' . $params['username'];
-		if(isset($params['host']))
-			$connString .= ' host=' . $params['host'];
-		if(isset($params['port']))
-			$connString .= ' port=' . $params['port'];
-		
-		$this->conn = pg_connect($connString, PGSQL_CONNECT_FORCE_NEW);
+		return array('database', 'username');
 	}
-	*/
 	
 	function escapeString($string)
 	{
-		return "'$string'";
+		return "'" . pg_escape_string($this->connection, $string) . "'";
 	}
 	
 	function _query($sql)
