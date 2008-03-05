@@ -85,7 +85,11 @@ class Zone
 				{
 					//	finally look for a defaultpage
 					if( method_exists($this, $defaultName) )
+					{
 						$foundPage = $defaultName;
+						
+					}
+						
 					else
 						trigger_error("no valid page for $thisPart in " . get_class($this));
 				}
@@ -95,8 +99,8 @@ class Zone
 		//	if we found a page then run it
 		if( isset($foundPage) )
 		{
-			$postfix = $foundPage == 'pageDefault' ? 'default' : $originalPart;
-			$pageParams = array_merge(array(0 => $postfix), $pathParts);
+			$postfix = $foundPage == 'pageDefault' ? array(0 => 'default', 1 => $originalPart) : array(0 => $originalPart);
+			$pageParams = array_merge($postfix, $pathParts);
 			
 			if( method_exists($this, 'initPages') )
 				$this->initPages($pageParams, $this->params);
@@ -130,8 +134,6 @@ class Zone
 		if($numLevels < 0)
 			$maxLevel += $numLevels;
 		
-		// echo_r($this->requestInfo);
-		// echo_r($this->params);
 		foreach($this->requestInfo as $index => $thisZoneInfo)
 		{
 			$path .= $thisZoneInfo['zone'];
