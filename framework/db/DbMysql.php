@@ -15,10 +15,26 @@ class DbMysql extends DbConnection
 	
 	function escapeString($string)
 	{
+		self::connect();	
 		return "'" . mysql_real_escape_string($string, $this->connection) . "'";
 	}
 	
 	function _query($sql)
+	{	
+		self::connect();	
+		$result = mysql_query($sql, $this->connection) 
+			or trigger_error(mysql_error());
+		
+		return new DbMysqlResult($result);
+	}
+	
+	function getLastInsertId()
+	{
+		self::connect();	
+		return mysql_insert_id($this->connection);
+	}
+	
+	private function connect()
 	{
 		//	lazy connection to the database
 		if(!$this->connection)
@@ -28,15 +44,5 @@ class DbMysql extends DbConnection
 			mysql_select_db($this->params['database'], $this->connection)
 				or trigger_error(mysql_error());
 		}
-		
-		$result = mysql_query($sql, $this->connection) 
-			or trigger_error(mysql_error());
-		
-		return new DbMysqlResult($result);
-	}
-	
-	function getLastInsertId()
-	{
-		return mysql_insert_id($this->connection);
 	}
 }
