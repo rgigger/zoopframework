@@ -23,9 +23,10 @@ class DbMysql extends DbConnection
 		//	lazy connection to the database
 		if(!$this->connection)
 		{
-			$this->connection = mysql_connect($this->params['host'], $this->params['username'], $this->params['password']);
+			$this->connection = mysql_connect($this->params['host'], $this->params['username'], $this->params['password'])
+				or trigger_error(mysql_error());
 			mysql_select_db($this->params['database'], $this->connection)
-				or trigger_error(mysql_error());;
+				or trigger_error(mysql_error());
 		}
 		
 		$result = mysql_query($sql, $this->connection) 
