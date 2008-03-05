@@ -1,8 +1,8 @@
 <?php
 class DbObject implements Iterator
 {
-	public $id;
-	
+	//	this should really be at least protected???
+	public $id;	
 	private $scalars;
 	private $hasMany;
 	private $belongsTo;
@@ -10,6 +10,24 @@ class DbObject implements Iterator
 	private $bound;
 	
 	//	constructor
+	//
+	//	How should the constructor really work?  Do we ever even want them calling it directly?
+	//	from now we will have these cases for the constructor
+	//	1. You pass nothing and get a totally in memory object.  You must call save in order to commit it to the db
+	//	2. You pass in all fields including all primary key fields in which case it will assume it is bound to a row in the db
+	//	3. You pass in some fields but not any primary key fields in which case it...
+	//		3.1 commits itself to the db and is then bound?
+	//		3.2 is in memory until you call save, then it binds itself to the db
+	//		3.3 just don't do it, it's too confusing
+	//
+	//	inserts now only happen in save and (static)get
+	//	constructor assumes either it already exists in the db or it is an in memory object
+	//
+	//	the other ways to create objects are:
+	//	1. find(): give it conditions and it will return the objects you need - no longer handled by constructor
+	//	2. create(): it will use the fields you give it to create a new row and return an object bound to it - no longer handled by 
+	//	3. get(): will create the rows if not already in the db and return objects bound to the rows
+	//
 	function __construct($init = NULL, $defaults = NULL)
 	{	
 		$this->bound = false;
@@ -65,12 +83,14 @@ class DbObject implements Iterator
 		$this->autoSave = true;
 		$this->init();
 	}
-
+	
+	//	second stage constructor
 	protected function init()
 	{
 		//	override this function to setup relationships without having to handle the constructor chaining
 	}
 	
+	//	these two need to be updated to handle other single field and multi-field primary keys
 	function setId($id)
 	{
 		$this->id = $id;
@@ -82,6 +102,7 @@ class DbObject implements Iterator
 		return $this->id;
 	}
 	
+	//	I don't know that this function even needs to exist.  You should be using _create instead and we will remake this into a static method later
 	function createRow($values)
 	{
 		$info = DbConnection::generateInsertInfo($this->getTableName(), $values);
@@ -89,6 +110,9 @@ class DbObject implements Iterator
 		return $this->id;
 	}
 	
+	//	init should have a chance to set both the table name and the field name
+	//	if it doesn't set them then we should calculate them once and store them in member vars
+	//	these functions should just be acessors for those vars
 	function getTableName()
 	{
 		$name = get_class($this);
@@ -109,7 +133,8 @@ class DbObject implements Iterator
 	//
 	//	the scalar handlers
 	//
-	
+	//	rewrite them and make them handle primary keys with different names or more than one field
+	//
 	function getScalar($field)
 	{
 		if(!$this->bound)
@@ -207,6 +232,14 @@ class DbObject implements Iterator
 		$this->setScalars($this->scalars, true);
 	}
 	
+	//
+	//	end of scalar handlers
+	//
+	
+	//
+	//	vector handlers
+	//
+	
 	function hasMany($name, $params = NULL)
 	{
 		if(isset($params['class']))
@@ -264,6 +297,10 @@ class DbObject implements Iterator
 		return new $className($this->getScalar($localKey));
 	}
 	
+	//
+	//	end vector handlers
+	//
+	
 	function __get($varname)
 	{
 		if(isset($this->hasMany[$varname]))
@@ -281,7 +318,10 @@ class DbObject implements Iterator
 		$this->setScalar($varname, $value);
 	}
 	
+	//
 	//	iterator functions
+	//
+	
 	public function rewind()
 	{
 		reset($this->scalars);
@@ -310,6 +350,15 @@ class DbObject implements Iterator
 		$var = $this->current() !== false;
 		return $var;
 	}
+	
+	//
+	//	end iterator functions
+	//
+	
+	
+	//
+	//	static methods
+	//
 	
 	static public function _create($className, $values)
 	{
@@ -395,4 +444,8 @@ class DbObject implements Iterator
 		
 		return current($a);
 	}
+	
+	//
+	//	end static methods
+	//
 }
