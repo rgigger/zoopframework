@@ -24,6 +24,7 @@ class DbPgsql extends DbConnection
 	
 	function escapeString($string)
 	{
+		self::connect();	
 		if(version_compare(PHP_VERSION, "5.2", "<"))
 			return "'" . pg_escape_string($string) . "'";
 		else
@@ -32,10 +33,7 @@ class DbPgsql extends DbConnection
 	
 	function _query($sql)
 	{
-		//	lazy connection to the database
-		if(!$this->connection)
-			$this->connection = pg_connect($this->connectionString, PGSQL_CONNECT_FORCE_NEW);
-		
+		self::connect();	
 		$result = pg_query($this->connection, $sql);
 		return new DbPgResult($result);
 	}
@@ -44,4 +42,12 @@ class DbPgsql extends DbConnection
 	{
 		return $this->fetchCell("select lastval()", array());
 	}
+	
+	private function connect()
+	{
+		//	lazy connection to the database
+		if(!$this->connection)
+			$this->connection = pg_connect($this->connectionString, PGSQL_CONNECT_FORCE_NEW);
+	}
+	
 }

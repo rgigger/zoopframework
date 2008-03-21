@@ -3,7 +3,7 @@
 <html>
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>I'm Writing</title>
+	<title>Main Title</title>
 	<BASE HREF="{$scriptUrl}">
     <link href="public/css/write.css" rel="stylesheet" type="text/css">
   </head>

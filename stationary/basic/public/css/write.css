@@ -16,7 +16,6 @@ body {
 	border: 5px solid blue;
 	height: 200px;
 	background-color: #FF0000;
-	background-image: url('../images/homestar.gif');
 	background-repeat: no-repeat;
 	background-position: 20px 20px;
 }

@@ -25,6 +25,9 @@ class DbMysql extends DbConnection
 		$result = mysql_query($sql, $this->connection) 
 			or trigger_error(mysql_error());
 		
+		if(gettype($result) == 'boolean')
+			return $result;
+		
 		return new DbMysqlResult($result);
 	}
 	
