@@ -1,13 +1,13 @@
 <?php
-class AppModule
+class AppModule extends ZoopModule
 {
-	function hasPub()
+	function getIncludes()
 	{
-		return 0;
+		return array(zoop_dir . '/krumo/class.krumo.php', 'Globals.php');
 	}
 	
 	function getClasses()
 	{
-		return array();
+		return array('Application');
 	}
 }

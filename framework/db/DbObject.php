@@ -1,87 +1,46 @@
 <?php
 class DbObject implements Iterator
 {
-	//	this should really be at least protected???
-	public $id;	
-	private $scalars;
-	private $hasMany;
-	private $belongsTo;
-	private $autoSave;
+	protected $tableName;
+	protected $primaryKey;
+	protected $keyAssignedBy;
+	private $missingKeyFields;
 	private $bound;
+	private $scalars;
+	// private $krumoHack = array();
 	
-	//	constructor
-	//
-	//	How should the constructor really work?  Do we ever even want them calling it directly?
-	//	from now we will have these cases for the constructor
-	//	1. You pass nothing and get a totally in memory object.  You must call save in order to commit it to the db
-	//	2. You pass in all fields including all primary key fields in which case it will assume it is bound to a row in the db
-	//	3. You pass in some fields but not any primary key fields in which case it...
-	//		3.1 commits itself to the db and is then bound?
-	//		3.2 is in memory until you call save, then it binds itself to the db
-	//		3.3 just don't do it, it's too confusing
-	//
-	//	inserts now only happen in save and (static)get
-	//	constructor assumes either it already exists in the db or it is an in memory object
-	//
-	//	the other ways to create objects are:
-	//	1. find(): give it conditions and it will return the objects you need - no longer handled by constructor
-	//	2. create(): it will use the fields you give it to create a new row and return an object bound to it - no longer handled by 
-	//	3. get(): will create the rows if not already in the db and return objects bound to the rows
-	//
-	function __construct($init = NULL, $defaults = NULL)
-	{	
+	const keyAssignedBy_db = 1;
+	const keyAssignedBy_dev = 2;
+	const keyAssignedBy_auto = 3;
+	
+	function __construct($init = NULL)
+	{
+		//	set up some sensible defaults
+		$this->primaryKey = array('id');
+		$this->tableName = $this->getDefaultTableName();
 		$this->bound = false;
-
-		if(is_numeric($init))
-			$init = (int)$init;
+		$this->keyAssignedBy = self::keyAssignedBy_db;
+		$this->scalars = array();
 		
-		if($init === 0)
+		$this->init($init);
+		
+		$this->missingKeyFields = count($this->primaryKey);
+		if($this->keyAssignedBy == self::keyAssignedBy_db && count($this->primaryKey) != 1)
+			trigger_error("in order for 'keyAssignedBy_db' to work you must have a single primary key field");
+		
+		if(is_array($init))
+		{
+			$this->assignScalars($init);
+		}
+		else if($init === NULL)
+		{
 			return;
-		
-		if($defaults)
-		{
-			assert(is_array($defaults));
-			if(!is_null($init))
-				trigger_error("defaults can only be used when creating the row in the database.  use setscalars to set them after it is created");
 		}
-		
-		switch(gettype($init))
+		else
 		{
-			case 'integer':
-				$this->setId($init);
-				$this->scalars = array();
-				break;
-			case 'array':
-				if(isset($init['id']))
-				{
-					$this->setId($init['id']);
-					$this->scalars = $init;
-				}
-				else
-				{
-					//	do a selsert on the lookup fields
-					//	retrieve all of them
-					//	if there is more than one throw an error
-					trigger_error('not yet implemented');
-				}
-				break;
-			case 'NULL':
-				//	we just need to create a new blank object, bound to a new row in the database
-				$tableName = $this->getTableName();
-				if(!$defaults)
-					$this->setId(SqlInsertRow("insert into $tableName default values", array()));
-				else
-					$this->createRow($defaults);
-				
-				break;
-			default:
-				trigger_error('object not initialized');
-				break;
+			assert(count($this->primaryKey) == 1);
+			$this->assignScalars(array($this->primaryKey), $init);
 		}
-		
-		$this->hasMany = array();
-		$this->autoSave = true;
-		$this->init();
 	}
 	
 	//	second stage constructor
@@ -90,30 +49,22 @@ class DbObject implements Iterator
 		//	override this function to setup relationships without having to handle the constructor chaining
 	}
 	
-	//	these two need to be updated to handle other single field and multi-field primary keys
-	function setId($id)
+	private function assignScalars($data)
 	{
-		$this->id = $id;
-		$this->bound = true;
+		foreach($data as $member => $value)
+		{
+			if(!isset($this->scalars[$member]) && in_array($member, $this->primaryKey))
+			{
+				$this->missingKeyFields--;
+				if($this->missingKeyFields == 0)
+					$this->bound = 1;
+			}
+			
+			$this->scalars[$member] = $value;
+		}
 	}
 	
-	function getId()
-	{
-		return $this->id;
-	}
-	
-	//	I don't know that this function even needs to exist.  You should be using _create instead and we will remake this into a static method later
-	function createRow($values)
-	{
-		$info = DbConnection::generateInsertInfo($this->getTableName(), $values);
-		$this->setId(SqlInsertRow($info['sql'], $info['params']));
-		return $this->id;
-	}
-	
-	//	init should have a chance to set both the table name and the field name
-	//	if it doesn't set them then we should calculate them once and store them in member vars
-	//	these functions should just be acessors for those vars
-	function getTableName()
+	private function getDefaultTableName()
 	{
 		$name = get_class($this);
 
@@ -124,99 +75,85 @@ class DbObject implements Iterator
 		return strtolower($name);		
 	}
 	
-	function getIdFieldName()
+	public function getTableName()
 	{
-		return 'id';
+		return $this->tableName;
 	}
 	
+	public function getId()
+	{
+		assert(count($this->primaryKey) == 1);
+		return $this->scalars[$this->primaryKey[0]];
+	}
 	
+	public function getString()
+	{
+		$s = '';
+		$this->loadScalars();
+		foreach($this->scalars as $field => $value)
+			$s .= " $field => $value";
+		return get_class($this) . ':' . $s;
+	}
+		
 	//
 	//	the scalar handlers
 	//
 	//	rewrite them and make them handle primary keys with different names or more than one field
 	//
-	function getScalar($field)
+		
+	public function getFields()
 	{
-		if(!$this->bound)
-			return NULL;
+		return $this->scalars;
+	}
+	
+	public function setFields($data)
+	{
+		$this->assignScalars($data);
+	}
+	
+	private function getScalar($field)
+	{
+		if(!isset($this->scalars[$field]))
+		{
+			if(!$this->bound)
+				trigger_error("the field: $field is not present in memory and this object is not yet bound to a database row");
+			$this->loadScalars();
+		}
 		
 		if(!isset($this->scalars[$field]))
-			$this->loadScalars();
+			trigger_error("the field $field present neither in memory nor in the cooresponding database table");
 		
 		return $this->scalars[$field];
 	}
 	
-	function setScalar($field, $value)
+	private function setScalar($field, $value)
 	{
 		$data[$field] = $value;
-		$this->setScalars($data);
+		$this->assignScalars($data);
 	}
 	
-	function setScalars($data, $force = false)
+	/*
+	private function setScalars($data)
 	{
-		$idFieldName = $this->getIdFieldName();
-		
-		//	
-		//	most of this should be replaced by a call to DbConnection::generateUpdateInfo() or something
-		//
-		
-		//	if they passed in an id we don't need to reset it just verify that it is the right one
-		if(isset($data[$idFieldName]))
+		foreach($data as $field => $value)
 		{
-			assert($data[$idFieldName] == $this->id);
-			unset($data[$idFieldName]);
-		}
-		
-		if($this->autoSave || $force)
-		{
-			//	this should probably all be abstracted into some 
-			if($this->bound)
-			{
-				$tableName = $this->getTableName();
-
-				$this->assignScalars($data);
-
-				$updateFields = array();
-				$updateValues = array();
-				foreach($data as $member => $value)
-				{
-					if($value === null)
-						$updateFields[] = "$member = NULL";
-					else
-					{
-						$updateFields[] = "$member = :$member";
-						$updateValues[$member] = $value;
-					}
-				}
-				$updateFields = implode(", ", $updateFields);
-				
-				$updateValues['id'] = $this->id;
-				SqlUpdateRow("update $tableName set $updateFields where $idFieldName = :id", $updateValues);
-			}
-			else
-			{
-				$this->createRow($data);
-			}
-		}
-		else
-		{
-			$this->assignScalars($data);
+			$this->scalars[$field] = $value;
 		}
 	}
+	*/
 	
-	function assignScalars($data)
+	private function loadScalars()
 	{
-		foreach($data as $member => $value)
+		assert($this->bound);
+		$wheres = array();
+		$whereValues = array();
+		foreach($this->primaryKey as $keyField)
 		{
-			$this->scalars[$member] = $value;
+			$wheres[] = "$keyField = :$keyField";
+			$whereValues[$keyField] = $this->scalars[$keyField];
 		}
-	}
-	
-	function loadScalars()
-	{
-		$tableName = $this->getTableName();
-		$idFieldName = $this->getIdFieldName();
-		$row = SqlFetchRow("select * from $tableName where $idFieldName = :id", array('id' => $this->id));
+		$whereClause = implode(' and ', $wheres);
+		$row = self::_getConnection(get_class($this))->fetchRow("select * from $this->tableName where $whereClause", $whereValues);
 		
 		//	if they manually set a field don't write over it just because they loaded one scalar
 		foreach($row as $field => $value)
@@ -224,23 +161,51 @@ class DbObject implements Iterator
 			if(!isset($this->scalars[$field]))
 				$this->scalars[$field] = $value;
 		}
-		
 	}
 	
-	function save()
+	public function save()
 	{
-		$this->setScalars($this->scalars, true);
+		if(!$this->bound)
+		{
+			if($this->keyAssignedBy == self::keyAssignedBy_db)
+				$this->setScalar($this->primaryKey[0], self::_getConnection(get_class($this))->insertArray($this->tableName, $this->scalars));
+			else
+			{
+				if(!$this->bound)
+					trigger_error("you must supply _create with values for all of the primary key fields");
+
+				self::_getConnection(get_class($this))->insertArray($this->tableName, $values, false);
+			}
+		}
+		else
+		{
+			$updateInfo = DbConnection::generateUpdateInfo($this->tableName, $this->getKeyConditions(), $this->scalars);
+			self::_getConnection(get_class($this))->updateRow($updateInfo['sql'], $updateInfo['params']);
+		}
+	}
+	
+	private function getKeyConditions()
+	{
+		assert($this->bound);
+		return array_intersect_key($this->scalars, array_flip($this->primaryKey));
+	}
+	
+	public function destroy()
+	{
+		$deleteInfo = DbConnection::generateDeleteInfo($this->tableName, $this->getKeyConditions());
+		self::_getConnection(get_class($this))->deleteRow($deleteInfo['sql'], $deleteInfo['params']);
 	}
 	
 	//
 	//	end of scalar handlers
 	//
 	
+	
 	//
 	//	vector handlers
 	//
-	
-	function hasMany($name, $params = NULL)
+	/*
+	protected function hasMany($name, $params = NULL)
 	{
 		if(isset($params['class']))
 			$className = $params['class'];
@@ -255,7 +220,7 @@ class DbObject implements Iterator
 		$this->hasMany[$name] = array('className' => $className, 'foreignKey' => $foreignKey);
 	}
 	
-	function getMany($name)
+	protected function getMany($name)
 	{
 		$className = $this->hasMany[$name]['className'];
 		$foreignKey = $this->hasMany[$name]['foreignKey'];
@@ -276,7 +241,7 @@ class DbObject implements Iterator
 		return $objects;
 	}
 	
-	function belongsTo($name, $params = NULL)
+	protected function belongsTo($name, $params = NULL)
 	{
 		//	determine the name of the class we belong to
 		$className = isset($params['class']) ? $params['class'] : $name;
@@ -289,37 +254,52 @@ class DbObject implements Iterator
 		$this->belongsTo[$name] = array('className' => $className, 'localKey' => $localKey);
 	}
 	
-	function getOwner($name)
+	protected function getOwner($name)
 	{
 		$className = $this->belongsTo[$name]['className'];
 		$localKey = $this->belongsTo[$name]['localKey'];
 		$tableName = DbObject::_getTableName($className);
 		return new $className($this->getScalar($localKey));
 	}
-	
+	*/
 	//
 	//	end vector handlers
 	//
 	
+	//
+	//	begin magic functions
+	//
+	
 	function __get($varname)
 	{
+		//	krumo hack
+		// if(substr($varname, 0, 5) == 'krumo')
+		// 	return isset($this->krumoHack[$varname]) ? $this->krumoHack[$varname] : NULL;
+		
+		/*
 		if(isset($this->hasMany[$varname]))
 			return $this->getMany($varname);
 		
 		if(isset($this->belongsTo[$varname]))
 			return $this->getOwner($varname);
-		
+		*/
 		return $this->getScalar($varname);
 	}
 
 	function __set($varname, $value)
 	{
-		$this->autoSave = false;
+		//	krumo hack
+		// if(substr($varname, 0, 5) == 'krumo')
+		// 	$this->krumoHack[$varname] = $value;
 		$this->setScalar($varname, $value);
 	}
 	
 	//
-	//	iterator functions
+	//	end magic functions
+	//
+	
+	//
+	//	begin iterator functions
 	//
 	
 	public function rewind()
@@ -360,72 +340,74 @@ class DbObject implements Iterator
 	//	static methods
 	//
 	
-	static public function _create($className, $values)
+	static private function _getConnectionName($className)
 	{
-		$tableName = DbObject::_getTableName($className);
-		SqlModifyRowValues($tableName, $values);
-		$object = new $className($values);
-		return $object;
+		return 'default';
 	}
 	
-	static function _getTableName($className)
+	static private function _getConnection($className)
+	{
+		return DbModule::getConnection(call_user_func(array($className, '_getConnectionName'), $className));
+	}
+	
+	static private function _getTableName($className)
 	{
 		//	work around lack of "late static binding"
-		// EchoBacktrace();
-		$dummy = new $className(0);
+		$dummy = new $className();
 		return $dummy->getTableName();
 	}
 	
-	static function _find($className, $conditions = NULL)
+	static public function _create($className, $values)
 	{
-		$tableName = self::_getTableName($className);
-		
-		if(is_numeric($conditions))
-			$conditions = (int)$conditions;
-		
-		switch(gettype($conditions))
-		{
-			case 'integer':
-				trigger_error('not yet implemented');
-				break;
-			case 'array':
-				$sql = "select * from $tableName";
-				
-				if(count($conditions) > 0)
-				{
-					$sql .= ' where ';
-					$parts = array();
-					foreach($conditions as $fieldname => $value)
-					{
-						$parts[] = "$fieldname = '$value'";
-					}
-					$sql .= implode(' and ', $parts);
-				}
-				
-				$rows = SqlFetchMap($sql, 'id', array());
-				$objects = array();
-				foreach($rows as $id => $row)
-				{
-					$objects[$id] = new $className($row);
-				}
-				return $objects;
-				break;
-			case 'NULL':
-				$sql = "select * from $tableName";
-				$rows = SqlFetchMap($sql, 'id', array());
-				$objects = array();
-				foreach($rows as $id => $row)
-				{
-					$objects[$id] = new $className($row);
-				}
-				return $objects;
-				break;
-			default:
-				trigger_error('unhandled conditions type');
-				break;
-		}
+		$object = new $className($values);
+		$object->save();
+		return $object;
 	}
 	
+	static public function _insert($className, $values)
+	{
+		self::_getConnection($className)->insertArray(self::_getTableName($className), $values, false);			
+	}
+		
+	static public function _findBySql($className, $sql, $params)
+	{
+		$res = self::_getConnection($className)->query($sql, $params);
+		
+		if(!$res->valid())
+			return array();
+		
+		$objects = array();
+		for($row = $res->current(); $res->valid(); $row = $res->next())
+		{
+			$objects[] = new $className($row);
+		}
+		
+		return $objects;
+	}
+	
+	static public function _findByWhere($className, $where, $params)
+	{
+		$tableName = DbObject::_getTableName($className);
+		return self::_findBySql($className, "select * from $tableName where $where", $params);
+	}
+	
+	static public function _find($className, $conditions = NULL)
+	{
+		$tableName = DbObject::_getTableName($className);
+		if($conditions)
+		{
+			$selectInfo = self::_getConnection($className)->generateSelectInfo($tableName, '*', $conditions);
+			$sql = $selectInfo['sql'];
+			$params = $selectInfo['params'];
+		}
+		else
+		{
+			$sql = "select * from $tableName";
+			$params = array();
+		}
+		
+		return self::_findBySql($className, $sql, $params);
+	}
 	
 	/**
 	 * Retrieve one object from the database and map it to an object
@@ -433,7 +415,8 @@ class DbObject implements Iterator
 	 * @param array $conditions Key value pair for the fields you want to look up
 	 * @return DbObject
 	 */	
-	static function _findOne($className, $conditions = NULL)
+	
+	static public function _findOne($className, $conditions = NULL)
 	{
 		$a = DbObject::_find($className, $conditions);
 		if(!$a)
@@ -443,6 +426,13 @@ class DbObject implements Iterator
 		assert(count($a) == 1);
 		
 		return current($a);
+	}
+	
+	static public function _getOne($className, $conditions = NULL)
+	{
+		$tableName = DbObject::_getTableName($className);
+		$row = self::_getConnection($className)->selsertRow($tableName, "*", $conditions);
+		return new $className($row);
 	}
 	
 	//

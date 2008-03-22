@@ -63,7 +63,9 @@ class Zoop
 		
 		//	temporary measure so I can test without having to convert all of the modules over to the new format right away
 		if(file_exists(zoop_dir . "/$name/module.php"))
+		{
 			include(zoop_dir . "/$name/module.php");
+		}
 		else
 		{
 			$moduleName = ucfirst($name) . 'Module';

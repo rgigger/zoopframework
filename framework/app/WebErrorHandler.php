@@ -1,6 +1,14 @@
 <?php
 class WebErrorHandler
 {
+	static function throwException($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
+	{
+		$e = new Exception($errstr, $errno);
+		$e->setFile($errfile);
+		$e->setLine($errline);
+		throw $e;
+	}
+	
 	static function handleError($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
 		switch(app_status)
@@ -81,7 +89,7 @@ class WebErrorHandler
 	
 	function exceptionHandler($exception)
 	{
-		echo_r($exception);
-		self::handleError(0, $exception->getMessage(), $exception->getFile(), $exception->getLine(), NULL, $exception->getTrace());
+		// echo_r($exception);
+		self::handleError($exception->getCode(), $exception->getMessage(), $exception->getFile(), $exception->getLine(), NULL, $exception->getTrace());
 	}
 }

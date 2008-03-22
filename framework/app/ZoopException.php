@@ -1,11 +1,13 @@
 <?php
 class ZoopException extends Exception
 { 
-	public static function errorHandlerCallback($code, $string, $file, $line, $context)
+	public function setFile($file)
 	{
-		$e = new self($string, $code);
-		$e->line = $line;
-		$e->file = $file;
-		throw $e;
+		$this->file = $file;
+	}
+	
+	public function setLine($line)
+	{
+		$this->line = $line;
 	}
 }

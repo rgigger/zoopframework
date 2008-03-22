@@ -15,7 +15,11 @@ abstract class DbConnection
 		$this->init();
 	}
 	
-	function validateParams($connectionName)
+	//
+	//	Begin configuration funtions
+	//
+	
+	private function validateParams($connectionName)
 	{
 		//	handle the required fields
 		$missing = array();
@@ -40,54 +44,76 @@ abstract class DbConnection
 	{
 	}
 	
-	function getRequireds()
+	protected function getRequireds()
 	{
 		return array();
 	}
 	
-	function getDefaults()
+	protected function getDefaults()
 	{
 		return array();
 	}
 	
-	function echoOn()
+	//
+	//	End configuration funtions
+	//
+	
+	//
+	//	Begin misc funtions
+	//
+	
+	public function echoOn()
 	{
 		$this->echo = true;
 	}
 	
-	function echoOff()
+	public function echoOff()
 	{
 		$this->echo = false;
 	}
 	
-	//	transaction stuff
-	function beginTransaction()
-	{
-		$this->_query('begin');
-	}
-	
-	function commitTransaction()
-	{
-		$this->_query('commit');
-	}
-	
-	function rollbackTransaction()
-	{
-		$this->_query('rollback');
-	}
-	
-	
-	function getSchema($name = 'public')
+	public function getSchema($name = 'public')
 	{
 		return new DbSchema($this);
 	}
 	
-	function alterSchema($sql)
+	public function alterSchema($sql)
 	{
 		return $this->_query($sql);
 	}
 	
-	function query($sql, $params)
+	//
+	//	End misc funtions
+	//
+	
+	//
+	//	Begin transaction funtions
+	//
+	
+	public function beginTransaction()
+	{
+		$this->_query('begin');
+	}
+	
+	public function commitTransaction()
+	{
+		$this->_query('commit');
+	}
+	
+	public function rollbackTransaction()
+	{
+		$this->_query('rollback');
+	}
+	
+	//
+	//	End transaction funtions
+	//
+	
+	//
+	//	Begin query funtions
+	//
+	
+	public function query($sql, $params)
 	{
 		//	do all of the variable replacements
 		$this->queryParams = array();
@@ -108,8 +134,7 @@ abstract class DbConnection
 	}
 	
 	//	callback passed to preg_replace_callback for doing the variable substitutions
-	//	private
-	function queryCallback($matches)
+	private function queryCallback($matches)
 	{
 		if(isset($matches[3]))
 			$matches[1] = $matches[3];
@@ -142,7 +167,24 @@ abstract class DbConnection
 		return $replaceString;
 	}
 	
-	function fetchRow($sql, $params)
+	//
+	//	end query funtions
+	//
+	
+	
+	//
+	//	Begin fetch funtions
+	//
+	
+	public function fetchCell($sql, $params)
+	{
+		$row = $this->fetchRow($sql, $params);
+		if(!$row)
+			return NULL;
+		return current($row);
+	}
+	
+	public function fetchRow($sql, $params)
 	{
 		$res = $this->query($sql, $params);
 		$num = $res->numRows();
@@ -155,15 +197,7 @@ abstract class DbConnection
 		return $res->current();
 	}
 	
-	function fetchCell($sql, $params)
-	{
-		$row = $this->fetchRow($sql, $params);
-		if(!$row)
-			return NULL;
-		return current($row);
-	}
-	
-	function fetchRows($sql, $params)
+	public function fetchRows($sql, $params)
 	{
 		$rows = array();
 		$res = $this->query($sql, $params);
@@ -179,7 +213,7 @@ abstract class DbConnection
 		return $rows;
 	}
 	
-	function fetchColumn($sql, $params)
+	public function fetchColumn($sql, $params)
 	{
 		$rows = array();
 		$res = $this->query($sql, $params);
@@ -195,7 +229,7 @@ abstract class DbConnection
 		return $rows;
 	}
 	
-	function fetchSimpleMap($sql, $keyFields, $valueField, $params)
+	public function fetchSimpleMap($sql, $keyFields, $valueField, $params)
 	{
 		$map = array();
 		$res = $this->query($sql, $params);
@@ -225,7 +259,7 @@ abstract class DbConnection
 		return $map;
 	}
 	
-	function fetchMap($sql, $mapFields, $params)
+	public function fetchMap($sql, $mapFields, $params)
 	{
 		$map = array();
 		$res = $this->query($sql, $params);
@@ -260,7 +294,7 @@ abstract class DbConnection
 		return $map;
 	}
 	
-	function fetchComplexMap($sql, $mapFields, $params)
+	public function fetchComplexMap($sql, $mapFields, $params)
 	{
 		$map = array();
 		$res = $this->query($sql, $params);
@@ -292,139 +326,79 @@ abstract class DbConnection
 		return $map;
 	}
 	
-	function modify($sql, $params)
+	//
+	//	End fetch functions
+	//
+	
+	//
+	//	Begin insert functions
+	//
+	
+	public function insertRow($sql, $params, $serial = true)
+	{
+		$this->query($sql, $params);
+		if($serial)
+			return $this->getLastInsertId();
+		else
+			return false;
+	}
+	
+	public function insertArray($tableName, $values, $serial = true)
+	{
+		$insertInfo = DbConnection::generateInsertInfo($tableName, $values);
+		return $this->insertRow($insertInfo['sql'], $insertInfo['params'], $serial);
+	}
+	
+	//
+	//	End insert functions
+	//
+	
+	//
+	//	Begin update functions
+	//
+	
+	public function updateRow($sql, $params)
+	{
+		$affected = $this->updateRows($sql, $params);
+		if($affected == 0 || $affected > 1)
+			trigger_error("attempting to update one row, $affected altered");
+	}
+	
+	public function updateRows($sql, $params)
 	{
 		$res = $this->query($sql, $params);
 		return $res->affectedRows();
 	}
 	
-	function modifyRow($sql, $params)
+	//
+	//	End update functions
+	//
+	
+	//
+	//	Begin delete functions
+	//
+	
+	public function deleteRow($sql, $params)
 	{
-		$affected = $this->modify($sql, $params);
-		if($affected > 1)
-			trigger_error("$affected rows were changed.  Only one was expected");
-		return $affected;
+		//	it just so happens that they actually need to do the exact same thing
+		$this->updateRow($sql, $params);
 	}
 	
-	public function modifyRowValues($tableName, $values)
+	public function deleteRows($sql, $params)
 	{
-		//	generate the insert query info
-		$insertInfo = self::generateInsertInfo($tableName, $values);
-		return $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
+		//	it just so happens that they actually need to do the exact same thing
+		return $this->updateRows($sql, $params);
 	}
 	
-	function insertArray($tableName, $values)
-	{
-		$info = DbConnection::generateInsertInfo($tableName, $fieldInfo);
-		return SqlInsertRow($info['sql'], $info['params']);
-	}
+	//
+	//	End delete functions
+	//
 	
-	function insertRow($sql, $params)
-	{
-		$this->modifyRow($sql, $params);
-		return $this->getLastInsertId();
-	}
+	//
+	//	Begin combo functions
+	//
 	
-	function insertRows($sql, $params)
-	{
-		return $this->modify($sql, $params);
-	}
-	
-	public function insertRowValues($tableName, $values)
-	{
-		//	generate the insert query info
-		$insertInfo = self::generateInsertInfo($tableName, $values);
-		return $this->insertRow($insertInfo['sql'], $insertInfo['params']);
-	}
-	
-	function updateRow($sql, $params)
-	{
-		return $this->modifyRow($sql, $params);
-	}
-	
-	function updateRows($sql, $params)
-	{
-		return $this->modify($sql, $params);
-	}
-	
-	function deleteRow($sql, $params)
-	{
-		return $this->modifyRow($sql, $params);
-	}
-	
-	function deleteRows($sql, $params)
-	{
-		return $this->modify($sql, $params);
-	}
-	
-	function upsertRow($tableName, $conditions, $values)
-	{
-		// echo_r($conditions);
-		// echo_r($values);
-		//	generate the update query info
-		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
-		// echo_r($updateInfo);
-		//	update the row if it's there
-		$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
-		// var_dump($num);
-		if(!$num)
-		{
-			//	generate the insert query info
-			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
-			// echo_r($insertInfo);
-			
-			//	if it wasn't there insert it
-			$num = $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
-			// echo_r($this->fetchRows("select * from session_base", array()));
-			// var_dump($num);
-			// die('here');
-			if(!$num)
-			{
-				//	race condition
-				//	if another thread inserted it first then we we should check again
-				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
-				$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
-				if(!$num)
-				{
-					//	I'm pretty sure that this should actually never happen
-					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
-				}
-			}
-		}
-	}
-	
-	function selsertRow($tableName, $fieldNames, $conditions, $defaults = NULL, $lock = 0)
-	{
-		//	generate the sqlect query info
-		$selectInfo = self::generateSelectInfo($tableName, $fieldNames, $conditions, $lock);
-		
-		//	select the row if it's there
-		$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
-		if(!$row)
-		{
-			//	generate the insert query info
-			$allInsertFields = $defaults ? array_merge($conditions, $defaults) : $conditions;
-			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
-			
-			//	if it wasn't there insert it
-			$num = $this->modifyRow($insertInfo['sql'], $insertInfo['params']);
-			//	you may have a race condition here
-			//	if another thread inserted it first then we need to supress the error in PHP4
-			//	we should probably try to use exceptions in PHP5
-
-			$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
-			if(!$row)
-			{
-				//	I'm pretty sure that this should actually never happen
-				trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
-			}
-		}
-		
-		return $row;
-	}
-	
-	//	static
-	function generateSelectInfo($tableName, $fieldsNames, $conditions, $lock)
+	static function generateSelectInfo($tableName, $fieldsNames, $conditions, $lock = 0)
 	{
 		$selectParams = array();
 		
@@ -491,8 +465,26 @@ abstract class DbConnection
 		return array('sql' => $updateSql, 'params' => $updateParams);
 	}
 	
-	//	static
-	function generateInsertInfo($tableName, $values)
+	static function generateDeleteInfo($tableName, $conditions)
+	{
+		$deleteParams = array();
+		
+		//	create the condition part
+		$conditionParts = array();
+		foreach($conditions as $fieldName => $value)
+		{
+			$conditionParts[] = "$fieldName = :$fieldName";
+			$deleteParams[$fieldName] = $value;
+		}
+		$conditionClause = implode(' AND ', $conditionParts);
+		
+		$updateSql = "DELETE FROM :tableName:keyword WHERE $conditionClause";
+		$deleteParams['tableName'] = $tableName;
+		
+		return array('sql' => $updateSql, 'params' => $deleteParams);
+	}
+	
+	static function generateInsertInfo($tableName, $values)
 	{
 		$insertParams = array();
 		
@@ -519,4 +511,70 @@ abstract class DbConnection
 		
 		return array('sql' => $insertSql, 'params' => $insertParams);
 	}
+	
+	public function upsertRow($tableName, $conditions, $values)
+	{
+		//	generate the update query info
+		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
+		
+		//	update the row if it's there
+		$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
+		// var_dump($num);
+		if(!$num)
+		{
+			//	generate the insert query info
+			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
+			// echo_r($insertInfo);
+			
+			//	if it wasn't there insert it
+			$id = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			
+			if(!$id)
+			{
+				//	race condition
+				//	if another thread inserted it first then we we should check again
+				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
+				$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
+				if(!$num)
+				{
+					//	I'm pretty sure that this should actually never happen
+					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
+				}
+			}
+		}
+	}
+	
+	public function selsertRow($tableName, $fieldNames, $conditions, $defaults = NULL, $lock = 0)
+	{
+		//	generate the sqlect query info
+		$selectInfo = self::generateSelectInfo($tableName, $fieldNames, $conditions, $lock);
+		
+		//	select the row if it's there
+		$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
+		if(!$row)
+		{
+			//	generate the insert query info
+			$allInsertFields = $defaults ? array_merge($conditions, $defaults) : $conditions;
+			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
+			
+			//	if it wasn't there insert it
+			$id = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			//	you may have a race condition here
+			//	if another thread inserted it first then we need to supress the error in PHP4
+			//	we should probably try to use exceptions in PHP5
+
+			$row = $this->fetchRow($selectInfo['sql'], $selectInfo['params']);
+			if(!$row)
+			{
+				//	I'm pretty sure that this should actually never happen
+				trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
+			}
+		}
+		
+		return $row;
+	}
+		
+	//
+	//	End combo functions
+	//
 }

@@ -20,7 +20,13 @@ abstract class ZoopModule
 		//	include any normal files that need to be included
 		if($this->getIncludes())
 			foreach($this->getIncludes() as $thisInclude)
-				require(zoop_dir . '/' . $this->name . '/' . $thisInclude);
+			{
+				if($thisInclude[0] == '/')
+					require($thisInclude);
+				else
+					require(zoop_dir . '/' . $this->name . '/' . $thisInclude);
+			}
+				
 		
 		//	register any class files
 		if($this->getClasses())
