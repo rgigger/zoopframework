@@ -1,5 +1,11 @@
 -	first priorities
-	-	get rid of the homestar runner pic in the stationary
+	-	necessary modules
+		/	more complete db object implementation
+		-	awesome permissions system
+		-	forms
+			-	validation
+			-	saving
+		-	ajax
 	-	use exceptions to help people get set up, don't automatically run schema changes
 	-	good solution for form validation
 		-	check fields on the client
@@ -30,9 +36,6 @@
 		-	how to prevent script injection
 		-	session
 		-	dbobject
-	-	necessary modules
-		-	more complete db object implementation
-		-	awesome permissions system
 -	second prioities
 	-	creating new projects automatically
 		-	command line tool

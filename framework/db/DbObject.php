@@ -6,6 +6,7 @@ class DbObject implements Iterator
 	protected $keyAssignedBy;
 	private $missingKeyFields;
 	private $bound;
+	private $persisted;
 	private $scalars;
 	// private $krumoHack = array();
 	
@@ -21,6 +22,7 @@ class DbObject implements Iterator
 		$this->bound = false;
 		$this->keyAssignedBy = self::keyAssignedBy_db;
 		$this->scalars = array();
+		$this->persisted = NULL;
 		
 		$this->init($init);
 		
@@ -47,21 +49,6 @@ class DbObject implements Iterator
 	protected function init()
 	{
 		//	override this function to setup relationships without having to handle the constructor chaining
-	}
-	
-	private function assignScalars($data)
-	{
-		foreach($data as $member => $value)
-		{
-			if(!isset($this->scalars[$member]) && in_array($member, $this->primaryKey))
-			{
-				$this->missingKeyFields--;
-				if($this->missingKeyFields == 0)
-					$this->bound = 1;
-			}
-			
-			$this->scalars[$member] = $value;
-		}
 	}
 	
 	private function getDefaultTableName()
@@ -142,9 +129,40 @@ class DbObject implements Iterator
 	}
 	*/
 	
+	private function assignScalars($data)
+	{
+		foreach($data as $member => $value)
+		{
+			if(!isset($this->scalars[$member]) && in_array($member, $this->primaryKey))
+			{
+				$this->missingKeyFields--;
+				if($this->missingKeyFields == 0)
+					$this->bound = 1;
+			}
+			
+			$this->scalars[$member] = $value;
+		}
+	}
+	
 	private function loadScalars()
 	{
 		assert($this->bound);
+		$row = $this->fetchPersisted();
+		$this->assignPersisted($row);
+	}
+	
+	private function assignPersisted($row)
+	{
+		//	if they manually set a field don't write over it just because they loaded one scalar
+		foreach($row as $field => $value)
+		{
+			if(!isset($this->scalars[$field]))
+				$this->scalars[$field] = $value;
+		}		
+	}
+	
+	private function fetchPersisted()
+	{
 		$wheres = array();
 		$whereValues = array();
 		foreach($this->primaryKey as $keyField)
@@ -154,13 +172,40 @@ class DbObject implements Iterator
 		}
 		$whereClause = implode(' and ', $wheres);
 		$row = self::_getConnection(get_class($this))->fetchRow("select * from $this->tableName where $whereClause", $whereValues);
+		if($row)
+			$this->persisted = true;
+		else
+			$this->persisted = false;
+		return $row;
+	}
+	
+	private function _persisted()
+	{
+		if(!$this->bound)
+			return false;
 		
-		//	if they manually set a field don't write over it just because they loaded one scalar
-		foreach($row as $field => $value)
+		if($this->keyAssignedBy == self::keyAssignedBy_db)
+			return true;
+		else
 		{
-			if(!isset($this->scalars[$field]))
-				$this->scalars[$field] = $value;
+			$row = $this->fetchPersisted();
+			if($row)
+			{
+				//	we might as well save the results
+				$this->assignPersisted();
+				return true;
+			}
+			
+			return false;
 		}
+	}
+	
+	public function persisted()
+	{
+		if($this->persisted !== NULL)
+			return $this->persisted;
+		else
+			return $this->persisted = $this->_persisted();
 	}
 	
 	public function save()
@@ -170,17 +215,25 @@ class DbObject implements Iterator
 			if($this->keyAssignedBy == self::keyAssignedBy_db)
 				$this->setScalar($this->primaryKey[0], self::_getConnection(get_class($this))->insertArray($this->tableName, $this->scalars));
 			else
-			{
-				if(!$this->bound)
-					trigger_error("you must supply _create with values for all of the primary key fields");
-
-				self::_getConnection(get_class($this))->insertArray($this->tableName, $values, false);
-			}
+				trigger_error("you must define all foreign key fields in order by save this object");
 		}
 		else
 		{
-			$updateInfo = DbConnection::generateUpdateInfo($this->tableName, $this->getKeyConditions(), $this->scalars);
-			self::_getConnection(get_class($this))->updateRow($updateInfo['sql'], $updateInfo['params']);
+			if($this->keyAssignedBy == self::keyAssignedBy_db)
+			{
+				$updateInfo = DbConnection::generateUpdateInfo($this->tableName, $this->getKeyConditions(), $this->scalars);
+				self::_getConnection(get_class($this))->updateRow($updateInfo['sql'], $updateInfo['params']);
+			}
+			else
+			{
+				if(!$this->persisted())
+					self::_getConnection(get_class($this))->insertArray($this->tableName, $this->scalars, false);
+				else
+				{
+					$updateInfo = DbConnection::generateUpdateInfo($this->tableName, $this->getKeyConditions(), $this->scalars);
+					self::_getConnection(get_class($this))->updateRow($updateInfo['sql'], $updateInfo['params']);
+				}
+			}
 		}
 	}
 	

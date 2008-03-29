@@ -7,5 +7,6 @@ Zoop::loadLib('db');
 
 Zoop::registerDomain('PersonStuff');
 Zoop::registerDomain('GuidPerson');
+Zoop::registerDomain('MultiPerson');
 
 ZoneApplication::handleRequest();

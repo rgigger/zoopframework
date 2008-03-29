@@ -488,26 +488,34 @@ abstract class DbConnection
 	{
 		$insertParams = array();
 		
-		//	create the set part
-		$fieldParts = array();
-		$valuesParts = array();
-		foreach($values as $fieldName => $value)
+		if($values)
 		{
-			$fieldNameParts = explode(':', $fieldName);
-			$realFieldName = $fieldNameParts[0];
-			if(isset($fieldType))
-				$fieldType = $fieldNameParts[1];
+			//	create the set part
+			$fieldParts = array();
+			$valuesParts = array();
+			foreach($values as $fieldName => $value)
+			{
+				$fieldNameParts = explode(':', $fieldName);
+				$realFieldName = $fieldNameParts[0];
+				if(isset($fieldType))
+					$fieldType = $fieldNameParts[1];
+
+				$fieldParts[] = $realFieldName;
+				$valuesParts[] = ':' . $fieldName;
+				$insertParams[$realFieldName] = $value;
+			}
+			$fieldClause = implode(', ', $fieldParts);
+			$valuesClause = implode(', ', $valuesParts);
 			
-			$fieldParts[] = $realFieldName;
-			$valuesParts[] = ':' . $fieldName;
-			$insertParams[$realFieldName] = $value;
+			//	now put it all together
+			$insertSql = "INSERT INTO :tableName:keyword ($fieldClause) VALUES ($valuesClause)";
+			$insertParams['tableName'] = $tableName;
 		}
-		$fieldClause = implode(', ', $fieldParts);
-		$valuesClause = implode(', ', $valuesParts);
-		
-		//	now put it all together
-		$insertSql = "INSERT INTO :tableName:keyword ($fieldClause) VALUES ($valuesClause)";
-		$insertParams['tableName'] = $tableName;
+		else
+		{
+			$insertSql = "INSERT INTO :tableName:keyword DEFAULT VALUES";
+			$insertParams['tableName'] = $tableName;
+		}
 		
 		return array('sql' => $insertSql, 'params' => $insertParams);
 	}
