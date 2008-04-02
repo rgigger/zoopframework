@@ -1,24 +1,53 @@
 <?php
+/**
+ * Turn on echoing of sql statements
+ *
+ * @return nothing
+ */
 function SqlEchoOn()
 {
 	return DbModule::getDefaultConnection()->echoOn();
 }
 
+/**
+ * Turn off echoing of sql statements
+ *
+ * @return nothing
+ */
 function SqlEchoOff()
 {
 	return DbModule::getDefaultConnection()->echoOff();
 }
 
+/**
+ * Begin a transaction (not all database engines support transactions)
+ *
+ * @return nothing
+ */
 function SqlBeginTransaction()
 {
 	return DbModule::getDefaultConnection()->beginTransaction();
 }
 
+/**
+ * Commit a transaction (not all database engines support transactions)
+ *
+ * @return nothing
+ */
 function SqlCommitTransaction()
 {
 	return DbModule::getDefaultConnection()->commitTransaction();
 }
 
+/**
+ * Executes a database query.  $params must be a $key => $value array of values to substitute into $sql 
+ * Returns a DbResultSet object
+ * If you are not passing parameters in, $params should be an empty array()
+ * 
+ * @param string $sql
+ * @param array($key=>$value) $params
+ * @return DbResultSet
+ */
 function SqlQuery($sql, $params)
 {
 	return DbModule::getDefaultConnection()->query($sql, $params);

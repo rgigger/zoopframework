@@ -43,6 +43,12 @@ abstract class ZoopModule
 	protected function init() {}
 	protected function configure() {}
 	
+	/**
+	 * Figures out the name of the module by removing the word "Module" from
+	 * the class name and returning the result
+	 *
+	 * @return string
+	 */
 	function createName()
 	{
 		return strtolower(str_replace('Module', '', get_class($this)));
@@ -58,6 +64,14 @@ abstract class ZoopModule
 		Config::suggest(zoop_dir . '/' . $this->name . '/' . 'config.yaml', 'zoop.' . $this->getConfigPath());
 	}
 	
+	/**
+	 * Returns the configuration options using the Config class.
+	 * Returns config options from "zoop.<modulename>.<path>"
+	 * Path is optional and may be omitted.
+	 *
+	 * @param string $path
+	 * @return array of configuration options
+	 */
 	function getConfig($path = '')
 	{
 		$config = Config::get('zoop.' . $this->getConfigPath() . $path);
@@ -65,6 +79,12 @@ abstract class ZoopModule
 		return $config;
 	}
 	
+	/**
+	 * This method should be overridden in the child class to return an array
+	 * of filenames that should be included when the module is loaded
+	 *
+	 * @return array("key" => "value") or false;
+	 */
 	protected function getIncludes()
 	{
 		return false;

@@ -32,6 +32,12 @@ class Config
 		self::insist(self::$file);
 	}
 	
+	/**
+	 * Returns configuration options based on a path (i.e. zoop.db or zoop.application.info)
+	 *
+	 * @param string $path
+	 * @return array of configuration values
+	 */
 	static function get($path)
 	{
 		$parts = explode('.', $path);

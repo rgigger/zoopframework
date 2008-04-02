@@ -7,9 +7,18 @@ class DbMysqlResult
 	
 	function __construct($res)
 	{
-		$this->res = $res;
-		$this->cur = 0;
-		$this->max = mysql_num_rows($this->res) - 1;
+		if (gettype($res) == "boolean")
+		{
+			$this->res = null;
+			$this->cur = 0;
+			$this->max = 0;
+		}
+		else
+		{
+			$this->res = $res;
+			$this->cur = 0;
+			$this->max = mysql_num_rows($this->res) - 1;
+		}
 	}
 	
 	function numRows()
@@ -54,6 +63,9 @@ class DbMysqlResult
 	
 	function affectedRows()
 	{
-		return mysql_affected_rows($this->res);
+		if ($this->res == null)
+			return -1;
+		else
+			return mysql_affected_rows($this->res);
 	}
 }
