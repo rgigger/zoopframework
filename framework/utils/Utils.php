@@ -1,14 +1,34 @@
 <?php
+/**
+ * Returns true if the current page was requested with the GET method
+ *
+ * @return boolean
+ */
 function RequestIsGet()
 {
 	return $_SERVER['REQUEST_METHOD'] == 'GET' ? 1 : 0;
 }
 
+/**
+ * Returns true if the current page was requested with the POST method
+ *
+ * @return boolean
+ */
 function RequestIsPost()
 {
 	return $_SERVER['REQUEST_METHOD'] == 'POST' ? 1 : 0;
 }
 
+/**
+ * Evaluates the POST variables and creates a standard "year-month-day Hour24:minute:second -7:00" date from a POSTed form
+ * The fields in the form should be as follows:
+ * <name>Month, <name>Day, <name>Year
+ * <name>Hour, <name>Minute, <name>Second
+ * <name>Meridian (<-- "am" or "pm")
+ * 
+ * @param $name Prefix of the POST variables to evaluate
+ * @return string Date string
+ */
 function GetPostDate($name)
 {
 	//echo_r($_POST);
@@ -26,6 +46,13 @@ function GetPostDate($name)
 	return "$year-$month-$day $hour:$minute:$second -7:00";
 }
 
+
+/**
+ * print_r the contents of the variable $var along with a full function backtrace to indicate where in the program this is occurring (great for debugging)
+ *
+ * @param mixed $var Variable to print
+ * @param boolean $supressBacktrace True if you wish to suppress the backtrace (default: False)
+ */
 function echo_r($var, $supressBacktrace = 0)
 {
 	if(!$supressBacktrace)
@@ -35,6 +62,11 @@ function echo_r($var, $supressBacktrace = 0)
 	echo '</pre>';
 }
 
+/**
+ * Redirect the client browser to $url
+ *
+ * @param string $url URL to which to send them
+ */
 function Redirect($url = NULL)
 {
 	if(!$url)
@@ -43,16 +75,34 @@ function Redirect($url = NULL)
 	die();
 }
 
+
+/**
+ * Redirects the client to a URL relative to the project (index.php/<url>)
+ *
+ * @param string $virtualPath Path inside the project to which to send them
+ */
 function BaseRedirect($virtualPath)
 {
 	Redirect(script_url . '/' . $virtualPath);
 }
 
+
+/**
+ * Echos an HTML-formatted backtrace
+ *
+ * @param unknown_type $value I don't know what this is for
+ */
 function EchoBacktrace($value='')
 {
 	echo FormatBacktraceHtml(debug_backtrace());
 }
 
+
+/**
+ * Generates and prints backtrace information in readable HTML
+ *
+ * @param debug_backtrace() $backtraceInfo The results of a debug_backtrace() function call
+ */
 function FormatBacktraceHtml($backtraceInfo)
 {
 	// debug_print_backtrace();
@@ -139,6 +189,11 @@ function FormatBacktraceFunctionCellHtml($lineInfo)
 
 
 
+/**
+ * Given a filename, outputs the contents of the file to the client
+ *
+ * @param string $filename Path and filename of the file to output
+ */
 function EchoStaticFile($filename)
 {
 	$fp = fopen($filename, 'rb');
@@ -151,6 +206,13 @@ function EchoStaticFile($filename)
 }
 
 
+/**
+ * Returns a list of files in the specified directory, optionally filtered by the values in array $extention
+ *
+ * @param string $path $path Directory path to scan
+ * @param array $params Array of file extensions (without leading ".")
+ * @return array Array of filenames found in the directory
+ */
 function ListDir($path, $params)
 {
 	$entries = array();
@@ -176,13 +238,26 @@ function ListDir($path, $params)
 	return $entries;
 }
 
+
+/**
+ * Return the extension of the given filename
+ *
+ * @param string $filename Filename to process
+ * @return string extension of the filename
+ */
 function GetFileExtention($filename)
 {
 	$parts = explode('.', $filename);
 	return array_pop($parts);
 }
 
-
+/**
+ * Appends a prefix to a string, if given prefix doesn't already exist
+ *
+ * @param string $string String to analyze
+ * @param string $prefix Prefix to append (if it isn't already there)
+ * @return string Prefixed string
+ */
 function str_prefix($string, $prefix)
 {
 	return substr($string, 0, strlen($prefix)) == $prefix ? 1 : 0;
