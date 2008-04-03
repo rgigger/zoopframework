@@ -42,10 +42,9 @@ function SqlCommitTransaction()
 /**
  * Executes a database query.  $params must be a $key => $value array of values to substitute into $sql 
  * Returns a DbResultSet object
- * If you are not passing parameters in, $params should be an empty array()
  * 
- * @param string $sql
- * @param array($key=>$value) $params
+ * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
+ * @param array($key=>$value) $params If you are not passing parameters in, params should be an empty array()
  * @return DbResultSet
  */
 function SqlQuery($sql, $params)
