@@ -484,8 +484,6 @@ abstract class DbConnection
 		{
 			$fieldNameParts = explode(':', $fieldName);
 			$realFieldName = $fieldNameParts[0];
-			if(isset($fieldType))
-				$fieldType = $fieldNameParts[1];
 			
 			$setParts[] = "$realFieldName = :$fieldName";
 			$updateParams[$realFieldName] = $value;
@@ -539,10 +537,6 @@ abstract class DbConnection
 			{
 				$fieldNameParts = explode(':', $fieldName);
 				$realFieldName = $fieldNameParts[0];
-				// TODO: fix this so that it makes sense... this next line will never be true
-				if(isset($fieldType))
-					$fieldType = $fieldNameParts[1];
-
 				$fieldParts[] = $realFieldName;
 				$valuesParts[] = ':' . $fieldName;
 				$insertParams[$realFieldName] = $value;
