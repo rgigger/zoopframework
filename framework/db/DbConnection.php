@@ -230,6 +230,19 @@ abstract class DbConnection
 		return $rows;
 	}
 	
+	
+	/**
+	 * Creates a simple nested array structure grouping the values of the $valueField column by the values of the columns specified in the $keyFields array.
+	 * 
+	 * For example, if your query returns a list of books and you'd like to group the titles by subject and isbn number, let $keyFields = array("subject", "isbn") and $valueField = "title".
+	 * The format thus created will be $var[$subject][$isbn] = $title;  
+	 *
+	 * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
+	 * @param array $keyFields array of fields to group the results by
+	 * @param array $valueField name of the field containing the value to be grouped
+	 * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
+	 * @return associative array structure grouped by the values in $mapFields 
+	 */
 	public function fetchSimpleMap($sql, $keyFields, $valueField, $params)
 	{
 		$map = array();
@@ -260,6 +273,19 @@ abstract class DbConnection
 		return $map;
 	}
 	
+	/**
+	 * Returns a nested array, grouped by the fields (or field) listed in $mapFields
+	 * 
+	 * For example, if mapFields = array("person_id", "book_id"), and the resultset returns
+	 * a list of all the chapters of all the books of all the people, this will group the
+	 * records by person and by book, keeping each row in an array under
+	 * $var[$person_id][$book_id]
+	 *
+	 * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
+	 * @param array $mapFields array of fields to group the results by
+	 * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
+	 * @return associative array structure grouped by the values in $mapFields 
+	 */
 	public function fetchMap($sql, $mapFields, $params)
 	{
 		$map = array();
@@ -344,6 +370,14 @@ abstract class DbConnection
 			return false;
 	}
 	
+	/**
+	 * Automatically insert the values of an ($key=>$value) array into a database using the $key as the field name 
+	 *
+	 * @param string $tableName Table into which the insert should be performed
+	 * @param array $values ($key => $value) array in the format ($fieldName => $fieldValue)
+	 * @param boolean $serial True if the last inserted ID should be returned
+	 * @return mixed ID of the inserted row or false if $serial == false
+	 */
 	public function insertArray($tableName, $values, $serial = true)
 	{
 		$insertInfo = DbConnection::generateInsertInfo($tableName, $values);
@@ -485,6 +519,13 @@ abstract class DbConnection
 		return array('sql' => $updateSql, 'params' => $deleteParams);
 	}
 	
+	/**
+	 * Generate an insert statement from an associative ($key => $value) array
+	 *
+	 * @param string $tableName Table into which the insert should be performed
+	 * @param array $values ($key => $value) array in the format ($fieldName => $fieldValue)
+	 * @return string SQL statement to perform the insert
+	 */
 	static function generateInsertInfo($tableName, $values)
 	{
 		$insertParams = array();
@@ -498,6 +539,7 @@ abstract class DbConnection
 			{
 				$fieldNameParts = explode(':', $fieldName);
 				$realFieldName = $fieldNameParts[0];
+				// TODO: fix this so that it makes sense... this next line will never be true
 				if(isset($fieldType))
 					$fieldType = $fieldNameParts[1];
 
