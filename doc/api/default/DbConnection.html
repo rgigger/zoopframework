@@ -53,6 +53,12 @@
 					<th class="class-table-header">Description</th>
 				</tr>
 								<tr>
+					<td style="padding-right: 2em"><a href="../default/DbMysql.html">DbMysql</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
 					<td style="padding-right: 2em"><a href="../default/DbPdo.html">DbPdo</a></td>
 					<td>
 											
@@ -82,21 +88,9 @@
 								</div>
 		<div class="info-box-body">
 			<div class="var-summary">
-																																																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$conn" title="details" class="var-name">$conn</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$echo" title="details" class="var-name">$echo</a>
-				</div>
-																<div class="var-title">
+																								<div class="var-title">
 					<span class="var-type">mixed</span>
 					<a href="#$params" title="details" class="var-name">$params</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$types" title="details" class="var-name">$types</a>
 				</div>
 											</div>
 		</div>
@@ -115,12 +109,27 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																																				<div class="method-definition">
+																																																																																																																																				<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateDeleteInfo" title="details" class="method-name">generateDeleteInfo</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#generateInsertInfo" title="details" class="method-name">generateInsertInfo</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateSelectInfo" title="details" class="method-name">generateSelectInfo</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lock</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#generateUpdateInfo" title="details" class="method-name">generateUpdateInfo</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
 									</div>
-																																																																																																																																																								
+																																																																																																								
 												<div class="method-definition">
 											<span class="method-result">DbConnection</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
@@ -177,9 +186,9 @@
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">associative</span>
 										<a href="#fetchMap" title="details" class="method-name">fetchMap</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -192,21 +201,11 @@
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">associative</span>
 										<a href="#fetchSimpleMap" title="details" class="method-name">fetchSimpleMap</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#generateInsertInfo" title="details" class="method-name">generateInsertInfo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#generateSelectInfo" title="details" class="method-name">generateSelectInfo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$lock</span>)
-									</div>
-																								<div class="method-definition">
+																																																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#getDefaults" title="details" class="method-name">getDefaults</a>
 										()
@@ -223,48 +222,23 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
+										<a href="#init" title="details" class="method-name">init</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
 										<a href="#insertArray" title="details" class="method-name">insertArray</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#insertRow" title="details" class="method-name">insertRow</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#insertRows" title="details" class="method-name">insertRows</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#insertRowValues" title="details" class="method-name">insertRowValues</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#modify" title="details" class="method-name">modify</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#modifyRow" title="details" class="method-name">modifyRow</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#modifyRowValues" title="details" class="method-name">modifyRowValues</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#query" title="details" class="method-name">query</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#queryCallback" title="details" class="method-name">queryCallback</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$matches</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -291,11 +265,6 @@
 										<a href="#upsertRow" title="details" class="method-name">upsertRow</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
 									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#validateParams" title="details" class="method-name">validateParams</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$connectionName</span>)
-									</div>
 								</div>
 		</div>
 	</div>		
@@ -314,43 +283,7 @@
 							
 					</div>
 		<div class="info-box-body">
-			<a name="var$conn" id="$conn"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$conn</span>
-						(line <span class="line-number">6</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	
-		
-		
-
-</div>
-<a name="var$echo" id="$echo"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$echo</span>
-						(line <span class="line-number">7</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	
-		
-		
-
-</div>
-<a name="var$params" id="$params"><!-- --></A>
+			<a name="var$params" id="$params"><!-- --></A>
 <div class="oddrow">
 
 	<div class="var-header">
@@ -362,24 +295,9 @@
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
-	
-	
-		
-		
-
-</div>
-<a name="var$types" id="$types"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$types</span>
-						(line <span class="line-number">5</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	
 		
@@ -402,11 +320,108 @@
 		</div>
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
+<a name="methodgenerateDeleteInfo" id="generateDeleteInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateDeleteInfo</span> (line <span class="line-number">501</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateDeleteInfo
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tableName</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$conditions</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateInsertInfo" id="generateInsertInfo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateInsertInfo</span> (line <span class="line-number">527</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate an insert statement from an associative ($key =&gt; $value) array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL statement to perform the insert</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateInsertInfo
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: Table into which the insert should be performed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: ($key =&gt; $value) array in the format ($fieldName =&gt; $fieldValue)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateSelectInfo" id="generateSelectInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateSelectInfo</span> (line <span class="line-number">436</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateSelectInfo
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lock</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tableName</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$fieldsNames</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$conditions</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$lock</span>			</li>
+				</ul>
+		
+			
+	</div>
 <a name="methodgenerateUpdateInfo" id="generateUpdateInfo"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method generateUpdateInfo</span> (line <span class="line-number">454</span>)
+		<span class="method-title">static method generateUpdateInfo</span> (line <span class="line-number">468</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -439,7 +454,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">9</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">10</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -462,13 +477,6 @@
 				</ul>
 		
 			
-			<hr class="separator" />
-		<div class="notes">Redefined in descendants as:</div>
-		<ul class="redefinitions">
-					<li>
-				<a href="../default/DbPgsql.html#method__construct">DbPgsql::__construct()</a>
-							</li>
-				</ul>
 	</div>
 <a name="methodalterSchema" id="alterSchema"><!-- --></a>
 <div class="oddrow">
@@ -478,6 +486,9 @@
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -499,10 +510,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">beginTransaction</span> (line <span class="line-number">59</span>)
+		<span class="method-title">beginTransaction</span> (line <span class="line-number">93</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -519,10 +533,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">commitTransaction</span> (line <span class="line-number">64</span>)
+		<span class="method-title">commitTransaction</span> (line <span class="line-number">98</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -539,10 +556,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">deleteRow</span> (line <span class="line-number">345</span>)
+		<span class="method-title">deleteRow</span> (line <span class="line-number">416</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -567,10 +587,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">deleteRows</span> (line <span class="line-number">350</span>)
+		<span class="method-title">deleteRows</span> (line <span class="line-number">422</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -595,10 +618,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">echoOff</span> (line <span class="line-number">53</span>)
+		<span class="method-title">echoOff</span> (line <span class="line-number">70</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -615,10 +641,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">echoOn</span> (line <span class="line-number">48</span>)
+		<span class="method-title">echoOn</span> (line <span class="line-number">65</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -635,10 +664,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchCell</span> (line <span class="line-number">153</span>)
+		<span class="method-title">fetchCell</span> (line <span class="line-number">180</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -663,10 +695,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchColumn</span> (line <span class="line-number">177</span>)
+		<span class="method-title">fetchColumn</span> (line <span class="line-number">217</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -691,10 +726,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchComplexMap</span> (line <span class="line-number">258</span>)
+		<span class="method-title">fetchComplexMap</span> (line <span class="line-number">324</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -722,29 +760,35 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchMap</span> (line <span class="line-number">223</span>)
+		<span class="method-title">fetchMap</span> (line <span class="line-number">289</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a nested array, grouped by the fields (or field) listed in $mapFields</p>
+<p class="description"><p>For example, if mapFields = array(&quot;person_id&quot;, &quot;book_id&quot;), and the resultset returns  a list of all the chapters of all the books of all the people, this will group the  records by person and by book, keeping each row in an array under  $var[$person_id][$book_id]</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array structure grouped by the values in $mapFields</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">associative</span>
 		<span class="method-name">
 			fetchMap
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$mapFields</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$mapFields</span><span class="var-description">: array of fields to group the results by</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 			
@@ -753,10 +797,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchRow</span> (line <span class="line-number">140</span>)
+		<span class="method-title">fetchRow</span> (line <span class="line-number">188</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -781,10 +828,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchRows</span> (line <span class="line-number">161</span>)
+		<span class="method-title">fetchRows</span> (line <span class="line-number">201</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -809,94 +859,38 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchSimpleMap</span> (line <span class="line-number">193</span>)
+		<span class="method-title">fetchSimpleMap</span> (line <span class="line-number">246</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a simple nested array structure grouping the values of the $valueField column by the values of the columns specified in the $keyFields array.</p>
+<p class="description"><p>For example, if your query returns a list of books and you'd like to group the titles by subject and isbn number, let $keyFields = array(&quot;subject&quot;, &quot;isbn&quot;) and $valueField = &quot;title&quot;.  The format thus created will be $var[$subject][$isbn] = $title;</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array structure grouped by the values in $mapFields</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">associative</span>
 		<span class="method-name">
 			fetchSimpleMap
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$keyFields</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$keyFields</span><span class="var-description">: array of fields to group the results by</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$valueField</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$valueField</span><span class="var-description">: name of the field containing the value to be grouped</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgenerateInsertInfo" id="generateInsertInfo"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">generateInsertInfo</span> (line <span class="line-number">490</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			generateInsertInfo
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgenerateSelectInfo" id="generateSelectInfo"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">generateSelectInfo</span> (line <span class="line-number">422</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			generateSelectInfo
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$lock</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$fieldsNames</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$lock</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 			
@@ -905,10 +899,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getDefaults</span> (line <span class="line-number">43</span>)
+		<span class="method-title">getDefaults</span> (line <span class="line-number">52</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -920,15 +917,25 @@
 	
 		
 			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbMysql.html#methodgetDefaults">DbMysql::getDefaults()</a>
+							</li>
+				</ul>
 	</div>
 <a name="methodgetRequireds" id="getRequireds"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getRequireds</span> (line <span class="line-number">38</span>)
+		<span class="method-title">getRequireds</span> (line <span class="line-number">47</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -940,6 +947,16 @@
 	
 		
 			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbMysql.html#methodgetRequireds">DbMysql::getRequireds()</a>
+							</li>
+					<li>
+				<a href="../default/DbPgsql.html#methodgetRequireds">DbPgsql::getRequireds()</a>
+							</li>
+				</ul>
 	</div>
 <a name="methodgetSchema" id="getSchema"><!-- --></a>
 <div class="oddrow">
@@ -949,6 +966,9 @@
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -966,49 +986,93 @@
 		
 			
 	</div>
-<a name="methodinsertArray" id="insertArray"><!-- --></a>
+<a name="methodinit" id="init"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">insertArray</span> (line <span class="line-number">311</span>)
+		<span class="method-title">init</span> (line <span class="line-number">43</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
+			init
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPdo.html#methodinit">DbPdo::init()</a>
+							</li>
+					<li>
+				<a href="../default/DbPgsql.html#methodinit">DbPgsql::init()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodinsertArray" id="insertArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertArray</span> (line <span class="line-number">381</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatically insert the values of an ($key=&gt;$value) array into a database using the $key as the field name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> ID of the inserted row or false if $serial == false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
 			insertArray
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: Table into which the insert should be performed</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: ($key =&gt; $value) array in the format ($fieldName =&gt; $fieldValue)</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$serial</span><span class="var-description">: True if the last inserted ID should be returned</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodinsertRow" id="insertRow"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">insertRow</span> (line <span class="line-number">317</span>)
+		<span class="method-title">insertRow</span> (line <span class="line-number">364</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			insertRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -1018,152 +1082,9 @@
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodinsertRows" id="insertRows"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">insertRows</span> (line <span class="line-number">323</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			insertRows
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-			</div>
-	
-			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodinsertRowValues" id="insertRowValues"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">insertRowValues</span> (line <span class="line-number">328</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			insertRowValues
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodmodify" id="modify"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">modify</span> (line <span class="line-number">290</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			modify
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodmodifyRow" id="modifyRow"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">modifyRow</span> (line <span class="line-number">296</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			modifyRow
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodmodifyRowValues" id="modifyRowValues"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">modifyRowValues</span> (line <span class="line-number">304</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			modifyRowValues
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-name">$serial</span>			</li>
 				</ul>
 		
 			
@@ -1172,10 +1093,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">query</span> (line <span class="line-number">85</span>)
+		<span class="method-title">query</span> (line <span class="line-number">116</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1196,39 +1120,17 @@
 		
 			
 	</div>
-<a name="methodqueryCallback" id="queryCallback"><!-- --></a>
+<a name="methodrollbackTransaction" id="rollbackTransaction"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">queryCallback</span> (line <span class="line-number">107</span>)
+		<span class="method-title">rollbackTransaction</span> (line <span class="line-number">103</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			queryCallback
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$matches</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$matches</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodrollbackTransaction" id="rollbackTransaction"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">rollbackTransaction</span> (line <span class="line-number">69</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1242,13 +1144,16 @@
 			
 	</div>
 <a name="methodselsertRow" id="selsertRow"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">selsertRow</span> (line <span class="line-number">391</span>)
+		<span class="method-title">selsertRow</span> (line <span class="line-number">592</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1279,13 +1184,16 @@
 			
 	</div>
 <a name="methodupdateRow" id="updateRow"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">updateRow</span> (line <span class="line-number">335</span>)
+		<span class="method-title">updateRow</span> (line <span class="line-number">395</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1307,13 +1215,16 @@
 			
 	</div>
 <a name="methodupdateRows" id="updateRows"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">updateRows</span> (line <span class="line-number">340</span>)
+		<span class="method-title">updateRows</span> (line <span class="line-number">402</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1335,13 +1246,16 @@
 			
 	</div>
 <a name="methodupsertRow" id="upsertRow"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">upsertRow</span> (line <span class="line-number">355</span>)
+		<span class="method-title">upsertRow</span> (line <span class="line-number">560</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -1365,41 +1279,13 @@
 		
 			
 	</div>
-<a name="methodvalidateParams" id="validateParams"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">validateParams</span> (line <span class="line-number">15</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			validateParams
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$connectionName</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$connectionName</span>			</li>
-				</ul>
-		
-			
-	</div>
 						
 		</div>
 	</div>
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:01 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

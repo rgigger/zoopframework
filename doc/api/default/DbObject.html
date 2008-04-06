@@ -19,7 +19,9 @@
 													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
 						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
 						
-					</div>
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
 	<div class="info-box-body">
                 <p class="implements">
             Implements interfaces:
@@ -38,6 +40,39 @@
 </div>
 
 
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#keyAssignedBy_auto" title="details" class="const-name">keyAssignedBy_auto</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#keyAssignedBy_db" title="details" class="const-name">keyAssignedBy_db</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#keyAssignedBy_dev" title="details" class="const-name">keyAssignedBy_dev</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
 
 	<a name="sec-var-summary"></a>
 	<div class="info-box">
@@ -48,12 +83,22 @@
 							| 
 									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
 							
-								</div>
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
 		<div class="info-box-body">
 			<div class="var-summary">
-																								<div class="var-title">
+																																								<div class="var-title">
 					<span class="var-type">mixed</span>
-					<a href="#$id" title="details" class="var-name">$id</a>
+					<a href="#$keyAssignedBy" title="details" class="var-name">$keyAssignedBy</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$primaryKey" title="details" class="var-name">$primaryKey</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$tableName" title="details" class="var-name">$tableName</a>
 				</div>
 											</div>
 		</div>
@@ -64,14 +109,16 @@
 		<div class="info-box-title">Method Summary</span></div>
 		<div class="nav-bar">
 			<a href="#sec-description">Description</a> |
-																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
 				 
 				|
 						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																																																																												<div class="method-definition">
+																																																																																																																																				<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#_create" title="details" class="method-name">_create</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
@@ -82,39 +129,49 @@
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#_findBySql" title="details" class="method-name">_findBySql</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#_findByWhere" title="details" class="method-name">_findByWhere</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+																<div class="method-definition">
 					static 						<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
 										<a href="#_findOne" title="details" class="method-name">_findOne</a>
 											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result">void</span>
-										<a href="#_getTableName" title="details" class="method-name">_getTableName</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+										<a href="#_getOne" title="details" class="method-name">_getOne</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#_insert" title="details" class="method-name">_insert</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
 									</div>
 																								
 												<div class="method-definition">
 											<span class="method-result">DbObject</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$defaults</span> = <span class="var-default">NULL</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#assignScalars" title="details" class="method-name">assignScalars</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#belongsTo" title="details" class="method-name">belongsTo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#createRow" title="details" class="method-name">createRow</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#current" title="details" class="method-name">current</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#destroy" title="details" class="method-name">destroy</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getFields" title="details" class="method-name">getFields</a>
 										()
 									</div>
 																<div class="method-definition">
@@ -124,33 +181,13 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
-										<a href="#getIdFieldName" title="details" class="method-name">getIdFieldName</a>
+										<a href="#getString" title="details" class="method-name">getString</a>
 										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#getMany" title="details" class="method-name">getMany</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#getOwner" title="details" class="method-name">getOwner</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#getScalar" title="details" class="method-name">getScalar</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#getTableName" title="details" class="method-name">getTableName</a>
 										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#hasMany" title="details" class="method-name">hasMany</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -164,12 +201,12 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
-										<a href="#loadScalars" title="details" class="method-name">loadScalars</a>
+										<a href="#next" title="details" class="method-name">next</a>
 										()
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
-										<a href="#next" title="details" class="method-name">next</a>
+										<a href="#persisted" title="details" class="method-name">persisted</a>
 										()
 									</div>
 																<div class="method-definition">
@@ -184,25 +221,15 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
-										<a href="#setId" title="details" class="method-name">setId</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#setScalar" title="details" class="method-name">setScalar</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#setScalars" title="details" class="method-name">setScalars</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$force</span> = <span class="var-default">false</span>])
+										<a href="#setFields" title="details" class="method-name">setFields</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#valid" title="details" class="method-name">valid</a>
 										()
 									</div>
-																																																<div class="method-definition">
+																																																																								<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#__get" title="details" class="method-name">__get</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$varname</span>)
@@ -224,25 +251,69 @@
 										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
 						
 			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
 										| 
 									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
 							
 					</div>
 		<div class="info-box-body">
-			<a name="var$id" id="$id"><!-- --></A>
+			<a name="var$keyAssignedBy" id="$keyAssignedBy"><!-- --></A>
 <div class="oddrow">
 
 	<div class="var-header">
 		<span class="var-title">
 			<span class="var-type">mixed</span>
-			<span class="var-name">$id</span>
+			<span class="var-name">$keyAssignedBy</span>
+						(line <span class="line-number">6</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$primaryKey" id="$primaryKey"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$primaryKey</span>
+						(line <span class="line-number">5</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$tableName" id="$tableName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$tableName</span>
 						(line <span class="line-number">4</span>)
 		</span>
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
+				<li><span class="field">access:</span> protected</li>
 			</ul>
 	
 	
@@ -260,7 +331,9 @@
 		<div class="nav-bar">
 			<a href="#sec-description">Description</a> |
 															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
 						
 		</div>
 		<div class="info-box-body">
@@ -269,7 +342,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _create</span> (line <span class="line-number">314</span>)
+		<span class="method-title">static method _create</span> (line <span class="line-number">413</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -301,10 +374,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _find</span> (line <span class="line-number">330</span>)
+		<span class="method-title">static method _find</span> (line <span class="line-number">447</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
@@ -326,15 +402,88 @@
 		
 			
 	</div>
+<a name="method_findBySql" id="_findBySql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method _findBySql</span> (line <span class="line-number">425</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_findBySql
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$sql</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_findByWhere" id="_findByWhere"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method _findByWhere</span> (line <span class="line-number">441</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_findByWhere
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$where</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
 <a name="method_findOne" id="_findOne"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _findOne</span> (line <span class="line-number">387</span>)
+		<span class="method-title">static method _findOne</span> (line <span class="line-number">472</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Retrieve one object from the database and map it to an object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
@@ -356,38 +505,76 @@
 		
 			
 	</div>
-<a name="method_getTableName" id="_getTableName"><!-- --></a>
+<a name="method_getOne" id="_getOne"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _getTableName</span> (line <span class="line-number">322</span>)
+		<span class="method-title">static method _getOne</span> (line <span class="line-number">484</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
 		<span class="method-result">void</span>
 		<span class="method-name">
-			_getTableName
+			_getOne
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$conditions</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_insert" id="_insert"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method _insert</span> (line <span class="line-number">420</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_insert
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$values</span>			</li>
 				</ul>
 		
 			
 	</div>
 
 <a name="method__construct" id="__construct"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">13</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">17</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -397,94 +584,13 @@
 		<span class="method-name">
 			__construct
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$defaults</span> = <span class="var-default">NULL</span>])
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$init</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$defaults</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodassignScalars" id="assignScalars"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">assignScalars</span> (line <span class="line-number">182</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			assignScalars
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$data</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodbelongsTo" id="belongsTo"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">belongsTo</span> (line <span class="line-number">246</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			belongsTo
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodcreateRow" id="createRow"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">createRow</span> (line <span class="line-number">85</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			createRow
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
 				</ul>
 		
 			
@@ -493,7 +599,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">current</span> (line <span class="line-number">290</span>)
+		<span class="method-title">current</span> (line <span class="line-number">363</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -517,14 +623,63 @@
 					</dl>
 			
 	</div>
+<a name="methoddestroy" id="destroy"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">destroy</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			destroy
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFields" id="getFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFields</span> (line <span class="line-number">91</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getFields
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
 <a name="methodgetId" id="getId"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getId</span> (line <span class="line-number">80</span>)
+		<span class="method-title">getId</span> (line <span class="line-number">70</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -537,19 +692,22 @@
 		
 			
 	</div>
-<a name="methodgetIdFieldName" id="getIdFieldName"><!-- --></a>
+<a name="methodgetString" id="getString"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getIdFieldName</span> (line <span class="line-number">103</span>)
+		<span class="method-title">getString</span> (line <span class="line-number">76</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
-			getIdFieldName
+			getString
 		</span>
 				()
 			</div>
@@ -557,89 +715,17 @@
 		
 			
 	</div>
-<a name="methodgetMany" id="getMany"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">getMany</span> (line <span class="line-number">225</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			getMany
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetOwner" id="getOwner"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">getOwner</span> (line <span class="line-number">259</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			getOwner
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetScalar" id="getScalar"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">getScalar</span> (line <span class="line-number">113</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			getScalar
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$field</span>			</li>
-				</ul>
-		
-			
-	</div>
 <a name="methodgetTableName" id="getTableName"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getTableName</span> (line <span class="line-number">92</span>)
+		<span class="method-title">getTableName</span> (line <span class="line-number">65</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -652,39 +738,11 @@
 		
 			
 	</div>
-<a name="methodhasMany" id="hasMany"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">hasMany</span> (line <span class="line-number">210</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			hasMany
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
-				</ul>
-		
-			
-	</div>
 <a name="methodinit" id="init"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">init</span> (line <span class="line-number">69</span>)
+		<span class="method-title">init</span> (line <span class="line-number">49</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -707,7 +765,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">key</span> (line <span class="line-number">296</span>)
+		<span class="method-title">key</span> (line <span class="line-number">369</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -731,31 +789,11 @@
 					</dl>
 			
 	</div>
-<a name="methodloadScalars" id="loadScalars"><!-- --></a>
+<a name="methodnext" id="next"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">loadScalars</span> (line <span class="line-number">190</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			loadScalars
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodnext" id="next"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">next</span> (line <span class="line-number">302</span>)
+		<span class="method-title">next</span> (line <span class="line-number">375</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -779,11 +817,34 @@
 					</dl>
 			
 	</div>
+<a name="methodpersisted" id="persisted"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">persisted</span> (line <span class="line-number">203</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			persisted
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
 <a name="methodrewind" id="rewind"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">rewind</span> (line <span class="line-number">285</span>)
+		<span class="method-title">rewind</span> (line <span class="line-number">358</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -811,10 +872,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">save</span> (line <span class="line-number">205</span>)
+		<span class="method-title">save</span> (line <span class="line-number">211</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -827,83 +891,30 @@
 		
 			
 	</div>
-<a name="methodsetId" id="setId"><!-- --></a>
+<a name="methodsetFields" id="setFields"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setId</span> (line <span class="line-number">74</span>)
+		<span class="method-title">setFields</span> (line <span class="line-number">96</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
-			setId
+			setFields
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$id</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsetScalar" id="setScalar"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">setScalar</span> (line <span class="line-number">124</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			setScalar
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$field</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$value</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsetScalars" id="setScalars"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">setScalars</span> (line <span class="line-number">130</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			setScalars
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$force</span> = <span class="var-default">false</span>])
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$data</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$force</span>			</li>
 				</ul>
 		
 			
@@ -912,7 +923,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">valid</span> (line <span class="line-number">308</span>)
+		<span class="method-title">valid</span> (line <span class="line-number">381</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -940,7 +951,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">__get</span> (line <span class="line-number">267</span>)
+		<span class="method-title">__get</span> (line <span class="line-number">326</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -965,7 +976,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">__set</span> (line <span class="line-number">278</span>)
+		<span class="method-title">__set</span> (line <span class="line-number">342</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -993,9 +1004,74 @@
 		</div>
 	</div>
 
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constkeyAssignedBy_auto" id="keyAssignedBy_auto"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">keyAssignedBy_auto</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">15</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constkeyAssignedBy_db" id="keyAssignedBy_db"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">keyAssignedBy_db</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">13</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constkeyAssignedBy_dev" id="keyAssignedBy_dev"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">keyAssignedBy_dev</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">14</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:01 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

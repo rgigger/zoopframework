@@ -40,23 +40,24 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlAlterSchema</span> (line <span class="line-number">32</span>)
+		<span class="method-title">SqlAlterSchema</span> (line <span class="line-number">73</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes a SQL statement to alter the schema  Unlike SqlQuery, this doesn't return a DbResultSet or accept parameters</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">nothing</span>
 		<span class="method-name">
 			SqlAlterSchema
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query to execute</span>			</li>
 				</ul>
 		
 	
@@ -65,13 +66,14 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlBeginTransaction</span> (line <span class="line-number">12</span>)
+		<span class="method-title">SqlBeginTransaction</span> (line <span class="line-number">27</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Begin a transaction (not all database engines support transactions)</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">nothing</span>
 		<span class="method-name">
 			SqlBeginTransaction
 		</span>
@@ -85,13 +87,14 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlCommitTransaction</span> (line <span class="line-number">17</span>)
+		<span class="method-title">SqlCommitTransaction</span> (line <span class="line-number">37</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Commit a transaction (not all database engines support transactions)</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">nothing</span>
 		<span class="method-name">
 			SqlCommitTransaction
 		</span>
@@ -105,7 +108,7 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlDeleteRows</span> (line <span class="line-number">107</span>)
+		<span class="method-title">SqlDeleteRows</span> (line <span class="line-number">255</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
@@ -133,13 +136,14 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlEchoOff</span> (line <span class="line-number">7</span>)
+		<span class="method-title">SqlEchoOff</span> (line <span class="line-number">17</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turn off echoing of sql statements</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">nothing</span>
 		<span class="method-name">
 			SqlEchoOff
 		</span>
@@ -153,13 +157,14 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlEchoOn</span> (line <span class="line-number">2</span>)
+		<span class="method-title">SqlEchoOn</span> (line <span class="line-number">7</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turn on echoing of sql statements</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">nothing</span>
 		<span class="method-name">
 			SqlEchoOn
 		</span>
@@ -173,26 +178,31 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlFetchCell</span> (line <span class="line-number">37</span>)
+		<span class="method-title">SqlFetchCell</span> (line <span class="line-number">87</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the given query and returns the value of the first cell in the first row of the resultset.</p>
+<p class="description"><p>An error will occur if the query returns more than one row.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> value of cell or false if no record returned</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			SqlFetchCell
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -201,26 +211,27 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlFetchColumn</span> (line <span class="line-number">47</span>)
+		<span class="method-title">SqlFetchColumn</span> (line <span class="line-number">113</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array containing the values from the first column of each row returned by the passed-in query</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			SqlFetchColumn
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -229,29 +240,34 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlFetchMap</span> (line <span class="line-number">57</span>)
+		<span class="method-title">SqlFetchMap</span> (line <span class="line-number">142</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a nested array, grouped by the fields (or field) listed in $mapFields</p>
+<p class="description"><p>For example, if mapFields = array(&quot;person_id&quot;, &quot;book_id&quot;), and the resultset returns  a list of all the chapters of all the books of all the people, this will group the  records by person and by book, keeping each row in an array under  $var[$person_id][$book_id]</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array structure grouped by the values in $mapFields</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">associative</span>
 		<span class="method-name">
 			SqlFetchMap
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$mapFields</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$mapFields</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$mapFields</span><span class="var-description">: array of fields to group the results by</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -260,26 +276,31 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlFetchRow</span> (line <span class="line-number">42</span>)
+		<span class="method-title">SqlFetchRow</span> (line <span class="line-number">101</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the given query and returns the first row of the resultset.</p>
+<p class="description"><p>An error will occur if the query returns more than one row.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> row data or false if no record returned</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			SqlFetchRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -288,26 +309,27 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlFetchRows</span> (line <span class="line-number">52</span>)
+		<span class="method-title">SqlFetchRows</span> (line <span class="line-number">125</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of all rows returned from the given SQL statement</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			SqlFetchRows
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -316,32 +338,37 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlFetchSimpleMap</span> (line <span class="line-number">62</span>)
+		<span class="method-title">SqlFetchSimpleMap</span> (line <span class="line-number">159</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a simple nested array structure grouping the values of the $valueField column by the values of the columns specified in the $keyFields array.</p>
+<p class="description"><p>For example, if your query returns a list of books and you'd like to group the titles by subject and isbn number, let $keyFields = array(&quot;subject&quot;, &quot;isbn&quot;) and $valueField = &quot;title&quot;.  The format thus created will be $var[$subject][$isbn] = $title;</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array structure grouped by the values in $mapFields</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">associative</span>
 		<span class="method-name">
 			SqlFetchSimpleMap
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$keyFields</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$valueField</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$keyFields</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$keyFields</span><span class="var-description">: array of fields to group the results by</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$valueField</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$valueField</span><span class="var-description">: name of the field containing the value to be grouped</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -350,23 +377,24 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlGetSchema</span> (line <span class="line-number">27</span>)
+		<span class="method-title">SqlGetSchema</span> (line <span class="line-number">61</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbSchema object  NOTE: currently not implemented on all database engines (i.e. only pgsql and a few others even support schemas)</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbSchema.html">DbSchema</a></span>
 		<span class="method-name">
 			SqlGetSchema
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">&#039;public&#039;</span>])
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">&#039;public&#039;</span>])
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Name of the schema to return (not yet implemented</span>			</li>
 				</ul>
 		
 	
@@ -375,26 +403,33 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlInsertArray</span> (line <span class="line-number">67</span>)
+		<span class="method-title">SqlInsertArray</span> (line <span class="line-number">172</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enter description here...</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> ID of the inserted row or false if $serial == false</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			SqlInsertArray
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: Table into which we will insert the data</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: ($key =&gt; $value) array in the format ($fieldName =&gt; $fieldValue)</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$serial</span><span class="var-description">: True if the last inserted ID should be returned</span>			</li>
 				</ul>
 		
 	
@@ -403,26 +438,31 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlInsertRow</span> (line <span class="line-number">82</span>)
+		<span class="method-title">SqlInsertRow</span> (line <span class="line-number">214</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute an insert statement</p>
+<p class="description"><p>Unlike SqlQuery, this method does not return a DbResultSet</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Number of affected rows (not all database engines support this)</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">number</span>
 		<span class="method-name">
 			SqlInsertRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -431,20 +471,27 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlInsertRowValues</span> (line <span class="line-number">87</span>)
+		<span class="method-title">SqlInsertRowValues</span> (line <span class="line-number">226</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This function has not yet been implemented</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			SqlInsertRowValues
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
+					<li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$tableName</span>			</li>
@@ -459,26 +506,31 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlModifyRow</span> (line <span class="line-number">72</span>)
+		<span class="method-title">SqlModifyRow</span> (line <span class="line-number">186</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an update statement on the database (identical to SqlUpdateRow)</p>
+<p class="description"><p>Unlike SqlQuery, this method does not return a DbResultSet objects</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Number of affected rows (not all database engines support this)</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">number</span>
 		<span class="method-name">
 			SqlModifyRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -487,20 +539,27 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlModifyRowValues</span> (line <span class="line-number">77</span>)
+		<span class="method-title">SqlModifyRowValues</span> (line <span class="line-number">200</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This function is not yet implimented</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			SqlModifyRowValues
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
+					<li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 					<li>
 				<span class="var-type"></span>
 				<span class="var-name">$tableName</span>			</li>
@@ -515,26 +574,27 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlQuery</span> (line <span class="line-number">22</span>)
+		<span class="method-title">SqlQuery</span> (line <span class="line-number">49</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes a database query.  $params must be a $key =&gt; $value array of values to substitute into $sql</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbResultSet.html">DbResultSet</a></span>
 		<span class="method-name">
 			SqlQuery
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -543,7 +603,7 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlSelsertRow</span> (line <span class="line-number">97</span>)
+		<span class="method-title">SqlSelsertRow</span> (line <span class="line-number">245</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
@@ -580,26 +640,28 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">SqlUpdateRow</span> (line <span class="line-number">92</span>)
+		<span class="method-title">SqlUpdateRow</span> (line <span class="line-number">240</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an update statement on the database</p>
+<p class="description"><p>Unlike the method query(), this method does not return a DbResultSet objects</p></p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			SqlUpdateRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array($key=>$value)</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL query with parameters in the format &quot;:variablename&quot; or &quot;:variablename:datatype&quot;</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array($key=>$value)</span>
+				<span class="var-name">$params</span><span class="var-description">: ($key =&gt; value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()</span>			</li>
 				</ul>
 		
 	
@@ -608,7 +670,7 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">SqlUpsertRow</span> (line <span class="line-number">102</span>)
+		<span class="method-title">SqlUpsertRow</span> (line <span class="line-number">250</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
@@ -639,7 +701,7 @@
 	</div>
 	
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:04 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:27 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

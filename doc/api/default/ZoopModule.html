@@ -53,6 +53,12 @@
 					<th class="class-table-header">Description</th>
 				</tr>
 								<tr>
+					<td style="padding-right: 2em"></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
 					<td style="padding-right: 2em"><a href="../default/AuthModule.html">AuthModule</a></td>
 					<td>
 											
@@ -66,6 +72,12 @@
 				</tr>
 								<tr>
 					<td style="padding-right: 2em"><a href="../default/GraphicModule.html">GraphicModule</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../default/MailModule.html">MailModule</a></td>
 					<td>
 											
 										</td>
@@ -139,7 +151,7 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#createName" title="details" class="method-name">createName</a>
 										()
 									</div>
@@ -149,9 +161,9 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">array</span>
 										<a href="#getConfig" title="details" class="method-name">getConfig</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">''</span>])
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">''</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -164,7 +176,7 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">array("key"</span>
 										<a href="#getIncludes" title="details" class="method-name">getIncludes</a>
 										()
 									</div>
@@ -192,7 +204,7 @@
 					</div>
 		<div class="info-box-body">
 			<a name="var$hasConfig" id="$hasConfig"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<span class="var-title">
@@ -230,7 +242,7 @@
 			<A NAME='method_detail'></A>
 
 <a name="method__construct" id="__construct"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">Constructor __construct</span> (line <span class="line-number">7</span>)
@@ -250,10 +262,10 @@
 			
 	</div>
 <a name="methodconfigure" id="configure"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">configure</span> (line <span class="line-number">38</span>)
+		<span class="method-title">configure</span> (line <span class="line-number">44</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -279,6 +291,7 @@
 							</li>
 					<li>
 				<a href="../default/DbModule.html#methodconfigure">DbModule::configure()</a>
+								: This method reads the configuration options (using the getConfig method)  and initializes the database connections.
 							</li>
 					<li>
 				<a href="../default/GraphicModule.html#methodconfigure">GraphicModule::configure()</a>
@@ -295,16 +308,17 @@
 				</ul>
 	</div>
 <a name="methodcreateName" id="createName"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">createName</span> (line <span class="line-number">40</span>)
+		<span class="method-title">createName</span> (line <span class="line-number">52</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Figures out the name of the module by removing the word &quot;Module&quot; from  the class name and returning the result</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			createName
 		</span>
@@ -315,10 +329,10 @@
 			
 	</div>
 <a name="methodgetClasses" id="getClasses"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getClasses</span> (line <span class="line-number">67</span>)
+		<span class="method-title">getClasses</span> (line <span class="line-number">93</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -337,13 +351,20 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
+				<a href="../default/AppModule.html#methodgetClasses">AppModule::getClasses()</a>
+							</li>
+					<li>
 				<a href="../default/AuthModule.html#methodgetClasses">AuthModule::getClasses()</a>
 							</li>
 					<li>
 				<a href="../default/DbModule.html#methodgetClasses">DbModule::getClasses()</a>
+								: This method is overridden to tell zoop which classes exist as part of this module  so that they can be added to the autoloader
 							</li>
 					<li>
 				<a href="../default/GraphicModule.html#methodgetClasses">GraphicModule::getClasses()</a>
+							</li>
+					<li>
+				<a href="../default/MailModule.html#methodgetClasses">MailModule::getClasses()</a>
 							</li>
 					<li>
 				<a href="../default/SessionModule.html#methodgetClasses">SessionModule::getClasses()</a>
@@ -354,35 +375,40 @@
 				</ul>
 	</div>
 <a name="methodgetConfig" id="getConfig"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getConfig</span> (line <span class="line-number">55</span>)
+		<span class="method-title">getConfig</span> (line <span class="line-number">75</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the configuration options using the Config class.</p>
+<p class="description"><p>Returns config options from &quot;zoop.&lt;modulename&gt;.&lt;path&gt;&quot;  Path is optional and may be omitted.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of configuration options</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			getConfig
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">''</span>])
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">''</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$path</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodgetConfigPath" id="getConfigPath"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getConfigPath</span> (line <span class="line-number">45</span>)
+		<span class="method-title">getConfigPath</span> (line <span class="line-number">57</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -399,10 +425,10 @@
 			
 	</div>
 <a name="methodgetDepends" id="getDepends"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getDepends</span> (line <span class="line-number">72</span>)
+		<span class="method-title">getDepends</span> (line <span class="line-number">98</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -426,19 +452,21 @@
 				</ul>
 	</div>
 <a name="methodgetIncludes" id="getIncludes"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getIncludes</span> (line <span class="line-number">62</span>)
+		<span class="method-title">getIncludes</span> (line <span class="line-number">88</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This method should be overridden in the child class to return an array  of filenames that should be included when the module is loaded</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> =&gt; &quot;value&quot;) or false;</li>
 				<li><span class="field">access:</span> protected</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array("key"</span>
 		<span class="method-name">
 			getIncludes
 		</span>
@@ -451,10 +479,14 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
+				
+							</li>
+					<li>
 				<a href="../default/AuthModule.html#methodgetIncludes">AuthModule::getIncludes()</a>
 							</li>
 					<li>
 				<a href="../default/DbModule.html#methodgetIncludes">DbModule::getIncludes()</a>
+								: This method is overridden to tell zoop which files to include with this module
 							</li>
 					<li>
 				<a href="../default/SessionModule.html#methodgetIncludes">SessionModule::getIncludes()</a>
@@ -465,10 +497,10 @@
 				</ul>
 	</div>
 <a name="methodinit" id="init"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">init</span> (line <span class="line-number">37</span>)
+		<span class="method-title">init</span> (line <span class="line-number">43</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -500,7 +532,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:16 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:37 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

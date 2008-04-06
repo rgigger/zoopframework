@@ -56,22 +56,22 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">unknown</span>
 										<a href="#getClasses" title="details" class="method-name">getClasses</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
 										<a href="#getConnection" title="details" class="method-name">getConnection</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
 										<a href="#getDefaultConnection" title="details" class="method-name">getDefaultConnection</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">array</span>
 										<a href="#getIncludes" title="details" class="method-name">getIncludes</a>
 										()
 									</div>
@@ -120,10 +120,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">configure</span> (line <span class="line-number">29</span>)
+		<span class="method-title">configure</span> (line <span class="line-number">56</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This method reads the configuration options (using the getConfig method)  and initializes the database connections.</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -145,13 +146,14 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getClasses</span> (line <span class="line-number">23</span>)
+		<span class="method-title">getClasses</span> (line <span class="line-number">45</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This method is overridden to tell zoop which classes exist as part of this module  so that they can be added to the autoloader</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">unknown</span>
 		<span class="method-name">
 			getClasses
 		</span>
@@ -170,22 +172,23 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getConnection</span> (line <span class="line-number">6</span>)
+		<span class="method-title">getConnection</span> (line <span class="line-number">12</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbConnection object to the database called &quot;$name&quot;</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
 		<span class="method-name">
 			getConnection
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$name</span>			</li>
 				</ul>
 		
@@ -195,13 +198,14 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getDefaultConnection</span> (line <span class="line-number">13</span>)
+		<span class="method-title">getDefaultConnection</span> (line <span class="line-number">24</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbConnection object for the default database connection</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
 		<span class="method-name">
 			getDefaultConnection
 		</span>
@@ -215,13 +219,17 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getIncludes</span> (line <span class="line-number">18</span>)
+		<span class="method-title">getIncludes</span> (line <span class="line-number">34</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This method is overridden to tell zoop which files to include with this module</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of filenames to include</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			getIncludes
 		</span>
@@ -233,6 +241,7 @@
 		<div class="notes">Redefinition of:</div>
 		<dl>
 			<dt><a href="../default/ZoopModule.html#methodgetIncludes">ZoopModule::getIncludes()</a></dt>
+						<dd>This method should be overridden in the child class to return an array  of filenames that should be included when the module is loaded</dd>
 					</dl>
 			
 	</div>
@@ -257,7 +266,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:01 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

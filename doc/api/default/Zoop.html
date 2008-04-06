@@ -22,8 +22,10 @@
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This object is for basic framework management tasks, such as:</p>
+<p class="description"><p>* Configuring auto-loading of zones and modules  * Loading libraries and domains</p></p>
 		<p class="notes">
-			Located in <a class="field" href="_Zoop.php.html">/Zoop.php</a> (line <span class="field">9</span>)
+			Located in <a class="field" href="_Zoop.php.html">/Zoop.php</a> (line <span class="field">14</span>)
 		</p>
 		
 				
@@ -47,7 +49,7 @@
 		<div class="info-box-body">
 			<div class="var-summary">
 																								<div class="var-title">
-					<span class="var-type">mixed</span>
+					<span class="var-type">array</span>
 					<a href="#$classList" title="details" class="var-name">$classList</a>
 				</div>
 											</div>
@@ -69,38 +71,38 @@
 																																				<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#registerClass" title="details" class="method-name">registerClass</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fullPath</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fullPath</span>)
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#registerDomain" title="details" class="method-name">registerDomain</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+											(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$className</span>)
 									</div>
 																								
 												<div class="method-definition">
-											<span class="method-result">Zoop</span>
+											<span class="method-result"><a href="../default/Zoop.html">Zoop</a></span>
 										<a href="#Zoop" title="details" class="method-name">Zoop</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#getClassPath" title="details" class="method-name">getClassPath</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#loadLib" title="details" class="method-name">loadLib</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
 									</div>
 																																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#_getClassPath" title="details" class="method-name">_getClassPath</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#_registerClass" title="details" class="method-name">_registerClass</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fullPath</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fullPath</span>)
 									</div>
 								</div>
 		</div>
@@ -124,13 +126,14 @@
 
 	<div class="var-header">
 		<span class="var-title">
-			<span class="var-type">mixed</span>
+			<span class="var-type">array</span>
 			<span class="var-name">$classList</span>
-						(line <span class="line-number">11</span>)
+						(line <span class="line-number">21</span>)
 		</span>
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Key =&gt; Value list of registered classes and the full path of the file that contains them</p>
 	
 	
 		
@@ -156,10 +159,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method registerClass</span> (line <span class="line-number">35</span>)
+		<span class="method-title">static method registerClass</span> (line <span class="line-number">71</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">static -- Register a class for auto-loading with the name of the class  and the full path of the file that contains it.</p>
 	
 	<div class="method-signature">
 	    static
@@ -167,15 +171,15 @@
 		<span class="method-name">
 			registerClass
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fullPath</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fullPath</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$className</span>			</li>
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$fullPath</span>			</li>
 				</ul>
 		
@@ -185,10 +189,11 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method registerDomain</span> (line <span class="line-number">41</span>)
+		<span class="method-title">static method registerDomain</span> (line <span class="line-number">84</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Register a &quot;domain&quot; class for autoload (a domain class is a  class that is located in the &quot;domains&quot; directory under  the project root with the filename &lt;classname&gt;.php)</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -199,12 +204,12 @@
 		<span class="method-name">
 			registerDomain
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+					(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$className</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">unknown_type</span>
 				<span class="var-name">$className</span>			</li>
 				</ul>
 		
@@ -215,13 +220,14 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor Zoop</span> (line <span class="line-number">13</span>)
+		<span class="method-title">Constructor Zoop</span> (line <span class="line-number">29</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">When a Zoop object is instantiated, the &quot;utils&quot; library is automatically  imported and the app_tmp_dir constant is defined (to projectdir/tmp)</p>
 	
 	<div class="method-signature">
-		<span class="method-result">Zoop</span>
+		<span class="method-result"><a href="../default/Zoop.html">Zoop</a></span>
 		<span class="method-name">
 			Zoop
 		</span>
@@ -235,22 +241,26 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getClassPath</span> (line <span class="line-number">47</span>)
+		<span class="method-title">getClassPath</span> (line <span class="line-number">95</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">static -- Returns the full path and filename associated with the given registered class</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> - full path and filename of the class</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			getClassPath
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$className</span>			</li>
 				</ul>
 		
@@ -260,22 +270,23 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">loadLib</span> (line <span class="line-number">53</span>)
+		<span class="method-title">loadLib</span> (line <span class="line-number">108</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads a library of specified name.  Modules are located in the root  directory of the framework, using the following naming scheme:  	&lt;root&gt;/&lt;module&gt;/&lt;module&gt;.php</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			loadLib
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$name</span>			</li>
 				</ul>
 		
@@ -285,22 +296,26 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">_getClassPath</span> (line <span class="line-number">26</span>)
+		<span class="method-title">_getClassPath</span> (line <span class="line-number">55</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the full path and filename associated with the given registered class</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> - full path and filename of the class</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			_getClassPath
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$className</span>			</li>
 				</ul>
 		
@@ -310,25 +325,26 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">_registerClass</span> (line <span class="line-number">21</span>)
+		<span class="method-title">_registerClass</span> (line <span class="line-number">44</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Register a class for auto-loading with the name of the class  and the full path of the file that contains it.</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			_registerClass
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fullPath</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fullPath</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$className</span>			</li>
 					<li>
-				<span class="var-type"></span>
+				<span class="var-type">string</span>
 				<span class="var-name">$fullPath</span>			</li>
 				</ul>
 		
@@ -340,7 +356,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:16 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:37 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>

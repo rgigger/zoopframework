@@ -40,23 +40,24 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">BaseRedirect</span> (line <span class="line-number">46</span>)
+		<span class="method-title">BaseRedirect</span> (line <span class="line-number">84</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirects the client to a URL relative to the project (index.php/&lt;url&gt;)</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			BaseRedirect
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$virtualPath</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$virtualPath</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$virtualPath</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$virtualPath</span><span class="var-description">: Path inside the project to which to send them</span>			</li>
 				</ul>
 		
 	
@@ -65,23 +66,24 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">EchoBacktrace</span> (line <span class="line-number">51</span>)
+		<span class="method-title">EchoBacktrace</span> (line <span class="line-number">95</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Echos an HTML-formatted backtrace</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			EchoBacktrace
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">&#039;&#039;</span>])
+					([<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">&#039;&#039;</span>])
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$value</span>			</li>
+				<span class="var-type">unknown_type</span>
+				<span class="var-name">$value</span><span class="var-description">: I don't know what this is for</span>			</li>
 				</ul>
 		
 	
@@ -90,23 +92,24 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">EchoStaticFile</span> (line <span class="line-number">142</span>)
+		<span class="method-title">EchoStaticFile</span> (line <span class="line-number">197</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Given a filename, outputs the contents of the file to the client</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			EchoStaticFile
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$filename</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$filename</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span><span class="var-description">: Path and filename of the file to output</span>			</li>
 				</ul>
 		
 	
@@ -115,26 +118,27 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">echo_r</span> (line <span class="line-number">29</span>)
+		<span class="method-title">echo_r</span> (line <span class="line-number">56</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">print_r the contents of the variable $var along with a full function backtrace to indicate where in the program this is occurring (great for debugging)</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			echo_r
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$var</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$supressBacktrace</span> = <span class="var-default">0</span>])
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$var</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$supressBacktrace</span> = <span class="var-default">0</span>])
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$var</span>			</li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$var</span><span class="var-description">: Variable to print</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$supressBacktrace</span>			</li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$supressBacktrace</span><span class="var-description">: True if you wish to suppress the backtrace (default: False)</span>			</li>
 				</ul>
 		
 	
@@ -143,7 +147,7 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">FormatBacktraceFunctionCellHtml</span> (line <span class="line-number">88</span>)
+		<span class="method-title">FormatBacktraceFunctionCellHtml</span> (line <span class="line-number">138</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
@@ -168,23 +172,24 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">FormatBacktraceHtml</span> (line <span class="line-number">56</span>)
+		<span class="method-title">FormatBacktraceHtml</span> (line <span class="line-number">106</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates and prints backtrace information in readable HTML</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			FormatBacktraceHtml
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$backtraceInfo</span>)
+					(<span class="var-type">debug_backtrace()</span>&nbsp;<span class="var-name">$backtraceInfo</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$backtraceInfo</span>			</li>
+				<span class="var-type">debug_backtrace()</span>
+				<span class="var-name">$backtraceInfo</span><span class="var-description">: The results of a debug_backtrace() function call</span>			</li>
 				</ul>
 		
 	
@@ -193,7 +198,7 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">FormateBacktraceLineHtml</span> (line <span class="line-number">78</span>)
+		<span class="method-title">FormateBacktraceLineHtml</span> (line <span class="line-number">128</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
@@ -218,23 +223,27 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">GetFileExtention</span> (line <span class="line-number">179</span>)
+		<span class="method-title">GetFileExtention</span> (line <span class="line-number">248</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the extension of the given filename</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> extension of the filename</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			GetFileExtention
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$filename</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$filename</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span><span class="var-description">: Filename to process</span>			</li>
 				</ul>
 		
 	
@@ -243,23 +252,28 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">GetPostDate</span> (line <span class="line-number">12</span>)
+		<span class="method-title">GetPostDate</span> (line <span class="line-number">32</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Evaluates the POST variables and creates a standard &quot;year-month-day Hour24:minute:second -7:00&quot; date from a POSTed form</p>
+<p class="description"><p>The fields in the form should be as follows:  &lt;name&gt;Month, &lt;name&gt;Day, &lt;name&gt;Year  &lt;name&gt;Hour, &lt;name&gt;Minute, &lt;name&gt;Second  &lt;name&gt;Meridian (&lt;-- &quot;am&quot; or &quot;pm&quot;)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Date string</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			GetPostDate
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+					(<span class="var-type">$name</span>&nbsp;<span class="var-name">$name</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
+				<span class="var-type">$name</span>
+				<span class="var-name">$name</span><span class="var-description">: Prefix of the POST variables to evaluate</span>			</li>
 				</ul>
 		
 	
@@ -268,26 +282,30 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">ListDir</span> (line <span class="line-number">154</span>)
+		<span class="method-title">ListDir</span> (line <span class="line-number">216</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of files in the specified directory, optionally filtered by the values in array $extention</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Array of filenames found in the directory</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			ListDir
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$path</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span><span class="var-description">: $path Directory path to scan</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: Array of file extensions (without leading &quot;.&quot;)</span>			</li>
 				</ul>
 		
 	
@@ -296,23 +314,24 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">Redirect</span> (line <span class="line-number">38</span>)
+		<span class="method-title">Redirect</span> (line <span class="line-number">70</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirect the client browser to $url</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			Redirect
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$url</span> = <span class="var-default">NULL</span>])
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span> = <span class="var-default">NULL</span>])
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$url</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$url</span><span class="var-description">: URL to which to send them</span>			</li>
 				</ul>
 		
 	
@@ -321,13 +340,14 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">RequestIsGet</span> (line <span class="line-number">2</span>)
+		<span class="method-title">RequestIsGet</span> (line <span class="line-number">7</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if the current page was requested with the GET method</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">boolean</span>
 		<span class="method-name">
 			RequestIsGet
 		</span>
@@ -341,13 +361,14 @@
 <div class="oddrow">
 	
 	<div>
-		<span class="method-title">RequestIsPost</span> (line <span class="line-number">7</span>)
+		<span class="method-title">RequestIsPost</span> (line <span class="line-number">17</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if the current page was requested with the POST method</p>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">boolean</span>
 		<span class="method-name">
 			RequestIsPost
 		</span>
@@ -361,26 +382,30 @@
 <div class="evenrow">
 	
 	<div>
-		<span class="method-title">str_prefix</span> (line <span class="line-number">186</span>)
+		<span class="method-title">str_prefix</span> (line <span class="line-number">261</span>)
 	</div> 
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Appends a prefix to a string, if given prefix doesn't already exist</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Prefixed string</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			str_prefix
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$prefix</span>)
 			</div>
 
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$string</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span><span class="var-description">: String to analyze</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$prefix</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prefix</span><span class="var-description">: Prefix to append (if it isn't already there)</span>			</li>
 				</ul>
 		
 	
@@ -389,7 +414,7 @@
 	</div>
 	
 	<p class="notes" id="credit">
-		Documentation generated on Fri, 29 Feb 2008 15:58:15 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Sun, 06 Apr 2008 17:19:37 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
 	</p>
 	</div></body>
 </html>
