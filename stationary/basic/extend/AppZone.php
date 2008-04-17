@@ -3,8 +3,6 @@ class AppZone extends GuiZone
 {
 	function chooseGui($guiType)
 	{
-		$guiVars = GuiGetAssigns();
-		
 		switch($guiType)
 		{
 			case 'main':

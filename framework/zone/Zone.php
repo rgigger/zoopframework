@@ -1,12 +1,8 @@
 <?php
-class Zone
+class Zone extends Object
 {
 	private	$requestInfo;
 	private $params;
-	
-	function __construct()
-	{
-	}
 	
 	function init($requestInfo = NULL, $params = array())
 	{
@@ -46,11 +42,11 @@ class Zone
 		$defaultPostName = "postDefault";
 		
 		//	first try to find a matching page
-		if( RequestIsPost() && method_exists($this, $postName) )
+		if( RequestIsPost() && $this->_methodExists($postName) )
 			$foundPage = $postName;
 		else
 		{
-			if( method_exists($this, $pageName) )
+			if( $this->_methodExists($pageName) )
 				$foundPage = $pageName;
 		}
 		
@@ -77,14 +73,14 @@ class Zone
 			else
 			{
 				//	now look for a default post page
-				if( RequestIsPost() && method_exists($this, $defaultPostName) )
+				if( RequestIsPost() && $this->_methodExists($defaultPostName) )
 				{
 					$foundPage = $defaultPostName;
 				}
 				else
 				{
 					//	finally look for a defaultpage
-					if( method_exists($this, $defaultName) )
+					if( $this->_methodExists($defaultName) )
 					{
 						$foundPage = $defaultName;
 						
@@ -102,15 +98,15 @@ class Zone
 			$postfix = $foundPage == 'pageDefault' ? array(0 => 'default', 1 => $originalPart) : array(0 => $originalPart);
 			$pageParams = array_merge($postfix, $pathParts);
 			
-			if( method_exists($this, 'initPages') )
+			if( $this->_methodExists('initPages') )
 				$this->initPages($pageParams, $this->params);
 			
 			$this->$foundPage($pageParams, $this->params);
 			
-			if( RequestIsGet() && method_exists($this, 'closePages') )
+			if( RequestIsGet() && $this->_methodExists('closePages') )
 				$this->closePages($pageParams, $this->params);
 			
-			if( RequestIsPost() && method_exists($this, 'closePosts') )
+			if( RequestIsPost() && $this->_methodExists('closePosts') )
 				$this->closePosts($pageParams, $this->params);
 		}
 		

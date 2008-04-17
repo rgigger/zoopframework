@@ -1,6 +1,37 @@
--	first priorities
+-	roll the 1.51.00 release
+	-	stuff we have
+		-	major overhaul of configuration system
+		-	complete rewrite of DbObject
+		-	mysql support
+		-	tons more examples
+		-	mixins
+		-	getters/setters
+	-	stuff we need
+		-	examples for mixins, getters and setters
+		-	examples of DbObject vector functions
+		-	maybe get all of that working within the business app
+	-	steps
+		-	make sure all the examples work
+		-	update the api docs
+		-	export the code
+		-	tar.gz it up
+		-	upload it to google code
+-	2.00.00 release
+	-	definitely
+		-	legacy
+		-	contrib
+		-	upgrade/transition/bc/compat
+		-	port a Zoop 1.5 app to Zoop 2.0 using upgrade
+	-	maybe
+		-	permissions?
+		-	forms?
+		-	xml graphics?
+		-	migrations?
+		-	ajax?
+		-	zap/zoop cli app?
+		-	scaffolding?
+-	important stuff
 	-	necessary modules
-		/	more complete db object implementation
 		-	awesome permissions system
 		-	forms
 			-	validation
@@ -36,7 +67,7 @@
 		-	how to prevent script injection
 		-	session
 		-	dbobject
--	second prioities
+-	slightly less important stuff
 	-	creating new projects automatically
 		-	command line tool
 	-	creating zones automatically

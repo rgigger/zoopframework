@@ -1,6 +1,6 @@
 <?php
 // 
-// This page is now obsolete and depricated
+// This file is now obsolete and depricated
 // 
 
 //

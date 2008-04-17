@@ -28,7 +28,7 @@ class DbMysql extends DbConnection
 		if(gettype($result) == 'boolean')
 			return $result;
 		
-		return new DbMysqlResult($result);
+		return new DbMysqlResult($this->connection, $result);
 	}
 	
 	function getLastInsertId()

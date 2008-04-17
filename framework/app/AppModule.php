@@ -8,6 +8,6 @@ class AppModule extends ZoopModule
 	
 	function getClasses()
 	{
-		return array('Application');
+		return array('Application', 'Object');
 	}
 }

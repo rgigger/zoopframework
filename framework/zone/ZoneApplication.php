@@ -1,8 +1,9 @@
 <?php
 //	todo:	I think that this should extend Application.
+//	Application calls session_start, we need to figure out if that should be handled there or not before we extend it
 class ZoneApplication
 {
-	function loadZone($name)
+	static function loadZone($name)
 	{
 		$name = ucfirst($name);
 		include(app_dir . "/zones/Zone$name.php");
@@ -28,11 +29,10 @@ class ZoneApplication
 		}
 	}
 	
-	//static
-	function handleRequest()
+	static function handleRequest()
 	{
 		global $app;
-		$app->loadZone('default');
+		self::loadZone('default');
 		$app->run();
 	}
 	

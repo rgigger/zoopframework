@@ -1,21 +1,26 @@
 <?php
-class DbSchema
+class DbSchema extends Object
 {
-	var $conn;
+	private $conn;
+	private $tables;
 	
-	function DbSchema($conn)
+	function __construct($conn)
 	{
 		$this->conn = $conn;
+		$this->addGetter('tables');
 	}
 	
-	function tableExists($name)
+	public function getTables()
 	{
-		$sql = "SELECT table_name
-				FROM information_schema.tables
-				WHERE table_type = 'BASE TABLE'
-					AND table_schema NOT IN ('pg_catalog', 'information_schema')
-					AND table_name = :name";
+		if(!$this->tables)
+		{
+			$this->tables = array();
+			foreach($this->conn->getTableNames() as $thisTableName)
+			{
+				$this->tables[$thisTableName] = new DbTable($this->conn, $thisTableName);
+			}
+		}
 		
-		return SqlFetchCell($sql, array('name' => $name)) ? 1 : 0;
+		return $this->tables;
 	}
 }

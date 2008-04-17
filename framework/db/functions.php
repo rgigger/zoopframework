@@ -53,14 +53,13 @@ function SqlQuery($sql, $params)
 
 /**
  * Returns a DbSchema object
- * NOTE: currently not implemented on all database engines (i.e. only pgsql and a few others even support schemas)
+ * This function returns a DbSchema object that can be used to query the structure of the database in a DOM like fashion.
  *
- * @param string $name Name of the schema to return (not yet implemented 
  * @return DbSchema
  */
-function SqlGetSchema($name = 'public')
+function SqlGetSchema()
 {
-	return DbModule::getDefaultConnection()->getSchema($name);
+	return DbModule::getDefaultConnection()->getSchema();
 }
 
 /**

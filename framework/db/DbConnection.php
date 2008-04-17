@@ -72,18 +72,30 @@ abstract class DbConnection
 		$this->echo = false;
 	}
 	
-	public function getSchema($name = 'public')
-	{
-		return new DbSchema($this);
-	}
+	//
+	//	End misc funtions
+	//
+	
+	//
+	//	Begin Schema functions
+	//
 	
 	public function alterSchema($sql)
 	{
 		return $this->_query($sql);
 	}
 	
+	public function getSchema()
+	{
+		return new DbSchema($this);
+	}
+	
+	abstract public function tableExists($name);
+	abstract public function getTableNames();
+	abstract public function getTableFieldInfo($tableName);
+	
 	//
-	//	End misc funtions
+	//	End Schema functions
 	//
 	
 	//
@@ -433,8 +445,9 @@ abstract class DbConnection
 	//	Begin combo functions
 	//
 	
-	static function generateSelectInfo($tableName, $fieldsNames, $conditions, $lock = 0)
+	static function generateSelectInfo($tableName, $fieldsNames, $conditions = NULL, $params = NULL)
 	{
+		// echo_r($params);
 		$selectParams = array();
 		
 		//	create the field clause
@@ -444,22 +457,39 @@ abstract class DbConnection
 			$fieldClause = implode(', ', $fieldsNames);
 		
 		//	create the condition clause
-		$conditionParts = array();
-		foreach($conditions as $fieldName => $value)
+		if($conditions)
 		{
-			$conditionParts[] = "$fieldName = :$fieldName";
-			$selectParams[$fieldName] = $value;
+			$conditionParts = array();
+			foreach($conditions as $fieldName => $value)
+			{
+				$conditionParts[] = "$fieldName = :$fieldName";
+				$selectParams[$fieldName] = $value;
+			}
+			$conditionClause = 'WHERE ' . implode(' AND ', $conditionParts);
 		}
-		$conditionClause = implode(' AND ', $conditionParts);
+		else
+			$conditionClause = '';
 		
 		//	create the lock clause
-		if($lock)
+		if(isset($params['lock']) && $params['lock'])
 			$lockClause = 'for update';
 		else
 			$lockClause = '';
 		
+		//	create the order by clause
+		if(isset($params['orderby']) && $params['orderby'])
+		{
+			$orderByClause = 'order by ';
+			if(is_array($params['orderby']))
+				$orderByClause .= implode(', ', $params['orderby']);
+			else
+				$orderByClause .= $params['orderby'];
+		}
+		else
+			$orderByClause = '';
+		
 		//	now put it all together
-		$selectSql = "SELECT $fieldClause FROM :tableName:keyword WHERE $conditionClause $lockClause";
+		$selectSql = "SELECT $fieldClause FROM :tableName:keyword $conditionClause $orderByClause $lockClause";
 		$selectParams['tableName'] = $tableName;
 		
 		return array('sql' => $selectSql, 'params' => $selectParams);
@@ -563,29 +593,25 @@ abstract class DbConnection
 		$updateInfo = self::generateUpdateInfo($tableName, $conditions, $values);
 		
 		//	update the row if it's there
-		$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
-		// var_dump($num);
+		$num = $this->updateRows($updateInfo['sql'], $updateInfo['params']);
+		
+		if($num > 1)
+			trigger_error("one row expected, $num rows updated");
+		
 		if(!$num)
 		{
 			//	generate the insert query info
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $values));
-			// echo_r($insertInfo);
 			
 			//	if it wasn't there insert it
-			$id = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			$this->insertRow($insertInfo['sql'], $insertInfo['params'], false);
 			
-			if(!$id)
-			{
-				//	race condition
-				//	if another thread inserted it first then we we should check again
-				//	also we need to supress the error in PHP4.  we should probably try to use exceptions in PHP5
-				$num = $this->updateRow($updateInfo['sql'], $updateInfo['params']);
-				if(!$num)
-				{
-					//	I'm pretty sure that this should actually never happen
-					trigger_error("error upsert: this shouldn't ever happen.  If it does figure out why and fix this function");
-				}
-			}
+			//
+			//	I think the only thing that can go wrong here is we get a race condition where another process inserts the row
+			//	after we do the update but before we do the insert.  In that case an error will be thrown here that needs to be handled.
+			//	Also after catching the error we should still try to execute the update statement.  Of course if the thread causing the insert
+			//	error then rolls back we might need to do an insert.  Hmmm... this could get tricky.
+			//
 		}
 	}
 	
@@ -603,7 +629,7 @@ abstract class DbConnection
 			$insertInfo = self::generateInsertInfo($tableName, array_merge($conditions, $allInsertFields));
 			
 			//	if it wasn't there insert it
-			$id = $this->insertRow($insertInfo['sql'], $insertInfo['params']);
+			$this->insertRow($insertInfo['sql'], $insertInfo['params'], false);
 			//	you may have a race condition here
 			//	if another thread inserted it first then we need to supress the error in PHP4
 			//	we should probably try to use exceptions in PHP5

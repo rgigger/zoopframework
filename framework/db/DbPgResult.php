@@ -1,13 +1,12 @@
 <?php
-class DbPgResult
+class DbPgResult extends DbResultSet
 {
-	var $res;
-	var $cur;
-	var $max;
+	private $cur;
+	private $max;
 	
-	function DbPgResult($res)
+	function __construct($link, $res)
 	{
-		$this->res = $res;
+		parent::__construct($link, $res);
 		$this->cur = 0;
 		$this->max = pg_num_rows($this->res) - 1;
 	}

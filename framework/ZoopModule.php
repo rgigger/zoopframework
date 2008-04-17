@@ -29,8 +29,8 @@ abstract class ZoopModule
 				
 		
 		//	register any class files
-		if($this->getClasses())
-			foreach($this->getClasses() as $thisClass)
+		if($classes = $this->getClasses())
+			foreach($classes as $thisClass)
 				Zoop::registerClass($thisClass, zoop_dir . '/' . $this->name . '/' . $thisClass . '.php');
 		
 		if($this->hasConfig)

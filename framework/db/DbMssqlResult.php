@@ -1,5 +1,5 @@
 <?php
-class DbMysqlResult
+class DbMssqlResult
 {
 	var $cur;
 	var $max;
@@ -7,17 +7,8 @@ class DbMysqlResult
 	function __construct($link, $res)
 	{
 		parent::__construct($link, $res);
-		if (gettype($res) == "boolean")
-		{
-			$this->res = null;
-			$this->cur = 0;
-			$this->max = 0;
-		}
-		else
-		{
-			$this->cur = 0;
-			$this->max = mysql_num_rows($this->res) - 1;
-		}
+		$this->cur = 0;
+		$this->max = mssql_num_rows($this->res) - 1;
 	}
 	
 	function numRows()
@@ -34,8 +25,8 @@ class DbMysqlResult
 	{
 		if($this->max == -1)
 			return false;
-		mysql_data_seek($this->res, $this->cur);
-		return mysql_fetch_assoc($this->res);
+		mssql_data_seek($this->res, $this->cur);
+		return mssql_fetch_assoc($this->res);
 	}
 	
 	function key()
@@ -48,8 +39,8 @@ class DbMysqlResult
 		$this->cur++;
 		if($this->cur > $this->max)
 			return false;
-		mysql_data_seek($this->res, $this->cur);
-		return mysql_fetch_assoc($this->res);
+		mssql_data_seek($this->res, $this->cur);
+		return mssql_fetch_assoc($this->res);
 	}
 	
 	function valid()
@@ -62,9 +53,8 @@ class DbMysqlResult
 	
 	function affectedRows()
 	{
-		if ($this->res == null)
-			return -1;
-		else
-			return mysql_affected_rows($this->link);
+        $result = mssql_query("select @@rowcount as rows", $this->link);
+        $rows = mssql_fetch_assoc($result);
+        return $rows['rows'];
 	}
 }

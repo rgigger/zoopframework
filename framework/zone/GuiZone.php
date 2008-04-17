@@ -1,7 +1,23 @@
 <?php
 class GuiZone extends Zone
 {
-	var $displayed = false;
+	protected $displayed = false;
+	protected $baseDir = NULL;
+	
+	public function init($requestInfo = NULL, $params = array())
+	{
+		parent::init($requestInfo, $params);
+	}
+	
+	public function setBaseDir($dir)
+	{
+		$this->baseDir = $dir;
+	}
+	
+	public function getBaseDir()
+	{
+		return $this->baseDir;
+	}
 	
 	function chooseGui($type)
 	{
@@ -10,7 +26,7 @@ class GuiZone extends Zone
 		return $tmp;
 	}
 	
-	function getTemplateDir()
+	protected function getTemplateDir()
 	{
 		$className = get_class($this);
 		$zoneName = strtolower(substr($className, 4));
@@ -31,11 +47,11 @@ class GuiZone extends Zone
 	{
 		$gui = $this->chooseGui($guiType);
 		
-		$guiAssigns = GuiGetAssigns();
-		foreach($guiAssigns as $name => $value)
-		{
+		foreach(GuiGetAssigns() as $name => $value)
 			$gui->assign($name, $value);
-		}
+		
+		foreach(GetTemplateDirs() as $thisDir)
+			$gui->addTemplateDir($thisDir);
 		
 		if(defined('script_url'))
 			$gui->assign('scriptUrl', script_url);
@@ -43,7 +59,10 @@ class GuiZone extends Zone
 			$gui->assign('virtualUrl', virtual_url);
 		$gui->assign('zoneUrl', $this->getUrl());
  		
-		$dirName = $this->getTemplateDir();
+		if(!$this->baseDir)
+			$dirName = $this->getTemplateDir();
+		else
+			$dirName = $this->baseDir;
 		$gui->display($dirName . '/'. $templateName . '.tpl');
 		$this->displayed = true;
 	}

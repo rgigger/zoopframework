@@ -41,7 +41,7 @@ class DbObject implements Iterator
 		else
 		{
 			assert(count($this->primaryKey) == 1);
-			$this->assignScalars(array($this->primaryKey), $init);
+			$this->assignScalars(array($this->primaryKey[0] => $init));
 		}
 	}
 	
@@ -73,6 +73,32 @@ class DbObject implements Iterator
 		return $this->scalars[$this->primaryKey[0]];
 	}
 	
+	public function getPrimaryKey()
+	{
+		return $this->primaryKey;
+	}
+	
+	public function primaryKeyAssignedByDb()
+	{
+		return $this->keyAssignedBy == self::keyAssignedBy_db ? true : false;
+	}
+	
+	public function getSchema()
+	{
+		return new DbTable(self::_getConnection(get_class($this)), $this->tableName);
+	}
+	
+	public function forceFields()
+	{
+		if($this->bound)
+			$this->loadScalars();
+		else
+		{
+			foreach($this->getSchema()->fields as $thisField)
+				$this->scalars[$thisField->name] = NULL;
+		}
+	}
+	
 	public function getString()
 	{
 		$s = '';
@@ -81,7 +107,7 @@ class DbObject implements Iterator
 			$s .= " $field => $value";
 		return get_class($this) . ':' . $s;
 	}
-		
+	
 	//
 	//	the scalar handlers
 	//
@@ -245,8 +271,12 @@ class DbObject implements Iterator
 	
 	public function destroy()
 	{
+		//	have a way to destroy any existing vector fields or refuse to continue (destroy_r)
 		$deleteInfo = DbConnection::generateDeleteInfo($this->tableName, $this->getKeyConditions());
 		self::_getConnection(get_class($this))->deleteRow($deleteInfo['sql'], $deleteInfo['params']);
+		$this->bound = false;
+		$this->scalars = array();
+		$this->persisted = false;
 	}
 	
 	//
@@ -444,22 +474,12 @@ class DbObject implements Iterator
 		return self::_findBySql($className, "select * from $tableName where $where", $params);
 	}
 	
-	static public function _find($className, $conditions = NULL)
+	static public function _find($className, $conditions = NULL, $params = NULL)
 	{
+		// echo_r($params);
 		$tableName = DbObject::_getTableName($className);
-		if($conditions)
-		{
-			$selectInfo = self::_getConnection($className)->generateSelectInfo($tableName, '*', $conditions);
-			$sql = $selectInfo['sql'];
-			$params = $selectInfo['params'];
-		}
-		else
-		{
-			$sql = "select * from $tableName";
-			$params = array();
-		}
-		
-		return self::_findBySql($className, $sql, $params);
+		$selectInfo = self::_getConnection($className)->generateSelectInfo($tableName, '*', $conditions, $params);
+		return self::_findBySql($className, $selectInfo['sql'], $selectInfo['params']);
 	}
 	
 	/**
