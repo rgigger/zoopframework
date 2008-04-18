@@ -75,7 +75,6 @@ function Redirect($url = NULL)
 	die();
 }
 
-
 /**
  * Redirects the client to a URL relative to the project (index.php/<url>)
  *

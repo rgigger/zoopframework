@@ -1,8 +1,7 @@
 <?php
 class Migration
 {
-	//	static
-	function initDb()
+	static function initDb()
 	{
 		//	create the migration table if it does not exist
 		$schema = SqlGetSchema();

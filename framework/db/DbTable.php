@@ -11,9 +11,12 @@ class DbTable extends Object
 		$this->conn = $conn;
 		// var_dump($this->conn);
 		$this->name = $name;
+		
+		//	change this to columns
 		$this->addGetter('fields');
 	}
 	
+	//	change this to getColumns
 	public function getFields()
 	{
 		if(!$this->fields)

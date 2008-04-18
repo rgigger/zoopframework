@@ -9,7 +9,7 @@ class DbModule extends ZoopModule
 	 * @param string $name
 	 * @return DbConnection
 	 */
-	function getConnection($name)
+	static function getConnection($name)
 	{
 		if(!isset(self::$connections[$name]))
 			trigger_error("connection '$name' does not exist");
@@ -21,7 +21,7 @@ class DbModule extends ZoopModule
 	 *
 	 * @return DbConnection
 	 */
-	function getDefaultConnection()
+	static function getDefaultConnection()
 	{
 		return self::getConnection('default');
 	}
@@ -46,7 +46,8 @@ class DbModule extends ZoopModule
 	{
 		return array('DbConnection', 'DbFactory', 'DbSchema', 'DbObject', 'DbZone', 'DbTable', 'DbField',
 						'DbPdo', 'DbPdoResult', 'DbPgsql', 'DbPgResult', 'DbMysql', 'DbMysqlResult',
-						'DbMssql', 'DbMssqlResult', 'DbResultSet');
+						'DbMssql', 'DbMssqlResult', 'DbResultSet', 'DbRelationshipBelongsTo', 'DbRelationshipBasic'
+						, 'DbRelationship', 'DbRelationshipHasMany');
 	}
 	
 	/**

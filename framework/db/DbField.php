@@ -1,4 +1,5 @@
 <?php
+//	change this to DbColumn
 class DbField
 {
 	public $name;

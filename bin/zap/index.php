@@ -8,6 +8,7 @@ include_once(dirname(__file__) . "/ZoneRedo.php");
 
 Config::setConfigFile(getcwd() . '/' . 'config.yaml');
 Config::load();
+Zoop::loadLib('app');
 Zoop::loadLib('cli');
 Zoop::loadLib('gui');
 Zoop::loadLib('db');

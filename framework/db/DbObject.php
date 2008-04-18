@@ -8,6 +8,7 @@ class DbObject implements Iterator
 	private $bound;
 	private $persisted;
 	private $scalars;
+	private $relationships;
 	// private $krumoHack = array();
 	
 	const keyAssignedBy_db = 1;
@@ -22,6 +23,7 @@ class DbObject implements Iterator
 		$this->bound = false;
 		$this->keyAssignedBy = self::keyAssignedBy_db;
 		$this->scalars = array();
+		$this->relationships = array();
 		$this->persisted = NULL;
 		
 		$this->init($init);
@@ -108,6 +110,11 @@ class DbObject implements Iterator
 		return get_class($this) . ':' . $s;
 	}
 	
+	public function getDb()
+	{
+		return self::_getConnection(get_class($this));
+	}
+	
 	//
 	//	the scalar handlers
 	//
@@ -124,17 +131,40 @@ class DbObject implements Iterator
 		$this->assignScalars($data);
 	}
 	
+	public function getField($field)
+	{
+		return $this->getScalar($field);
+	}
+	
 	private function getScalar($field)
 	{
 		if(!isset($this->scalars[$field]))
 		{
 			if(!$this->bound)
+			{
+				/*
+				Different possibilities on how to handle this situation.  Maybe we could use some flags.
+				1. check the metadata.  (alwaysCheckMeta)
+					1. if its there then (useDummyDefaults requires alwaysCheckMeta)
+						1. return the default value
+						2. return NULL
+					2. if its not there
+						1. throw and error
+				2.	dont check the metadata (useDummyNulls requires !alwaysCheckMeta)
+					1.	return null
+					2.	throw an error
+				
 				trigger_error("the field: $field is not present in memory and this object is not yet bound to a database row");
+				*/
+				
+				return NULL;
+			}
+				
 			$this->loadScalars();
 		}
 		
 		if(!isset($this->scalars[$field]))
-			trigger_error("the field $field present neither in memory nor in the cooresponding database table");
+			trigger_error("the field $field is present neither in memory nor in the cooresponding database table");
 		
 		return $this->scalars[$field];
 	}
@@ -287,64 +317,45 @@ class DbObject implements Iterator
 	//
 	//	vector handlers
 	//
-	/*
-	protected function hasMany($name, $params = NULL)
+	
+	private function addRelationship($name, $relationship)
 	{
-		if(isset($params['class']))
-			$className = $params['class'];
+		$this->relationships[$name] = $relationship;
+	}
+	
+	private function hasRelationship($name)
+	{
+		return isset($this->relationships[$name]) ? true : false;
+	}
+	
+	private function getRelationshipInfo($name)
+	{
+		return $this->relationships[$name]->getInfo();
+	}
+	
+	protected function hasMany($name, $params = array())
+	{
+		if(isset($params['through']) && $params['through'])
+			$this->addRelationship($name, new DbRelationshipHasManyThrough($name, $params, $this));
 		else
-			$className = $name;
-		
-		if(isset($params['field']))
-			$foreignKey = $params['field'];
-		else
-			$foreignKey = $this->getTableName() . '_id';
-		
-		$this->hasMany[$name] = array('className' => $className, 'foreignKey' => $foreignKey);
+			$this->addRelationship($name, new DbRelationshipHasMany($name, $params, $this));
 	}
 	
-	protected function getMany($name)
+	protected function hasOne($name, $params = array())
 	{
-		$className = $this->hasMany[$name]['className'];
-		$foreignKey = $this->hasMany[$name]['foreignKey'];
-		
-		//	work around lack of "late static binding"
-		$dummy = new $className(0);
-		$tableName = $dummy->getTableName();
-		
-		$sql = "select * from $tableName where $foreignKey = :id";
-		
-		$rows = SqlFetchRows($sql, array('id' => $this->id));
-		$objects = array();
-		foreach($rows as $thisRow)
-		{
-			$objects[] = new $className($thisRow);
-		}
-		
-		return $objects;
+		$this->addRelationship($name, new DbRelationshipHasOne($name, $params, $this));
 	}
 	
-	protected function belongsTo($name, $params = NULL)
+	protected function belongsTo($name, $params = array())
 	{
-		//	determine the name of the class we belong to
-		$className = isset($params['class']) ? $params['class'] : $name;
-		
-		$tableName = DbObject::_getTableName($className);
-		
-		//	get the name of the foreign key in this table
-		$localKey = isset($params['key']) ? $params['key'] : $tableName . '_id';
-		
-		$this->belongsTo[$name] = array('className' => $className, 'localKey' => $localKey);
+		$this->addRelationship($name, new DbRelationshipBelongsTo($name, $params, $this));
 	}
 	
-	protected function getOwner($name)
+	protected function fieldOptions($name, $params = array())
 	{
-		$className = $this->belongsTo[$name]['className'];
-		$localKey = $this->belongsTo[$name]['localKey'];
-		$tableName = DbObject::_getTableName($className);
-		return new $className($this->getScalar($localKey));
+		$this->addRelationship($name, new DbRelationshipOptions($name, $params, $this));
 	}
-	*/
+	
 	//
 	//	end vector handlers
 	//
@@ -355,25 +366,14 @@ class DbObject implements Iterator
 	
 	function __get($varname)
 	{
-		//	krumo hack
-		// if(substr($varname, 0, 5) == 'krumo')
-		// 	return isset($this->krumoHack[$varname]) ? $this->krumoHack[$varname] : NULL;
+		if($this->hasRelationship($varname))
+			return $this->getRelationshipInfo($varname);
 		
-		/*
-		if(isset($this->hasMany[$varname]))
-			return $this->getMany($varname);
-		
-		if(isset($this->belongsTo[$varname]))
-			return $this->getOwner($varname);
-		*/
 		return $this->getScalar($varname);
 	}
 
 	function __set($varname, $value)
 	{
-		//	krumo hack
-		// if(substr($varname, 0, 5) == 'krumo')
-		// 	$this->krumoHack[$varname] = $value;
 		$this->setScalar($varname, $value);
 	}
 	
@@ -433,7 +433,7 @@ class DbObject implements Iterator
 		return DbModule::getConnection(call_user_func(array($className, '_getConnectionName'), $className));
 	}
 	
-	static private function _getTableName($className)
+	static public function _getTableName($className)
 	{
 		//	work around lack of "late static binding"
 		$dummy = new $className();

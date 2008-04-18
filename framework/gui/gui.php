@@ -38,9 +38,10 @@ class Gui extends Smarty
 		//	we want to run this filter on every single smarty script that we execute
 		//	it finds all places where we echo out a simple variable and escapes the html
 		//
-		//	why wasn't this being used?
+		//	unfortunately this filters everything.  The entire contents if the template.  I think it is escaping include.
+		//	If we can get it to not do that then we can put this back in.
 		//
-		$this->autoload_filters = array('pre' => array("strip_html"));
+		//$this->autoload_filters = array('pre' => array("strip_html"));
 	}
 	
 	function addTemplateDir($inDir)

@@ -10,6 +10,11 @@ class DbSchema extends Object
 		$this->addGetter('tables');
 	}
 	
+	public function tableExists($tableName)
+	{
+		return $this->conn->tableExists($tableName);
+	}
+	
 	public function getTables()
 	{
 		if(!$this->tables)

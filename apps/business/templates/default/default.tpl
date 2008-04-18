@@ -1,0 +1,1 @@
+<a href="{$zoneUrl}/simple">other page</a>
