@@ -1,6 +1,8 @@
 <?php
 class DbMssql extends DbConnection
 {	
+	private $connection;
+	
 	public function getRequireds()
 	{
 		return array('database', 'username');
@@ -8,14 +10,14 @@ class DbMssql extends DbConnection
 	
 	function escapeString($string)
 	{
-		return str_replace(array("'", "\0"), array("''", "[NULL]"), $string);
+		return "'" . str_replace(array("'", "\0"), array("''", "[NULL]"), $string) . "'";
 	}
 	
 	function _query($sql)
 	{
 		self::connect();	
 		$result = mssql_query($sql, $this->connection);
-		return new DbPgResult($this->connection, $result);
+		return new DbMssqlResult($this->connection, $result);
 	}
 	
 	function getLastInsertId()
@@ -43,13 +45,19 @@ class DbMssql extends DbConnection
 	
 	public function getTableNames()
 	{
-		// http://www.lejalgenes.com/techtips/tips/Microsoft_SQL_Server/Information_Schema_View_Listing.php
-		trigger_error("schema information not implemented for mssql");
+		$sql = "SELECT table_name
+				FROM information_schema.tables
+				WHERE table_type = 'BASE TABLE'";
+		
+		return $this->fetchColumn($sql, array());
 	}
 	
 	public function getTableFieldInfo($tableName)
 	{
-		// http://www.lejalgenes.com/techtips/tips/Microsoft_SQL_Server/Information_Schema_View_Listing.php
-		trigger_error("schema information not implemented for mssql");
+		$sql = "SELECT 
+					column_name as name, 
+					data_type as type
+				from information_schema.columns where table_name = :name";
+		return $this->fetchRows($sql, array('name' => $tableName));		
 	}
 }

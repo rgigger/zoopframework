@@ -45,7 +45,8 @@ class DbModule extends ZoopModule
 	function getClasses()
 	{
 		return array('DbConnection', 'DbFactory', 'DbSchema', 'DbObject', 'DbZone', 'DbTable', 'DbField',
-						'DbPdo', 'DbPdoResult', 'DbPgsql', 'DbPgResult', 'DbMysql', 'DbMysqlResult');
+						'DbPdo', 'DbPdoResult', 'DbPgsql', 'DbPgResult', 'DbMysql', 'DbMysqlResult',
+						'DbMssql', 'DbMssqlResult', 'DbResultSet');
 	}
 	
 	/**

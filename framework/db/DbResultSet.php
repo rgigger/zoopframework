@@ -1,8 +1,8 @@
 <?php
 class DbResultSet
 {
-	private $res;
-	private $link;
+	protected $res;
+	protected $link;
 	
 	function __construct($link, $res)
 	{

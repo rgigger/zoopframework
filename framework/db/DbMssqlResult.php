@@ -1,5 +1,5 @@
 <?php
-class DbMssqlResult
+class DbMssqlResult extends DbResultSet
 {
 	var $cur;
 	var $max;

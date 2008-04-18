@@ -2,7 +2,8 @@
 //	this all needs to be thought out better and redone
 class DbFactory
 {
-	private static $classMap = array('php_pgsql' => 'DbPgsql', 'php_mysql' => 'DbMysql', 'pdo' => 'DbPdo');
+	private static $classMap = array('php_pgsql' => 'DbPgsql', 'php_mysql' => 'DbMysql', 
+										'pdo' => 'DbPdo', 'php_mssql' => 'DbMssql');
 	
 	static function getConnection($params, $name)
 	{
