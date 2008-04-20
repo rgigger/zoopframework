@@ -72,6 +72,16 @@ abstract class DbConnection
 		$this->echo = false;
 	}
 	
+	function escapeString($string)
+	{
+		trigger_error("escapeString must be defined in each individual database driver");
+	}
+	
+	function escapeIdentifier($string)
+	{
+		return '"' . $string . '"';
+	}
+	
 	//
 	//	End misc funtions
 	//
@@ -171,6 +181,9 @@ abstract class DbConnection
 				break;
 			case 'keyword':
 				$replaceString = $this->queryParams[$name];
+				break;
+			case 'identifier':
+				$replaceString = $this->escapeIdentifier($this->queryParams[$name]);
 				break;
 			default:
 				trigger_error("unknown param type: " . $type);
@@ -489,7 +502,7 @@ abstract class DbConnection
 			$orderByClause = '';
 		
 		//	now put it all together
-		$selectSql = "SELECT $fieldClause FROM :tableName:keyword $conditionClause $orderByClause $lockClause";
+		$selectSql = "SELECT $fieldClause FROM :tableName:identifier $conditionClause $orderByClause $lockClause";
 		$selectParams['tableName'] = $tableName;
 		
 		return array('sql' => $selectSql, 'params' => $selectParams);
