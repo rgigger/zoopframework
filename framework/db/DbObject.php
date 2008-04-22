@@ -1,7 +1,18 @@
 <?php
 class DbObject implements Iterator
 {
+	/**
+	 * The assigned name of the table (defaults to the class name translated by the getDefaultTableName
+	 *
+	 * @var string
+	 */
 	protected $tableName;
+	
+	/**
+	 * The field name(s) of the primary key in an array
+	 *
+	 * @var array
+	 */
 	protected $primaryKey;
 	protected $keyAssignedBy;
 	private $missingKeyFields;
@@ -53,6 +64,11 @@ class DbObject implements Iterator
 		//	override this function to setup relationships without having to handle the constructor chaining
 	}
 	
+	/**
+	 * Returns the name of the table based on the name of the current class.  If the class is called "personObject" the tablename will default to person_object.
+	 *
+	 * @return string
+	 */
 	private function getDefaultTableName()
 	{
 		$name = get_class($this);
@@ -64,11 +80,21 @@ class DbObject implements Iterator
 		return strtolower($name);		
 	}
 	
+	/**
+	 * Returns the name of the table associated with the db object
+	 *
+	 * @return string
+	 */
 	public function getTableName()
 	{
 		return $this->tableName;
 	}
 	
+	/**
+	 * Returns the value of the primary key of the record that this object is associated with.  An error will be thrown if there is more than one primary key.
+	 *
+	 * @return mixed
+	 */
 	public function getId()
 	{
 		assert(count($this->primaryKey) == 1);
@@ -264,6 +290,10 @@ class DbObject implements Iterator
 			return $this->persisted = $this->_persisted();
 	}
 	
+	/**
+	 * Saves the record in memory
+	 *
+	 */
 	public function save()
 	{
 		if(!$this->bound)
@@ -440,6 +470,13 @@ class DbObject implements Iterator
 		return $dummy->getTableName();
 	}
 	
+	/**
+	 * Static method creates a new DbObject by name.  There must be a class that inherits from DbObject of the name "className" for this to work.
+	 *
+	 * @param string $className Name of the DbObject class to use
+	 * @param array $values Associative array of $fieldName => $value to store in the table
+	 * @return DbObject
+	 */
 	static public function _create($className, $values)
 	{
 		$object = new $className($values);
