@@ -1,4 +1,10 @@
 <?php
+/**
+ * Configuration class
+ * 
+ * Provides methods for retrieving configuration options from a YAML config file.
+ *
+ */
 class Config
 {
 	private static $info = array();
@@ -19,11 +25,20 @@ class Config
 		self::$info = array_merge($root, Yaml::read($file));
 	}
 		
+	/**
+	 * Specify configuration file to use
+	 *
+	 * @param string $file Path and filename of the config file to use
+	 */
 	static function setConfigFile($file)
 	{
 		self::$file = $file;
 	}
 	
+	/**
+	 * Loads the config file specified by the $file member variable (or app_dir/config.yaml) 
+	 *
+	 */
 	static function load()
 	{
 		if(!self::$file)
@@ -35,7 +50,7 @@ class Config
 	/**
 	 * Returns configuration options based on a path (i.e. zoop.db or zoop.application.info)
 	 *
-	 * @param string $path
+	 * @param string $path Path for which to fetch options
 	 * @return array of configuration values
 	 */
 	static function get($path)

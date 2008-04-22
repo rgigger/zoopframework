@@ -1,4 +1,9 @@
 <?php
+/**
+ * Object extends the Smarty templating system to allow easy separation of business and
+ * presentation logic
+ *
+ */
 class Gui extends Smarty
 {
 	function __construct()
@@ -70,8 +75,17 @@ class Gui extends Smarty
 	}
 }
 
-//	often we want to assign the variables before we know what type of gui we want so store the assigns
-//		in a global array until we create the gui 
+//	
+//		
+/**
+ * Assigns a gui variable independant of a specific gui object
+ * 
+ * often we want to assign the variables before we know what type of gui we want so store the assigns
+ * in a global array until we create the gui 
+ * 
+ * @param string $name the key that the gui object will use to identify this variable
+ * @param mixed $value the value that should be associated with this key
+ */
 function GuiAssign($name, $value)
 {
 	global $GuiVars;
@@ -79,6 +93,12 @@ function GuiAssign($name, $value)
 	return;	
 }
 
+
+/**
+ * Returns an array of gui variables for use with rendering a page
+ *
+ * @return unknown
+ */
 function GuiGetAssigns()
 {
 	global $GuiVars;

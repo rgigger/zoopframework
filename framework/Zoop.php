@@ -137,7 +137,7 @@ $zoop = new Zoop();
  * information that was registered using the Zoop::registerClass or ::registerDomain
  * method 
  *
- * @param string $className
+ * @param string $className Name of the class to load
  */
 function __autoload($className)
 {
