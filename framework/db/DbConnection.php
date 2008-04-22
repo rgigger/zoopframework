@@ -83,7 +83,7 @@ abstract class DbConnection
 	}
 
 	//
-	//	End misc funtionsfunc
+	//	End misc funtions
 	//
 
 	//
@@ -554,7 +554,7 @@ abstract class DbConnection
 			$orderByClause = '';
 
 		//	now put it all together
-		$selectSql = "SELECT $fieldClause FROM :tableName:keyword $conditionClause $orderByClause $lockClause";
+		$selectSql = "SELECT $fieldClause FROM :tableName:identifier $conditionClause $orderByClause $lockClause";
 		$selectParams['tableName'] = $tableName;
 
 		return array('sql' => $selectSql, 'params' => $selectParams);
