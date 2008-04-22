@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class Zend_Pdf_Color</h2>
 
 <a name="sec-description"></a>
@@ -55,18 +55,6 @@
 					<th class="class-table-header">Description</th>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_Cmyk.html">Zend_Pdf_Color_Cmyk</a></td>
-					<td>
-											CMYK color implementation
-										</td>
-				</tr>
-								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_GrayScale.html">Zend_Pdf_Color_GrayScale</a></td>
-					<td>
-											GrayScale color implementation
-										</td>
-				</tr>
-								<tr>
 					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_Html.html">Zend_Pdf_Color_Html</a></td>
 					<td>
 											HTML color implementation
@@ -76,6 +64,18 @@
 					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_Rgb.html">Zend_Pdf_Color_Rgb</a></td>
 					<td>
 											RGB color implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_GrayScale.html">Zend_Pdf_Color_GrayScale</a></td>
+					<td>
+											GrayScale color implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Color_Cmyk.html">Zend_Pdf_Color_Cmyk</a></td>
+					<td>
+											CMYK color implementation
 										</td>
 				</tr>
 							</table>
@@ -151,7 +151,11 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Color_Cmyk.html#methodinstructions">Zend_Pdf_Color_Cmyk::instructions()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Color_Html.html#methodinstructions">Zend_Pdf_Color_Html::instructions()</a>
+								: Instructions, which can be directly inserted into content stream  to switch color.
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Color_Rgb.html#methodinstructions">Zend_Pdf_Color_Rgb::instructions()</a>
 								: Instructions, which can be directly inserted into content stream  to switch color.
 							</li>
 					<li>
@@ -159,11 +163,7 @@
 								: Instructions, which can be directly inserted into content stream  to switch color.
 							</li>
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Color_Html.html#methodinstructions">Zend_Pdf_Color_Html::instructions()</a>
-								: Instructions, which can be directly inserted into content stream  to switch color.
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Color_Rgb.html#methodinstructions">Zend_Pdf_Color_Rgb::instructions()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Color_Cmyk.html#methodinstructions">Zend_Pdf_Color_Cmyk::instructions()</a>
 								: Instructions, which can be directly inserted into content stream  to switch color.
 							</li>
 				</ul>
@@ -174,7 +174,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:21 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:02 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

@@ -138,7 +138,7 @@ class DbObject implements Iterator
 	/**
 	 * Returns a DbTable object with scheme information for the associated table (if supported by your database)
 	 *
-	 * @return DbTable object
+	 * @return DbTable DbTable object
 	 */
 	public function getSchema()
 	{
@@ -163,7 +163,7 @@ class DbObject implements Iterator
 	/**
 	 * Serializes all column names and values and returns them in a string of the format "<DbObject class>: <field> => <value> <field> => <value> ..."
 	 *
-	 * @return string
+	 * @return string string
 	 */
 	public function getString()
 	{
@@ -177,7 +177,7 @@ class DbObject implements Iterator
 	/**
 	 * Returns the connection associated with the DbObject
 	 *
-	 * @return DbConnection
+	 * @return DbConnection DbConnection object
 	 */
 	public function getDb()
 	{
@@ -193,7 +193,7 @@ class DbObject implements Iterator
 	/**
 	 * Returns a $field => $value array containing all the fields and their values
 	 *
-	 * @return assoc_array
+	 * @return assoc_array assoc_array containing all fields and values
 	 */
 	public function getFields()
 	{
@@ -214,7 +214,7 @@ class DbObject implements Iterator
 	 * Returns the value of the specified field
 	 *
 	 * @param string $field Field to retreive
-	 * @return string Value of the field
+	 * @return string String value of the field
 	 */
 	public function getField($field)
 	{
@@ -225,7 +225,7 @@ class DbObject implements Iterator
 	 * Returns the value of the specified field
 	 *
 	 * @param string $field Field to retreive
-	 * @return string Value of the field
+	 * @return string String value of the field
 	 */
 	private function getScalar($field)
 	{

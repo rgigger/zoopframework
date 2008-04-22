@@ -145,16 +145,17 @@ abstract class DbConnection
 
 	/**
 	 * Escapes and inserts parameters into the the SQL statement and executes the statement.
+	 *
 	 * Syntax for parameters:
-	 * 		* :<varname>:string 	-- the variable is escaped as a string and replaces this entry
-	 * 		* :<varname>:int 		-- the variable is escaped as a number and replaces this entry
-	 * 		* :<varname>:keyword	-- the variable replaces this entry with no change
-	 * 		* :<varname>:identifier	-- the variable is escaped as a SQL identifier (table, field name, etc) and replaces this entry
-	 * 		* :<varname>			-- if no type is specified, variable is treated as a string.
+	 * - :<varname>:string 	-- the variable is escaped as a string and replaces this entry
+	 * - :<varname>:int 		-- the variable is escaped as a number and replaces this entry
+	 * - :<varname>:keyword	-- the variable replaces this entry with no change
+	 * - :<varname>:identifier	-- the variable is escaped as a SQL identifier (table, field name, etc) and replaces this entry
+	 * - :<varname>			-- if no type is specified, variable is treated as a string.
 	 *
 	 * @param string $sql SQL statement to execute
 	 * @param assoc_array $params $variable => $value array of parameters to substitute into the SQL statement
-	 * @return DbResultSet object
+	 * @return DbResultSet Resultset object
 	 */
 	public function query($sql, $params)
 	{
@@ -181,11 +182,11 @@ abstract class DbConnection
 	 * Private callback function passed to preg_replace_callback for doing the variable substitutions
 	 * This method handles all escaping of strings and identifiers based on the matched list.
 	 * Syntax:
-	 * 		* :<varname>:string 	-- the variable is escaped as a string and replaces this entry
-	 * 		* :<varname>:int 		-- the variable is escaped as a number and replaces this entry
-	 * 		* :<varname>:keyword	-- the variable replaces this entry with no change
-	 * 		* :<varname>:identifier	-- the variable is escaped as a SQL identifier (table, field name, etc) and replaces this entry
-	 * 		* :<varname>			-- if no type is specified, variable is treated as a string.
+	 * - :<varname>:string 	-- the variable is escaped as a string and replaces this entry
+	 * - :<varname>:int 		-- the variable is escaped as a number and replaces this entry
+	 * - :<varname>:keyword	-- the variable replaces this entry with no change
+	 * - :<varname>:identifier	-- the variable is escaped as a SQL identifier (table, field name, etc) and replaces this entry
+	 * - :<varname>			-- if no type is specified, variable is treated as a string.
 	 *
 	 * @param array $matches array of matches provided by preg_replace_callback
 	 * @return string String to replace the matched string with
@@ -450,6 +451,12 @@ abstract class DbConnection
 	//	Begin update functions
 	//
 
+	/**
+	 * Executes the given update SQL statement. This method throws an error if multiple rows are updated.
+	 *
+	 * @param string $sql SQL UPDATE statement
+	 * @param assoc_array $params $param => $value array of parameters to escape and substitute into the query
+	 */
 	public function updateRow($sql, $params)
 	{
 		$affected = $this->updateRows($sql, $params);
@@ -457,6 +464,12 @@ abstract class DbConnection
 			trigger_error("attempting to update one row, $affected altered");
 	}
 
+	/**
+	 * Executes the given update SQL statement
+	 *
+	 * @param string $sql SQL UPDATE statement
+	 * @param assoc_array $params $param => $value array of parameters to escape and substitute into the query
+	 */
 	public function updateRows($sql, $params)
 	{
 		$res = $this->query($sql, $params);

@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class DbMysql</h2>
 
 <a name="sec-description"></a>
@@ -49,8 +49,13 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																												
+																																																																												
 												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#escapeIdentifier" title="details" class="method-name">escapeIdentifier</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+									</div>
+																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#escapeString" title="details" class="method-name">escapeString</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
@@ -69,6 +74,21 @@
 											<span class="method-result">void</span>
 										<a href="#getRequireds" title="details" class="method-name">getRequireds</a>
 										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTableFieldInfo" title="details" class="method-name">getTableFieldInfo</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTableNames" title="details" class="method-name">getTableNames</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#tableExists" title="details" class="method-name">tableExists</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -92,7 +112,7 @@
 							
 					</div>
 		<div class="info-box-body">
-										<h4>Inherited Variables</h4>
+										<h4>Inherited Variables</h4>
 				<A NAME='inherited_vars'><!-- --></A>
 									<p>Inherited from <span class="classname"><a href="../default/DbConnection.html">DbConnection</a></span></p>
 					<blockquote>
@@ -116,11 +136,46 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 
-<a name="methodescapeString" id="escapeString"><!-- --></a>
+<a name="methodescapeIdentifier" id="escapeIdentifier"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">escapeString</span> (line <span class="line-number">16</span>)
+		<span class="method-title">escapeIdentifier</span> (line <span class="line-number">22</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Escapes the field name (to handle fields with special names, i.e. insert, select, update, now, date, etc)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> escaped string (this method should be overridden by each db class to escape properly if needed)</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			escapeIdentifier
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fieldName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fieldName</span><span class="var-description">: name of the field</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#methodescapeIdentifier">DbConnection::escapeIdentifier()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodescapeString" id="escapeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">escapeString</span> (line <span class="line-number">42</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -139,10 +194,15 @@
 				<span class="var-name">$string</span>			</li>
 				</ul>
 		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#methodescapeString">DbConnection::escapeString()</a></dt>
+					</dl>
 			
 	</div>
 <a name="methodgetDefaults" id="getDefaults"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">getDefaults</span> (line <span class="line-number">11</span>)
@@ -170,10 +230,10 @@
 			
 	</div>
 <a name="methodgetLastInsertId" id="getLastInsertId"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getLastInsertId</span> (line <span class="line-number">34</span>)
+		<span class="method-title">getLastInsertId</span> (line <span class="line-number">60</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -190,7 +250,7 @@
 			
 	</div>
 <a name="methodgetRequireds" id="getRequireds"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">getRequireds</span> (line <span class="line-number">6</span>)
@@ -217,11 +277,105 @@
 					</dl>
 			
 	</div>
+<a name="methodgetTableFieldInfo" id="getTableFieldInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableFieldInfo</span> (line <span class="line-number">37</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTableFieldInfo
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tableName</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#methodgetTableFieldInfo">DbConnection::getTableFieldInfo()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetTableNames" id="getTableNames"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableNames</span> (line <span class="line-number">32</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTableNames
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#methodgetTableNames">DbConnection::getTableNames()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodtableExists" id="tableExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableExists</span> (line <span class="line-number">27</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tableExists
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#methodtableExists">DbConnection::tableExists()</a></dt>
+					</dl>
+			
+	</div>
 <a name="method_query" id="_query"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">_query</span> (line <span class="line-number">22</span>)
+		<span class="method-title">_query</span> (line <span class="line-number">48</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -240,6 +394,12 @@
 				<span class="var-name">$sql</span>			</li>
 				</ul>
 		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/DbConnection.html#method_query">DbConnection::_query()</a></dt>
+						<dd>Executes the passed in SQL statement on the database and returns a result set</dd>
+					</dl>
 			
 	</div>
 							<h4>Inherited Methods</h4>
@@ -255,6 +415,8 @@
 													<span class="method-name"><a href="../default/DbConnection.html#methoddeleteRows">DbConnection::deleteRows()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodechoOff">DbConnection::echoOff()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodechoOn">DbConnection::echoOn()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#methodescapeIdentifier">DbConnection::escapeIdentifier()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#methodescapeString">DbConnection::escapeString()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodfetchCell">DbConnection::fetchCell()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodfetchColumn">DbConnection::fetchColumn()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodfetchComplexMap">DbConnection::fetchComplexMap()</a></span><br>
@@ -269,15 +431,19 @@
 													<span class="method-name"><a href="../default/DbConnection.html#methodgetDefaults">DbConnection::getDefaults()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodgetRequireds">DbConnection::getRequireds()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodgetSchema">DbConnection::getSchema()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#methodgetTableFieldInfo">DbConnection::getTableFieldInfo()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#methodgetTableNames">DbConnection::getTableNames()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodinit">DbConnection::init()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodinsertArray">DbConnection::insertArray()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodinsertRow">DbConnection::insertRow()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodquery">DbConnection::query()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodrollbackTransaction">DbConnection::rollbackTransaction()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodselsertRow">DbConnection::selsertRow()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#methodtableExists">DbConnection::tableExists()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodupdateRow">DbConnection::updateRow()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodupdateRows">DbConnection::updateRows()</a></span><br>
 													<span class="method-name"><a href="../default/DbConnection.html#methodupsertRow">DbConnection::upsertRow()</a></span><br>
+													<span class="method-name"><a href="../default/DbConnection.html#method_query">DbConnection::_query()</a></span><br>
 											</blockquote>
 										
 		</div>
@@ -285,7 +451,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:04 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

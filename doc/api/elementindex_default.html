@@ -8,20 +8,19 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-						<a name="top"></a>
+						<a name="top"></a>
 <h2>[default] element index</h2>
 	<h3>Package indexes</h3>
 	<ul>
-				<li><a href="elementindex_app.html">app</a></li>
-							<li><a href="elementindex_Krumo.html">Krumo</a></li>
-					<li><a href="elementindex_PHPMailer.html">PHPMailer</a></li>
+				<li><a href="elementindex_PHPMailer.html">PHPMailer</a></li>
+							<li><a href="elementindex_app.html">app</a></li>
 					<li><a href="elementindex_Smarty.html">Smarty</a></li>
 					<li><a href="elementindex_Spyc.html">Spyc</a></li>
-					<li><a href="elementindex_Zend_Cache.html">Zend_Cache</a></li>
-					<li><a href="elementindex_Zend.html">Zend</a></li>
 					<li><a href="elementindex_Zend_Json.html">Zend_Json</a></li>
-					<li><a href="elementindex_Zend_Memory.html">Zend_Memory</a></li>
 					<li><a href="elementindex_Zend_Pdf.html">Zend_Pdf</a></li>
+					<li><a href="elementindex_Zend.html">Zend</a></li>
+					<li><a href="elementindex_Zend_Memory.html">Zend_Memory</a></li>
+					<li><a href="elementindex_Zend_Cache.html">Zend_Cache</a></li>
 			</ul>
 <a href="elementindex.html">All elements</a>
 <br />
@@ -35,6 +34,7 @@
 	<a class="index-letter" href="elementindex_default.html#g">g</a>
 	<a class="index-letter" href="elementindex_default.html#h">h</a>
 	<a class="index-letter" href="elementindex_default.html#i">i</a>
+	<a class="index-letter" href="elementindex_default.html#j">j</a>
 	<a class="index-letter" href="elementindex_default.html#k">k</a>
 	<a class="index-letter" href="elementindex_default.html#l">l</a>
 	<a class="index-letter" href="elementindex_default.html#m">m</a>
@@ -66,6 +66,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_create">DbObject::_create()</a> in DbObject.php</div>
+							<div class="index-item-description">Static method creates a new DbObject by name.  There must be a class that inherits from DbObject of the name &quot;className&quot; for this to work.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_createResult</span>
@@ -90,25 +91,28 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_find">DbObject::_find()</a> in DbObject.php</div>
+							<div class="index-item-description">Searches the database and returns an array of DbObjects each representing a record in the resultset</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_findBySql</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_findBySql">DbObject::_findBySql()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns an array of DbObjects each representing a row in the database returned by the given SQL statement</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_findByWhere</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_findByWhere">DbObject::_findByWhere()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns an array of DbObjects each representing a row in the database returned by selecting on the DbObject specified with the given WHERE clause</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_findOne</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_findOne">DbObject::_findOne()</a> in DbObject.php</div>
-							<div class="index-item-description">Retrieve one object from the database and map it to an object</div>
+							<div class="index-item-description">Retrieve one object from the database and map it to an object.  Throws an error if more than one row is returned.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_getClassPath</span>
@@ -122,18 +126,33 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_getOne">DbObject::_getOne()</a> in DbObject.php</div>
+							<div class="index-item-description">Retrieves a DbObject from the given table with a row in it, creating the row if neccesary</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">_getTableName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#method_getTableName">DbObject::_getTableName()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the name of the SQL table based on the name of the DbObject class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_insert</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method_insert">DbObject::_insert()</a> in DbObject.php</div>
+							<div class="index-item-description">Inserts a row into the table associated with the given DbObject class</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">_methodExists</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#method_methodExists">Object::_methodExists()</a> in Object.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_query</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgsql.html#method_query">DbPgsql::_query()</a> in DbPgsql.php</div>
+			<div class="index-item-details"><a href="default/DbPdo.html#method_query">DbPdo::_query()</a> in DbPdo.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_query</span>
@@ -145,7 +164,20 @@
 						<span class="method-title">_query</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPdo.html#method_query">DbPdo::_query()</a> in DbPdo.php</div>
+			<div class="index-item-details"><a href="default/DbPgsql.html#method_query">DbPgsql::_query()</a> in DbPgsql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">_query</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html#method_query">DbMssql::_query()</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">_query</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#method_query">DbConnection::_query()</a> in DbConnection.php</div>
+							<div class="index-item-description">Executes the passed in SQL statement on the database and returns a result set</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_registerClass</span>
@@ -158,13 +190,13 @@
 						<span class="method-title">_startTest</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TextTestResult.html#method_startTest">TextTestResult::_startTest()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestResult.html#method_startTest">TestResult::_startTest()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">_startTest</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestResult.html#method_startTest">TestResult::_startTest()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TextTestResult.html#method_startTest">TextTestResult::_startTest()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__autoload</span>
@@ -174,52 +206,10 @@
 							<div class="index-item-description">Automatic class loading handler.  This automatically loads a class using the path  information that was registered using the Zoop::registerClass or ::registerDomain  method</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">__construct</span>
+						<span class="method-title">__call</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ZoopModule.html#method__construct">ZoopModule::__construct()</a> in ZoopModule.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicTextRun.html#method__construct">GraphicTextRun::__construct()</a> in GraphicTextRun.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/SessionDb.html#method__construct">SessionDb::__construct()</a> in SessionDb.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicStyleStack.html#method__construct">GraphicStyleStack::__construct()</a> in GraphicStyleStack.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlParser.html#method__construct">XmlParser::__construct()</a> in XmlParser.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Zone.html#method__construct">Zone::__construct()</a> in Zone.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicDiv.html#method__construct">GraphicDiv::__construct()</a> in GraphicDiv.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicContext.html#method__construct">GraphicContext::__construct()</a> in GraphicContext.php</div>
+			<div class="index-item-details"><a href="default/Object.html#method__call">Object::__call()</a> in Object.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__construct</span>
@@ -231,37 +221,7 @@
 						<span class="method-title">__construct</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbObject.html#method__construct">DbObject::__construct()</a> in DbObject.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#method__construct">DbMysqlResult::__construct()</a> in DbMysqlResult.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbConnection.html#method__construct">DbConnection::__construct()</a> in DbConnection.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthDbStorageDb.html#method__construct">AuthDbStorageDb::__construct()</a> in AuthStorageHandlerDb.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/BacktraceViewCli.html#method__construct">BacktraceViewCli::__construct()</a> in BacktraceViewCli.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__construct</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ConfigException.html#method__construct">ConfigException::__construct()</a> in ConfigException.php</div>
+			<div class="index-item-details"><a href="default/GraphicParser.html#method__construct">GraphicParser::__construct()</a> in GraphicParser.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__construct</span>
@@ -273,7 +233,152 @@
 						<span class="method-title">__construct</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicParser.html#method__construct">GraphicParser::__construct()</a> in GraphicParser.php</div>
+			<div class="index-item-details"><a href="default/GraphicStyleStack.html#method__construct">GraphicStyleStack::__construct()</a> in GraphicStyleStack.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicTextRun.html#method__construct">GraphicTextRun::__construct()</a> in GraphicTextRun.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/ZoopModule.html#method__construct">ZoopModule::__construct()</a> in ZoopModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/SessionDb.html#method__construct">SessionDb::__construct()</a> in SessionDb.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicDiv.html#method__construct">GraphicDiv::__construct()</a> in GraphicDiv.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/XmlParser.html#method__construct">XmlParser::__construct()</a> in XmlParser.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#method__construct">DbRelationshipOptions::__construct()</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPgResult.html#method__construct">DbPgResult::__construct()</a> in DbPgResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationship.html#method__construct">DbRelationship::__construct()</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicContext.html#method__construct">GraphicContext::__construct()</a> in GraphicContext.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#method__construct">DbConnection::__construct()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#method__construct">DbObject::__construct()</a> in DbObject.php</div>
+							<div class="index-item-description">This is the constructor.  (honest, I swear)</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#method__construct">DbMssqlResult::__construct()</a> in DbMssqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysqlResult.html#method__construct">DbMysqlResult::__construct()</a> in DbMysqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbField.html#method__construct">DbField::__construct()</a> in DbField.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBasic.html#method__construct">DbRelationshipBasic::__construct()</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbSchema.html#method__construct">DbSchema::__construct()</a> in DbSchema.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#method__construct">DbTable::__construct()</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/BacktraceViewCli.html#method__construct">BacktraceViewCli::__construct()</a> in BacktraceViewCli.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html#method__construct">DbRelationshipBelongsTo::__construct()</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbResultSet.html#method__construct">DbResultSet::__construct()</a> in DbResultSet.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/ConfigException.html#method__construct">ConfigException::__construct()</a> in ConfigException.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/AuthDbStorageDb.html#method__construct">AuthDbStorageDb::__construct()</a> in AuthStorageHandlerDb.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__construct</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#method__construct">DbRelationshipHasManyThrought::__construct()</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__get</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#method__get">Object::__get()</a> in Object.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__get</span>
@@ -286,24 +391,32 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method__get">DbObject::__get()</a> in DbObject.php</div>
+							<div class="index-item-description">Automatic getter: maps unknown variables to database fields</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#method__set">Object::__set()</a> in Object.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__set</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#method__set">DbObject::__set()</a> in DbObject.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">__toString</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicTextRun.html#method__toString">GraphicTextRun::__toString()</a> in GraphicTextRun.php</div>
+							<div class="index-item-description">Automatic setter: maps unknown variables to database fields</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">__toString</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicDiv.html#method__toString">GraphicDiv::__toString()</a> in GraphicDiv.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">__toString</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicTextRun.html#method__toString">GraphicTextRun::__toString()</a> in GraphicTextRun.php</div>
 					</dd>
 		</dl>
 	<a name="a"></a>
@@ -326,6 +439,12 @@
 			<div class="index-item-details"><a href="default/GraphicStyle.html#methodadd">GraphicStyle::add()</a> in GraphicStyle.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">add</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodadd">DbRelationshipHasMany::add()</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">AddChange</span>
 					</dt>
 		<dd class="index-item-body">
@@ -339,6 +458,18 @@
 			<div class="index-item-details"><a href="default/GraphicSoftBrokenLine.html#methodaddEntry">GraphicSoftBrokenLine::addEntry()</a> in GraphicSoftBrokenLine.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">addGetSetter</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodaddGetSetter">Object::addGetSetter()</a> in Object.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">addGetter</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodaddGetter">Object::addGetter()</a> in Object.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">addMember</span>
 					</dt>
 		<dd class="index-item-body">
@@ -350,6 +481,18 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/phpmailerTest.html#methodAddNote">phpmailerTest::AddNote()</a> in phpmailer_test.php</div>
 							<div class="index-item-description">Adds a simple note to the message.</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">addSetter</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodaddSetter">Object::addSetter()</a> in Object.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">AddTemplateDir</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_gui---gui.php.html#functionAddTemplateDir">AddTemplateDir()</a> in gui.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">addTest</span>
@@ -367,13 +510,19 @@
 						<span class="method-title">affectedRows</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPdoResult.html#methodaffectedRows">DbPdoResult::affectedRows()</a> in DbPdoResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">affectedRows</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPgResult.html#methodaffectedRows">DbPgResult::affectedRows()</a> in DbPgResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">affectedRows</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPdoResult.html#methodaffectedRows">DbPdoResult::affectedRows()</a> in DbPdoResult.php</div>
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodaffectedRows">DbMssqlResult::affectedRows()</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">affectedRows</span>
@@ -409,19 +558,19 @@
 						AppModule
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AppModule.html">AppModule</a> in Module.php</div>
-					</dd>
-			<dt class="field">
-						Assert
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Assert.html">Assert</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/AppModule.html">AppModule</a> in AppModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">assert</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Assert.html#methodassert">Assert::assert()</a> in phpunit.php</div>
+					</dd>
+			<dt class="field">
+						Assert
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Assert.html">Assert</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">assertEquals</span>
@@ -534,6 +683,12 @@
 	</div>
 	<dl>
 			<dt class="field">
+						<span class="var-title">$baseDir</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GuiZone.html#var$baseDir">GuiZone::$baseDir</a> in GuiZone.php</div>
+					</dd>
+			<dt class="field">
 						<span class="var-title">$bottomIndent</span>
 					</dt>
 		<dd class="index-item-body">
@@ -557,6 +712,12 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodbeginTransaction">DbConnection::beginTransaction()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">belongsTo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodbelongsTo">DbObject::belongsTo()</a> in DbObject.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">breakIntoHardBrokenLines</span>
@@ -612,12 +773,6 @@
 							<div class="index-item-description">Key =&gt; Value list of registered classes and the full path of the file that contains them</div>
 					</dd>
 			<dt class="field">
-						<span class="var-title">$conn</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbSchema.html#var$conn">DbSchema::$conn</a> in DbSchema.php</div>
-					</dd>
-			<dt class="field">
 						<span class="var-title">$container</span>
 					</dt>
 		<dd class="index-item-body">
@@ -639,13 +794,13 @@
 						<span class="var-title">$cur</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#var$cur">DbMysqlResult::$cur</a> in DbMysqlResult.php</div>
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#var$cur">DbMssqlResult::$cur</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="var-title">$cur</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgResult.html#var$cur">DbPgResult::$cur</a> in DbPgResult.php</div>
+			<div class="index-item-details"><a href="default/DbMysqlResult.html#var$cur">DbMysqlResult::$cur</a> in DbMysqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">CliErrorHandler.php</span>
@@ -719,6 +874,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Config.html">Config</a> in Config.php</div>
+							<div class="index-item-description">Configuration class</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">Config.php</span>
@@ -748,19 +904,6 @@
 						<span class="method-title">configure</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbModule.html#methodconfigure">DbModule::configure()</a> in DbModule.php</div>
-							<div class="index-item-description">This method reads the configuration options (using the getConfig method)  and initializes the database connections.</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">configure</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlModule.html#methodconfigure">XmlModule::configure()</a> in XmlModule.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">configure</span>
-					</dt>
-		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicModule.html#methodconfigure">GraphicModule::configure()</a> in GraphicModule.php</div>
 					</dd>
 			<dt class="field">
@@ -773,7 +916,14 @@
 						<span class="method-title">configure</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ZoopModule.html#methodconfigure">ZoopModule::configure()</a> in ZoopModule.php</div>
+			<div class="index-item-details"><a href="default/XmlModule.html#methodconfigure">XmlModule::configure()</a> in XmlModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">configure</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbModule.html#methodconfigure">DbModule::configure()</a> in DbModule.php</div>
+							<div class="index-item-description">This method reads the configuration options (using the getConfig method)  and initializes the database connections.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">configure</span>
@@ -788,6 +938,12 @@
 			<div class="index-item-details"><a href="default/ZendModule.html#methodconfigure">ZendModule::configure()</a> in ZendModule.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">configure</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/ZoopModule.html#methodconfigure">ZoopModule::configure()</a> in ZoopModule.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">countFailures</span>
 					</dt>
 		<dd class="index-item-body">
@@ -797,13 +953,13 @@
 						<span class="method-title">countTestCases</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestSuite.html#methodcountTestCases">TestSuite::countTestCases()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestCase.html#methodcountTestCases">TestCase::countTestCases()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">countTestCases</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestCase.html#methodcountTestCases">TestCase::countTestCases()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestSuite.html#methodcountTestCases">TestSuite::countTestCases()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">countTests</span>
@@ -822,6 +978,12 @@
 						<span class="method-title">current</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/XmlNodeList.html#methodcurrent">XmlNodeList::current()</a> in XmlNodeList.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">current</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPdoResult.html#methodcurrent">DbPdoResult::current()</a> in DbPdoResult.php</div>
 					</dd>
 			<dt class="field">
@@ -834,7 +996,20 @@
 						<span class="method-title">current</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodcurrent">DbMssqlResult::current()</a> in DbMssqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">current</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#methodcurrent">DbTable::current()</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">current</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodcurrent">DbObject::current()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the value of the column that the internal pointer is at</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">current</span>
@@ -846,7 +1021,7 @@
 						<span class="method-title">current</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlNodeList.html#methodcurrent">XmlNodeList::current()</a> in XmlNodeList.php</div>
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodcurrent">DbRelationshipHasMany::current()</a> in DbRelationshipHasMany.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">config.php</span>
@@ -881,6 +1056,12 @@
 			<div class="index-item-details"><a href="default/SessionDb.html#var$db">SessionDb::$db</a> in SessionDb.php</div>
 					</dd>
 			<dt class="field">
+						<span class="var-title">$dbObject</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationship.html#var$dbObject">DbRelationship::$dbObject</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
 						<span class="var-title">$displayed</span>
 					</dt>
 		<dd class="index-item-body">
@@ -905,10 +1086,28 @@
 			<div class="index-item-details"><a href="default/_db---DbFactory.php.html">DbFactory.php</a> in DbFactory.php</div>
 					</dd>
 			<dt class="field">
+						<span class="include-title">DbField.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbField.php.html">DbField.php</a> in DbField.php</div>
+					</dd>
+			<dt class="field">
 						<span class="include-title">DbModule.php</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_db---DbModule.php.html">DbModule.php</a> in DbModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbMssql.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbMssql.php.html">DbMssql.php</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbMssqlResult.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbMssqlResult.php.html">DbMssqlResult.php</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">DbMysql.php</span>
@@ -953,6 +1152,48 @@
 			<div class="index-item-details"><a href="default/_db---DbPgsql.php.html">DbPgsql.php</a> in DbPgsql.php</div>
 					</dd>
 			<dt class="field">
+						<span class="include-title">DbRelationship.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationship.php.html">DbRelationship.php</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipBasic.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipBasic.php.html">DbRelationshipBasic.php</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipBelongsTo.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipBelongsTo.php.html">DbRelationshipBelongsTo.php</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipHasMany.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipHasMany.php.html">DbRelationshipHasMany.php</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipHasManyThrough.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipHasManyThrough.php.html">DbRelationshipHasManyThrough.php</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipHasOne.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipHasOne.php.html">DbRelationshipHasOne.php</a> in DbRelationshipHasOne.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">DbRelationshipOptions.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbRelationshipOptions.php.html">DbRelationshipOptions.php</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
 						<span class="include-title">DbResultSet.php</span>
 					</dt>
 		<dd class="index-item-body">
@@ -971,6 +1212,12 @@
 			<div class="index-item-details"><a href="default/_db---DbTable.php.html">DbTable.php</a> in DbTable.php</div>
 					</dd>
 			<dt class="field">
+						<span class="include-title">DbZone.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_db---DbZone.php.html">DbZone.php</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
 						DbConnection
 					</dt>
 		<dd class="index-item-body">
@@ -983,10 +1230,28 @@
 			<div class="index-item-details"><a href="default/DbFactory.html">DbFactory</a> in DbFactory.php</div>
 					</dd>
 			<dt class="field">
+						DbField
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbField.html">DbField</a> in DbField.php</div>
+					</dd>
+			<dt class="field">
 						DbModule
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbModule.html">DbModule</a> in DbModule.php</div>
+					</dd>
+			<dt class="field">
+						DbMssql
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html">DbMssql</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						DbMssqlResult
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html">DbMssqlResult</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						DbMysql
@@ -1031,16 +1296,52 @@
 			<div class="index-item-details"><a href="default/DbPgResult.html">DbPgResult</a> in DbPgResult.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">DbPgResult</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgResult.html#methodDbPgResult">DbPgResult::DbPgResult()</a> in DbPgResult.php</div>
-					</dd>
-			<dt class="field">
 						DbPgsql
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPgsql.html">DbPgsql</a> in DbPgsql.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationship
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationship.html">DbRelationship</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipBasic
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBasic.html">DbRelationshipBasic</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipBelongsTo
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html">DbRelationshipBelongsTo</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipHasMany
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html">DbRelationshipHasMany</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipHasManyThrought
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html">DbRelationshipHasManyThrought</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipHasOne
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasOne.html">DbRelationshipHasOne</a> in DbRelationshipHasOne.php</div>
+					</dd>
+			<dt class="field">
+						DbRelationshipOptions
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html">DbRelationshipOptions</a> in DbRelationshipOptions.php</div>
 					</dd>
 			<dt class="field">
 						DbResultSet
@@ -1049,22 +1350,22 @@
 			<div class="index-item-details"><a href="default/DbResultSet.html">DbResultSet</a> in DbResultSet.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">DbSchema</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbSchema.html#methodDbSchema">DbSchema::DbSchema()</a> in DbSchema.php</div>
-					</dd>
-			<dt class="field">
 						DbSchema
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbSchema.html">DbSchema</a> in DbSchema.php</div>
 					</dd>
 			<dt class="field">
-						DBTable
+						DbTable
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DBTable.html">DBTable</a> in DbTable.php</div>
+			<div class="index-item-details"><a href="default/DbTable.html">DbTable</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
+						DbZone
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html">DbZone</a> in DbZone.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">DefineOnce</span>
@@ -1088,12 +1389,6 @@
 						<span class="method-title">destroy</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Session.html#methoddestroy">Session::destroy()</a> in Session.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">destroy</span>
-					</dt>
-		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/SessionDb.html#methoddestroy">SessionDb::destroy()</a> in SessionDb.php</div>
 					</dd>
 			<dt class="field">
@@ -1101,12 +1396,19 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methoddestroy">DbObject::destroy()</a> in DbObject.php</div>
+							<div class="index-item-description">Deletes the record from the database, deletes all fields and values from memory, and unbinds the DbObject</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">destroy</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Session.html#methoddestroy">Session::destroy()</a> in Session.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">display</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/BacktraceViewCli.html#methoddisplay">BacktraceViewCli::display()</a> in BacktraceViewCli.php</div>
+			<div class="index-item-details"><a href="default/GuiZone.html#methoddisplay">GuiZone::display()</a> in GuiZone.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">display</span>
@@ -1124,7 +1426,7 @@
 						<span class="method-title">display</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GuiZone.html#methoddisplay">GuiZone::display()</a> in GuiZone.php</div>
+			<div class="index-item-details"><a href="default/BacktraceViewCli.html#methoddisplay">BacktraceViewCli::display()</a> in BacktraceViewCli.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">displayed</span>
@@ -1154,7 +1456,19 @@
 						<span class="method-title">draw</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicDocument.html#methoddraw">GraphicDocument::draw()</a> in GraphicDocument.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">draw</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicDiv.html#methoddraw">GraphicDiv::draw()</a> in GraphicDiv.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">draw</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicSoftBrokenLine.html#methoddraw">GraphicSoftBrokenLine::draw()</a> in GraphicSoftBrokenLine.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">draw</span>
@@ -1166,19 +1480,7 @@
 						<span class="method-title">draw</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicDocument.html#methoddraw">GraphicDocument::draw()</a> in GraphicDocument.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">draw</span>
-					</dt>
-		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicObject.html#methoddraw">GraphicObject::draw()</a> in GraphicObject.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">draw</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicSoftBrokenLine.html#methoddraw">GraphicSoftBrokenLine::draw()</a> in GraphicSoftBrokenLine.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">draw</span>
@@ -1202,12 +1504,6 @@
 						<span class="method-title">drawRenderTree</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicDiv.html#methoddrawRenderTree">GraphicDiv::drawRenderTree()</a> in GraphicDiv.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">drawRenderTree</span>
-					</dt>
-		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#methoddrawRenderTree">GraphicHardBrokenLine::drawRenderTree()</a> in GraphicHardBrokenLine.php</div>
 					</dd>
 			<dt class="field">
@@ -1215,6 +1511,12 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicTextRun.html#methoddrawRenderTree">GraphicTextRun::drawRenderTree()</a> in GraphicTextRun.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">drawRenderTree</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicDiv.html#methoddrawRenderTree">GraphicDiv::drawRenderTree()</a> in GraphicDiv.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">dependency.php</span>
@@ -1276,6 +1578,19 @@
 			<div class="index-item-details"><a href="default/TestCase.html#methoderror">TestCase::error()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">escapeIdentifier</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#methodescapeIdentifier">DbConnection::escapeIdentifier()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">escapeIdentifier</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysql.html#methodescapeIdentifier">DbMysql::escapeIdentifier()</a> in DbMysql.php</div>
+							<div class="index-item-description">Escapes the field name (to handle fields with special names, i.e. insert, select, update, now, date, etc)</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">escapeString</span>
 					</dt>
 		<dd class="index-item-body">
@@ -1285,19 +1600,25 @@
 						<span class="method-title">escapeString</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPdo.html#methodescapeString">DbPdo::escapeString()</a> in DbPdo.php</div>
+			<div class="index-item-details"><a href="default/DbMysql.html#methodescapeString">DbMysql::escapeString()</a> in DbMysql.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">escapeString</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysql.html#methodescapeString">DbMysql::escapeString()</a> in DbMysql.php</div>
+			<div class="index-item-details"><a href="default/DbMssql.html#methodescapeString">DbMssql::escapeString()</a> in DbMssql.php</div>
 					</dd>
 			<dt class="field">
-						Exception
+						<span class="method-title">escapeString</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Exception.html">Exception</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/DbConnection.html#methodescapeString">DbConnection::escapeString()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">escapeString</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPdo.html#methodescapeString">DbPdo::escapeString()</a> in DbPdo.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">Exception</span>
@@ -1306,16 +1627,22 @@
 			<div class="index-item-details"><a href="default/Exception.html#methodException">Exception::Exception()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">exceptionHandler</span>
+						Exception
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/CliErrorHandler.html#methodexceptionHandler">CliErrorHandler::exceptionHandler()</a> in CliErrorHandler.php</div>
+			<div class="index-item-details"><a href="default/Exception.html">Exception</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">exceptionHandler</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/WebErrorHandler.html#methodexceptionHandler">WebErrorHandler::exceptionHandler()</a> in WebErrorHandler.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">exceptionHandler</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/CliErrorHandler.html#methodexceptionHandler">CliErrorHandler::exceptionHandler()</a> in CliErrorHandler.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">echo.php</span>
@@ -1460,6 +1787,12 @@
 							<div class="index-item-description">Creates a simple nested array structure grouping the values of the $valueField column by the values of the columns specified in the $keyFields array.</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">fieldOptions</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodfieldOptions">DbObject::fieldOptions()</a> in DbObject.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">filenameFromVersion</span>
 					</dt>
 		<dd class="index-item-body">
@@ -1470,6 +1803,13 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/PdfContext.html#constfontHelvetica">PdfContext::fontHelvetica</a> in PdfContext.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">forceFields</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodforceFields">DbObject::forceFields()</a> in DbObject.php</div>
+							<div class="index-item-description">Loops through all the fields in the associated table and ensures a default NULL value for each of them in the class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">forcePageBreak</span>
@@ -1494,7 +1834,7 @@
 						<span class="method-title">formatBytes</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/_gui---public---ext---examples---dependency---dependency.php.html#functionformatBytes">formatBytes()</a> in dependency.php</div>
+			<div class="index-item-details"><a href="default/_gui---public---ext---examples---tree---get-nodes.php.html#functionformatBytes">formatBytes()</a> in get-nodes.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">FormateBacktraceLineHtml</span>
@@ -1531,12 +1871,6 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/BacktraceViewCli.html#methodformatLine">BacktraceViewCli::formatLine()</a> in BacktraceViewCli.php</div>
-					</dd>
-			<dt class="field">
-						<span class="include-title">function.closeform.php</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/_gui---plugins---function.closeform.php.html">function.closeform.php</a> in function.closeform.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">function.constraint.php</span>
@@ -1579,12 +1913,6 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_gui---plugins---function.letter_counter.php.html">function.letter_counter.php</a> in function.letter_counter.php</div>
-					</dd>
-			<dt class="field">
-						<span class="include-title">function.openform.php</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/_gui---plugins---function.openform.php.html">function.openform.php</a> in function.openform.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">function.popupwindow.php</span>
@@ -1641,6 +1969,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodgenerateDeleteInfo">DbConnection::generateDeleteInfo()</a> in DbConnection.php</div>
+							<div class="index-item-description">Automatically generate a statement to delete records from a table based on certain conditions.  Currently only the &quot;=&quot; operator is supported for conditions.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">generateInsertInfo</span>
@@ -1654,24 +1983,26 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodgenerateSelectInfo">DbConnection::generateSelectInfo()</a> in DbConnection.php</div>
+							<div class="index-item-description">Automatically generates a select statement using the given information</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">generateUpdateInfo</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodgenerateUpdateInfo">DbConnection::generateUpdateInfo()</a> in DbConnection.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">get</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/SessionDb.html#methodget">SessionDb::get()</a> in SessionDb.php</div>
+							<div class="index-item-description">Automatically generate an UPDATE SQL statement for the given table based on the passed in conditions and values.  Currently only supports direct equalities for conditions.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">get</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Session.html#methodget">Session::get()</a> in Session.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">get</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/SessionDb.html#methodget">SessionDb::get()</a> in SessionDb.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">get</span>
@@ -1712,6 +2043,12 @@
 			<div class="index-item-details"><a href="default/XmlNode.html#methodgetAttributes">XmlNode::getAttributes()</a> in XmlNode.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">getBaseDir</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GuiZone.html#methodgetBaseDir">GuiZone::getBaseDir()</a> in GuiZone.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">getCharWidths</span>
 					</dt>
 		<dd class="index-item-body">
@@ -1727,20 +2064,7 @@
 						<span class="method-title">getClasses</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/MailModule.html#methodgetClasses">MailModule::getClasses()</a> in MailModule.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">getClasses</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbModule.html#methodgetClasses">DbModule::getClasses()</a> in DbModule.php</div>
-							<div class="index-item-description">This method is overridden to tell zoop which classes exist as part of this module  so that they can be added to the autoloader</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">getClasses</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthModule.html#methodgetClasses">AuthModule::getClasses()</a> in AuthModule.php</div>
+			<div class="index-item-details"><a href="default/ZoopModule.html#methodgetClasses">ZoopModule::getClasses()</a> in ZoopModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getClasses</span>
@@ -1752,7 +2076,7 @@
 						<span class="method-title">getClasses</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlModule.html#methodgetClasses">XmlModule::getClasses()</a> in XmlModule.php</div>
+			<div class="index-item-details"><a href="default/MailModule.html#methodgetClasses">MailModule::getClasses()</a> in MailModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getClasses</span>
@@ -1764,13 +2088,26 @@
 						<span class="method-title">getClasses</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ZoopModule.html#methodgetClasses">ZoopModule::getClasses()</a> in ZoopModule.php</div>
+			<div class="index-item-details"><a href="default/XmlModule.html#methodgetClasses">XmlModule::getClasses()</a> in XmlModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getClasses</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AppModule.html#methodgetClasses">AppModule::getClasses()</a> in Module.php</div>
+			<div class="index-item-details"><a href="default/AuthModule.html#methodgetClasses">AuthModule::getClasses()</a> in AuthModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getClasses</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/AppModule.html#methodgetClasses">AppModule::getClasses()</a> in AppModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getClasses</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbModule.html#methodgetClasses">DbModule::getClasses()</a> in DbModule.php</div>
+							<div class="index-item-description">This method is overridden to tell zoop which classes exist as part of this module  so that they can be added to the autoloader</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getClassPath</span>
@@ -1796,14 +2133,14 @@
 						<span class="method-title">getConnection</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbModule.html#methodgetConnection">DbModule::getConnection()</a> in DbModule.php</div>
-							<div class="index-item-description">Returns a DbConnection object to the database called &quot;$name&quot;</div>
+			<div class="index-item-details"><a href="default/DbFactory.html#methodgetConnection">DbFactory::getConnection()</a> in DbFactory.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getConnection</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbFactory.html#methodgetConnection">DbFactory::getConnection()</a> in DbFactory.php</div>
+			<div class="index-item-details"><a href="default/DbModule.html#methodgetConnection">DbModule::getConnection()</a> in DbModule.php</div>
+							<div class="index-item-description">Returns a DbConnection object to the database called &quot;$name&quot;</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getContent</span>
@@ -1816,6 +2153,13 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicObject.html#methodgetContext">GraphicObject::getContext()</a> in GraphicObject.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getDb</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodgetDb">DbObject::getDb()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the connection associated with the DbObject</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getDefaultConnection</span>
@@ -1852,13 +2196,13 @@
 						<span class="method-title">getEngine</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/SessionModule.html#methodgetEngine">SessionModule::getEngine()</a> in SessionModule.php</div>
+			<div class="index-item-details"><a href="default/SessionFactory.html#methodgetEngine">SessionFactory::getEngine()</a> in SessionFactory.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getEngine</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/SessionFactory.html#methodgetEngine">SessionFactory::getEngine()</a> in SessionFactory.php</div>
+			<div class="index-item-details"><a href="default/SessionModule.html#methodgetEngine">SessionModule::getEngine()</a> in SessionModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getExceptions</span>
@@ -1879,10 +2223,24 @@
 			<div class="index-item-details"><a href="default/TestResult.html#methodgetFailures">TestResult::getFailures()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">getField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodgetField">DbObject::getField()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the value of the specified field</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getFields</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#methodgetFields">DbTable::getFields()</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">getFields</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodgetFields">DbObject::getFields()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns a $field =&gt; $value array containing all the fields and their values</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">GetFileExtention</span>
@@ -1914,19 +2272,13 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodgetId">DbObject::getId()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the value of the primary key of the record that this object is associated with.  An error will be thrown if there is more than one primary key.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getIncludes</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/SessionModule.html#methodgetIncludes">SessionModule::getIncludes()</a> in SessionModule.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">getIncludes</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ZoopModule.html#methodgetIncludes">ZoopModule::getIncludes()</a> in ZoopModule.php</div>
-							<div class="index-item-description">This method should be overridden in the child class to return an array  of filenames that should be included when the module is loaded</div>
+			<div class="index-item-details"><a href="default/XmlModule.html#methodgetIncludes">XmlModule::getIncludes()</a> in XmlModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getIncludes</span>
@@ -1939,13 +2291,38 @@
 						<span class="method-title">getIncludes</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/SessionModule.html#methodgetIncludes">SessionModule::getIncludes()</a> in SessionModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getIncludes</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/AuthModule.html#methodgetIncludes">AuthModule::getIncludes()</a> in AuthModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getIncludes</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlModule.html#methodgetIncludes">XmlModule::getIncludes()</a> in XmlModule.php</div>
+			<div class="index-item-details"><a href="default/AppModule.html#methodgetIncludes">AppModule::getIncludes()</a> in AppModule.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getIncludes</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/ZoopModule.html#methodgetIncludes">ZoopModule::getIncludes()</a> in ZoopModule.php</div>
+							<div class="index-item-description">This method should be overridden in the child class to return an array  of filenames that should be included when the module is loaded</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodgetInfo">DbRelationshipHasMany::getInfo()</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/AuthStorageHandler.html#methodgetInfo">AuthStorageHandler::getInfo()</a> in AuthStorageHandler.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getInfo</span>
@@ -1957,7 +2334,37 @@
 						<span class="method-title">getInfo</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthStorageHandler.html#methodgetInfo">AuthStorageHandler::getInfo()</a> in AuthStorageHandler.php</div>
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#methodgetInfo">DbRelationshipHasManyThrought::getInfo()</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#methodgetInfo">DbRelationshipOptions::getInfo()</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasOne.html#methodgetInfo">DbRelationshipHasOne::getInfo()</a> in DbRelationshipHasOne.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html#methodgetInfo">DbRelationshipBelongsTo::getInfo()</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationship.html#methodgetInfo">DbRelationship::getInfo()</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getLastInsertId</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysql.html#methodgetLastInsertId">DbMysql::getLastInsertId()</a> in DbMysql.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getLastInsertId</span>
@@ -1975,7 +2382,7 @@
 						<span class="method-title">getLastInsertId</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysql.html#methodgetLastInsertId">DbMysql::getLastInsertId()</a> in DbMysql.php</div>
+			<div class="index-item-details"><a href="default/DbMssql.html#methodgetLastInsertId">DbMssql::getLastInsertId()</a> in DbMssql.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getLength</span>
@@ -2000,6 +2407,12 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#methodgetMinHeight">GraphicHardBrokenLine::getMinHeight()</a> in GraphicHardBrokenLine.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getMixinOwner</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodgetMixinOwner">Object::getMixinOwner()</a> in Object.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getName</span>
@@ -2035,13 +2448,13 @@
 						<span class="method-title">getObjectTree</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicContainer.html#methodgetObjectTree">GraphicContainer::getObjectTree()</a> in GraphicContainer.php</div>
+			<div class="index-item-details"><a href="default/GraphicTextRun.html#methodgetObjectTree">GraphicTextRun::getObjectTree()</a> in GraphicTextRun.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getObjectTree</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicTextRun.html#methodgetObjectTree">GraphicTextRun::getObjectTree()</a> in GraphicTextRun.php</div>
+			<div class="index-item-details"><a href="default/GraphicContainer.html#methodgetObjectTree">GraphicContainer::getObjectTree()</a> in GraphicContainer.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getParamNames</span>
@@ -2063,6 +2476,13 @@
 							<div class="index-item-description">Evaluates the POST variables and creates a standard &quot;year-month-day Hour24:minute:second -7:00&quot; date from a POSTed form</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">getPrimaryKey</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodgetPrimaryKey">DbObject::getPrimaryKey()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the field name(s) in the primary key in an array</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">getReference</span>
 					</dt>
 		<dd class="index-item-body">
@@ -2078,13 +2498,13 @@
 						<span class="method-title">getRequireds</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgsql.html#methodgetRequireds">DbPgsql::getRequireds()</a> in DbPgsql.php</div>
+			<div class="index-item-details"><a href="default/DbConnection.html#methodgetRequireds">DbConnection::getRequireds()</a> in DbConnection.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getRequireds</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbConnection.html#methodgetRequireds">DbConnection::getRequireds()</a> in DbConnection.php</div>
+			<div class="index-item-details"><a href="default/DbPgsql.html#methodgetRequireds">DbPgsql::getRequireds()</a> in DbPgsql.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getRequireds</span>
@@ -2093,28 +2513,103 @@
 			<div class="index-item-details"><a href="default/DbMysql.html#methodgetRequireds">DbMysql::getRequireds()</a> in DbMysql.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">getRequireds</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html#methodgetRequireds">DbMssql::getRequireds()</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">getSchema</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodgetSchema">DbConnection::getSchema()</a> in DbConnection.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">getSchema</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodgetSchema">DbObject::getSchema()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns a DbTable object with scheme information for the associated table (if supported by your database)</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">getString</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodgetString">DbObject::getString()</a> in DbObject.php</div>
+							<div class="index-item-description">Serializes all column names and values and returns them in a string of the format &quot;&lt;DbObject class&gt;: &lt;field&gt; =&gt; &lt;value&gt; &lt;field&gt; =&gt; &lt;value&gt; ...&quot;</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableFieldInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html#methodgetTableFieldInfo">DbMssql::getTableFieldInfo()</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableFieldInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysql.html#methodgetTableFieldInfo">DbMysql::getTableFieldInfo()</a> in DbMysql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableFieldInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPgsql.html#methodgetTableFieldInfo">DbPgsql::getTableFieldInfo()</a> in DbPgsql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableFieldInfo</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#methodgetTableFieldInfo">DbConnection::getTableFieldInfo()</a> in DbConnection.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getTableName</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodgetTableName">DbObject::getTableName()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns the name of the table associated with the db object</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableNames</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html#methodgetTableNames">DbMssql::getTableNames()</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableNames</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#methodgetTableNames">DbConnection::getTableNames()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableNames</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysql.html#methodgetTableNames">DbMysql::getTableNames()</a> in DbMysql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTableNames</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPgsql.html#methodgetTableNames">DbPgsql::getTableNames()</a> in DbPgsql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">getTables</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbSchema.html#methodgetTables">DbSchema::getTables()</a> in DbSchema.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getTemplateDir</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GuiZone.html#methodgetTemplateDir">GuiZone::getTemplateDir()</a> in GuiZone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">GetTemplateDirs</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_gui---gui.php.html#functionGetTemplateDirs">GetTemplateDirs()</a> in gui.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">getTestName</span>
@@ -2273,16 +2768,16 @@
 			<div class="index-item-details"><a href="default/GraphicDocument.html">GraphicDocument</a> in GraphicDocument.php</div>
 					</dd>
 			<dt class="field">
-						GraphicHardBrokenLine
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html">GraphicHardBrokenLine</a> in GraphicHardBrokenLine.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">GraphicHardBrokenLine</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#methodGraphicHardBrokenLine">GraphicHardBrokenLine::GraphicHardBrokenLine()</a> in GraphicHardBrokenLine.php</div>
+					</dd>
+			<dt class="field">
+						GraphicHardBrokenLine
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html">GraphicHardBrokenLine</a> in GraphicHardBrokenLine.php</div>
 					</dd>
 			<dt class="field">
 						GraphicModule
@@ -2361,12 +2856,14 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_gui---gui.php.html#functionGuiAssign">GuiAssign()</a> in gui.php</div>
+							<div class="index-item-description">Assigns a gui variable independant of a specific gui object</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">GuiGetAssigns</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_gui---gui.php.html#functionGuiGetAssigns">GuiGetAssigns()</a> in gui.php</div>
+							<div class="index-item-description">Returns an array of gui variables for use with rendering a page</div>
 					</dd>
 			<dt class="field">
 						GuiInit
@@ -2453,13 +2950,13 @@
 						<span class="method-title">handleError</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/CliErrorHandler.html#methodhandleError">CliErrorHandler::handleError()</a> in CliErrorHandler.php</div>
+			<div class="index-item-details"><a href="default/WebErrorHandler.html#methodhandleError">WebErrorHandler::handleError()</a> in WebErrorHandler.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">handleError</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/WebErrorHandler.html#methodhandleError">WebErrorHandler::handleError()</a> in WebErrorHandler.php</div>
+			<div class="index-item-details"><a href="default/CliErrorHandler.html#methodhandleError">CliErrorHandler::handleError()</a> in CliErrorHandler.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">handleMeta</span>
@@ -2528,6 +3025,18 @@
 			<div class="index-item-details"><a href="default/XmlNode.html#methodhasContent">XmlNode::hasContent()</a> in XmlNode.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">hasMany</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodhasMany">DbObject::hasMany()</a> in DbObject.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">hasOne</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodhasOne">DbObject::hasOne()</a> in DbObject.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">html</span>
 					</dt>
 		<dd class="index-item-body">
@@ -2558,12 +3067,13 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodinit">DbObject::init()</a> in DbObject.php</div>
+							<div class="index-item-description">This is a second stage constructor that should be overridden in individual database objects to initialize the instance</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">init</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Zone.html#methodinit">Zone::init()</a> in Zone.php</div>
+			<div class="index-item-details"><a href="default/ZendPdfContext.html#methodinit">ZendPdfContext::init()</a> in ZendPdfContext.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">init</span>
@@ -2581,7 +3091,13 @@
 						<span class="method-title">init</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/ZendPdfContext.html#methodinit">ZendPdfContext::init()</a> in ZendPdfContext.php</div>
+			<div class="index-item-details"><a href="default/Zone.html#methodinit">Zone::init()</a> in Zone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">init</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodinit">DbZone::init()</a> in DbZone.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">init</span>
@@ -2593,13 +3109,13 @@
 						<span class="method-title">init</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicContext.html#methodinit">GraphicContext::init()</a> in GraphicContext.php</div>
+			<div class="index-item-details"><a href="default/GuiZone.html#methodinit">GuiZone::init()</a> in GuiZone.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">initdb</span>
+						<span class="method-title">init</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthModule.html#methodinitdb">AuthModule::initdb()</a> in AuthModule.php</div>
+			<div class="index-item-details"><a href="default/GraphicContext.html#methodinit">GraphicContext::init()</a> in GraphicContext.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">initDb</span>
@@ -2608,16 +3124,22 @@
 			<div class="index-item-details"><a href="default/Migration.html#methodinitDb">Migration::initDb()</a> in Migration.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">initExtra</span>
+						<span class="method-title">initdb</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicParser.html#methodinitExtra">GraphicParser::initExtra()</a> in GraphicParser.php</div>
+			<div class="index-item-details"><a href="default/AuthModule.html#methodinitdb">AuthModule::initdb()</a> in AuthModule.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">initExtra</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/XmlParser.html#methodinitExtra">XmlParser::initExtra()</a> in XmlParser.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">initExtra</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicParser.html#methodinitExtra">GraphicParser::initExtra()</a> in GraphicParser.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">initRootContainer</span>
@@ -2660,19 +3182,45 @@
 						<span class="method-title">isInline</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicObject.html#methodisInline">GraphicObject::isInline()</a> in GraphicObject.php</div>
+			<div class="index-item-details"><a href="default/GraphicContainer.html#methodisInline">GraphicContainer::isInline()</a> in GraphicContainer.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">isInline</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicContainer.html#methodisInline">GraphicContainer::isInline()</a> in GraphicContainer.php</div>
+			<div class="index-item-details"><a href="default/GraphicObject.html#methodisInline">GraphicObject::isInline()</a> in GraphicObject.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">isText</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/XmlNode.html#methodisText">XmlNode::isText()</a> in XmlNode.php</div>
+					</dd>
+		</dl>
+	<a name="j"></a>
+	<div class="index-letter-section">
+		<div style="float: left" class="index-letter-title">j</div>
+		<div style="float: right"><a href="#top">top</a></div>
+		<div style="clear: both"></div>
+	</div>
+	<dl>
+			<dt class="field">
+						<span class="var-title">$joinTable</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$joinTable">DbRelationshipHasManyThrought::$joinTable</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$joinTableLocalField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$joinTableLocalField">DbRelationshipHasManyThrought::$joinTableLocalField</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$joinTableRemoteField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$joinTableRemoteField">DbRelationshipHasManyThrought::$joinTableRemoteField</a> in DbRelationshipHasManyThrough.php</div>
 					</dd>
 		</dl>
 	<a name="k"></a>
@@ -2698,6 +3246,30 @@
 						<span class="method-title">key</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPdoResult.html#methodkey">DbPdoResult::key()</a> in DbPdoResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">key</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodkey">DbMssqlResult::key()</a> in DbMssqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">key</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPgResult.html#methodkey">DbPgResult::key()</a> in DbPgResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">key</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#methodkey">DbTable::key()</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">key</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodkey">DbMysqlResult::key()</a> in DbMysqlResult.php</div>
 					</dd>
 			<dt class="field">
@@ -2705,18 +3277,13 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodkey">DbObject::key()</a> in DbObject.php</div>
+							<div class="index-item-description">returns the name of the column the internal pointer is at</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">key</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPdoResult.html#methodkey">DbPdoResult::key()</a> in DbPdoResult.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">key</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgResult.html#methodkey">DbPgResult::key()</a> in DbPgResult.php</div>
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodkey">DbRelationshipHasMany::key()</a> in DbRelationshipHasMany.php</div>
 					</dd>
 			<dt class="field">
 						keyAssignedBy_auto
@@ -2751,6 +3318,36 @@
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#var$lineSpacing">GraphicHardBrokenLine::$lineSpacing</a> in GraphicHardBrokenLine.php</div>
 					</dd>
 			<dt class="field">
+						<span class="var-title">$link</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbResultSet.html#var$link">DbResultSet::$link</a> in DbResultSet.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$localField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$localField">DbRelationshipHasManyThrought::$localField</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$localField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#var$localField">DbRelationshipOptions::$localField</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$localFieldName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html#var$localFieldName">DbRelationshipBelongsTo::$localFieldName</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$localFieldName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBasic.html#var$localFieldName">DbRelationshipBasic::$localFieldName</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">ListDir</span>
 					</dt>
 		<dd class="index-item-body">
@@ -2762,6 +3359,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Config.html#methodload">Config::load()</a> in Config.php</div>
+							<div class="index-item-description">Loads the config file specified by the $file member variable (or app_dir/config.yaml)</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">loadLib</span>
@@ -2795,7 +3393,7 @@
 						<span class="var-title">$max</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgResult.html#var$max">DbPgResult::$max</a> in DbPgResult.php</div>
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#var$max">DbMssqlResult::$max</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="var-title">$max</span>
@@ -2820,6 +3418,12 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Exception.html#var$message">Exception::$message</a> in phpunit.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">Mixin.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_app---Mixin.php.html">Mixin.php</a> in Mixin.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">module.php</span>
@@ -2918,6 +3522,24 @@
 			<div class="index-item-details"><a href="default/_migration---module.php.html">module.php</a> in module.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">mixedInto</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodmixedInto">Object::mixedInto()</a> in Object.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">mixin</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html#methodmixin">Object::mixin()</a> in Object.php</div>
+					</dd>
+			<dt class="field">
+						Mixin
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Mixin.html">Mixin</a> in Mixin.php</div>
+					</dd>
+			<dt class="field">
 						Mizithra
 					</dt>
 		<dd class="index-item-body">
@@ -2974,6 +3596,24 @@
 	</div>
 	<dl>
 			<dt class="field">
+						<span class="var-title">$name</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbField.html#var$name">DbField::$name</a> in DbField.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$name</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationship.html#var$name">DbRelationship::$name</a> in DbRelationship.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$name</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#var$name">DbTable::$name</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
 						<span class="var-title">$nodeData</span>
 					</dt>
 		<dd class="index-item-body">
@@ -3008,7 +3648,7 @@
 						<span class="method-title">next</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodnext">DbMysqlResult::next()</a> in DbMysqlResult.php</div>
+			<div class="index-item-details"><a href="default/DbTable.html#methodnext">DbTable::next()</a> in DbTable.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">next</span>
@@ -3020,13 +3660,32 @@
 						<span class="method-title">next</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbObject.html#methodnext">DbObject::next()</a> in DbObject.php</div>
+			<div class="index-item-details"><a href="default/DbPdoResult.html#methodnext">DbPdoResult::next()</a> in DbPdoResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">next</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPdoResult.html#methodnext">DbPdoResult::next()</a> in DbPdoResult.php</div>
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodnext">DbMssqlResult::next()</a> in DbMssqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">next</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodnext">DbRelationshipHasMany::next()</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">next</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodnext">DbMysqlResult::next()</a> in DbMysqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">next</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbObject.html#methodnext">DbObject::next()</a> in DbObject.php</div>
+							<div class="index-item-description">Moves the internal pointer to the next column and returns the value of that column</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">next</span>
@@ -3039,6 +3698,12 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPgResult.html#methodnumRows">DbPgResult::numRows()</a> in DbPgResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">numRows</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodnumRows">DbMssqlResult::numRows()</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">numRows</span>
@@ -3060,6 +3725,24 @@
 		<div style="clear: both"></div>
 	</div>
 	<dl>
+			<dt class="field">
+						<span class="var-title">$options</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#var$options">DbRelationshipOptions::$options</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="include-title">Object.php</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/_app---Object.php.html">Object.php</a> in Object.php</div>
+					</dd>
+			<dt class="field">
+						Object
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Object.html">Object</a> in Object.php</div>
+					</dd>
 			<dt class="field">
 						<span class="method-title">open</span>
 					</dt>
@@ -3091,6 +3774,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#var$primaryKey">DbObject::$primaryKey</a> in DbObject.php</div>
+							<div class="index-item-description">The field name(s) of the primary key in an array</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">PdfContext.php</span>
@@ -3105,16 +3789,46 @@
 			<div class="index-item-details"><a href="default/_gui---plugins---prefilter.strip_html.php.html">prefilter.strip_html.php</a> in prefilter.strip_html.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">parseFile</span>
+						<span class="method-title">pageDefault</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlParser.html#methodparseFile">XmlParser::parseFile()</a> in XmlParser.php</div>
+			<div class="index-item-details"><a href="default/DbZone.html#methodpageDefault">DbZone::pageDefault()</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">pageEdit</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodpageEdit">DbZone::pageEdit()</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">pageList</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodpageList">DbZone::pageList()</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">pageView</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodpageView">DbZone::pageView()</a> in DbZone.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">parseFile</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/XmlDom.html#methodparseFile">XmlDom::parseFile()</a> in XmlDom.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">parseFile</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/XmlParser.html#methodparseFile">XmlParser::parseFile()</a> in XmlParser.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">parseText</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GraphicParser.html#methodparseText">GraphicParser::parseText()</a> in GraphicParser.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">parseText</span>
@@ -3129,12 +3843,6 @@
 			<div class="index-item-details"><a href="default/XmlDom.html#methodparseText">XmlDom::parseText()</a> in XmlDom.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">parseText</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/GraphicParser.html#methodparseText">GraphicParser::parseText()</a> in GraphicParser.php</div>
-					</dd>
-			<dt class="field">
 						PdfContext
 					</dt>
 		<dd class="index-item-body">
@@ -3145,6 +3853,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodpersisted">DbObject::persisted()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns true if this DbObject is (and can be) saved in the database</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">phpmailer.lang-br.php</span>
@@ -3267,18 +3976,18 @@
 			<div class="index-item-details"><a href="default/_phpmailer---test---phpunit.php.html">phpunit.php</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
-						phpmailerTest
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/phpmailerTest.html">phpmailerTest</a> in phpmailer_test.php</div>
-							<div class="index-item-description">Performs authentication tests</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">phpmailerTest</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/phpmailerTest.html#methodphpmailerTest">phpmailerTest::phpmailerTest()</a> in phpmailer_test.php</div>
 							<div class="index-item-description">Class constuctor.</div>
+					</dd>
+			<dt class="field">
+						phpmailerTest
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/phpmailerTest.html">phpmailerTest</a> in phpmailer_test.php</div>
+							<div class="index-item-description">Performs authentication tests</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">pop</span>
@@ -3293,6 +4002,18 @@
 			<div class="index-item-details"><a href="default/Zone.html#methodpopZone">Zone::popZone()</a> in Zone.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">postEdit</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodpostEdit">DbZone::postEdit()</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">postList</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbZone.html#methodpostList">DbZone::postList()</a> in DbZone.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">postNodeHandler</span>
 					</dt>
 		<dd class="index-item-body">
@@ -3305,16 +4026,23 @@
 			<div class="index-item-details"><a href="default/GraphicParser.html#methodpreNodeHandler">GraphicParser::preNodeHandler()</a> in GraphicParser.php</div>
 					</dd>
 			<dt class="field">
-						PropertyList
+						<span class="method-title">primaryKeyAssignedByDb</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/PropertyList.html">PropertyList</a> in PropertyList.php</div>
+			<div class="index-item-details"><a href="default/DbObject.html#methodprimaryKeyAssignedByDb">DbObject::primaryKeyAssignedByDb()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns true if this DbObject class is set to use primary keys generated by the database</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">PropertyList</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/PropertyList.html#methodPropertyList">PropertyList::PropertyList()</a> in PropertyList.php</div>
+					</dd>
+			<dt class="field">
+						PropertyList
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/PropertyList.html">PropertyList</a> in PropertyList.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">pushZone</span>
@@ -3341,6 +4069,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodquery">DbConnection::query()</a> in DbConnection.php</div>
+							<div class="index-item-description">Escapes and inserts parameters into the the SQL statement and executes the statement.</div>
 					</dd>
 		</dl>
 	<a name="r"></a>
@@ -3351,22 +4080,70 @@
 	</div>
 	<dl>
 			<dt class="field">
-						<span class="var-title">$res</span>
+						<span class="var-title">$remoteClass</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbPgResult.html#var$res">DbPgResult::$res</a> in DbPgResult.php</div>
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$remoteClass">DbRelationshipHasManyThrought::$remoteClass</a> in DbRelationshipHasManyThrough.php</div>
 					</dd>
 			<dt class="field">
-						<span class="var-title">$res</span>
+						<span class="var-title">$remoteClassName</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#var$res">DbMysqlResult::$res</a> in DbMysqlResult.php</div>
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html#var$remoteClassName">DbRelationshipBelongsTo::$remoteClassName</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteClassName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBasic.html#var$remoteClassName">DbRelationshipBasic::$remoteClassName</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasManyThrought.html#var$remoteField">DbRelationshipHasManyThrought::$remoteField</a> in DbRelationshipHasManyThrough.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteFieldName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBasic.html#var$remoteFieldName">DbRelationshipBasic::$remoteFieldName</a> in DbRelationshipBasic.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteFieldName</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipBelongsTo.html#var$remoteFieldName">DbRelationshipBelongsTo::$remoteFieldName</a> in DbRelationshipBelongsTo.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteKeyField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#var$remoteKeyField">DbRelationshipOptions::$remoteKeyField</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteTable</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#var$remoteTable">DbRelationshipOptions::$remoteTable</a> in DbRelationshipOptions.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$remoteValueField</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipOptions.html#var$remoteValueField">DbRelationshipOptions::$remoteValueField</a> in DbRelationshipOptions.php</div>
 					</dd>
 			<dt class="field">
 						<span class="var-title">$res</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPdoResult.html#var$res">DbPdoResult::$res</a> in DbPdoResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$res</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbResultSet.html#var$res">DbResultSet::$res</a> in DbResultSet.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">Role.php</span>
@@ -3387,6 +4164,12 @@
 			<div class="index-item-details"><a href="default/SessionDb.html#methodread">SessionDb::read()</a> in SessionDb.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">redirect</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/Zone.html#methodredirect">Zone::redirect()</a> in Zone.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">Redirect</span>
 					</dt>
 		<dd class="index-item-body">
@@ -3394,23 +4177,11 @@
 							<div class="index-item-description">Redirect the client browser to $url</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">redirect</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/Zone.html#methodredirect">Zone::redirect()</a> in Zone.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">registerClass</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Zoop.html#methodregisterClass">Zoop::registerClass()</a> in Zoop.php</div>
 							<div class="index-item-description">static -- Register a class for auto-loading with the name of the class  and the full path of the file that contains it.</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">registerClasses</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AppModule.html#methodregisterClasses">AppModule::registerClasses()</a> in Module.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerDomain</span>
@@ -3449,13 +4220,20 @@
 						<span class="method-title">rewind</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodrewind">DbMysqlResult::rewind()</a> in DbMysqlResult.php</div>
+			<div class="index-item-details"><a href="default/XmlNodeList.html#methodrewind">XmlNodeList::rewind()</a> in XmlNodeList.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">rewind</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#methodrewind">DbTable::rewind()</a> in DbTable.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rewind</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodrewind">DbObject::rewind()</a> in DbObject.php</div>
+							<div class="index-item-description">Resets the internal pointer to the first column</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rewind</span>
@@ -3467,13 +4245,25 @@
 						<span class="method-title">rewind</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodrewind">DbRelationshipHasMany::rewind()</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">rewind</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbPgResult.html#methodrewind">DbPgResult::rewind()</a> in DbPgResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rewind</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/XmlNodeList.html#methodrewind">XmlNodeList::rewind()</a> in XmlNodeList.php</div>
+			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodrewind">DbMysqlResult::rewind()</a> in DbMysqlResult.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">rewind</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodrewind">DbMssqlResult::rewind()</a> in DbMssqlResult.php</div>
 					</dd>
 			<dt class="field">
 						Role
@@ -3503,13 +4293,7 @@
 						<span class="method-title">run</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestCase.html#methodrun">TestCase::run()</a> in phpunit.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">run</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestSuite.html#methodrun">TestSuite::run()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestRunner.html#methodrun">TestRunner::run()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">run</span>
@@ -3521,7 +4305,13 @@
 						<span class="method-title">run</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestRunner.html#methodrun">TestRunner::run()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestCase.html#methodrun">TestCase::run()</a> in phpunit.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">run</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/TestSuite.html#methodrun">TestSuite::run()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">runBare</span>
@@ -3584,6 +4374,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodsave">DbObject::save()</a> in DbObject.php</div>
+							<div class="index-item-description">Saves the record in memory</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">saveChanges</span>
@@ -3707,6 +4498,12 @@
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#methodsetAlignment">GraphicHardBrokenLine::setAlignment()</a> in GraphicHardBrokenLine.php</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">setBaseDir</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/GuiZone.html#methodsetBaseDir">GuiZone::setBaseDir()</a> in GuiZone.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setBottomIndent</span>
 					</dt>
 		<dd class="index-item-body">
@@ -3717,12 +4514,14 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/Config.html#methodsetConfigFile">Config::setConfigFile()</a> in Config.php</div>
+							<div class="index-item-description">Specify configuration file to use</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setFields</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#methodsetFields">DbObject::setFields()</a> in DbObject.php</div>
+							<div class="index-item-description">Accepts a $field =&gt; $value array containing fields and their values to be set in this DbObject</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setFile</span>
@@ -3740,13 +4539,13 @@
 						<span class="method-title">setInfo</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthStorageHandler.html#methodsetInfo">AuthStorageHandler::setInfo()</a> in AuthStorageHandler.php</div>
+			<div class="index-item-details"><a href="default/AuthDbStorageDb.html#methodsetInfo">AuthDbStorageDb::setInfo()</a> in AuthStorageHandlerDb.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setInfo</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/AuthDbStorageDb.html#methodsetInfo">AuthDbStorageDb::setInfo()</a> in AuthStorageHandlerDb.php</div>
+			<div class="index-item-details"><a href="default/AuthStorageHandler.html#methodsetInfo">AuthStorageHandler::setInfo()</a> in AuthStorageHandler.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setLanguageId</span>
@@ -3806,14 +4605,14 @@
 						<span class="method-title">setUp</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/phpmailerTest.html#methodsetUp">phpmailerTest::setUp()</a> in phpmailer_test.php</div>
-							<div class="index-item-description">Run before each test is started.</div>
+			<div class="index-item-details"><a href="default/TestCase.html#methodsetUp">TestCase::setUp()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setUp</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestCase.html#methodsetUp">TestCase::setUp()</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/phpmailerTest.html#methodsetUp">phpmailerTest::setUp()</a> in phpmailer_test.php</div>
+							<div class="index-item-description">Run before each test is started.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">shouldStop</span>
@@ -3850,12 +4649,6 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_gui---plugins---block.for.php.html#functionsmarty_block_for">smarty_block_for()</a> in block.for.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">smarty_function_closeform</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/_gui---plugins---function.closeform.php.html#functionsmarty_function_closeform">smarty_function_closeform()</a> in function.closeform.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">smarty_function_constraint</span>
@@ -3899,12 +4692,6 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_gui---plugins---function.letter_counter.php.html#functionsmarty_function_letter_counter">smarty_function_letter_counter()</a> in function.letter_counter.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">smarty_function_openform</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/_gui---plugins---function.openform.php.html#functionsmarty_function_openform">smarty_function_openform()</a> in function.openform.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">smarty_function_popupwindow</span>
@@ -4030,7 +4817,7 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/_db---functions.php.html#functionSqlGetSchema">SqlGetSchema()</a> in functions.php</div>
-							<div class="index-item-description">Returns a DbSchema object  NOTE: currently not implemented on all database engines (i.e. only pgsql and a few others even support schemas)</div>
+							<div class="index-item-description">Returns a DbSchema object  This function returns a DbSchema object that can be used to query the structure of the database in a DOM like fashion.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">SqlInsertArray</span>
@@ -4149,12 +4936,19 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbObject.html#var$tableName">DbObject::$tableName</a> in DbObject.php</div>
+							<div class="index-item-description">The assigned name of the table (defaults to the class name translated by the getDefaultTableName</div>
 					</dd>
 			<dt class="field">
 						<span class="var-title">$topIndent</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/GraphicHardBrokenLine.html#var$topIndent">GraphicHardBrokenLine::$topIndent</a> in GraphicHardBrokenLine.php</div>
+					</dd>
+			<dt class="field">
+						<span class="var-title">$type</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbField.html#var$type">DbField::$type</a> in DbField.php</div>
 					</dd>
 			<dt class="field">
 						<span class="include-title">test.php</span>
@@ -4166,7 +4960,31 @@
 						<span class="method-title">tableExists</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbConnection.html#methodtableExists">DbConnection::tableExists()</a> in DbConnection.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">tableExists</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbSchema.html#methodtableExists">DbSchema::tableExists()</a> in DbSchema.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">tableExists</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbPgsql.html#methodtableExists">DbPgsql::tableExists()</a> in DbPgsql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">tableExists</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssql.html#methodtableExists">DbMssql::tableExists()</a> in DbMssql.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">tableExists</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMysql.html#methodtableExists">DbMysql::tableExists()</a> in DbMysql.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">tearDown</span>
@@ -4182,22 +5000,16 @@
 							<div class="index-item-description">Run after each test is completed.</div>
 					</dd>
 			<dt class="field">
-						TestCase
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestCase.html">TestCase</a> in phpunit.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">TestCase</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/TestCase.html#methodTestCase">TestCase::TestCase()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
-						TestFailure
+						TestCase
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestFailure.html">TestFailure</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestCase.html">TestCase</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">TestFailure</span>
@@ -4206,10 +5018,10 @@
 			<div class="index-item-details"><a href="default/TestFailure.html#methodTestFailure">TestFailure::TestFailure()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
-						TestResult
+						TestFailure
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestResult.html">TestResult</a> in phpunit.php</div>
+			<div class="index-item-details"><a href="default/TestFailure.html">TestFailure</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">TestResult</span>
@@ -4218,22 +5030,28 @@
 			<div class="index-item-details"><a href="default/TestResult.html#methodTestResult">TestResult::TestResult()</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
+						TestResult
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/TestResult.html">TestResult</a> in phpunit.php</div>
+					</dd>
+			<dt class="field">
 						TestRunner
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/TestRunner.html">TestRunner</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
-						TestSuite
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/TestSuite.html">TestSuite</a> in phpunit.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">TestSuite</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/TestSuite.html#methodTestSuite">TestSuite::TestSuite()</a> in phpunit.php</div>
+					</dd>
+			<dt class="field">
+						TestSuite
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/TestSuite.html">TestSuite</a> in phpunit.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">test_AltBody</span>
@@ -4392,12 +5210,14 @@
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodupdateRow">DbConnection::updateRow()</a> in DbConnection.php</div>
+							<div class="index-item-description">Executes the given update SQL statement. This method throws an error if multiple rows are updated.</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">updateRows</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/DbConnection.html#methodupdateRows">DbConnection::updateRows()</a> in DbConnection.php</div>
+							<div class="index-item-description">Executes the given update SQL statement</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">upsertRow</span>
@@ -4429,6 +5249,18 @@
 						<span class="method-title">valid</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbRelationshipHasMany.html#methodvalid">DbRelationshipHasMany::valid()</a> in DbRelationshipHasMany.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">valid</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbTable.html#methodvalid">DbTable::valid()</a> in DbTable.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">valid</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="default/XmlNodeList.html#methodvalid">XmlNodeList::valid()</a> in XmlNodeList.php</div>
 					</dd>
 			<dt class="field">
@@ -4447,13 +5279,20 @@
 						<span class="method-title">valid</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbObject.html#methodvalid">DbObject::valid()</a> in DbObject.php</div>
+			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodvalid">DbMysqlResult::valid()</a> in DbMysqlResult.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">valid</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="default/DbMysqlResult.html#methodvalid">DbMysqlResult::valid()</a> in DbMysqlResult.php</div>
+			<div class="index-item-details"><a href="default/DbObject.html#methodvalid">DbObject::valid()</a> in DbObject.php</div>
+							<div class="index-item-description">Returns true if this DbObject is successfully bound to a row in the database</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">valid</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="default/DbMssqlResult.html#methodvalid">DbMssqlResult::valid()</a> in DbMssqlResult.php</div>
 					</dd>
 		</dl>
 	<a name="w"></a>
@@ -4735,6 +5574,7 @@
 	<a class="index-letter" href="elementindex_default.html#g">g</a>
 	<a class="index-letter" href="elementindex_default.html#h">h</a>
 	<a class="index-letter" href="elementindex_default.html#i">i</a>
+	<a class="index-letter" href="elementindex_default.html#j">j</a>
 	<a class="index-letter" href="elementindex_default.html#k">k</a>
 	<a class="index-letter" href="elementindex_default.html#l">l</a>
 	<a class="index-letter" href="elementindex_default.html#m">m</a>
@@ -4752,5 +5592,5 @@
 	<a class="index-letter" href="elementindex_default.html#y">y</a>
 	<a class="index-letter" href="elementindex_default.html#z">z</a>
 	<a class="index-letter" href="elementindex_default.html#_">_</a>
-</div>	</body>
-</html>
+</div>	</body>
+</html>

@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-						
+						
 <!-- Start of Class Data -->
 <H2>
 	
@@ -60,12 +60,16 @@
 <h2>Root class DbConnection</h2>
 <ul>
 <li><a href="default/DbConnection.html">DbConnection</a><ul>
-<li><a href="default/DbMysql.html">DbMysql</a></li><li><a href="default/DbPdo.html">DbPdo</a></li><li><a href="default/DbPgsql.html">DbPgsql</a></li></ul></li>
+<li><a href="default/DbMssql.html">DbMssql</a></li><li><a href="default/DbMysql.html">DbMysql</a></li><li><a href="default/DbPdo.html">DbPdo</a></li><li><a href="default/DbPgsql.html">DbPgsql</a></li></ul></li>
 </ul>
 
 <h2>Root class DbFactory</h2>
 <ul>
 <li><a href="default/DbFactory.html">DbFactory</a></li></ul>
+
+<h2>Root class DbField</h2>
+<ul>
+<li><a href="default/DbField.html">DbField</a></li></ul>
 
 <h2>Root class DbMysqlResult</h2>
 <ul>
@@ -79,21 +83,19 @@
 <ul>
 <li><a href="default/DbPdoResult.html">DbPdoResult</a></li></ul>
 
-<h2>Root class DbPgResult</h2>
+<h2>Root class DbRelationship</h2>
 <ul>
-<li><a href="default/DbPgResult.html">DbPgResult</a></li></ul>
+<li><a href="default/DbRelationship.html">DbRelationship</a><ul>
+<li><a href="default/DbRelationshipBasic.html">DbRelationshipBasic</a><ul>
+<li><a href="default/DbRelationshipHasMany.html">DbRelationshipHasMany</a></li><li><a href="default/DbRelationshipHasOne.html">DbRelationshipHasOne</a></li></ul></li>
+<li><a href="default/DbRelationshipBelongsTo.html">DbRelationshipBelongsTo</a></li><li><a href="default/DbRelationshipHasManyThrought.html">DbRelationshipHasManyThrought</a></li><li><a href="default/DbRelationshipOptions.html">DbRelationshipOptions</a></li></ul></li>
+</ul>
 
 <h2>Root class DbResultSet</h2>
 <ul>
-<li><a href="default/DbResultSet.html">DbResultSet</a></li></ul>
-
-<h2>Root class DbSchema</h2>
-<ul>
-<li><a href="default/DbSchema.html">DbSchema</a></li></ul>
-
-<h2>Root class DBTable</h2>
-<ul>
-<li><a href="default/DBTable.html">DBTable</a></li></ul>
+<li><a href="default/DbResultSet.html">DbResultSet</a><ul>
+<li><a href="default/DbMssqlResult.html">DbMssqlResult</a></li><li><a href="default/DbPgResult.html">DbPgResult</a></li></ul></li>
+</ul>
 
 <h2>Root class Exception</h2>
 <ul>
@@ -145,9 +147,21 @@
 <ul>
 <li><a href="default/Migration.html">Migration</a></li></ul>
 
+<h2>Root class Mixin</h2>
+<ul>
+<li><a href="default/Mixin.html">Mixin</a></li></ul>
+
 <h2>Root class Mizithra</h2>
 <ul>
 <li><a href="default/Mizithra.html">Mizithra</a></li></ul>
+
+<h2>Root class Object</h2>
+<ul>
+<li><a href="default/Object.html">Object</a><ul>
+<li><a href="default/DbSchema.html">DbSchema</a></li><li><a href="default/DbTable.html">DbTable</a></li><li><a href="default/DbZone.html">DbZone</a></li><li><a href="default/Zone.html">Zone</a><ul>
+<li><a href="default/GuiZone.html">GuiZone</a></li></ul></li>
+</ul></li>
+</ul>
 
 <h2>Root class PropertyList</h2>
 <ul>
@@ -215,12 +229,6 @@
 <ul>
 <li><a href="default/Yaml.html">Yaml</a></li></ul>
 
-<h2>Root class Zone</h2>
-<ul>
-<li><a href="default/Zone.html">Zone</a><ul>
-<li><a href="default/GuiZone.html">GuiZone</a></li></ul></li>
-</ul>
-
 <h2>Root class ZoneApplication</h2>
 <ul>
 <li><a href="default/ZoneApplication.html">ZoneApplication</a></li></ul>
@@ -232,11 +240,11 @@
 <h2>Root class ZoopModule</h2>
 <ul>
 <li><a href="default/ZoopModule.html">ZoopModule</a><ul>
-<li></li><li><a href="default/AuthModule.html">AuthModule</a></li><li><a href="default/DbModule.html">DbModule</a></li><li><a href="default/GraphicModule.html">GraphicModule</a></li><li><a href="default/MailModule.html">MailModule</a></li><li><a href="default/SessionModule.html">SessionModule</a></li><li><a href="default/XmlModule.html">XmlModule</a></li><li><a href="default/ZendModule.html">ZendModule</a></li></ul></li>
+<li><a href="default/AppModule.html">AppModule</a></li><li><a href="default/AuthModule.html">AuthModule</a></li><li><a href="default/DbModule.html">DbModule</a></li><li><a href="default/GraphicModule.html">GraphicModule</a></li><li><a href="default/MailModule.html">MailModule</a></li><li><a href="default/SessionModule.html">SessionModule</a></li><li><a href="default/XmlModule.html">XmlModule</a></li><li><a href="default/ZendModule.html">ZendModule</a></li></ul></li>
 </ul>
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:18 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:50:59 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</body>
-</html>
+</html>

@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class DbConnection</h2>
 
 <a name="sec-description"></a>
@@ -53,7 +53,7 @@
 					<th class="class-table-header">Description</th>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../default/DbMysql.html">DbMysql</a></td>
+					<td style="padding-right: 2em"><a href="../default/DbPgsql.html">DbPgsql</a></td>
 					<td>
 											
 										</td>
@@ -65,7 +65,13 @@
 										</td>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../default/DbPgsql.html">DbPgsql</a></td>
+					<td style="padding-right: 2em"><a href="../default/DbMysql.html">DbMysql</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../default/DbMssql.html">DbMssql</a></td>
 					<td>
 											
 										</td>
@@ -109,10 +115,10 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																				<div class="method-definition">
-					static 						<span class="method-result">void</span>
+																																																																																																																																																				<div class="method-definition">
+					static 						<span class="method-result">string</span>
 										<a href="#generateDeleteInfo" title="details" class="method-name">generateDeleteInfo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span>)
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result">string</span>
@@ -120,16 +126,16 @@
 											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result">string</span>
 										<a href="#generateSelectInfo" title="details" class="method-name">generateSelectInfo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lock</span> = <span class="var-default">0</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$fieldsNames</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>], [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result">string</span>
 										<a href="#generateUpdateInfo" title="details" class="method-name">generateUpdateInfo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$values</span>)
 									</div>
-																																																																																																								
+																																																																																																																																								
 												<div class="method-definition">
 											<span class="method-result">DbConnection</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
@@ -169,6 +175,16 @@
 											<span class="method-result">void</span>
 										<a href="#echoOn" title="details" class="method-name">echoOn</a>
 										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#escapeIdentifier" title="details" class="method-name">escapeIdentifier</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#escapeString" title="details" class="method-name">escapeString</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -218,7 +234,17 @@
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#getSchema" title="details" class="method-name">getSchema</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">'public'</span>])
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTableFieldInfo" title="details" class="method-name">getTableFieldInfo</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTableNames" title="details" class="method-name">getTableNames</a>
+										()
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -236,9 +262,9 @@
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$serial</span> = <span class="var-default">true</span>])
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result"><a href="../default/DbResultSet.html">DbResultSet</a></span>
 										<a href="#query" title="details" class="method-name">query</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -252,18 +278,28 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
+										<a href="#tableExists" title="details" class="method-name">tableExists</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
 										<a href="#updateRow" title="details" class="method-name">updateRow</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#updateRows" title="details" class="method-name">updateRows</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#upsertRow" title="details" class="method-name">upsertRow</a>
 											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../default/DbResultSet.html">DbResultSet</a></span>
+										<a href="#_query" title="details" class="method-name">_query</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
 									</div>
 								</div>
 		</div>
@@ -304,7 +340,7 @@
 		
 
 </div>
-						
+						
 		</div>
 	</div>
 	
@@ -324,27 +360,31 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method generateDeleteInfo</span> (line <span class="line-number">501</span>)
+		<span class="method-title">static method generateDeleteInfo</span> (line <span class="line-number">626</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatically generate a statement to delete records from a table based on certain conditions.  Currently only the &quot;=&quot; operator is supported for conditions.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL statement to delete records from the table</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			generateDeleteInfo
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: Name of the table to delete from</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: $field =&gt; $value array of conditions to match for the delete statement</span>			</li>
 				</ul>
 		
 			
@@ -353,7 +393,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method generateInsertInfo</span> (line <span class="line-number">527</span>)
+		<span class="method-title">static method generateInsertInfo</span> (line <span class="line-number">653</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -386,33 +426,37 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method generateSelectInfo</span> (line <span class="line-number">436</span>)
+		<span class="method-title">static method generateSelectInfo</span> (line <span class="line-number">516</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatically generates a select statement using the given information</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL select statement</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			generateSelectInfo
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fieldsNames</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lock</span> = <span class="var-default">0</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$fieldsNames</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>], [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: name of the table to select from</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$fieldsNames</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fieldsNames</span><span class="var-description">: array of fields to retreive</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: $field =&gt; $value array of what to check (at this time only the &quot;=&quot; operator is supported)</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$lock</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $var =&gt; $value array of optional special parameters.  Currently &quot;lock&quot; and &quot;orderby&quot; (set to an array of field names) are supported.</span>			</li>
 				</ul>
 		
 			
@@ -421,30 +465,34 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method generateUpdateInfo</span> (line <span class="line-number">468</span>)
+		<span class="method-title">static method generateUpdateInfo</span> (line <span class="line-number">584</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatically generate an UPDATE SQL statement for the given table based on the passed in conditions and values.  Currently only supports direct equalities for conditions.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL statement to update the table</li>
+			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			generateUpdateInfo
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$values</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$tableName</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: Name of the table to update</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: $field =&gt; $value array of conditions.  Currently only supports the &quot;=&quot; operator.</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$values</span><span class="var-description">: $field =&gt; $value array of fields to update.  The update statement will be generated to update the fields supplied to the supplied values.</span>			</li>
 				</ul>
 		
 			
@@ -482,7 +530,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">alterSchema</span> (line <span class="line-number">80</span>)
+		<span class="method-title">alterSchema</span> (line <span class="line-number">93</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -510,7 +558,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">beginTransaction</span> (line <span class="line-number">93</span>)
+		<span class="method-title">beginTransaction</span> (line <span class="line-number">123</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -533,7 +581,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">commitTransaction</span> (line <span class="line-number">98</span>)
+		<span class="method-title">commitTransaction</span> (line <span class="line-number">128</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -556,7 +604,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">deleteRow</span> (line <span class="line-number">416</span>)
+		<span class="method-title">deleteRow</span> (line <span class="line-number">487</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -587,7 +635,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">deleteRows</span> (line <span class="line-number">422</span>)
+		<span class="method-title">deleteRows</span> (line <span class="line-number">493</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -660,11 +708,85 @@
 		
 			
 	</div>
+<a name="methodescapeIdentifier" id="escapeIdentifier"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">escapeIdentifier</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			escapeIdentifier
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$string</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbMysql.html#methodescapeIdentifier">DbMysql::escapeIdentifier()</a>
+								: Escapes the field name (to handle fields with special names, i.e. insert, select, update, now, date, etc)
+							</li>
+				</ul>
+	</div>
+<a name="methodescapeString" id="escapeString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">escapeString</span> (line <span class="line-number">75</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			escapeString
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$string</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPgsql.html#methodescapeString">DbPgsql::escapeString()</a>
+							</li>
+					<li>
+				<a href="../default/DbPdo.html#methodescapeString">DbPdo::escapeString()</a>
+							</li>
+					<li>
+				<a href="../default/DbMysql.html#methodescapeString">DbMysql::escapeString()</a>
+							</li>
+					<li>
+				<a href="../default/DbMssql.html#methodescapeString">DbMssql::escapeString()</a>
+							</li>
+				</ul>
+	</div>
 <a name="methodfetchCell" id="fetchCell"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchCell</span> (line <span class="line-number">180</span>)
+		<span class="method-title">fetchCell</span> (line <span class="line-number">239</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -695,7 +817,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchColumn</span> (line <span class="line-number">217</span>)
+		<span class="method-title">fetchColumn</span> (line <span class="line-number">276</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -726,7 +848,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchComplexMap</span> (line <span class="line-number">324</span>)
+		<span class="method-title">fetchComplexMap</span> (line <span class="line-number">383</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -760,7 +882,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchMap</span> (line <span class="line-number">289</span>)
+		<span class="method-title">fetchMap</span> (line <span class="line-number">348</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -797,7 +919,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchRow</span> (line <span class="line-number">188</span>)
+		<span class="method-title">fetchRow</span> (line <span class="line-number">247</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -828,7 +950,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchRows</span> (line <span class="line-number">201</span>)
+		<span class="method-title">fetchRows</span> (line <span class="line-number">260</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -859,7 +981,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">fetchSimpleMap</span> (line <span class="line-number">246</span>)
+		<span class="method-title">fetchSimpleMap</span> (line <span class="line-number">305</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -951,10 +1073,13 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
+				<a href="../default/DbPgsql.html#methodgetRequireds">DbPgsql::getRequireds()</a>
+							</li>
+					<li>
 				<a href="../default/DbMysql.html#methodgetRequireds">DbMysql::getRequireds()</a>
 							</li>
 					<li>
-				<a href="../default/DbPgsql.html#methodgetRequireds">DbPgsql::getRequireds()</a>
+				<a href="../default/DbMssql.html#methodgetRequireds">DbMssql::getRequireds()</a>
 							</li>
 				</ul>
 	</div>
@@ -962,7 +1087,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getSchema</span> (line <span class="line-number">75</span>)
+		<span class="method-title">getSchema</span> (line <span class="line-number">98</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -975,16 +1100,90 @@
 		<span class="method-name">
 			getSchema
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">'public'</span>])
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTableFieldInfo" id="getTableFieldInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableFieldInfo</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTableFieldInfo
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
-				<span class="var-name">$name</span>			</li>
+				<span class="var-name">$tableName</span>			</li>
 				</ul>
 		
 			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPgsql.html#methodgetTableFieldInfo">DbPgsql::getTableFieldInfo()</a>
+							</li>
+					<li>
+				<a href="../default/DbMysql.html#methodgetTableFieldInfo">DbMysql::getTableFieldInfo()</a>
+							</li>
+					<li>
+				<a href="../default/DbMssql.html#methodgetTableFieldInfo">DbMssql::getTableFieldInfo()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodgetTableNames" id="getTableNames"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableNames</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTableNames
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPgsql.html#methodgetTableNames">DbPgsql::getTableNames()</a>
+							</li>
+					<li>
+				<a href="../default/DbMysql.html#methodgetTableNames">DbMysql::getTableNames()</a>
+							</li>
+					<li>
+				<a href="../default/DbMssql.html#methodgetTableNames">DbMssql::getTableNames()</a>
+							</li>
+				</ul>
 	</div>
 <a name="methodinit" id="init"><!-- --></a>
 <div class="evenrow">
@@ -1012,10 +1211,10 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
-				<a href="../default/DbPdo.html#methodinit">DbPdo::init()</a>
+				<a href="../default/DbPgsql.html#methodinit">DbPgsql::init()</a>
 							</li>
 					<li>
-				<a href="../default/DbPgsql.html#methodinit">DbPgsql::init()</a>
+				<a href="../default/DbPdo.html#methodinit">DbPdo::init()</a>
 							</li>
 				</ul>
 	</div>
@@ -1023,7 +1222,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">insertArray</span> (line <span class="line-number">381</span>)
+		<span class="method-title">insertArray</span> (line <span class="line-number">440</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1059,7 +1258,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">insertRow</span> (line <span class="line-number">364</span>)
+		<span class="method-title">insertRow</span> (line <span class="line-number">423</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1093,29 +1292,32 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">query</span> (line <span class="line-number">116</span>)
+		<span class="method-title">query</span> (line <span class="line-number">160</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Escapes and inserts parameters into the the SQL statement and executes the statement.</p>
+<p class="description"><p>Syntax for parameters: <ul><li>:&lt;varname&gt;:string 	-- the variable is escaped as a string and replaces this entry</li><li>:&lt;varname&gt;:int 		-- the variable is escaped as a number and replaces this entry</li><li>:&lt;varname&gt;:keyword	-- the variable replaces this entry with no change</li><li>:&lt;varname&gt;:identifier	-- the variable is escaped as a SQL identifier (table, field name, etc) and replaces this entry</li><li>:&lt;varname&gt;			-- if no type is specified, variable is treated as a string.</li></ul></p></p>
 	<ul class="tags">
+				<li><span class="field">return:</span> Resultset object</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbResultSet.html">DbResultSet</a></span>
 		<span class="method-name">
 			query
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL statement to execute</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $variable =&gt; $value array of parameters to substitute into the SQL statement</span>			</li>
 				</ul>
 		
 			
@@ -1124,7 +1326,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">rollbackTransaction</span> (line <span class="line-number">103</span>)
+		<span class="method-title">rollbackTransaction</span> (line <span class="line-number">133</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1147,7 +1349,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">selsertRow</span> (line <span class="line-number">592</span>)
+		<span class="method-title">selsertRow</span> (line <span class="line-number">715</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1183,14 +1385,57 @@
 		
 			
 	</div>
-<a name="methodupdateRow" id="updateRow"><!-- --></a>
+<a name="methodtableExists" id="tableExists"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">updateRow</span> (line <span class="line-number">395</span>)
+		<span class="method-title">tableExists</span> (line <span class="line-number">103</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tableExists
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPgsql.html#methodtableExists">DbPgsql::tableExists()</a>
+							</li>
+					<li>
+				<a href="../default/DbMysql.html#methodtableExists">DbMysql::tableExists()</a>
+							</li>
+					<li>
+				<a href="../default/DbMssql.html#methodtableExists">DbMssql::tableExists()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodupdateRow" id="updateRow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateRow</span> (line <span class="line-number">460</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the given update SQL statement. This method throws an error if multiple rows are updated.</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -1200,28 +1445,29 @@
 		<span class="method-name">
 			updateRow
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL UPDATE statement</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $param =&gt; $value array of parameters to escape and substitute into the query</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodupdateRows" id="updateRows"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">updateRows</span> (line <span class="line-number">402</span>)
+		<span class="method-title">updateRows</span> (line <span class="line-number">473</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the given update SQL statement</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -1231,25 +1477,25 @@
 		<span class="method-name">
 			updateRows
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL UPDATE statement</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $param =&gt; $value array of parameters to escape and substitute into the query</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodupsertRow" id="upsertRow"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">upsertRow</span> (line <span class="line-number">560</span>)
+		<span class="method-title">upsertRow</span> (line <span class="line-number">687</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1279,13 +1525,60 @@
 		
 			
 	</div>
+<a name="method_query" id="_query"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_query</span> (line <span class="line-number">113</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the passed in SQL statement on the database and returns a result set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> object</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../default/DbResultSet.html">DbResultSet</a></span>
+		<span class="method-name">
+			_query
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL statement to execute</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/DbPgsql.html#method_query">DbPgsql::_query()</a>
+							</li>
+					<li>
+				<a href="../default/DbPdo.html#method_query">DbPdo::_query()</a>
+							</li>
+					<li>
+				<a href="../default/DbMysql.html#method_query">DbMysql::_query()</a>
+							</li>
+					<li>
+				<a href="../default/DbMssql.html#method_query">DbMssql::_query()</a>
+							</li>
+				</ul>
+	</div>
 						
 		</div>
 	</div>
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:04 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class DbModule</h2>
 
 <a name="sec-description"></a>
@@ -49,7 +49,17 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																												
+																												<div class="method-definition">
+					static 						<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+										<a href="#getConnection" title="details" class="method-name">getConnection</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+										<a href="#getDefaultConnection" title="details" class="method-name">getDefaultConnection</a>
+										()
+									</div>
+																
 												<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#configure" title="details" class="method-name">configure</a>
@@ -60,17 +70,7 @@
 										<a href="#getClasses" title="details" class="method-name">getClasses</a>
 										()
 									</div>
-																<div class="method-definition">
-											<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
-										<a href="#getConnection" title="details" class="method-name">getConnection</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
-										<a href="#getDefaultConnection" title="details" class="method-name">getDefaultConnection</a>
-										()
-									</div>
-																<div class="method-definition">
+																																<div class="method-definition">
 											<span class="method-result">array</span>
 										<a href="#getIncludes" title="details" class="method-name">getIncludes</a>
 										()
@@ -92,7 +92,7 @@
 							
 					</div>
 		<div class="info-box-body">
-										<h4>Inherited Variables</h4>
+										<h4>Inherited Variables</h4>
 				<A NAME='inherited_vars'><!-- --></A>
 									<p>Inherited from <span class="classname"><a href="../default/ZoopModule.html">ZoopModule</a></span></p>
 					<blockquote>
@@ -115,12 +115,61 @@
 		</div>
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
-
-<a name="methodconfigure" id="configure"><!-- --></a>
+<a name="methodgetConnection" id="getConnection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getConnection</span> (line <span class="line-number">12</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbConnection object to the database called &quot;$name&quot;</p>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+		<span class="method-name">
+			getConnection
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetDefaultConnection" id="getDefaultConnection"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">configure</span> (line <span class="line-number">56</span>)
+		<span class="method-title">static method getDefaultConnection</span> (line <span class="line-number">24</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbConnection object for the default database connection</p>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+		<span class="method-name">
+			getDefaultConnection
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="methodconfigure" id="configure"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">configure</span> (line <span class="line-number">58</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -143,7 +192,7 @@
 			
 	</div>
 <a name="methodgetClasses" id="getClasses"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">getClasses</span> (line <span class="line-number">45</span>)
@@ -168,55 +217,8 @@
 					</dl>
 			
 	</div>
-<a name="methodgetConnection" id="getConnection"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">getConnection</span> (line <span class="line-number">12</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Returns a DbConnection object to the database called &quot;$name&quot;</p>
-	
-	<div class="method-signature">
-		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
-		<span class="method-name">
-			getConnection
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">$name</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetDefaultConnection" id="getDefaultConnection"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">getDefaultConnection</span> (line <span class="line-number">24</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Returns a DbConnection object for the default database connection</p>
-	
-	<div class="method-signature">
-		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
-		<span class="method-name">
-			getDefaultConnection
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
 <a name="methodgetIncludes" id="getIncludes"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">getIncludes</span> (line <span class="line-number">34</span>)
@@ -266,7 +268,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:04 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

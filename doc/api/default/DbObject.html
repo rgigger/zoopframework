@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class DbObject</h2>
 
 <a name="sec-description"></a>
@@ -93,11 +93,11 @@
 					<a href="#$keyAssignedBy" title="details" class="var-name">$keyAssignedBy</a>
 				</div>
 																<div class="var-title">
-					<span class="var-type">mixed</span>
+					<span class="var-type">array</span>
 					<a href="#$primaryKey" title="details" class="var-name">$primaryKey</a>
 				</div>
 																<div class="var-title">
-					<span class="var-type">mixed</span>
+					<span class="var-type">string</span>
 					<a href="#$tableName" title="details" class="var-name">$tableName</a>
 				</div>
 											</div>
@@ -118,25 +118,25 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																				<div class="method-definition">
-					static 						<span class="method-result">void</span>
+																																																																																																																																																																																																																				<div class="method-definition">
+					static 						<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
 										<a href="#_create" title="details" class="method-name">_create</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result">array</span>
 										<a href="#_find" title="details" class="method-name">_find</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>], [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result">array</span>
 										<a href="#_findBySql" title="details" class="method-name">_findBySql</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result">array</span>
 										<a href="#_findByWhere" title="details" class="method-name">_findByWhere</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
@@ -144,23 +144,33 @@
 											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
-					static 						<span class="method-result">void</span>
+					static 						<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
 										<a href="#_getOne" title="details" class="method-name">_getOne</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#_getTableName" title="details" class="method-name">_getTableName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#_insert" title="details" class="method-name">_insert</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$values</span>)
 									</div>
 																								
 												<div class="method-definition">
 											<span class="method-result">DbObject</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
+										<a href="#belongsTo" title="details" class="method-name">belongsTo</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
 										<a href="#current" title="details" class="method-name">current</a>
 										()
 									</div>
@@ -171,23 +181,63 @@
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
+										<a href="#fieldOptions" title="details" class="method-name">fieldOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#forceFields" title="details" class="method-name">forceFields</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+										<a href="#getDb" title="details" class="method-name">getDb</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getField" title="details" class="method-name">getField</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">assoc_array</span>
 										<a href="#getFields" title="details" class="method-name">getFields</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">mixed</span>
 										<a href="#getId" title="details" class="method-name">getId</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">array</span>
+										<a href="#getPrimaryKey" title="details" class="method-name">getPrimaryKey</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../default/DbTable.html">DbTable</a></span>
+										<a href="#getSchema" title="details" class="method-name">getSchema</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
 										<a href="#getString" title="details" class="method-name">getString</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#getTableName" title="details" class="method-name">getTableName</a>
 										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#hasMany" title="details" class="method-name">hasMany</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#hasOne" title="details" class="method-name">hasOne</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -195,18 +245,23 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#key" title="details" class="method-name">key</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">mixed</span>
 										<a href="#next" title="details" class="method-name">next</a>
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">boolean</span>
 										<a href="#persisted" title="details" class="method-name">persisted</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#primaryKeyAssignedByDb" title="details" class="method-name">primaryKeyAssignedByDb</a>
 										()
 									</div>
 																<div class="method-definition">
@@ -222,22 +277,22 @@
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#setFields" title="details" class="method-name">setFields</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+											(<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$data</span>)
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">boolean</span>
 										<a href="#valid" title="details" class="method-name">valid</a>
 										()
 									</div>
-																																																																								<div class="method-definition">
-											<span class="method-result">void</span>
+																																																																																<div class="method-definition">
+											<span class="method-result">mixed</span>
 										<a href="#__get" title="details" class="method-name">__get</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$varname</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$varname</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#__set" title="details" class="method-name">__set</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$varname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$varname</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
 									</div>
 								</div>
 		</div>
@@ -259,13 +314,13 @@
 					</div>
 		<div class="info-box-body">
 			<a name="var$keyAssignedBy" id="$keyAssignedBy"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<span class="var-title">
 			<span class="var-type">mixed</span>
 			<span class="var-name">$keyAssignedBy</span>
-						(line <span class="line-number">6</span>)
+						(line <span class="line-number">17</span>)
 		</span>
 	</div>
 
@@ -280,17 +335,18 @@
 
 </div>
 <a name="var$primaryKey" id="$primaryKey"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<span class="var-title">
-			<span class="var-type">mixed</span>
+			<span class="var-type">array</span>
 			<span class="var-name">$primaryKey</span>
-						(line <span class="line-number">5</span>)
+						(line <span class="line-number">16</span>)
 		</span>
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The field name(s) of the primary key in an array</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> protected</li>
 			</ul>
@@ -301,17 +357,18 @@
 
 </div>
 <a name="var$tableName" id="$tableName"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<span class="var-title">
-			<span class="var-type">mixed</span>
+			<span class="var-type">string</span>
 			<span class="var-name">$tableName</span>
-						(line <span class="line-number">4</span>)
+						(line <span class="line-number">9</span>)
 		</span>
 	</div>
 
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The assigned name of the table (defaults to the class name translated by the getDefaultTableName</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> protected</li>
 			</ul>
@@ -321,7 +378,7 @@
 		
 
 </div>
-						
+						
 		</div>
 	</div>
 	
@@ -339,148 +396,158 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 <a name="method_create" id="_create"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _create</span> (line <span class="line-number">413</span>)
+		<span class="method-title">static method _create</span> (line <span class="line-number">639</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Static method creates a new DbObject by name.  There must be a class that inherits from DbObject of the name &quot;className&quot; for this to work.</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
 		<span class="method-name">
 			_create
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the DbObject class to use</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: Associative array of $fieldName =&gt; $value to store in the table</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="method_find" id="_find"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _find</span> (line <span class="line-number">447</span>)
+		<span class="method-title">static method _find</span> (line <span class="line-number">703</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Searches the database and returns an array of DbObjects each representing a record in the resultset</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> of DbObject (s)</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			_find
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>], [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">NULL</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the DbObject class to retreive</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: $field =&gt; $value array of conditions to search on (currently only &quot;=&quot; operator is supported)</span>			</li>
+					<li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $param =&gt; $value array of parameters to be passed to generateSelectInfo</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="method_findBySql" id="_findBySql"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _findBySql</span> (line <span class="line-number">425</span>)
+		<span class="method-title">static method _findBySql</span> (line <span class="line-number">665</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of DbObjects each representing a row in the database returned by the given SQL statement</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> of DbObject</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			_findBySql
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the DbObject class to retreive</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$sql</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: SQL select statement to use to search</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $param =&gt; $value array with parameters to be substituted into the SQL statement</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="method_findByWhere" id="_findByWhere"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _findByWhere</span> (line <span class="line-number">441</span>)
+		<span class="method-title">static method _findByWhere</span> (line <span class="line-number">689</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of DbObjects each representing a row in the database returned by selecting on the DbObject specified with the given WHERE clause</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> of DbObject</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			_findByWhere
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$params</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the DbObject class to retreive</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$where</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$where</span><span class="var-description">: SQL &quot;where&quot; clause (minus the &quot;where &quot; at the beginning) to select on</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$params</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$params</span><span class="var-description">: $param =&gt; $value array with parameters to be substituted into the WHERE clause</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="method_findOne" id="_findOne"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _findOne</span> (line <span class="line-number">472</span>)
+		<span class="method-title">static method _findOne</span> (line <span class="line-number">718</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Retrieve one object from the database and map it to an object</p>
+<p class="short-description">Retrieve one object from the database and map it to an object.  Throws an error if more than one row is returned.</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -506,33 +573,65 @@
 			
 	</div>
 <a name="method_getOne" id="_getOne"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _getOne</span> (line <span class="line-number">484</span>)
+		<span class="method-title">static method _getOne</span> (line <span class="line-number">737</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves a DbObject from the given table with a row in it, creating the row if neccesary</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 	    static
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../default/DbObject.html">DbObject</a></span>
 		<span class="method-name">
 			_getOne
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$conditions</span> = <span class="var-default">NULL</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: name of the DbObject class to return an instance of</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$conditions</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$conditions</span><span class="var-description">: $field =&gt; $value for generating the where clause to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getTableName" id="_getTableName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method _getTableName</span> (line <span class="line-number">625</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the name of the SQL table based on the name of the DbObject class</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Name of the SQL table to link to</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getTableName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
 				</ul>
 		
 			
@@ -541,10 +640,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method _insert</span> (line <span class="line-number">420</span>)
+		<span class="method-title">static method _insert</span> (line <span class="line-number">652</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inserts a row into the table associated with the given DbObject class</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -555,16 +655,16 @@
 		<span class="method-name">
 			_insert
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$values</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$values</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$className</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the DbObject class</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$values</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$values</span><span class="var-description">: $field =&gt; $value array to be inserted into the database (must contain all required fields or a SQL error will be generated)</span>			</li>
 				</ul>
 		
 			
@@ -574,41 +674,75 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">17</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">40</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This is the constructor.  (honest, I swear)</p>
+<p class="description"><p>Some things to know about the defaults defined by this constructor:  Default primary key: id  Default keyAssignedBy: keyAssignedBy_db</p><p>If keyAssignedBy is keyAssignedBy_db the primary_key array can contain no more than one field</p></p>
 	
 	<div class="method-signature">
 		<span class="method-result">DbObject</span>
 		<span class="method-name">
 			__construct
 		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$init</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$init</span><span class="var-description">: Initial value for the primary key field (if this is supplied there can be only one field in the primary key)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbelongsTo" id="belongsTo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">belongsTo</span> (line <span class="line-number">484</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			belongsTo
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type"></span>
-				<span class="var-name">$init</span>			</li>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
 				</ul>
 		
 			
 	</div>
 <a name="methodcurrent" id="current"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">current</span> (line <span class="line-number">363</span>)
+		<span class="method-title">current</span> (line <span class="line-number">549</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the value of the column that the internal pointer is at</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			current
 		</span>
@@ -624,13 +758,14 @@
 			
 	</div>
 <a name="methoddestroy" id="destroy"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">destroy</span> (line <span class="line-number">246</span>)
+		<span class="method-title">destroy</span> (line <span class="line-number">437</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the record from the database, deletes all fields and values from memory, and unbinds the DbObject</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -646,20 +781,133 @@
 		
 			
 	</div>
-<a name="methodgetFields" id="getFields"><!-- --></a>
-<div class="evenrow">
+<a name="methodfieldOptions" id="fieldOptions"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getFields</span> (line <span class="line-number">91</span>)
+		<span class="method-title">fieldOptions</span> (line <span class="line-number">489</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fieldOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodforceFields" id="forceFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">forceFields</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loops through all the fields in the associated table and ensures a default NULL value for each of them in the class</p>
+<p class="description"><p>This feature only works with DbConnection objects that have full schema support implemented</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
+		<span class="method-name">
+			forceFields
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDb" id="getDb"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDb</span> (line <span class="line-number">182</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the connection associated with the DbObject</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> DbConnection object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../default/DbConnection.html">DbConnection</a></span>
+		<span class="method-name">
+			getDb
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetField" id="getField"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getField</span> (line <span class="line-number">219</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the value of the specified field</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> String value of the field</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getField
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: Field to retreive</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFields" id="getFields"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFields</span> (line <span class="line-number">198</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a $field =&gt; $value array containing all the fields and their values</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> assoc_array containing all fields and values</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">assoc_array</span>
 		<span class="method-name">
 			getFields
 		</span>
@@ -670,19 +918,20 @@
 			
 	</div>
 <a name="methodgetId" id="getId"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getId</span> (line <span class="line-number">70</span>)
+		<span class="method-title">getId</span> (line <span class="line-number">112</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the value of the primary key of the record that this object is associated with.  An error will be thrown if there is more than one primary key.</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			getId
 		</span>
@@ -692,20 +941,72 @@
 		
 			
 	</div>
-<a name="methodgetString" id="getString"><!-- --></a>
-<div class="evenrow">
+<a name="methodgetPrimaryKey" id="getPrimaryKey"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getString</span> (line <span class="line-number">76</span>)
+		<span class="method-title">getPrimaryKey</span> (line <span class="line-number">123</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the field name(s) in the primary key in an array</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> of field names</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getPrimaryKey
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSchema" id="getSchema"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSchema</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a DbTable object with scheme information for the associated table (if supported by your database)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> DbTable object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../default/DbTable.html">DbTable</a></span>
+		<span class="method-name">
+			getSchema
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetString" id="getString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getString</span> (line <span class="line-number">168</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Serializes all column names and values and returns them in a string of the format &quot;&lt;DbObject class&gt;: &lt;field&gt; =&gt; &lt;value&gt; &lt;field&gt; =&gt; &lt;value&gt; ...&quot;</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
 		<span class="method-name">
 			getString
 		</span>
@@ -716,19 +1017,20 @@
 			
 	</div>
 <a name="methodgetTableName" id="getTableName"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getTableName</span> (line <span class="line-number">65</span>)
+		<span class="method-title">getTableName</span> (line <span class="line-number">102</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the name of the table associated with the db object</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			getTableName
 		</span>
@@ -738,14 +1040,77 @@
 		
 			
 	</div>
-<a name="methodinit" id="init"><!-- --></a>
-<div class="evenrow">
+<a name="methodhasMany" id="hasMany"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">init</span> (line <span class="line-number">49</span>)
+		<span class="method-title">hasMany</span> (line <span class="line-number">471</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			hasMany
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasOne" id="hasOne"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasOne</span> (line <span class="line-number">479</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			hasOne
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinit" id="init"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">init</span> (line <span class="line-number">76</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This is a second stage constructor that should be overridden in individual database objects to initialize the instance</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> protected</li>
 			</ul>
@@ -762,19 +1127,21 @@
 			
 	</div>
 <a name="methodkey" id="key"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">key</span> (line <span class="line-number">369</span>)
+		<span class="method-title">key</span> (line <span class="line-number">560</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the name of the column the internal pointer is at</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> Column Name</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			key
 		</span>
@@ -790,19 +1157,21 @@
 			
 	</div>
 <a name="methodnext" id="next"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">next</span> (line <span class="line-number">375</span>)
+		<span class="method-title">next</span> (line <span class="line-number">571</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moves the internal pointer to the next column and returns the value of that column</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> Value of the next column</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			next
 		</span>
@@ -818,21 +1187,48 @@
 			
 	</div>
 <a name="methodpersisted" id="persisted"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">persisted</span> (line <span class="line-number">203</span>)
+		<span class="method-title">persisted</span> (line <span class="line-number">381</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if this DbObject is (and can be) saved in the database</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> True if the DbObject is/can be saved in the DB</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">boolean</span>
 		<span class="method-name">
 			persisted
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprimaryKeyAssignedByDb" id="primaryKeyAssignedByDb"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">primaryKeyAssignedByDb</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if this DbObject class is set to use primary keys generated by the database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the database automatically generates primary keys</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			primaryKeyAssignedByDb
 		</span>
 				()
 			</div>
@@ -844,10 +1240,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">rewind</span> (line <span class="line-number">358</span>)
+		<span class="method-title">rewind</span> (line <span class="line-number">539</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the internal pointer to the first column</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -872,10 +1269,11 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">save</span> (line <span class="line-number">211</span>)
+		<span class="method-title">save</span> (line <span class="line-number">393</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Saves the record in memory</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -895,10 +1293,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setFields</span> (line <span class="line-number">96</span>)
+		<span class="method-title">setFields</span> (line <span class="line-number">208</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accepts a $field =&gt; $value array containing fields and their values to be set in this DbObject</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -908,13 +1307,13 @@
 		<span class="method-name">
 			setFields
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+					(<span class="var-type">assoc_array</span>&nbsp;<span class="var-name">$data</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$data</span>			</li>
+				<span class="var-type">assoc_array</span>
+				<span class="var-name">$data</span><span class="var-description">: $field =&gt; $value associative array with data to be stored in this object</span>			</li>
 				</ul>
 		
 			
@@ -923,16 +1322,18 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">valid</span> (line <span class="line-number">381</span>)
+		<span class="method-title">valid</span> (line <span class="line-number">582</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if this DbObject is successfully bound to a row in the database</p>
 	<ul class="tags">
+				<li><span class="field">return:</span> True if the object is bound to a row in the database</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">boolean</span>
 		<span class="method-name">
 			valid
 		</span>
@@ -951,23 +1352,27 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">__get</span> (line <span class="line-number">326</span>)
+		<span class="method-title">__get</span> (line <span class="line-number">508</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatic getter: maps unknown variables to database fields</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Value of the given database field</li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">mixed</span>
 		<span class="method-name">
 			__get
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$varname</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$varname</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$varname</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$varname</span><span class="var-description">: Name of the database field to get the value of</span>			</li>
 				</ul>
 		
 			
@@ -976,26 +1381,27 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">__set</span> (line <span class="line-number">342</span>)
+		<span class="method-title">__set</span> (line <span class="line-number">522</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Automatic setter: maps unknown variables to database fields</p>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
 			__set
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$varname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$varname</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$varname</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$varname</span><span class="var-description">: Name of the database field to set the value of</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$value</span>			</li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: New value for the given database field</span>			</li>
 				</ul>
 		
 			
@@ -1026,7 +1432,7 @@
 		<span class="const-title">
 			<span class="const-name">keyAssignedBy_auto</span>
 			 = <span class="const-default"> 3</span>
-			(line <span class="line-number">15</span>)
+			(line <span class="line-number">27</span>)
 		</span>
 	</div>
 
@@ -1042,7 +1448,7 @@
 		<span class="const-title">
 			<span class="const-name">keyAssignedBy_db</span>
 			 = <span class="const-default"> 1</span>
-			(line <span class="line-number">13</span>)
+			(line <span class="line-number">25</span>)
 		</span>
 	</div>
 
@@ -1058,7 +1464,7 @@
 		<span class="const-title">
 			<span class="const-name">keyAssignedBy_dev</span>
 			 = <span class="const-default"> 2</span>
-			(line <span class="line-number">14</span>)
+			(line <span class="line-number">26</span>)
 		</span>
 	</div>
 
@@ -1066,12 +1472,12 @@
 	
 	
 </div>
-						
+						
 		</div>
 	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:04 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

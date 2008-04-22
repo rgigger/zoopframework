@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class Zend_Pdf_Element</h2>
 
 <a name="sec-description"></a>
@@ -58,27 +58,9 @@
 					<th class="class-table-header">Description</th>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Array.html">Zend_Pdf_Element_Array</a></td>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_String.html">Zend_Pdf_Element_String</a></td>
 					<td>
-											PDF file 'array' element implementation
-										</td>
-				</tr>
-								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html">Zend_Pdf_Element_Boolean</a></td>
-					<td>
-											PDF file 'boolean' element implementation
-										</td>
-				</tr>
-								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></td>
-					<td>
-											PDF file 'dictionary' element implementation
-										</td>
-				</tr>
-								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Name.html">Zend_Pdf_Element_Name</a></td>
-					<td>
-											PDF file 'name' element implementation
+											PDF file 'string' element implementation
 										</td>
 				</tr>
 								<tr>
@@ -94,27 +76,45 @@
 										</td>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Object.html">Zend_Pdf_Element_Object</a></td>
-					<td>
-											PDF file 'indirect object' element implementation
-										</td>
-				</tr>
-								<tr>
 					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html">Zend_Pdf_Element_Reference</a></td>
 					<td>
 											PDF file 'reference' element implementation
 										</td>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Stream.html">Zend_Pdf_Element_Stream</a></td>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Object.html">Zend_Pdf_Element_Object</a></td>
 					<td>
-											PDF file 'stream' element implementation
+											PDF file 'indirect object' element implementation
 										</td>
 				</tr>
 								<tr>
-					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_String.html">Zend_Pdf_Element_String</a></td>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html">Zend_Pdf_Element_Boolean</a></td>
 					<td>
-											PDF file 'string' element implementation
+											PDF file 'boolean' element implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html">Zend_Pdf_Element_Dictionary</a></td>
+					<td>
+											PDF file 'dictionary' element implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Array.html">Zend_Pdf_Element_Array</a></td>
+					<td>
+											PDF file 'array' element implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Name.html">Zend_Pdf_Element_Name</a></td>
+					<td>
+											PDF file 'name' element implementation
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Pdf/Zend_Pdf_Element_Stream.html">Zend_Pdf_Element_Stream</a></td>
+					<td>
+											PDF file 'stream' element implementation
 										</td>
 				</tr>
 							</table>
@@ -242,7 +242,7 @@
 			<A NAME='method_detail'></A>
 
 <a name="methodcleanUp" id="cleanUp"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">cleanUp</span> (line <span class="line-number">111</span>)
@@ -268,6 +268,10 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodcleanUp">Zend_Pdf_Element_Reference::cleanUp()</a>
+								: Clean up resources
+							</li>
+					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Object.html#methodcleanUp">Zend_Pdf_Element_Object::cleanUp()</a>
 								: Clean up resources, used by object
 							</li>
@@ -275,14 +279,10 @@
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Object_Stream.html#methodcleanUp">Zend_Pdf_Element_Object_Stream::cleanUp()</a>
 								: Clean up resources, used by object
 							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodcleanUp">Zend_Pdf_Element_Reference::cleanUp()</a>
-								: Clean up resources
-							</li>
 				</ul>
 	</div>
 <a name="methodgetParentObject" id="getParentObject"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">getParentObject</span> (line <span class="line-number">89</span>)
@@ -306,7 +306,7 @@
 			
 	</div>
 <a name="methodgetType" id="getType"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">getType</span> (line <span class="line-number">59</span>)
@@ -334,19 +334,7 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Array.html#methodgetType">Zend_Pdf_Element_Array::getType()</a>
-								: Return type of the element.
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html#methodgetType">Zend_Pdf_Element_Boolean::getType()</a>
-								: Return type of the element.
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html#methodgetType">Zend_Pdf_Element_Dictionary::getType()</a>
-								: Return type of the element.
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Name.html#methodgetType">Zend_Pdf_Element_Name::getType()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_String.html#methodgetType">Zend_Pdf_Element_String::getType()</a>
 								: Return type of the element.
 							</li>
 					<li>
@@ -358,25 +346,37 @@
 								: Return type of the element.
 							</li>
 					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodgetType">Zend_Pdf_Element_Reference::getType()</a>
+								: Return type of the element.
+							</li>
+					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Object.html#methodgetType">Zend_Pdf_Element_Object::getType()</a>
 								: Return type of the element.
 							</li>
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodgetType">Zend_Pdf_Element_Reference::getType()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html#methodgetType">Zend_Pdf_Element_Boolean::getType()</a>
+								: Return type of the element.
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html#methodgetType">Zend_Pdf_Element_Dictionary::getType()</a>
+								: Return type of the element.
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Array.html#methodgetType">Zend_Pdf_Element_Array::getType()</a>
+								: Return type of the element.
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Name.html#methodgetType">Zend_Pdf_Element_Name::getType()</a>
 								: Return type of the element.
 							</li>
 					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Stream.html#methodgetType">Zend_Pdf_Element_Stream::getType()</a>
 								: Return type of the element.
 							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_String.html#methodgetType">Zend_Pdf_Element_String::getType()</a>
-								: Return type of the element.
-							</li>
 				</ul>
 	</div>
 <a name="methodsetParentObject" id="setParentObject"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">setParentObject</span> (line <span class="line-number">78</span>)
@@ -408,7 +408,7 @@
 			
 	</div>
 <a name="methodtoString" id="toString"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">toString</span> (line <span class="line-number">70</span>)
@@ -441,19 +441,11 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Array.html#methodtoString">Zend_Pdf_Element_Array::toString()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_String.html#methodtoString">Zend_Pdf_Element_String::toString()</a>
 								: Return object as string
 							</li>
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html#methodtoString">Zend_Pdf_Element_Boolean::toString()</a>
-								: Return object as string
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html#methodtoString">Zend_Pdf_Element_Dictionary::toString()</a>
-								: Return object as string
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Name.html#methodtoString">Zend_Pdf_Element_Name::toString()</a>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_String_Binary.html#methodtoString">Zend_Pdf_Element_String_Binary::toString()</a>
 								: Return object as string
 							</li>
 					<li>
@@ -465,29 +457,37 @@
 								: Return object as string
 							</li>
 					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodtoString">Zend_Pdf_Element_Reference::toString()</a>
+								: Return reference to the object
+							</li>
+					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Object.html#methodtoString">Zend_Pdf_Element_Object::toString()</a>
 								: Return reference to the object
 							</li>
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodtoString">Zend_Pdf_Element_Reference::toString()</a>
-								: Return reference to the object
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Boolean.html#methodtoString">Zend_Pdf_Element_Boolean::toString()</a>
+								: Return object as string
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Dictionary.html#methodtoString">Zend_Pdf_Element_Dictionary::toString()</a>
+								: Return object as string
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Array.html#methodtoString">Zend_Pdf_Element_Array::toString()</a>
+								: Return object as string
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Name.html#methodtoString">Zend_Pdf_Element_Name::toString()</a>
+								: Return object as string
 							</li>
 					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Stream.html#methodtoString">Zend_Pdf_Element_Stream::toString()</a>
 								: Return object as string
 							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_String.html#methodtoString">Zend_Pdf_Element_String::toString()</a>
-								: Return object as string
-							</li>
-					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_String_Binary.html#methodtoString">Zend_Pdf_Element_String_Binary::toString()</a>
-								: Return object as string
-							</li>
 				</ul>
 	</div>
 <a name="methodtouch" id="touch"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">touch</span> (line <span class="line-number">101</span>)
@@ -514,12 +514,12 @@
 		<div class="notes">Redefined in descendants as:</div>
 		<ul class="redefinitions">
 					<li>
-				<a href="../Zend_Pdf/Zend_Pdf_Element_Object.html#methodtouch">Zend_Pdf_Element_Object::touch()</a>
-								: Mark object as modified, to include it into new PDF file segment
-							</li>
-					<li>
 				<a href="../Zend_Pdf/Zend_Pdf_Element_Reference.html#methodtouch">Zend_Pdf_Element_Reference::touch()</a>
 								: Mark object as modified, to include it into new PDF file segment.
+							</li>
+					<li>
+				<a href="../Zend_Pdf/Zend_Pdf_Element_Object.html#methodtouch">Zend_Pdf_Element_Object::touch()</a>
+								: Mark object as modified, to include it into new PDF file segment
 							</li>
 				</ul>
 	</div>
@@ -542,7 +542,7 @@
 					</div>
 		<div class="info-box-body">
 			<a name="constTYPE_ARRAY" id="TYPE_ARRAY"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -558,7 +558,7 @@
 	
 </div>
 <a name="constTYPE_BOOL" id="TYPE_BOOL"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -574,7 +574,7 @@
 	
 </div>
 <a name="constTYPE_DICTIONARY" id="TYPE_DICTIONARY"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -590,7 +590,7 @@
 	
 </div>
 <a name="constTYPE_NAME" id="TYPE_NAME"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -606,7 +606,7 @@
 	
 </div>
 <a name="constTYPE_NULL" id="TYPE_NULL"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -622,7 +622,7 @@
 	
 </div>
 <a name="constTYPE_NUMERIC" id="TYPE_NUMERIC"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -638,7 +638,7 @@
 	
 </div>
 <a name="constTYPE_STREAM" id="TYPE_STREAM"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -654,7 +654,7 @@
 	
 </div>
 <a name="constTYPE_STRING" id="TYPE_STRING"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
@@ -669,12 +669,12 @@
 	
 	
 </div>
-						
+						
 		</div>
 	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:24 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:05 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
-			<div class="page-body">			
+			<div class="page-body">			
 <h2 class="class-name">Class Config</h2>
 
 <a name="sec-description"></a>
@@ -21,8 +21,10 @@
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configuration class</p>
+<p class="description"><p>Provides methods for retrieving configuration options from a YAML config file.</p></p>
 		<p class="notes">
-			Located in <a class="field" href="_config---Config.php.html">/config/Config.php</a> (line <span class="field">2</span>)
+			Located in <a class="field" href="_config---Config.php.html">/config/Config.php</a> (line <span class="field">8</span>)
 		</p>
 		
 				
@@ -66,7 +68,7 @@
 																<div class="method-definition">
 					static 						<span class="method-result">void</span>
 										<a href="#setConfigFile" title="details" class="method-name">setConfigFile</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
 									</div>
 																<div class="method-definition">
 					static 						<span class="method-result">void</span>
@@ -93,7 +95,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method get</span> (line <span class="line-number">41</span>)
+		<span class="method-title">static method get</span> (line <span class="line-number">56</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -114,7 +116,7 @@
 			<ul class="parameters">
 					<li>
 				<span class="var-type">string</span>
-				<span class="var-name">$path</span>			</li>
+				<span class="var-name">$path</span><span class="var-description">: Path for which to fetch options</span>			</li>
 				</ul>
 		
 			
@@ -123,7 +125,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method getReference</span> (line <span class="line-number">55</span>)
+		<span class="method-title">static method getReference</span> (line <span class="line-number">70</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -149,7 +151,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method insist</span> (line <span class="line-number">16</span>)
+		<span class="method-title">static method insist</span> (line <span class="line-number">22</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -181,10 +183,11 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method load</span> (line <span class="line-number">27</span>)
+		<span class="method-title">static method load</span> (line <span class="line-number">42</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads the config file specified by the $file member variable (or app_dir/config.yaml)</p>
 	
 	<div class="method-signature">
 	    static
@@ -202,10 +205,11 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method setConfigFile</span> (line <span class="line-number">22</span>)
+		<span class="method-title">static method setConfigFile</span> (line <span class="line-number">33</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specify configuration file to use</p>
 	
 	<div class="method-signature">
 	    static
@@ -213,13 +217,13 @@
 		<span class="method-name">
 			setConfigFile
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$file</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$file</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: Path and filename of the config file to use</span>			</li>
 				</ul>
 		
 			
@@ -228,7 +232,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">static method suggest</span> (line <span class="line-number">7</span>)
+		<span class="method-title">static method suggest</span> (line <span class="line-number">13</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -263,7 +267,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Sun, 06 Apr 2008 17:19:22 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+		Documentation generated on Tue, 22 Apr 2008 00:51:02 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
-</html>
+</html>

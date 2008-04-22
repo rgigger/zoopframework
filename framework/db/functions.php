@@ -12,7 +12,6 @@ function SqlEchoOn()
 /**
  * Turn off echoing of sql statements
  *
- * @return nothing
  */
 function SqlEchoOff()
 {
@@ -22,7 +21,6 @@ function SqlEchoOff()
 /**
  * Begin a transaction (not all database engines support transactions)
  *
- * @return nothing
  */
 function SqlBeginTransaction()
 {
@@ -32,7 +30,6 @@ function SqlBeginTransaction()
 /**
  * Commit a transaction (not all database engines support transactions)
  *
- * @return nothing
  */
 function SqlCommitTransaction()
 {
@@ -40,11 +37,11 @@ function SqlCommitTransaction()
 }
 
 /**
- * Executes a database query.  $params must be a $key => $value array of values to substitute into $sql 
- * 
+ * Executes a database query.  $params must be a $key => $value array of values to substitute into $sql
+ *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
  * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
- * @return DbResultSet
+ * @return DbResultSet DbResultSet object
  */
 function SqlQuery($sql, $params)
 {
@@ -65,7 +62,7 @@ function SqlGetSchema()
 /**
  * Executes a SQL statement to alter the schema
  * Unlike SqlQuery, this doesn't return a DbResultSet or accept parameters
- * 
+ *
  * @param string $sql SQL query to execute
  * @returns nothing
  */
@@ -76,7 +73,7 @@ function SqlAlterSchema($sql)
 
 /**
  * Executes the given query and returns the value of the first cell in the first row of the resultset.
- * 
+ *
  * An error will occur if the query returns more than one row.
  *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
@@ -90,9 +87,9 @@ function SqlFetchCell($sql, $params)
 
 /**
  * Executes the given query and returns the first row of the resultset.
- * 
+ *
  * An error will occur if the query returns more than one row.
- * 
+ *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
  * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
  * @return array row data or false if no record returned
@@ -136,7 +133,7 @@ function SqlFetchRows($sql, $params)
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
  * @param array $mapFields array of fields to group the results by
  * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
- * @return associative array structure grouped by the values in $mapFields 
+ * @return associative array structure grouped by the values in $mapFields
  */
 function SqlFetchMap($sql, $mapFields, $params)
 {
@@ -145,15 +142,15 @@ function SqlFetchMap($sql, $mapFields, $params)
 
 /**
  * Creates a simple nested array structure grouping the values of the $valueField column by the values of the columns specified in the $keyFields array.
- * 
+ *
  * For example, if your query returns a list of books and you'd like to group the titles by subject and isbn number, let $keyFields = array("subject", "isbn") and $valueField = "title".
- * The format thus created will be $var[$subject][$isbn] = $title;  
+ * The format thus created will be $var[$subject][$isbn] = $title;
  *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
  * @param array $keyFields array of fields to group the results by
  * @param array $valueField name of the field containing the value to be grouped
  * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
- * @return associative array structure grouped by the values in $mapFields 
+ * @return associative array structure grouped by the values in $mapFields
  */
 function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
 {
@@ -175,7 +172,7 @@ function SqlInsertArray($tableName, $values, $serial = true)
 
 /**
  * Executes an update statement on the database (identical to SqlUpdateRow)
- * 
+ *
  * Unlike SqlQuery, this method does not return a DbResultSet objects
  *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
@@ -202,10 +199,10 @@ function SqlModifyRowValues($tableName, $values)
 }
 
 /**
- * Execute an insert statement 
+ * Execute an insert statement
  *
  * Unlike SqlQuery, this method does not return a DbResultSet
- * 
+ *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
  * @param array($key=>$value) $params ($key => value) array of parameters to substitute into the SQL query. If you are not passing parameters in, params should be an empty array()
  * @return number Number of affected rows (not all database engines support this)
@@ -229,7 +226,7 @@ function SqlInsertRowValues($tableName, $values)
 
 /**
  * Executes an update statement on the database
- * 
+ *
  * Unlike the method query(), this method does not return a DbResultSet objects
  *
  * @param string $sql SQL query with parameters in the format ":variablename" or ":variablename:datatype"
