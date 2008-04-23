@@ -24,16 +24,32 @@ class DbMysql extends DbConnection
 		return "`" . $fieldName . "`";
 	}
 
+	/**
+	 * Checks if a given table exists in the database
+	 *
+	 * @param string $name Name of the table to look for
+	 * @return boolean True if the table exists in this database
+	 */
 	public function tableExists($name)
 	{
 		trigger_error("tableExists method not yet implemented in DbMysql");
 	}
 
+	/**
+	 * Returns an array of table names that exist in the database
+	 *
+	 * @return array Array of table names
+	 */
 	public function getTableNames()
 	{
 		trigger_error("getTableNames is not yet implemented in DbMysql");
 	}
 
+	/**
+	 * Returns field information about the specified table
+	 *
+	 * @param string $tableName Name of the table to return information about
+	 */
 	public function getTableFieldInfo($tableName)
 	{
 		trigger_error("getTableFieldInfo is not yet implemented in DbMysql");

@@ -50,7 +50,7 @@ class DbPdo extends DbConnection
 	function _query($sql)
 	{
 		$result = $this->conn->query($sql);
-		return new DbPdoResult($this->connection, $result);
+		return new DbPdoResult($this->conn, $result);
 	}
 
 	function getLastInsertId()

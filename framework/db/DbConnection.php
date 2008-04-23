@@ -4,6 +4,11 @@ abstract class DbConnection
 	protected $params;
 	private $queryParams;
 	private $types;
+	/**
+	 * Actual connection to the database
+	 *
+	 * @var unknown_type
+	 */
 	private $conn;
 	private $echo;
 
@@ -633,7 +638,7 @@ abstract class DbConnection
 		{
 			$conditionParts[] = ":fld_$fieldName:identifier = :$fieldName";
 			$deleteParams[$fieldName] = $value;
-			$deleteParams[$fieldName] = $fieldName;
+			$deleteParams["fld_$fieldName"] = $fieldName;
 		}
 		$conditionClause = implode(' AND ', $conditionParts);
 
