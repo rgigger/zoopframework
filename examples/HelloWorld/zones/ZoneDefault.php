@@ -3,6 +3,6 @@ class ZoneDefault extends zone
 {
 	function pageDefault()
 	{
-		die('hello pehppy!');
+		die('hello zoop!');
 	}
 }
