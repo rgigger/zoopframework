@@ -1,4 +1,4 @@
--	lazy connections to the database
++	lazy connections to the database
 -	support for sequences
 -	paginated result sets
 -	pre-loading of data for many objects at a time
@@ -7,15 +7,16 @@
 	-	create objects from the results
 -	enhance DbObject
 	-	relationships
-		-	one-to-one
-		-	one-to-many
-		-	many-to-one
-		-	and many-to-many
+		+	one-to-one
+		+	one-to-many
+		+	many-to-one
+		+	and many-to-many
 		-	distinguish between aggregate, ownership, and mapped relationships
 		-	have a way to indicate that you want to pre-load the objects from these relationships
 	-	figure out how to handle multiple database connections
 		-	map by class
 		-	map by function(classname, id) - returns connection
+		-	map by object
 	-	static functions
 		-	functions
 			-	findOne

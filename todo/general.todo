@@ -7,15 +7,30 @@
 		-	mixins
 		-	getters/setters
 	-	stuff we need
+		-	fix the Object undeclared member variable problem
 		-	examples for mixins, getters and setters
-		-	examples of DbObject vector functions
-		-	maybe get all of that working within the business app
+		-	examples of DbObject relationship functions
 	-	steps
 		-	make sure all the examples work
 		-	update the api docs
 		-	export the code
 		-	tar.gz it up
 		-	upload it to google code
+-	1.52.00 release???
+	-	ajax
+	-	form handling
+	-	ability to use external zoop framework module
+	-	somehow make the old graphics module available
+-	1.53.00 release???
+	-	auth
+	-	permissions
+	-	krumo replacement
+	-	scaffolding
+-	1.54.00 release???
+	-	cli
+	-	migrations
+	-	charts
+	-	log
 -	2.00.00 release
 	-	definitely
 		-	legacy

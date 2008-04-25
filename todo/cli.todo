@@ -1,0 +1,3 @@
+-	base functions for handling arguments, switches, options etc
+-	zone structure for handling objects and operations on those objects
+-	interactive application that includes a whole bunch of zoop stuff and let you experiment

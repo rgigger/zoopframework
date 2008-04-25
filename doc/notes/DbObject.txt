@@ -1,0 +1,95 @@
+questions
+	how to name the different relationship types (the ror conventions seem to confuse people)
+destruction
+	destroy_r to destroy all dependant vector fields
+configuration
+	handle loading relationship info from config file (dry) or let the use call the methods directly on both ends
+	check for foreign key and unique constraints that should be present
+		warn if they are not
+		have a way to auto-generate sql statements to fix add them
+	auto-generate a config file or set of relationship method calls 
+relationships
+	features
+		lazy loading
+		automatic caching
+		pre-loading via config info
+		pre-loading via a big sql statement
+		ordering or vector objects
+		data sharing when pre-loading both has many and has many through relationships
+	types
+		+ has many
+		+ has one
+		+ belongs to
+			access name
+			local field name
+			remote class
+			remote field name
+		+ has many through
+			access name
+			join class or table
+			join class local field
+			join class remote field
+			remote class
+			remote field
+		options
+			access name
+			local field name
+			remote table
+			remote key field
+			remote name field
+		segment (horizontal, some fields in other table, one to one mapping between the two tables)
+			local field name
+			remote table name
+			remote field name
+		partition (vertical, all fields the same in all tables, tables logically unioned together)
+			list of table names
+			partition function
+		tree
+			parent field name
+		nested set
+			init function
+			move function
+		graph
+			adjacency table
+			node1id field
+			node2id field
+	methods
+		count
+		loadAndCount
+		load
+		get
+		iterator methods (for has many and has many through)
+		generate sql
+		loaded
+		clear
+		sqlCount
+	misc
+		maybe move them to be static class data and static methods someday
+		maybe for trees configure to use:
+			adjacency list,
+			adjaceny list with with a stored procedure, (in postgres look at constrib/ltreee connectby)
+			nested sets,
+			nested sets with extra space,
+			nested intervals,
+			binary fractions,
+			materialized path,
+		create as much help for automating nested sets as possible
+		support for special fields such as create_date and update_date
+			should that just be handled in the db?
+		dirty field handling
+			-	only update stuff that's changed
+				-	four ways to handle saving data
+					-	always save all fields all the time
+					-	if any field has changed save all fields
+					-	save only changed fields
+				-	two ways to determine if a field has changed
+					-	if they set the value of it for any reason
+					-	always load the original value and see if it has changed
+						-	diff it with the value from the database
+							-	when the object was created
+							-	when the field is saved
+							-	whenever the field happened to get loaded
+							-	when the form was populated
+			-	handled it DbObject or in the form handler?
+		-	optimistic locking???
+		-	better locking???

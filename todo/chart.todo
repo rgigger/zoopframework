@@ -1,0 +1,29 @@
+-	backends
+	-	google charts (http://code.google.com/more/#label=Featured&product=charts)
+	-	open flash charts (http://teethgrinder.co.uk/open-flash-chart/tutorial.php)
+	-	PHP/SWF charts (http://www.maani.us/charts/index.php)
+	-	maybe grab some stuff from here (http://www.hotscripts.com/PHP/Scripts_and_Programs/Graphs_and_Charts/index.html)
+	-	libchart (http://naku.dohcrew.com/libchart/pages/introduction/)
+	-	homebrewed svg charts
+	-	this place (http://www.developertutorials.com/scripts/3/72/)
+	-	and this place too (http://www.roscripts.com/CSS_PHP_flash_and_AJAX_charts-128.html)
+	-	dojo charting
+	-	home brewed with zoop graphics module
+		-	with html/css
+		-	with a graphic plugin with it's own xml tags and php code
+-	front ends
+	-	html/css/javascript
+		-	visual chart
+		-	image maps for image charts
+	-	images
+	-	swf
+	-	pdf
+	-	svg
+	-	fop
+-	implementation
+	-	use all the other libs you can, come up with a unified api
+	-	wrap all of them
+	-	create gui plugins for adding them to html
+	-	create an xml parser for specifying the data as xml and displaying as a chart
+	-	create gui plugins for handling the xml data
+	-	allow the gui plugins and xml data to be used to create zoop graphics documents

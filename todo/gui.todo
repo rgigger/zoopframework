@@ -2,6 +2,7 @@
 -	use smarty->default_modifiers to automatically escape all html by default
 	-	make sure it also applies to smarty functions and not just variables
 	-	make sure it runs it after it applies all other modifiers
+	-	make sure it doesn't apply to includes so it just escapes what you want
 -	smarty resources
 	-	possibly use resource paths (http://smarty.php.net/manual/en/template.resources.php) to handle module templates
 	-	use the default template handler to present a pleasant error message when you can't find a template in development - or create it for you on the fly!
@@ -10,3 +11,80 @@
 	-	button that just goes to an url
 		-	use onclick to set document.location
 		-	post an action to the post page and redirect to the new location
+-	GuiControls
+	-	come up with a set of methods that need to be defined
+	-	have a way to map plugins to GuiControls
+	-	maybe have a way of sending undefinded smarty tags to a default GuiControl have having it determine based on the tag -	-	name and attributes what GuiControl to create and execute
+	-	allow GuiControls and normal plugins to use templates within themselves
+-	code for sanitizing html
+	-	use a whitelist of tags and attributes
+	-	come up with default whitelist configurations for allowing commonly needed, known to be safe tags and attributes
+-	templating system
+	-	<? code ?> for code that doesn't print anything
+	-	<?= code ?> for stuff that needs to print and escape
+		-	have
+	-	Builder templates (similar to in RoR), if it can be done elegantly in PHP 
+	-	create a tweaked syntax mode in textmate to handle new syntax elements
+	-	control characters
+		-	postions
+			-	open
+			-	close
+		-	purposes
+			-	whether or not to print
+			-	whitespace control
+			-	whether or not to escape the result string (always escape by default)
+	-	add a character somewhere in  such as +-/ etc in order to control whitespace properly
+	-	integration with text/translation system
+	-	caching
+		-	compiled php code
+		-	content
+		-	paramaterized content
+	-	helpers/plugins?
+		-	scopes
+			-	zoop helpers
+			-	app helpers
+			-	zone helpers
+			-	page helpers
+		-	syntax
+			-	as tags like in Smarty
+				-	{name att1=value1 att2=value2}
+				-	<?name att1=value1 att2=value2?>
+				-	<?@name att1=value1 att2=value2?>
+			-	as funcions like in RoR
+		-	functions
+			-	creating links
+				-	get links
+				-	use javascript to do a post
+				-	mailto links
+			-	form tags
+				-	create open an close tags
+					-	handle nestedness issues
+					-	handle upload forms
+				-	handle the action field
+			-	form elements
+				-	buttons
+					-	normal buttons
+					-	submit buttons
+					-	image buttons
+				-	radio buttons
+				-	checkboxes
+				-	drop down menus
+				-	combo boxes
+				-	hidden fields
+				-	text fields
+				-	password fields
+				-	textareas
+				-	date field
+				-	time field
+				-	date/time field
+				-	search boxes for a round trip to the server
+				-	search boxes that pull results from ajax
+				-	search boxes that filter local javascript data
+			-	images
+			-	pagination
+			-	validation
+				-	required
+				-	int
+				-	email
+				-	regex
+				-	matches (sameas)

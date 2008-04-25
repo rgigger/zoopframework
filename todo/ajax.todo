@@ -1,0 +1,16 @@
+-	major areas of support
+	-	include various libraries: ext, dojo, prototype, script.aculo.us, yui etc and make them easy get set up
+	-	wrappers for abstracting basic functions that can use any backend library
+-	form validation
+-	submiting without leaving the page
+-	updates to control states affecting other controls
+	-	disable other controls
+	-	make other controls invisible
+	-	execute arbitrary code
+	-	relplace the elements in a menu
+	-	load html from the server and put it somewhere
+-	always use progress indicators everywhere
+-	autocomplete
+-	drag and drop
+-	visual effects
+-	in place editing

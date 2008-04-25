@@ -1,0 +1,6 @@
+-	use cases
+	-	translations
+	-	user customizable text
+-	issues
+	-	making text changes that get made in development and making sure they carry over when the code is moved to production
+	-	making changes in production and making sure they also get made in the dev code

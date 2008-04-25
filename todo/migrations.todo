@@ -1,26 +1,67 @@
--	make sure that reverse migrations don't work without at least a very, very clear warning, etc
--	make it subsitiute "_"s for "."s when creating the class name
--	init the db
-	-	just have an init.sql file or whatever else the other modules do
--	apply migrations
-	+	have it scan the migrations directory for all available migrations
-	+	scan the db for applied migrations
-	+	apply anything that hasn't been done yet, in the proper order
-	-	allow you to selectively apply a specific migration
-	-	allow you to selectively apply a specific range of migration
--	removing migrations
-	-	allow you to selectively remove a specific migration
-	-	allow you to selectively remove a specific range of migration
-	-	allow you to remove the last set of migrations done
--	testing migrations
-	-	allow you to 
--	namespacing
-	-	tablename prefix
-	-	schema prefix
--	complete schema info
-	-	dump the entire schema from the existing database after migrations are applied
-	-	implement creating sql snapshot files
-		-	create a blank tmp database
-		-	run all schema and data migrations on it
-		-	dump it to a sql file
-		-	drop tmp database
+-	new
+	-	functions
+		-	initialize database
+			-	copy a migration template from the module into the applications migrations and run it
+			-	have a special bootstrap migration that doesn't check for the migration tables but rather creates them
+		-	apply all migrations
+			-	this should probably throw and error if the database isn't in it's default state
+		-	apply all unappied migrations
+		-	reapply migration
+		-	reapply migrations start:end
+		-	checkpoint
+			-	dump the current state of the database
+			-	skip everything before this point
+		-	rollback the database to a certaint point
+		-	recreate the database up to a certaion point
+		-	categorize migrations or items inside migrations
+			-	by
+				-	schema
+				-	data
+				-	text
+				-	arbitrary keyword tagging system
+			-	have a way of only including or excluding lists of tags
+		-	branch (see below)
+		-	create a base prefix used for determining version numbers
+			-	default prefix is ''
+			-	the next version number is determined as follows
+				-	select max(last part of version number) where version number like '$prefix%';
+					-	if null or '' then 0
+					-	else prefix . '.' . value + 1
+			-	zap migration branch command for setting the prefix to the current max version number or some other arbitrary string
+		-	have a way of handling versioning and naming
+			-	you fork off a stable branch (version 1)
+			-	you make a change to the database in the stable branch and make a change (version 2)
+				-	this change may or may not also need to be applied to the dev branch
+			-	you make a change to the dev branch and make a change (version 2)
+				-	this may or may not need to be applied to the stable branch
+			-	you fork again, dev moves to stable (version 3)
+	-	create a database indepentdent format
+		-	yaml based
+		-	php array based
+-	old
+	-	make sure that reverse migrations don't work without at least a very, very clear warning, etc
+	+	make it subsitiute "_"s for "."s when creating the class name
+	-	init the db
+		-	just have an init.sql file or whatever else the other modules do
+	-	apply migrations
+		+	have it scan the migrations directory for all available migrations
+		+	scan the db for applied migrations
+		+	apply anything that hasn't been done yet, in the proper order
+		-	allow you to selectively apply a specific migration
+		-	allow you to selectively apply a specific range of migration
+	-	removing migrations
+		-	allow you to selectively remove a specific migration
+		-	allow you to selectively remove a specific range of migration
+		-	allow you to remove the last set of migrations done
+	-	testing migrations
+		-	allow you to 
+	-	namespacing
+		-	tablename prefix
+		-	schema prefix
+	-	complete schema info
+		-	dump the entire schema from the existing database after migrations are applied
+		-	implement creating sql snapshot files
+			-	create a blank tmp database
+			-	run all schema and data migrations on it
+			-	dump it to a sql file
+			-	drop tmp database

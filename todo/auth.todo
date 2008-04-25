@@ -1,13 +1,40 @@
--	questions
-	-	should standard allow for for storing more than one kind of password
-	-	should we allow for password migration
-
-
--	account creation
--	Upon successful auth store token
-	-	Session
-	-	Cookie
-	-	URL
--	Check auth token
--	Request http authentication
--	way to detect  password strength and upgrade it if better encryption is available
+-	new
+	-	storage
+		-	encryption
+			-	phpass based
+				-	bcrypt
+				-	des
+				-	md5 based
+			-	crypt based
+				-	std_des
+				-	ext_des
+				-	md5
+				-	blowfish
+			-	zend framework based
+				-	???
+			-	do it yourself (you man need to manually salt these)
+				-	plain text
+				-	md5
+				-	sha1
+				-	crd32
+				-	other simple hashes (maybe let them give their own userland function)
+		-	location
+			-	db
+			-	files
+		-	format
+			-	username field
+			-	password field
+			-	password fields contains salt any any info needed to tell what type of hash it is
+			-	modeled after crypt
+	-	config
+		-	allowed methods 
+		-	grandfather old password formats or updgrade to new ones upon login
+		-	db or file
+		-	db conneciion or file location
+		-	db tables and field infor or file format info
+	-	features
+		-	set password
+		-	check password
+		-	upgrade passwords to more secure formats
+		-	disable accounts with old formats
+		-	password strength checker
