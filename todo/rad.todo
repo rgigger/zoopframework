@@ -3,3 +3,18 @@
 	-	web app 
 	-	desktop apps
 	-	textmate plugins
+-	scaffolding
+	-	provide a rational for scaffolding, it's not just a toy
+		-	http://en.wikipedia.org/wiki/Gall's_law
+		-	http://en.wikipedia.org/wiki/The_Systems_Bible
+		-	http://en.wikipedia.org/wiki/Systems_theory
+		-	https://buildsecurityin.us-cert.gov/daisy/bsi/articles/best-practices/assembly/50.html
+-	functions
+	-	create new zone
+		-	create file
+		-	register zone
+			-	append to file
+			-	auto-register somehow?
+	-	create new page (append to file)
+	-	create a new domain object
+	-	create a zone and corresponding domain object

@@ -1,3 +1,7 @@
+-	Object
+	-	__callStatic
+	-	__isset
+	-	__unset
 -	error
 	-	convert all errors to exceptions
 		-	create an error handler that throws an exception will all relevent info it in it

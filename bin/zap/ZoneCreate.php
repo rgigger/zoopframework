@@ -16,8 +16,15 @@ class ZoneCreate
 	
 	function subMigration($p, $s)
 	{
-		$version = $p[3];
-		$name = $p[4];
+		if(!isset($p[3]))
+			trigger_error("no version passed in");
+		else
+			$version = $p[3];
+		
+		if(!isset($p[4]))
+			trigger_error("no name passed in");
+		else
+			$name = $p[4];
 		
 		$gui = new Gui();
 		$gui->left_delimiter = '[[';

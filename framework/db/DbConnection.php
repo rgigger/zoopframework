@@ -201,7 +201,9 @@ abstract class DbConnection
 		if(isset($matches[3]))
 			$matches[1] = $matches[3];
 
-		$name = $matches[1];
+		$name = $matches[1];		
+		if(is_null($this->queryParams[$name]))
+			return 'NULL';
 		if($matches[2])
 			$type = $matches[2];
 
@@ -434,6 +436,17 @@ abstract class DbConnection
 			return false;
 	}
 
+	public function insertRows($sql, $params, $serial = false)
+	{
+		$ids = array();
+		foreach($params as $thisRow)
+		{
+			$id = $this->insertRow($sql, $thisRow, $serial);
+			if($serial)
+				$ids[] = $id;
+		}
+	}
+
 	/**
 	 * Automatically insert the values of an ($key=>$value) array into a database using the $key as the field name
 	 *
@@ -544,7 +557,21 @@ abstract class DbConnection
 			$conditionParts = array();
 			foreach($conditions as $fieldName => $value)
 			{
-				$conditionParts[] = ":fld_$fieldName:identifier = :$fieldName";
+				if(is_array($value))
+				{
+					$valueParts = array();
+					foreach($value as $thisKey => $thisValue)
+					{
+						$partName = "{$fieldName}_{$thisKey}";
+						$valueParts[] = ":$partName";
+						$selectParams[$partName] = $thisValue;
+					}
+					
+					$valueString = implode(', ', $valueParts);
+					$conditionParts[] = ":fld_$fieldName:identifier in ($valueString)";
+				}
+				else
+					$conditionParts[] = ":fld_$fieldName:identifier = :$fieldName";
 				$selectParams[$fieldName] = $value;
 				$selectParams["fld_$fieldName"] = $fieldName;
 			}

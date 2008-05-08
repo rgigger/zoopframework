@@ -167,7 +167,7 @@ function SqlFetchSimpleMap($sql, $keyFields, $valueField, $params)
  */
 function SqlInsertArray($tableName, $values, $serial = true)
 {
-	return DbModule::getDefaultConnection()->insertArray($tableName, $fieldInfo, $serial);
+	return DbModule::getDefaultConnection()->insertArray($tableName, $values, $serial);
 }
 
 /**
@@ -210,6 +210,11 @@ function SqlModifyRowValues($tableName, $values)
 function SqlInsertRow($sql, $params)
 {
 	return DbModule::getDefaultConnection()->insertRow($sql, $params);
+}
+
+function SqlInsertRows($sql, $params)
+{
+	return DbModule::getDefaultConnection()->insertRows($sql, $params);
 }
 
 /**

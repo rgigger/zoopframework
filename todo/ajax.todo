@@ -1,3 +1,5 @@
+-	libraries
+	-	rip out ext and put in a minimal ext install
 -	major areas of support
 	-	include various libraries: ext, dojo, prototype, script.aculo.us, yui etc and make them easy get set up
 	-	wrappers for abstracting basic functions that can use any backend library

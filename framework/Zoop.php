@@ -153,7 +153,6 @@ function __autoload($className)
 		$modName = $parts[1];
 		require_once(zoop_dir . "/zend/$modName.php");
 	}
-	
 }
 
 Zoop::loadLib('config');

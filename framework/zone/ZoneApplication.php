@@ -3,6 +3,12 @@
 //	Application calls session_start, we need to figure out if that should be handled there or not before we extend it
 class ZoneApplication
 {
+	function __construct()
+	{
+		if(ini_get('magic_quotes_gpc'))
+			StripMagicQuotesFromPost();
+	}
+	
 	static function loadZone($name)
 	{
 		$name = ucfirst($name);

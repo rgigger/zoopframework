@@ -20,7 +20,6 @@ class DbObject implements Iterator
 	private $persisted;
 	private $scalars;
 	private $relationships;
-	// private $krumoHack = array();
 
 	const keyAssignedBy_db = 1;
 	const keyAssignedBy_dev = 2;
@@ -47,7 +46,7 @@ class DbObject implements Iterator
 		$this->scalars = array();
 		$this->relationships = array();
 		$this->persisted = NULL;
-
+		
 		$this->init($init);
 
 		$this->missingKeyFields = count($this->primaryKey);
@@ -140,9 +139,30 @@ class DbObject implements Iterator
 	 *
 	 * @return DbTable DbTable object
 	 */
+	static public function _getTableSchema($className)
+	{
+		$object = new $className();
+		return $object->getSchema();
+	}
+	
+	/**
+	 * Returns a DbTable object with scheme information for the associated table (if supported by your database)
+	 *
+	 * @return DbTable DbTable object
+	 */
 	public function getSchema()
 	{
 		return new DbTable(self::_getConnection(get_class($this)), $this->tableName);
+	}
+	
+	/**
+	 * Alias for getSchema
+	 *
+	 * @return DbTable DbTable object
+	 */
+	public function getTable()
+	{
+		return $this->getSchema();
 	}
 
 	/**
@@ -253,8 +273,8 @@ class DbObject implements Iterator
 
 			$this->loadScalars();
 		}
-
-		if(!isset($this->scalars[$field]))
+		
+		if(!array_key_exists($field, $this->scalars))
 			trigger_error("the field $field is present neither in memory nor in the cooresponding database table");
 
 		return $this->scalars[$field];
@@ -490,6 +510,15 @@ class DbObject implements Iterator
 	{
 		$this->addRelationship($name, new DbRelationshipOptions($name, $params, $this));
 	}
+	
+	public function getFieldOptions($field)
+	{
+		foreach($this->relationships as $thisRelationship)
+			if($thisRelationship instanceof DbRelationshipOptions && $thisRelationship->isTiedToField($field))
+				return $thisRelationship;
+		
+		return false;
+	}
 
 	//
 	//	end vector handlers
@@ -516,7 +545,7 @@ class DbObject implements Iterator
 	/**
 	 * Automatic setter: maps unknown variables to database fields
 	 *
-	 * @param string $varname Name of the database field to set the value of
+	 * @param string $varname Name of the database field to set the value of  
 	 * @param mixed $value New value for the given database field
 	 */
 	function __set($varname, $value)
@@ -700,9 +729,9 @@ class DbObject implements Iterator
 	 * @param assoc_array $params $param => $value array of parameters to be passed to generateSelectInfo
 	 * @return array of DbObject (s)
 	 */
+	
 	static public function _find($className, $conditions = NULL, $params = NULL)
 	{
-		// echo_r($params);
 		$tableName = DbObject::_getTableName($className);
 		$selectInfo = self::_getConnection($className)->generateSelectInfo($tableName, '*', $conditions, $params);
 		return self::_findBySql($className, $selectInfo['sql'], $selectInfo['params']);

@@ -1,0 +1,50 @@
+-	procedure
+	-	make sure all the examples work
+	-	update the api docs
+	-	export the code
+	-	tar.gz it up
+	-	upload it to google code
+-	info
+	-	all info here is tentative and subject to change at any moment
+-	releases
+	-	1.51.00
+		+	stuff we have
+			+	major overhaul of configuration system
+			+	complete rewrite of DbObject
+			+	mysql support
+			+	tons more examples
+			+	mixins
+			+	getters/setters
+		-	stuff we need
+			-	fix the Object undeclared member variable problem
+			-	examples for mixins, getters and setters
+			-	examples of DbObject relationship functions
+	-	1.52.00
+		-	ajax
+		-	form handling
+		-	ability to use external zoop framework module
+		-	somehow make the old graphics module available
+	-	1.53.00
+		-	auth
+		-	permissions
+		-	krumo replacement
+		-	scaffolding
+	-	1.54.00
+		-	cli
+		-	migrations
+		-	charts
+		-	log
+	-	2.00.00
+		-	definitely
+			-	legacy
+			-	contrib
+			-	upgrade/transition/bc/compat
+			-	port a Zoop 1.5 app to Zoop 2.0 using upgrade
+		-	maybe
+			-	permissions?
+			-	forms?
+			-	xml graphics?
+			-	migrations?
+			-	ajax?
+			-	zap/zoop cli app?
+			-	scaffolding?

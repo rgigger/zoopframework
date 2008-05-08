@@ -1,0 +1,34 @@
+-	google code site
+	-	overhaul the wiki and remove all the cruft
+-	development web site
+	-	hosting
+		-	steves box
+		-	ryans box
+		-	google app hosting (if they support php someday)
+	-	content
+		-	examples and example apps
+			-	make sure that they all actually run
+			-	make them automatically clear that data at specified times and rebuild some sample data as a way of testing
+			-	set up usable installs of each
+			-	links to the code
+		-	all source code (including examples and docs)
+			-	syntax highlighted
+			-	pulled straight from subversion
+			-	allow you to specify the version
+			-	allow you to specify specific line numbers
+			-	allow you to put special comments delimiting code blocks you want to be able to pull out and display
+		-	current version of the docs
+		-	compare similar applications built with different frameworks
+			-	make some nice apps is the best way possible with zoop
+			-	invite other framework authors to come here and embarass us with how much better their framework is
+			-	have them write up articles on how much better theirs is
+			-	pick ideas that we really think improve on ours and add them to zoop
+			-	try to highlight ways that zoop is better
+		-	application framework comparison
+			-	structured info on the featuers, strenghts, and weaknesses of each framework
+				-	come up with a good list of things that a framework can / should do
+				-	have authors, experts, and users rate each framework
+				-	allow challenges to invite someone to give arguments as to why they deserved a higher score than someone else
+			-	use the application comparisons to highlight arguments
+			-	invite authors and experts from other frameworks to maintain info on their site
+-	post an article on the future of zoop to the zoop users site

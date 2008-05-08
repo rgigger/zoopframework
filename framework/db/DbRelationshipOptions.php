@@ -40,15 +40,20 @@ class DbRelationshipOptions extends DbRelationship
 		
 	}
 	
+	public function isTiedToField($fieldName)
+	{
+		return $this->localFieldName == $fieldName;
+	}
+	
+	public function getOptions()
+	{
+		return SqlFetchSimpleMap("select {$this->remoteKeyField}, {$this->remoteValueField} from {$this->remoteTable}", $this->remoteKeyField, $this->remoteValueField, array());
+	}
+	
 	public function getInfo()
 	{
-		$key = $this->dbObject->getScalar($this->localFieldName);
-		if(!$this->options[$key])
-		{
-			$sql = "select {$this->remoteValueField} from {$remoteTable} where {$this->remoteKeyField} = :id:int";
-			$this->options[$key] = SqlFetchCell($sql, $key);
-		}
-				
-		return $this->options[$key];
+		$options = $this->getOptions();
+		$field = $this->localFieldName;
+		return $options[$this->dbObject->$field];
 	}
 }

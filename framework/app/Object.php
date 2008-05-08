@@ -5,6 +5,8 @@ class Object
 	private $getters = array();
 	private $setters = array();
 	private $mixinOwner;
+	protected $allowAdhocAttributes = true;
+	private $adhocAttributes = array();
 	
 	protected function addGetter($name)
 	{
@@ -22,6 +24,16 @@ class Object
 		$this->addSetter($name);
 	}
 	
+	public function __isset($name)
+	{
+		trigger_error("I'm not even sure what this should do yet?  Do getters and setters count here or just adhoc attributes");
+	}
+	
+	public function __unset($name)
+	{
+		trigger_error("I'm not even sure what this should do yet?  Do getters and setters count here or just adhoc attributes");
+	}
+	
 	public function __get($name)
 	{
 		if(isset($this->getters[$name]))
@@ -29,6 +41,11 @@ class Object
 			$funcName = "get$name";
 			return $this->$funcName();
 		}
+		
+		if($this->allowAdhocAttributes && isset($this->adhocAttributes[$name]))
+			return $this->adhocAttributes[$name];
+		else
+			trigger_error("attributes $name does not exist");
 	}
 	
 	public function __set($name, $value)
@@ -37,6 +54,17 @@ class Object
 		{
 			$funcName = "set$Name";
 			$this->$funcName($value);
+			return;
+		}
+		
+		if(isset($this->getters[$name]))
+			trigger_error("attributes $name is read only");
+		else
+		{
+			if($this->allowAdhocAttributes)
+				$this->adhocAttributes[$name] = $value;
+			else
+				trigger_error("attributes $name does not exist");
 		}
 	}
 	
@@ -45,6 +73,7 @@ class Object
 		$this->mixins[$className] = new $className();
 		$this->mixins[$className]->mixedInto($this);
 		$this->mixins[$className]->init($params);
+		return $this->mixins[$className];
 	}
 	
 	protected function mixedInto($mixer)

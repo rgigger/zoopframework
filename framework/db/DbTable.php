@@ -1,5 +1,5 @@
 <?php
-class DbTable extends Object
+class DbTable extends Object implements Iterator
 {
 	public $name;
 	private $fields;
@@ -12,8 +12,9 @@ class DbTable extends Object
 		// var_dump($this->conn);
 		$this->name = $name;
 		
-		//	change this to columns
+		//	get rid of fields and just use columns
 		$this->addGetter('fields');
+		$this->addGetter('columns');
 	}
 	
 	//	change this to getColumns
@@ -29,6 +30,12 @@ class DbTable extends Object
 		}
 		
 		return $this->fields;
+	}
+	
+	//	alias for getColumns (this is the prefered method to use)
+	public function getColumns()
+	{
+		return $this->getFields();
 	}
 	
 	//

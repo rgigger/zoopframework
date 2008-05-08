@@ -47,7 +47,7 @@ class DbModule extends ZoopModule
 		return array('DbConnection', 'DbFactory', 'DbSchema', 'DbObject', 'DbZone', 'DbTable', 'DbField',
 						'DbPdo', 'DbPdoResult', 'DbPgsql', 'DbPgResult', 'DbMysql', 'DbMysqlResult',
 						'DbMssql', 'DbMssqlResult', 'DbResultSet', 'DbRelationshipBelongsTo', 'DbRelationshipBasic'
-						, 'DbRelationship', 'DbRelationshipHasMany');
+						, 'DbRelationship', 'DbRelationshipHasMany', 'DbRelationshipOptions');
 	}
 	
 	/**

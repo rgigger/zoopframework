@@ -261,3 +261,47 @@ function str_prefix($string, $prefix)
 {
 	return substr($string, 0, strlen($prefix)) == $prefix ? 1 : 0;
 }
+
+function StripMagicQuotesFromPost()
+{
+	_StripMagicQuotes($_POST);
+}
+
+function _StripMagicQuotes(&$cur)
+{
+	foreach($cur as $key => $val)
+	{
+		if(gettype($val) == 'string')
+			$cur[$key] = stripslashes($val);
+		else if(gettype($val) == 'array')
+			_StripMagicQuotes($cur[$key]);
+	}
+}
+
+//	adapted from the excellent phpass security package
+function GetRandomBytes($count, $allowFallback = false)
+{
+	$output = '';
+	if(($fh = fopen('/dev/urandom', 'rb')))
+	{
+		$output = fread($fh, $count);
+		fclose($fh);
+	}
+
+	if (strlen($output) < $count)
+	{
+		if(!$allowFallback)
+			trigger_error('system could not generate enough random data');
+		
+		$output = '';
+		for ($i = 0; $i < $count; $i += 16) {
+			$this->random_state =
+			    md5(microtime() . $this->random_state);
+			$output .=
+			    pack('H*', md5($this->random_state));
+		}
+		$output = substr($output, 0, $count);
+	}
+
+	return $output;
+}

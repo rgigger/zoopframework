@@ -1,1 +1,2 @@
 -	validation of zone variables
+-	instead of using class_exists keep track of the list of zones and just check that

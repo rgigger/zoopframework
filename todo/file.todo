@@ -1,0 +1,14 @@
+-	abstract file system
+	-	backends
+		-	file system apis
+		-	database
+		-	redundant
+			-	register two other file systems and make sure it gets written to both of them each time
+			-	if either fails
+				-	throw an error
+				-	log the error
+			-	randomly choose one to read from
+		-	xml files
+	-	given as list of paths
+		-	does a given file exist
+		-	open the file

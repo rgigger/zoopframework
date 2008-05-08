@@ -5,6 +5,18 @@
 	-	run a sql statement, possibly excluding the field info
 	-	look up the field info if necessary (if we used our own query language )
 	-	create objects from the results
+-	redundant file systems
+	-	register two other file systems and make sure it gets written to both of them each time
+	-	if either fails on a write
+		-	throw an error
+		-	log the error
+	-	randomly choose one to read from
+-	function to take two database connections and copy between them
+	-	schema
+	-	data
+	-	settings
+	-	copy or exclude only specific tables, settings, other objects, data ranges, etc
+	-	copy linked data based on associations set up in DbObject or config files
 -	enhance DbObject
 	-	relationships
 		+	one-to-one
