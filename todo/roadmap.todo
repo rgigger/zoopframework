@@ -8,27 +8,24 @@
 	-	all info here is tentative and subject to change at any moment
 -	releases
 	-	1.51.00
-		+	stuff we have
-			+	major overhaul of configuration system
-			+	complete rewrite of DbObject
-			+	mysql support
-			+	tons more examples
-			+	mixins
-			+	getters/setters
-		+	stuff we need
-			+	fix the Object undeclared member variable problem
+		+	major overhaul of configuration system
+		+	complete rewrite of DbObject
+		+	mysql support
+		+	tons more examples
+		+	mixins
+		+	getters/setters
 	-	1.52.00
 		-	examples of DbObject relationship functions
 		-	ability to log errors, controlled by config
 		-	ability to turn display of errors on or off in config
+		-	krumo replacement
+		-	permissions system
+	-	1.53.00
 		-	ajax
 		-	form handling
 		-	ability to use external zoop framework module
 		-	somehow make the old graphics module available
-	-	1.53.00
 		-	auth
-		-	permissions
-		-	krumo replacement
 		-	scaffolding
 	-	1.54.00
 		-	cli
