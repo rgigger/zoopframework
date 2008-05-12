@@ -15,11 +15,12 @@
 			+	tons more examples
 			+	mixins
 			+	getters/setters
-		-	stuff we need
-			-	fix the Object undeclared member variable problem
-			-	examples for mixins, getters and setters
-			-	examples of DbObject relationship functions
+		+	stuff we need
+			+	fix the Object undeclared member variable problem
 	-	1.52.00
+		-	examples of DbObject relationship functions
+		-	ability to log errors, controlled by config
+		-	ability to turn display of errors on or off in config
 		-	ajax
 		-	form handling
 		-	ability to use external zoop framework module
