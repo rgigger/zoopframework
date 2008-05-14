@@ -1,0 +1,190 @@
+.title, .subtitle
+{
+	font-family: arial, verdana;
+	color: #57668E;
+}
+
+.title
+{
+	font-size: 20px;
+	margin-bottom:15px;
+}
+
+.subTitle
+{
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom:10px;
+}
+
+body, p, .formPromptTd
+{
+	font-family: arial verdana;
+	font-size: 14px;
+	color:#333333;
+}
+
+body
+{
+	margin:0px;
+}
+
+p
+{
+	margin-top:0px;
+	margin-bottom:10px;
+}
+
+.fontBold
+{
+	font-weight:bold;
+}
+
+.fontSmall
+{
+	font-size:10px;
+	color:#777777;
+}
+
+a:visited, a:link, a:hover
+{
+	font-family: arial;
+	text-decoration:none;
+	font-size: 14px;
+}
+
+a:visited, a:link
+{
+	color:#3748e5;
+}
+
+a:hover
+{
+	color:#ff0000;
+}
+
+.formPromptTd
+{
+	text-align:right;
+}
+
+.formRequiredTd, .errorText
+{
+	color: #C80000;
+}
+
+.formElementTd
+{
+}
+
+.formElement
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#BCCB8E;
+}
+
+.formButton
+{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.step
+{
+	text-align: center;
+	font-style: bold;
+	color: #AAAAAA;
+	border: 1px solid #AAAAAA;
+	padding: 5px 10px 5px 10px;
+}
+
+.currentstep
+{
+	text-align: center;
+	font-style: bold;
+	border: 1px solid black;
+	padding: 5px 10px 5px 10px;
+}
+
+.tab
+{
+	border-top: 1px solid #305282;
+	border-left: 1px solid #305282;
+	border-right: 1px solid #305282;
+	border-bottom: none;
+	padding: 1px 5px 1px 5px;
+	cursor:hand;
+	font-family: futura, helvetica, arial, sans-serif;
+	font-size:12px;
+}
+
+.topNavLink:visited, .topNavLink:link, .topNavLink:hover
+{
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+.navColorDark
+{
+	background-color:#023377;
+}
+
+.navColorLight, .tab
+{
+	background-color:#B8C6D9;
+}
+
+.spacer
+{
+	padding:10px;
+}
+
+.spacerSmall
+{
+	padding:4px;
+}
+
+.mainContentCell
+{
+	padding:10px;
+}
+
+.formatFormButton
+{
+	text-align:right;
+}
+
+.formContentBox
+{
+	background-color:#d3e5d0;
+	border:1px solid #BCCB8E;
+	padding:5px;
+	margin-bottom:10px;
+}
+
+.formatFormButton, .formContentBox, .formatTableWidth, p
+{
+	width=750px;
+}
+
+th
+{
+	border-bottom: 1px solid #023377;
+	color:white;
+	background-color:#9fb1cc;
+}
+
+.formatTableSmall
+{
+	font-size: 12px;
+}
+
+.deleteImage, .addImage
+{
+	align:center;
+	width:10px;
+	height:10px;
+	background-repeat : no-repeat;
+	cursor:hand;
+}
