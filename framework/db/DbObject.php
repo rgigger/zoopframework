@@ -1,5 +1,5 @@
 <?php
-class DbObject implements Iterator
+class DbObject extends Object implements Iterator
 {
 	/**
 	 * The assigned name of the table (defaults to the class name translated by the getDefaultTableName

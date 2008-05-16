@@ -6,6 +6,12 @@ class Person extends DbObject
 	protected function init()
 	{
 		$this->hasMany('request', array('remote_field' => 'owner_id'));
+		$this->addGetter('name');
+	}
+	
+	public function getName()
+	{
+		return $this->firstname . ' ' . $this->lastname;
 	}
 		
 	public function getPermittedRequests()

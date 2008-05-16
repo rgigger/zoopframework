@@ -1,15 +1,21 @@
 <?php
 class TodoListParser
 {
-	var $file;
-	var $root;
-	var $stack;
-	var $lookAheadLine;
+	public $filename;
+	private $file;
+	private $root;
+	private $stack;
+	private $lookAheadLine;
 	
-	function parseFile($filename)
+	function __construct($filename)
 	{
+		$parts = explode('/', $filename);
+		$this->filename = array_pop($parts);
 		$this->file = fopen($filename, "r");
-		
+	}
+	
+	function parse()
+	{
 		$this->root = new TodoListItem($dummy = NULL, '*', '');
 		$this->stack = array();
 		$this->stack[0] = &$this->root;

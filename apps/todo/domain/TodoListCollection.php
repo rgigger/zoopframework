@@ -1,10 +1,11 @@
 <?php
-class TodoListCollection
+class TodoListCollection extends Object
 {
 	var $dir;
 	
-	function TodoListCollection($dir)
+	function __construct($dir)
 	{
+		$this->addGetter('todoListNames');
 		$this->dir = $dir;
 	}
 	
@@ -20,7 +21,6 @@ class TodoListCollection
 		{
 			$parts = explode('.', $entry);
 			if(array_pop($parts) == 'todo')
-				//$lists[] = $parser->parseFile($this->dir . '/' . $entry);
 				$listNames[] = $entry;
 		}
 		$d->close();

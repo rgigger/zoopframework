@@ -31,7 +31,7 @@ class DbRelationshipBelongsTo extends DbRelationship
 		{
 			$remoteTableName = DbObject::_getTableName($this->remoteClassName);
 			$sql = "select * from $remoteTableName where {$this->remoteFieldName} = :id:int";
-			$row = $this->dbObject->getDb()->fetchRow($sql, array($this->remoteFieldName => $this->dbObject->getField($this->localFieldName)));
+			$row = $this->dbObject->getDb()->fetchRow($sql, array($this->remoteFieldName => $this->dbObject->getField($this->remoteFieldName)));
 			$this->owner = new $this->remoteClassName($row);
 		}
 		

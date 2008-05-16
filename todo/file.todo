@@ -1,4 +1,7 @@
 -	abstract file system
+	-	front end
+		-	directory object
+		-	file object
 	-	backends
 		-	file system apis
 		-	database
@@ -9,6 +12,7 @@
 				-	log the error
 			-	randomly choose one to read from
 		-	xml files
+		-	svn repository
 	-	given as list of paths
 		-	does a given file exist
 		-	open the file

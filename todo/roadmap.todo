@@ -15,12 +15,14 @@
 		+	mixins
 		+	getters/setters
 	-	1.52.00
+		-	application stubs
 		-	examples of DbObject relationship functions
 		-	ability to log errors, controlled by config
 		-	ability to turn display of errors on or off in config
 		-	krumo replacement
 		-	permissions system
 	-	1.53.00
+		-	trim ext down to a bare minimum
 		-	ajax
 		-	form handling
 		-	ability to use external zoop framework module
