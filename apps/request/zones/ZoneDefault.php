@@ -18,27 +18,6 @@ class ZoneDefault extends AppZone
 	
 	public function pageList()
 	{
-		/*
-		$a = microtime(1);
-
-		$mbox = imap_open ("{pop.gmail.com:995/pop3/ssl}", "rick@rickgigger.com", "giggles");
-
-		echo "<h1>Headers in INBOX</h1>\n";
-		$headers = imap_headers($mbox);
-
-		$b = microtime(1);
-		echo 'time = ' . ($b - $a) . '<br>';
-		if ($headers == false) {
-		    echo "Call failed<br />\n";
-		} else {
-		    foreach ($headers as $val) {
-		        echo $val . "<br />\n";
-		    }
-		}
-
-		imap_close($mbox);
-		*/
-		
 		// echo_r($this->loggedInUser->getPermittedRequests());
 		$this->assign('requests', $this->loggedInUser->getPermittedRequests());
 		$this->display('list');
