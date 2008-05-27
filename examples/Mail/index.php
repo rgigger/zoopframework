@@ -1,4 +1,5 @@
 <?php
+die('this example does not work.  Mail support is currently experimental');
 include('config.php');
 include(zoop_dir . '/Zoop.php');
 

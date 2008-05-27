@@ -36,7 +36,7 @@ class WebErrorHandler
 		$errorLine = self::formatErrorLineHtml($errno, $errstr, $errfile, $errline, $context, $backtrace);
 		echo '<p>' . $errorLine . '</p>';
 		$backtrace = $backtrace ? $backtrace : debug_backtrace();
-		array_shift($backtrace);
+		// array_shift($backtrace);
 		FormatBacktraceHtml($backtrace);
 	}
 	
@@ -89,7 +89,6 @@ class WebErrorHandler
 	
 	function exceptionHandler($exception)
 	{
-		// echo_r($exception);
 		self::handleError($exception->getCode(), $exception->getMessage(), $exception->getFile(), $exception->getLine(), NULL, $exception->getTrace());
 	}
 }
