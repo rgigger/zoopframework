@@ -151,7 +151,7 @@ function __autoload($className)
 	{
 		$parts = explode('_', $className);
 		$modName = $parts[1];
-		require_once(zoop_dir . "/zend/$modName.php");
+		require_once(zoop_dir . "/Zend/$modName.php");
 	}
 }
 
