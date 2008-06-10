@@ -1,10 +1,32 @@
+{capture assign="contentOutput"}{include file=$TEMPLATE_CONTENT}{/capture}
 <html>
 <head>
 
 <BASE HREF="{$scriptUrl}">
-
+<script type="text/javascript" src="{$scriptUrl}/modpub/gui/yui/yuiloader/yuiloader-beta-min.js" ></script> 
 <script>
+<!-- begin yui stuff -->
+{getglobal var=yuiModules assign=yuiModules}
+var gYuiModules = {json var=$yuiModules};
+var gScriptUrl = '{$scriptUrl}';
 {literal}
+var loader = new YAHOO.util.YUILoader({
+	base: gScriptUrl + '/modpub/gui/yui/',
+    require: gYuiModules,
+    loadOptional: true,
+    onSuccess: function() {
+		if(typeof PageOnload != 'undefined')
+			PageOnload();
+    }
+});
+
+// Load the files using the insert() method. The insert method takes an optional
+// configuration object, and in this case we have configured everything in
+// the constructor, so we don't need to pass anything to insert().
+loader.insert();
+
+<!-- end yui stuff -->
+
 /*
 function submitForm(action)
 {
@@ -16,7 +38,7 @@ function submitForm(action)
 </script>
 <link rel="stylesheet" href="public/css/request.css" type="text/css">
 </head>
-<body {if isset($focus)}onload="document.main_form.{$focus}.focus();"{/if}>
+<body class="yui-skin-sam" onload="//alert('onload')" {if isset($focus)}onload="document.main_form.{$focus}.focus();"{/if}>
 {*
 {if isset($fileUpload) && $fileUpload}
 	<form action="{$virtualUrl}" enctype="multipart/form-data" name="main_form" method="post">
@@ -48,7 +70,7 @@ function submitForm(action)
 	</td>
 	<td align="right" class="subTitle">name &nbsp;</td>
 </tr>
-<tr><td colspan="3" class="navColorDark"><img src="resources/pixel.gif" height="2" width="0"></td></tr>
+<tr><td colspan="3" class="navColorDark" style="height: 2px"></td></tr>
 
 {*
 {if isset($showSteps) && $showSteps}
@@ -75,7 +97,7 @@ function submitForm(action)
 	<td valign="top" height="100%" class="navColorLight">{if isset($showLeftNav) && $showLeftNav}{include file="leftNav.tpl"}{/if}</td>
 	<td valign="top" height="100%" align="left" width="100%" class="mainContentCell" colspan="2">
 	<!-- Begin main content area -->
-	{include file="$TEMPLATE_CONTENT"}
+	{ $contentOutput }
 	<!-- End main content area -->
 	</td>
 </tr>

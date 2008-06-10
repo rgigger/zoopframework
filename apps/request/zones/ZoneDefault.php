@@ -43,4 +43,11 @@ class ZoneDefault extends AppZone
 		$this->assign('filename', $file);
 		$this->display('view');
 	}
+	
+	public function postSetCompleted($p, $z)
+	{
+		$request = new Request($_POST['id']);
+		$request->completed = $_POST['value'] == 'yes' ? 't' : 'f';
+		$request->save();
+	}
 }

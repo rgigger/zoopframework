@@ -163,21 +163,9 @@ a:hover
 	margin-bottom:10px;
 }
 
-.formatFormButton, .formContentBox, .formatTableWidth, p
+.formatFormButton, .formContentBox, p
 {
 	width=750px;
-}
-
-th
-{
-	border-bottom: 1px solid #023377;
-	color:white;
-	background-color:#9fb1cc;
-}
-
-.formatTableSmall
-{
-	font-size: 12px;
 }
 
 .deleteImage, .addImage

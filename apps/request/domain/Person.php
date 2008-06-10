@@ -17,7 +17,7 @@ class Person extends DbObject
 	public function getPermittedRequests()
 	{
 		if($this->id == self::rootId)
-			$requests = DbObject::_find('Request');
+			$requests = DbObject::_find('Request', NULL, array('orderby' => 'id'));
 		else
 			$requests = $this->request;
 		return $requests;
