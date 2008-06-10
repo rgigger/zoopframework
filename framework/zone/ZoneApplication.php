@@ -48,6 +48,9 @@ class ZoneApplication
 		$modName = str_replace('..', '', array_shift($pathParts));
 		$staticPath = str_replace('..', '', implode('/', $pathParts));
 		$filePath = zoop_dir . "/$modName/public/" . $staticPath;
+		header('Cache-Control: max-age=315360000');
+		header("Pragma: public");
+		header('Expires: ' . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
 		EchoStaticFile($filePath);
 	}
 }
