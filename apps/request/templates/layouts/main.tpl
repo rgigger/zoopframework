@@ -6,6 +6,7 @@
 <script type="text/javascript" src="{$scriptUrl}/modpub/gui/yui/yuiloader/yuiloader-beta-min.js" ></script> 
 <script>
 <!-- begin yui stuff -->
+{globalappend var=yuiModules value='yuiloader'}
 {getglobal var=yuiModules assign=yuiModules}
 var gYuiModules = {json var=$yuiModules};
 var gScriptUrl = '{$scriptUrl}';
