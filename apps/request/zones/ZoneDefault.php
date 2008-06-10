@@ -4,7 +4,7 @@ class ZoneDefault extends AppZone
 	public function initPages($p)
 	{
 		$this->loggedInUser = RequestApp::getLoggedInUser();
-		if(!$this->loggedInUser && $p != 'default')
+		if(!$this->loggedInUser && $p[0] != 'default')
 			$this->redirect('default');
 	}
 	
@@ -32,7 +32,7 @@ class ZoneDefault extends AppZone
 	public function postEdit($p)
 	{
 		$request = isset($p[1]) && $p[1] ? new Request($p[1]) : new Request();
-		$request->setFields($_POST['_record']);
+		$request->setFields(array_merge($_POST['_record'], array('owner_id' => $this->loggedInUser->id)));
 		$request->save();
 		$this->redirect('list');
 	}
