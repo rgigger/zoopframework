@@ -109,7 +109,7 @@ class SessionDb
 	{
 		$this->db->beginTransaction();
 		$this->db->deleteRows("delete from session_base where extract(epoch from CURRENT_TIMESTAMP - last_active) > :maxLifetime", array('maxLifetime' => $maxLifetime));
-		$this->db->deleteRows("delete from session_data using session_base where session_data.session_id = session_base.session_id and session_base.session_id is null", array());
+		$this->db->deleteRows("delete from session_data where session_id not in (select session_id from session_base)", array());
 		$this->db->commitTransaction();
 		return true;
 	}
