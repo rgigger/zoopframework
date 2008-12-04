@@ -1,8 +1,0 @@
--	finish the todo app
--	finish all the basic zone features
--	release 1.50.01
--	come up with a better documentation strategy
--	db
-	-	rework / rethink the db api
-	-	implement the new db api
-	-	dbobject
