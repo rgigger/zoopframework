@@ -16,3 +16,5 @@
 		-	other more compelex scenarios
 -	caching
 	-	take the final array and store it to a file for quick loading
+-	inline config???
+	-	maybe use the format that has been presented for new php array syntax but put it in a string and parse it

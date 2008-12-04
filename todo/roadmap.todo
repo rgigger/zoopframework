@@ -7,7 +7,7 @@
 -	info
 	-	all info here is tentative and subject to change at any moment
 -	releases
-	-	1.51.00
+	+	1.51.00
 		+	major overhaul of configuration system
 		+	complete rewrite of DbObject
 		+	mysql support
@@ -15,36 +15,29 @@
 		+	mixins
 		+	getters/setters
 	-	1.52.00
+		+	get rid of ext
+		+	get rid of yui
+		+	get rid of dojo
+		-	js/ajax/jquery examples
+		-	examples of how to use other js libs
+			-	including them in the public folder
+			-	hosting them externally
+			-	including them of other hosts (google, yahoo, amazon, etc)
+		-	finish the session code
+		-	forms
+		-	request app
+	-	beyond
+		-	cli
+		-	migrations
+		-	permissions system
 		-	application stubs
 		-	examples of DbObject relationship functions
 		-	ability to log errors, controlled by config
 		-	ability to turn display of errors on or off in config
 		-	krumo replacement
-		-	permissions system
-	-	1.53.00
-		-	trim ext down to a bare minimum
-		-	ajax
-		-	form handling
-		-	ability to use external zoop framework module
-		-	somehow make the old graphics module available
 		-	auth
 		-	scaffolding
-	-	1.54.00
-		-	cli
-		-	migrations
 		-	charts
 		-	log
-	-	2.00.00
-		-	definitely
-			-	legacy
-			-	contrib
-			-	upgrade/transition/bc/compat
-			-	port a Zoop 1.5 app to Zoop 2.0 using upgrade
-		-	maybe
-			-	permissions?
-			-	forms?
-			-	xml graphics?
-			-	migrations?
-			-	ajax?
-			-	zap/zoop cli app?
-			-	scaffolding?
+		-	xml graphics
+		-	rename mixins to delgates?

@@ -1,12 +1,39 @@
+-	training
+	-	change this to js.todo
+	-	create some examples
+		-	jquery
+		-	yui
+-	documentation
+	-	add pages in the wiki with links to the yui, jquery, and jquery modules docs
 -	libraries
-	-	use the google and yahoo loaders so we don't have to include any complete libraries
+	-	loader
+		-	use the google and yahoo loaders so we don't have to include any complete libraries
+		-	or make your own loader
+			-	just include them with a smarty plugin
+			-	or with javascript (http://www.javascriptkit.com/javatutors/loadjavascriptcss.shtml)
+			-	minify and combine scripts
+				-	js: http://code.google.com/p/minify/
+				-	css: http://csstidy.sourceforge.net/
+			-	pre-gzip them?
+				-	http://www.webcodingtech.com/php/gzip-compression.php
+				-	http://www.fiftyfoureleven.com/weblog/web-development/css/the-definitive-css-gzip-method
 	-	include small scripts and plugins
 	-	remove any major libraries already in there
 -	functions
 	-	tables
-		-	sortable
-		-	editable
+		-	sortable (http://tablesorter.com/docs/)
+		-	editable (http://davehauenstein.com/code/jquery-edit-in-place/)
 		-	custom adornments
+		-	reordering
+		-	scrolling with fixed headers (http://jackysee.googlepages.com/fixedheaders.html)
+		-	column resizing (http://www.ita.es/jquery/jquery.grid.columnSizing.htm)
+		-	show / hide columns (http://p.sohei.org/jquery-plugins/columnmanager/)
+		-	row resizing (http://www.ita.es/jquery/jquery.grid.rowSizing.htm)
+		-	navigating and manipulating table cells (http://plugins.jquery.com/project/TableHelper)
+		-	paging (http://plugins.jquery.com/project/tablePager)
+		-	event handling (http://plugins.jquery.com/project/tableRowCheckboxToggle)
+		-	filtering (http://gregweber.info/projects/uitablefilter)
+		-	tree table (http://ludo.cubicphuse.nl/jquery-plugins/treeTable/doc/index.html#examples)
 		-	load data through various forms
 			-	local json
 			-	loadable json
@@ -31,9 +58,10 @@
 	-	drag and drop
 	-	visual effects
 	-	in place editing
--	forms
-	-	direct access to library through javascript
-	-	zoop javascript wrapper
-	 	-	consistant interface to various functions with plugable backends
-	-	smarty
-	-	guicontrols
+	-	forms
+		-	direct access to library through javascript
+		-	zoop javascript wrapper
+		 	-	consistant interface to various functions with plugable backends
+		-	smarty
+		-	guicontrols
+	-	comet

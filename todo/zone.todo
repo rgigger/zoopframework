@@ -1,2 +1,24 @@
 -	validation of zone variables
 -	instead of using class_exists keep track of the list of zones and just check that
+-	static files
+	-	allow automatic filtering of output
+		-	gzipping
+			-	how much will this increase cpu on the server
+			-	will it actually decrease latency
+		-	minifying of js/css/html
+-	key value params for zones and pages
+-	get rid of the ambiguity between zone/default and zone/
+	-	zone/default should go to pageDefault
+	-	zone or zone/ should go to index (not pageIndex)
+	-	zone/doesn't/match/any/page should go to default (not pageDefault)
+-	allow output in different formats
+	-	possible formats
+		-	html
+		-	xml
+		-	pdf
+		-	image
+	-	ways to request it
+		-	virtual file extension
+		-	page param
+		-	get param
+		-	request header

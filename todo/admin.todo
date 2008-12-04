@@ -1,5 +1,18 @@
 -	library for automating stuff
-	-	command line interface (zap?)
-	-	web interface (might only work if running a web server as the user)
+	-	forms
+		-	base library where all the hard work is done and reused
+		-	wrap the library with different interfaces
+			-	command line interface (zap?)
+			-	web interface (might only work if running a web server as the user)
+			-	ide / editor wrappers
+				-	ide / editor
+					-	textmate
+						-	navigation between files (see below)
+						-	create zones files, template files, page and post functions, domain objects, etc.
+						-	snippets or commands for creating all of those things inside existing files
+	-	functions
+			-	given a template find its zone file and page function
+				-	how to handle includes?
+			-	give a zone file and page / post function find it's template
 -	build system
 	-	setting perms to make stuff writable to the web server

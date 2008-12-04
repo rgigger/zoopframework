@@ -19,6 +19,11 @@
 -	code for sanitizing html
 	-	use a whitelist of tags and attributes
 	-	come up with default whitelist configurations for allowing commonly needed, known to be safe tags and attributes
+-	allow automatic filtering of output
+	-	gzipping
+		-	how much will this increase cpu on the server
+		-	will it actually decrease latency
+	-	minifying
 -	templating system
 	-	<? code ?> for code that doesn't print anything
 	-	<?= code ?> for stuff that needs to print and escape

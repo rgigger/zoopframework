@@ -1,25 +1,69 @@
--	write your own session code
-	-	start_session_read_only
-	-	write_session_unsafe
-	-	start_session_for_writing
-	-	write_session
-	-	method for determining which way to start a session on a default + per/page or zone config basis
-	-	api for structured session data
-		-	rotating request log
-		-	sequence info
-	-	forms
--	drivers
-	-	files
-	/	mysql
-	+	pgsql
-	-	msession?
-	-	my daemon?
-	-	that other guys daemon
-	-	pear
-	/	pdo
-	+	sqlite
--	modes
+-	styles (these refer to automatic handling of the __default__ element and creation of $_SESSION superglobal)
 	-	serialize
+		-	automatic locking
+		-	identical to php file based sessions
 	-	serialize_manual
-	-	write_unsafe
-	+	write_manual (default)
+		-	automatic locking
+		-	like serialize but it only re-writes the data if you tell it too
+		-	saves on writes
+	-	write_manual
+		-	no locking
+		-	always read the data
+		-	only write it out if you call writeUnsafe
+	-	read_only
+		-	no locking
+		-	always read
+		-	only allow writing through the manual apis, don't do any writing in the handler functions
+	-	manual
+		-	no locking
+		-	don't do anything in the handlers
+		-	never set the $_SESSION variable
+		-	do everything with the manual apis
+-	data api
+	-	for use with all locking models
+		-	get
+		-	getWithLock
+		-	set
+		-	setUnsafe
+	-	also available for sql_update locking model
+		-	close
+		-	setAndClose
+		-	reset
+		-	resetAndClose
+-	locking
+	-	sql_update (use "select ... for update")
+		-	locks only released upon commit
+		-	if it shares the same connection as other functions it could interfere with them (commit issues)
+	-	postgres advisory locks
+		-	dependant on postgres
+		-	need for int fields in both tables
+		-	could interfere with advisory locks used by the application
+	-	flock
+		-	requires all requests for session to have access to the same file system
+	-	semaphores
+		-	need to come up with a unique 32 bit integer for each session item
+		-	requires all requests for session to have access to the same shared memory system
+	-	msession
+		-	need to come up with a unique 32 bit integer for each session item
+-	locking api
+	-	aquire($id1, $id2)
+		-	some require one integer
+		-	some can handle one or two integers
+		-	some can handle strings
+	-	release($id1, $id2)
+-	custom session module api
+	-	extra hooks for
+	 	-	session start
+		-	session destroy
+	-	create modules for
+		-	rotating request log info
+		-	sequence info
+-	storage backends
+	-	files
+	-	mysql
+	-	pgsql
+	-	sqlite
+	-	msession
+	-	my daemon
+	-	pear session server
+-	forms
