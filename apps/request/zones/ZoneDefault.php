@@ -37,17 +37,29 @@ class ZoneDefault extends AppZone
 		$this->redirect('list');
 	}
 	
-	function pageView($p)
+	public function pageView($p)
 	{
 		$file = $p[1];
 		$this->assign('filename', $file);
 		$this->display('view');
 	}
 	
-	public function postSetCompleted($p, $z)
+	public function postSetField($p, $z)
 	{
-		$request = new Request($_POST['id']);
-		$request->completed = $_POST['value'] == 'yes' ? 't' : 'f';
+		$id = $_POST['id'];
+		$field = $_POST['field'];
+		$request = new Request($id);
+		
+		if($field == 'completed')
+			$request->completed = $_POST['update_value'];
+		else if($field == 'priority')
+			$request->priority_id = SqlFetchCell("select id from priority where name = :name", array('name' => $_POST['update_value']));
+		else
+			trigger_error("undefined field: $field");
+		
 		$request->save();
+		
+		//	this is sent back and thus placed in the table cell
+		echo $_POST['update_value'];
 	}
 }

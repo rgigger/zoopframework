@@ -1,0 +1,53 @@
+-	support
+	-	create a new module js
+		-	add tablesorter js, css, and images to js/public
+		-	add modified inplace code
+		-	include the minified versions
+			-	do I need some sort of build script here?
+			-	a textmate plugin to update it?
+			-	a smarty like compile system
+			 	-	keep them updated on the fly?
+				-	just always make sure that they get compiled while testing, then check in the changes
+			-	libs
+				-	Minify
+					-	homepage: http://code.google.com/p/minify/
+					-	user guide: http://code.google.com/p/minify/wiki/UserGuide
+					-	article: http://www.vulgarisoip.com/2007/06/21/minify-your-external-javascript-and-css-with-php/
++	cleanup
+	+	updates the names to not be using stuff from the example
+	+	update the init stuff to be setting things up correctly
+-	features
+	-	adding requests
+		-	hot key to add
+		-	use a modal dialog
+		-	post with ajax
+	-	editing of requests
+	+	have a button to mark a task as completed
+	-	add a column for priority, let us sort on it
+	-	add a feedback system
+		-	have a list of feedback entries for each request
+			-	a thread of text messages with the request text as the first entry
+			-	a flag to determine if progress is stopped on the issue until feedback is received
+				-	upon the first response clear the flag
+				-	allow the requester to reset the flag if the response doesn't actually allow work to continue
+	-	filtering of the list
+		-	server side filtering
+		-	cient side filtering
+		-	paging systems
+		-	interface
+			-	chose field
+			-	choose value
+			-	update results with js/ajax
+		-	saving of filters
+	-	hiding and showing columns
+	-	projects
+		-	allow requests to be grouped into projects
+			-	should a project just be a super request?
+			-	have acls for projects
+	-	permissions
+		-	you can see a request if
+			-	you are the owner
+			-	you are on the acl for that request
+			-	you are the the acl for a parent request or project
+-	appearance
+	-	do we want fix height rows?

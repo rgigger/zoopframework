@@ -3,43 +3,26 @@
 <head>
 
 <BASE HREF="{$scriptUrl}">
-<script type="text/javascript" src="{$scriptUrl}/modpub/gui/yui/yuiloader/yuiloader-beta-min.js" ></script> 
 <script>
-<!-- begin yui stuff -->
-{globalappend var=yuiModules value='yuiloader'}
-{getglobal var=yuiModules assign=yuiModules}
-var gYuiModules = {json var=$yuiModules};
-var gScriptUrl = '{$scriptUrl}';
+var scriptUrl = '{$scriptUrl}';
+var virtualUrl = '{$scriptUrl}';
+var zoneUrl = '{$scriptUrl}';
+</script>	
+	
+{*
+<script>
 {literal}
-var loader = new YAHOO.util.YUILoader({
-	base: gScriptUrl + '/modpub/gui/yui/',
-    require: gYuiModules,
-    loadOptional: true,
-    onSuccess: function() {
-		if(typeof PageOnload != 'undefined')
-			PageOnload();
-    }
-});
-
-// Load the files using the insert() method. The insert method takes an optional
-// configuration object, and in this case we have configured everything in
-// the constructor, so we don't need to pass anything to insert().
-loader.insert();
-
-<!-- end yui stuff -->
-
-/*
 function submitForm(action)
 {
 	document.main_form.actionField.value = action;
 	document.main_form.submit();
 }
-*/
 {/literal}
 </script>
+*}
+
 <link rel="stylesheet" href="public/css/request.css" type="text/css">
 </head>
-<body class="yui-skin-sam" onload="//alert('onload')" {if isset($focus)}onload="document.main_form.{$focus}.focus();"{/if}>
 {*
 {if isset($fileUpload) && $fileUpload}
 	<form action="{$virtualUrl}" enctype="multipart/form-data" name="main_form" method="post">

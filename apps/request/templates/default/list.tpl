@@ -1,91 +1,74 @@
 {globalappend var=yuiModules value='event'}
 {globalappend var=yuiModules value='datatable'}
-<script>
+<link rel="stylesheet" href="http://tablesorter.com/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<script type="text/javascript" src="http://tablesorter.com/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="http://localhost/~rick/jqplug/jquery.jeditable.pack.js"></script>
+<script type="text/javascript" src="http://localhost/~rick/jqplug/jquery.inplace.js"></script>
 
-
-// alert(YAHOO.util.Event);
+<script type="text/javascript">
 {literal}
-function PageOnload()
-{
-	// alert('setting up table');
-    YAHOO.example.EnhanceFromMarkup = new function() {
-		
-        var myColumnDefs = [
-            {key:"id",label:"id",formatter:YAHOO.widget.DataTable.formatNumber,sortable:true},
-            {key:"name",label:"name", sortable:true,},
-            {key:"desc",label:"desc", sortable:true},
-            {key:"owner",label:"owner", sortable:true},
-            {key:"completed",label:"completed", sortable:true, editor:"radio", editorOptions:{radioOptions:["yes","no"],disableBtns:true}}
-        ];
+	
+$.tablesorter.addParser({
+	id: 'priority', 
+	is: function(s) { 
+		return false; 
+	}, 
+	format: function(s) {
+		if(s == 'Low')
+			return 1;
+		else if(s == 'Medium')
+			return 2;
+		else if(s == 'High')
+			return 3;
+		else
+			return 0;
+		// return s.toLowerCase().replace(/low/,1).replace(/medium/,2).replace(/high/,3); 
+	}, 
+	type: 'numeric' 
+});
 
-        this.parseNumberFromCurrency = function(sString) {
-            // Remove dollar sign and make it a float
-            return parseFloat(sString.substring(1));
-        };
-
-        this.myDataSource = new YAHOO.util.DataSource(YAHOO.util.Dom.get("accounts"));
-        this.myDataSource.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
-        this.myDataSource.responseSchema = {
-            fields: [{key:"id", parser:YAHOO.util.DataSource.parsNumber},
-                    {key:"name"},
-                    {key:"desc"},
-                    {key:"owner"},
-                    {key:"completed"}
-            ]
-        };
-
-        this.myDataTable = new YAHOO.widget.DataTable("markup", myColumnDefs, this.myDataSource,
-                {sortedBy:{key:"id",dir:"desc"}}
-        );
-
-        // Set up editing flow
-        this.highlightEditableCell = function(oArgs) {
-            var elCell = oArgs.target;
-            if(YAHOO.util.Dom.hasClass(elCell, "yui-dt-editable")) {
-                this.highlightCell(elCell);
-            }
-        };
-        this.myDataTable.subscribe("cellMouseoverEvent", this.highlightEditableCell);
-        this.myDataTable.subscribe("cellMouseoutEvent", this.myDataTable.onEventUnhighlightCell);
-        this.myDataTable.subscribe("cellClickEvent", this.myDataTable.onEventShowCellEditor);
-
-        // Hook into custom event to customize save-flow of "radio" editor
-        this.myDataTable.subscribe("editorUpdateEvent", function(oArgs) {
-			var id = oArgs.editor.record._oData.id;
-			var value = oArgs.editor.value;
-			
-			var postData = "id=" + id;
-			var postData = postData + "&value=" + value;
-			var url = gScriptUrl + '/setCompleted';
-			var callback =
-			{
-			  success: function(o) {
-				// document.getElementById('result').innerHTML = o.responseText;
-			  },
-			  failure: function() {alert('it failed')},
-			  argument: ['foo','bar']
-			};
-			var request = YAHOO.util.Connect.asyncRequest('POST', url, callback, postData);
-			this.saveCellEditor();
-        });
-        this.myDataTable.subscribe("editorBlurEvent", function(oArgs) {
-			this.cancelCellEditor();
-        });
-    };
-	// alert('done');
-}
-
+$(function() {
+	$("#list_table").tablesorter({
+		widgets: ['zebra'],
+		headers: {
+			3: {sorter: 'priority'}
+		}
+	});
+	
+	$("#list_table tr").each(function() {
+		if(this.cells[this.cells.length - 1].tagName == 'TD')
+		{
+			var id = $(this.cells[0]).text();
+			$(this.cells[this.cells.length - 1]).editInPlace({
+				url: zoneUrl + '/setField',
+				params: "field=completed&id=" + id,
+				field_type: "select",
+				select_options: "yes,no"
+			});
+			$(this.cells[3]).editInPlace({
+				url: zoneUrl + '/setField',
+				params: "field=priority&id=" + id,
+				field_type: "select",
+				select_options: "Low,Medium,High"
+			});
+		}
+	});
+});
 {/literal}
+
 </script>
-<div id="markup">
-<table id="accounts">
+
+<div id="main">
+  	<table id="list_table" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
 	<thead>
 	<tr>
-		<th>id</th>
+		<th width="25">id</th>
 		<th>name</th>
 		<th>desc</th>
-		<th>owner</th>
-		<th>completed</th>
+		<th width="60">priority</th>
+		<th width="60">owner</th>
+		<th width="80">completed</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -94,11 +77,15 @@ function PageOnload()
 			<td>{$thisRequest->id}</td>
 			<td>{$thisRequest->name}</td>
 			<td>{$thisRequest->description}</td>
+			<td>{$thisRequest->priority}</td>
 			<td>{$thisRequest->Person->getName()}</td>
-			<td>{if $thisRequest->completed == 't'}yes{else}no{/if}</td>
+			<td id="completed_{$thisRequest->id}">{if $thisRequest->completed == 't'}yes{else}no{/if}</td>
 		</tr>
 	{/foreach}
 	</tbody>
 </table>
+<input id="add" type="button" value="add" onclick="document.location = '{$scriptUrl}/edit'" ACCESSKEY="a">
+
 </div>
-<input type="button" value="add" onclick="document.location = '{$scriptUrl}/edit'">
+{literal}
+{/literal}
