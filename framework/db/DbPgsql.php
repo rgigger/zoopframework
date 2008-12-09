@@ -9,9 +9,9 @@ class DbPgsql extends DbConnection
 		//	create the connection string
 		$connString = 'dbname=' . $this->params['database'];
 		$connString .= ' user=' . $this->params['username'];
-		if(isset($params['host']))
+		if(isset($this->params['host']))
 			$connString .= ' host=' . $this->params['host'];
-		if(isset($params['port']))
+		if(isset($this->params['port']))
 			$connString .= ' port=' . $this->params['port'];
 		
 		$this->connectionString = $connString;
