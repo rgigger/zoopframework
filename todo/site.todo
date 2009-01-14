@@ -96,7 +96,25 @@
 				-	Evolution of Zoop, what Zoop allows you to do
 					-	include notes on how each element in zoop relates to the different patterns
 				-	Recommendation of a specific pattern
-							
+		-	zoop is a distribution
+			-	we are not as opinionated as RoR
+			-	we don't want to reinvent every web component ever made
+			-	we want to take the best of what's out there and
+				-	aggreate it into a distrobution
+				-	wrap it up in the zoop stuff so it is easy to set up, configure and use
+				-	our setup provides sensible defaults
+				-	we try to allow you to swap components in and out as necessary
+				-	if new better stuff comes along you can use that
+	-	publish the release file
+		-	take the release info out and put it in release.todo
+		-	link it to the main project
+	-	downloads
+		-	set up scripts to create nightly snapshots
+			-	don't create the api docs anymore, put them online and let the user make them if he/she wants
+				-	create a wiki page on how to generate the docs yourself
+			-	create the new tarball
+			-	delete the previous days snapshot
+			-	upload the new snapshot
 						
 
 

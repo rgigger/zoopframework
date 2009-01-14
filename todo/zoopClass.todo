@@ -1,8 +1,10 @@
 -	fix how it loads classes, make it use the dynamic loading stuff
 	+	add in the auto include stuff
-	-	use if for all of the zoop modules
+	+	use if for all of the zoop modules
 	-	some concept of depencencies
-		-	for instance guizone depends on gui and zone.  how should me make sure that these things are loaded?
+		+	add in the ability to indicate and load dependant modules
+		-	add in some code to make sure it doesn't readd modules that have already been loaded
 -	public files
 	+	make them work (accessible from with the application with no configuration)
 	-	make it so you can concat multiple so if you have a bunch of modules with tiny css or js files you can just download one consolidated file
+	-	cache compressed and minified or otherwise altered versions of static files

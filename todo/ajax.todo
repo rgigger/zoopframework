@@ -19,6 +19,7 @@
 				-	http://www.fiftyfoureleven.com/weblog/web-development/css/the-definitive-css-gzip-method
 	-	include small scripts and plugins
 	-	remove any major libraries already in there
+	-	try out Objective-J / Cappuccino
 -	functions
 	-	tables
 		-	sortable (http://tablesorter.com/docs/)
@@ -65,3 +66,5 @@
 		-	smarty
 		-	guicontrols
 	-	comet
+-	misc
+	pquery (http://www.ngcoders.com/php/pquery-php-and-jquery)

@@ -6,7 +6,16 @@
 -	smarty resources
 	-	possibly use resource paths (http://smarty.php.net/manual/en/template.resources.php) to handle module templates
 	-	use the default template handler to present a pleasant error message when you can't find a template in development - or create it for you on the fly!
--	experiment with non smarty drivers such as wrapping php templates in some sort of class
+-	experiment with non smarty drivers
+	-	configure in config.yaml
+	-	drivers
+		-	mizithra
+			-	<? code ?> for code that doesn't print anything
+			-	<?= code ?> for stuff that needs to print and escape
+			-	syntax modules for textmate
+				-	should just be a tweak to the php syntax
+		-	plainTemplate (http://meta20.net/plainTemplates/) + phpQuery (http://meta20.net/phpQuery)
+
 -	controls we need to have
 	-	button that just goes to an url
 		-	use onclick to set document.location
@@ -25,11 +34,6 @@
 		-	will it actually decrease latency
 	-	minifying
 -	templating system
-	-	<? code ?> for code that doesn't print anything
-	-	<?= code ?> for stuff that needs to print and escape
-		-	have
-	-	Builder templates (similar to in RoR), if it can be done elegantly in PHP 
-	-	create a tweaked syntax mode in textmate to handle new syntax elements
 	-	control characters
 		-	postions
 			-	open

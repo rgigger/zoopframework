@@ -1,4 +1,5 @@
 +	lazy connections to the database
+-	free memory from result sets after queries you've pulled all the data out
 -	support for sequences
 -	paginated result sets
 -	pre-loading of data for many objects at a time
