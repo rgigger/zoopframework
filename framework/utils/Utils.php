@@ -39,7 +39,7 @@ function GetFormDate($name, $src = null)
 	{
 		$year = $src[$name]['Date_Year'];
 		$month = $src[$name]['Date_Month'];
-		$date = $src[$name]['Date_Day'];
+		$day = $src[$name]['Date_Day'];
 	}
 	else
 	{
