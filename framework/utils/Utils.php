@@ -30,20 +30,23 @@ function RequestIsPost()
  * @return string Date string
  */
 
-function GetPostDate($name)
+function GetFormDate($name, $src = null)
 {
-	if(is_array($_POST[$name]))
+	if(!$src)
+		$src = $_POST;
+	
+	if(is_array($src[$name]))
 	{
-		$year = $_POST[$name]['Date_Year'];
-		$month = $_POST[$name]['Date_Month'];
-		$date = $_POST[$name]['Date_Day'];
+		$year = $src[$name]['Date_Year'];
+		$month = $src[$name]['Date_Month'];
+		$date = $src[$name]['Date_Day'];
 	}
 	else
 	{
 		$name = "{$name}_";
-		$month = $_POST[$name . 'Month'];
-		$day = $_POST[$name . 'Day'];
-		$year = $_POST[$name . 'Year'];
+		$month = $src[$name . 'Month'];
+		$day = $src[$name . 'Day'];
+		$year = $src[$name . 'Year'];
 	}
 	
 	return "$year-$month-$day";
