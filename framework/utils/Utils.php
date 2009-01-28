@@ -29,6 +29,28 @@ function RequestIsPost()
  * @param $name Prefix of the POST variables to evaluate
  * @return string Date string
  */
+
+function GetPostDate($name)
+{
+	if(is_array($_POST[$name]))
+	{
+		$year = $_POST[$name]['Date_Year'];
+		$month = $_POST[$name]['Date_Month'];
+		$date = $_POST[$name]['Date_Day'];
+	}
+	else
+	{
+		$name = "{$name}_";
+		$month = $_POST[$name . 'Month'];
+		$day = $_POST[$name . 'Day'];
+		$year = $_POST[$name . 'Year'];
+	}
+	
+	return "$year-$month-$day";
+}
+
+/*
+there should be separate functions for date and time
 function GetPostDate($name)
 {
 	//echo_r($_POST);
@@ -45,6 +67,7 @@ function GetPostDate($name)
 	
 	return "$year-$month-$day $hour:$minute:$second -7:00";
 }
+*/
 
 
 /**
