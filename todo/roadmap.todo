@@ -26,6 +26,7 @@
 		-	finish the session code
 		-	forms
 		-	request app
+		-	improved basic stationary
 	-	beyond
 		-	cli
 		-	migrations
@@ -35,6 +36,8 @@
 		-	ability to log errors, controlled by config
 		-	ability to turn display of errors on or off in config
 		-	krumo replacement
+			-	actually krumo might be fixable in php5 because you can do a === operator on two objects to determine if they
+				represent the same instance
 		-	auth
 		-	scaffolding
 		-	charts
