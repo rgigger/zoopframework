@@ -22,6 +22,7 @@
 	-	relationships
 		+	one-to-one
 		+	one-to-many
+			-	allow you to auto-create x number of subordinate rows with given default values
 		+	many-to-one
 		+	and many-to-many
 		-	distinguish between aggregate, ownership, and mapped relationships

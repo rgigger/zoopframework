@@ -1,8 +1,6 @@
 -	training
 	-	change this to js.todo
 	-	create some examples
-		-	jquery
-		-	yui
 -	documentation
 	-	add pages in the wiki with links to the yui, jquery, and jquery modules docs
 -	libraries
