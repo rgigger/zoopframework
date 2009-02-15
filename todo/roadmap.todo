@@ -18,10 +18,10 @@
 		+	get rid of ext
 		+	get rid of yui
 		+	get rid of dojo
+		+	improved basic stationary
 		-	forms
 		-	finish the session code
 		-	request app
-		+	improved basic stationary
 		-	js/ajax/jquery examples
 		-	examples of how to use other js libs
 			-	including them in the public folder
