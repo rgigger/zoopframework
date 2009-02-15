@@ -21,10 +21,17 @@
 -	enhance DbObject
 	-	relationships
 		+	one-to-one
-		+	one-to-many
+		-	one-to-many (hasMany)
 			-	allow you to auto-create x number of subordinate rows with given default values
+			+	hasOne
+			+	belongsTo
+			+	basic functionality
+			+	mapped field paramater
+			-	allow you to specify an array for the mapped field paramter and have it organize it like the Sql*Map functions
 		+	many-to-one
+			+	belongsTo
 		+	and many-to-many
+			+	hasMany(through)
 		-	distinguish between aggregate, ownership, and mapped relationships
 		-	have a way to indicate that you want to pre-load the objects from these relationships
 	-	figure out how to handle multiple database connections
@@ -55,6 +62,11 @@
 	-	set up abstract methods called with DbObject::__construct
 		-	relate: use this to set up relationships
 		-	refine: use this to set up named queries
+	-	allow an object to be bound if it has all the values for any unique key on the table
+		-	how would you know which one to look up on?
+			-	primary key if it is there
+			-	first one it finds otherwise
+			-	validate that the other unique field sets match up
 -	evaluate doctrine
 	-	doctrine query language
 	-	how it handles prepared statements vs paramater escaping
