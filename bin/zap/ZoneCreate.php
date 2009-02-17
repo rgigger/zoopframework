@@ -16,22 +16,42 @@ class ZoneCreate
 	
 	function subMigration($p, $s)
 	{
-		if(!isset($p[3]))
-			trigger_error("no version passed in");
+		if(!isset($s['v']))
+			trigger_error("no version passed in.  use -v migration_version");
 		else
-			$version = $p[3];
+			$version = $s['v'];
 		
-		if(!isset($p[4]))
-			trigger_error("no name passed in");
+		if(!isset($s['n']))
+			trigger_error("no name passed in.  use -n migration_name");
 		else
-			$name = $p[4];
+			$name = $s['n'];
+		
+		if(!isset($s['s']))
+			$stationaryFilename = 'migration.tpl';
+		else
+			$stationaryFilename = $s['s'];
+		
+		if(isset($s['m']))
+			$moduleName = $s['m'];
 		
 		$gui = new Gui();
 		$gui->left_delimiter = '[[';
 		$gui->right_delimiter = ']]';
-		$stationaryFile = 'file:' . getcwd() . '/stationary/migration.tpl';
+		
+		if(isset($s['m']))
+			$stationaryFilename = 'file:' . zoop_dir . "/$moduleName/stationary/$stationaryFilename";
+		else if(strpos($stationaryFilename, ':') === false)
+			$stationaryFilename = 'file:' . getcwd() . "/stationary/$stationaryFilename";
+		else
+		{
+			$parts = explode(':', $stationaryFilename);
+			$modName = $parts[0];
+			$filename = $parts[1];
+			$stationaryFilename = 'file:' . zoop_dir . "/$modName/stationary/$filename";
+		}
+			
 		$gui->assign('version', str_replace('.', '_', $version));
-		$contents = $gui->fetch($stationaryFile);
+		$contents = $gui->fetch($stationaryFilename);
 		
 		$dir = getcwd() . '/migrations';
 		$newFilename = $dir . '/' . $version . '_' . $name . '.php';
