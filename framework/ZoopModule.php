@@ -12,7 +12,7 @@ abstract class ZoopModule
 		//	get the module name
 		$this->name = $this->createName();
 		
-		//	register any class files
+		//	load any dependant modules
 		if($this->getDepends())
 			foreach($this->getDepends() as $thisDepends)
 				Zoop::loadLib($thisDepends);
