@@ -8,6 +8,43 @@
 		-	clients
 	-	issues
 		-	integrate with the time tracker you you can easily record where you are spending all of your time
+	-	checkin
+		-	send out email periodically to check in and see if you have completed a specific task
+		-	the email contains links to indicate if you did or didn't do it
+		-	your performance is recorded and reported on
+	-	tunnel
+		-	config file with tunnel info
+			-	section of tunnel servers including
+				-	name
+				-	host
+				-	port
+				-	username
+				-	forwards
+					-	local port
+					-	remote host
+					-	report port
+			-	section of servers that you want to connect to
+				-	name
+				-	tunnel name
+				-	port
+		-	script to
+			-	list open tunnels
+			-	open a new tunnel
+				-	make sure it's not already open
+					-	use grep -c ?
+			-	kill a tunnel
+			-	connect to a specific server
+				-	start the necessary tunnel if it's not already open
+		-	(or possibly try to use launchd to and ssh_config to accomplish having tunnels automatically open when you ssh to the server)
+	-	tag manager
+		-	detection code for Mac OS X
+		-	api
+			-	searches on tags
+		-	gui
+			-	search tags
+			-	change filenames
+			-	browse tags
+			-	save smart tag collections and open all of them in a browser
 -	old and busted
 	-	duplicate google code?
 		-	wiki

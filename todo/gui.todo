@@ -103,3 +103,5 @@
 				-	email
 				-	regex
 				-	matches (sameas)
+-	themes
+	-	provide a whole bunch of site themes and a good way to pull them into an existing stationary set
