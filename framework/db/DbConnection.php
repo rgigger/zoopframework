@@ -177,7 +177,13 @@ abstract class DbConnection
 		$sql = preg_replace_callback("/:([[:alpha:]_\d]+):([[:alpha:]_]+)|:([[:alpha:]_\d]+)/", array($this, 'queryCallback'), $sql);
 
 		if($this->echo)
-			echo $sql . '<br>';
+		{
+			if(php_sapi_name() == "cli")
+				echo $sql . "\n";
+			else
+				echo $sql . '<br>';
+		}
+			
 
 		//	actually do the query
 		return $this->_query($sql);
@@ -598,8 +604,16 @@ abstract class DbConnection
 		else
 			$orderByClause = '';
 
+		//	create the limit
+		if(isset($params['limit']) && $params['limit'])
+		{
+			$limitClause = 'limit ' . $params['limit'];
+		}
+		else
+			$limitClause = '';
+		
 		//	now put it all together
-		$selectSql = "SELECT $fieldClause FROM :tableName:identifier $conditionClause $orderByClause $lockClause";
+		$selectSql = "SELECT $fieldClause FROM :tableName:identifier $conditionClause $orderByClause $limitClause $lockClause";
 		$selectParams['tableName'] = $tableName;
 
 		return array('sql' => $selectSql, 'params' => $selectParams);

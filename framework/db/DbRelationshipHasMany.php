@@ -12,10 +12,13 @@ class DbRelationshipHasMany extends DbRelationshipBasic implements Iterator
 	{
 		if(!$this->theMany)
 		{
+			if(isset($this->params['orderby']))
+				$orderby = "order by " . $this->params['orderby'];
+			else
+				$orderby = '';
 			$remoteTableName = DbObject::_getTableName($this->remoteClassName);
-			$sql = "select * from $remoteTableName where {$this->remoteFieldName} = :id:int";
+			$sql = "select * from $remoteTableName where {$this->remoteFieldName} = :id:int $orderby";
 			$rows = $this->dbObject->getDb()->fetchRows($sql, array('id' => $this->dbObject->getField($this->localFieldName)));
-			
 			$this->theMany = array();
 			foreach($rows as $thisRow)
 			{

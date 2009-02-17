@@ -104,7 +104,8 @@ class DbObject extends Object implements Iterator
 	}
 
 	/**
-	 * Returns the value of the primary key of the record that this object is associated with.  An error will be thrown if there is more than one primary key.
+	 * Returns the value of the primary key of the record that this object is associated with.  An error 
+	 * will be thrown if there is more than one primary key.
 	 *
 	 * @return mixed
 	 */
