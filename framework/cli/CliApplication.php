@@ -15,26 +15,28 @@ class CliApplication
 		global $argv;
 				
 		//	parse the flags
-		$switches = array();
 		$params = array();
-		$inSwitch = 0;
+		$inShortFlag = 0;
+		$shortFlags = array();
 		foreach($argv as $thisArg)
 		{
-			//	check for a double switch
+			//	check for long flags
 			if($thisArg[0] == '-' && $thisArg[1] == '-')
 			{
 			}
-			//	check for a single switch
+			//	check for short flags
 			else if($thisArg[0] == '-')
 			{
-				$inSwitch = 1;
+				$inShortFlag = 1;
+				$shortFlagName = substr($thisArg, 1);
 			}
 			//	it's a paramater
 			else
 			{
-				if($inSwitch)
+				if($inShortFlag)
 				{
-					$inSwitch = 0;
+					$inShortFlag = 0;
+					$shortFlags[$shortFlagName] = $thisArg;
 				}
 				else
 				{
@@ -53,7 +55,7 @@ class CliApplication
 		$zoneName = 'Zone' . $params[1];
 		$pageName = 'sub' . $params[2];
 		$zone = new $zoneName();
-		$zone->$pageName($params, $switches);
+		$zone->$pageName($params, $shortFlags);
 	}
 	
 	/*
