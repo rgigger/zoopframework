@@ -116,6 +116,8 @@ class Zoop
 			return;
 		}
 		
+		//	put some code in here to make sure we don't reload modules that have already been loaded
+		
 		//	temporary measure so I can test without having to convert all of the modules over to the new format right away
 		if(file_exists(zoop_dir . "/$name/module.php"))
 		{
@@ -128,32 +130,32 @@ class Zoop
 			$module = new $moduleName();
 		}
 	}
+	
+	/**
+	 * Automatic class loading handler.  This automatically loads a class using the path
+	 * information that was registered using the Zoop::registerClass or ::registerDomain
+	 * method 
+	 *
+	 * @param string $className Name of the class to load
+	 */
+	static function autoload($className)
+	{
+		$classPath = Zoop::getClassPath($className);
+		if($classPath)
+		{
+			require_once($classPath);
+		}
+
+		if(substr($className, 0, 5) == 'Zend_')
+		{
+			$parts = explode('_', $className);
+			$modName = $parts[1];
+			require_once(zoop_dir . "/Zend/$modName.php");
+		}
+	}
 }
 
 $zoop = new Zoop();
-
-/**
- * Automatic class loading handler.  This automatically loads a class using the path
- * information that was registered using the Zoop::registerClass or ::registerDomain
- * method 
- *
- * @param string $className Name of the class to load
- */
-function __autoload($className)
-{
-	$classPath = Zoop::getClassPath($className);
-	if($classPath)
-	{
-		require_once($classPath);
-	}
-	
-	if(substr($className, 0, 5) == 'Zend_')
-	{
-		$parts = explode('_', $className);
-		$modName = $parts[1];
-		require_once(zoop_dir . "/Zend/$modName.php");
-	}
-}
-
 Zoop::loadLib('config');
 Config::load();
+spl_autoload_register(array('Zoop', 'autoload'));
