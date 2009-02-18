@@ -27,20 +27,31 @@
 			-	including them in the public folder
 			-	hosting them externally
 			-	including them of other hosts (google, yahoo, amazon, etc)
-	-	beyond
-		-	cli
-		-	migrations
-		-	permissions system
-		-	application stubs
-		-	examples of DbObject relationship functions
 		-	ability to log errors, controlled by config
 		-	ability to turn display of errors on or off in config
+		-	make the error reporting good
+			-	html
+			-	cli
+		-	translate functions
+			-	basic api
+			-	smary prefilter plugin
+	-	beyond
+		-	cli
+		-	sql DSL
+		-	migrations
+		-	storage
+		-	permissions system
+		-	application stubs
 		-	krumo replacement
 			-	actually krumo might be fixable in php5 because you can do a === operator on two objects to determine if they
 				represent the same instance
+		-	log
+		-	GuiControls
+		-	xml graphics
+		-	examples of DbObject relationship functions
+		-	smarty replacement
 		-	auth
 		-	scaffolding
 		-	charts
-		-	log
-		-	xml graphics
-		-	rename mixins to delgates?
+		-	rename mixins to delgates
+		-	
