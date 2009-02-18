@@ -18,15 +18,15 @@
 		+	get rid of ext
 		+	get rid of yui
 		+	get rid of dojo
+		-	forms
+		-	finish the session code
+		-	request app
+		+	improved basic stationary
 		-	js/ajax/jquery examples
 		-	examples of how to use other js libs
 			-	including them in the public folder
 			-	hosting them externally
 			-	including them of other hosts (google, yahoo, amazon, etc)
-		-	finish the session code
-		-	forms
-		-	request app
-		-	improved basic stationary
 	-	beyond
 		-	cli
 		-	migrations
