@@ -9,6 +9,6 @@ class CliModule extends ZoopModule
 	 */
 	function getClasses()
 	{
-		return array('CliApplication');
+		return array('CliApplication', 'Importer', 'CsvImporter');
 	}
 }
