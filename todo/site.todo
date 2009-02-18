@@ -96,6 +96,10 @@
 				-	Evolution of Zoop, what Zoop allows you to do
 					-	include notes on how each element in zoop relates to the different patterns
 				-	Recommendation of a specific pattern
+		-	philosophy
+			-	speed (http://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html)
+				-	this works for developers as well as users
+			-	pain points
 		-	zoop is a distribution
 			-	we are not as opinionated as RoR
 			-	we don't want to reinvent every web component ever made

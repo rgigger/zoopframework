@@ -91,3 +91,11 @@
 		-	shapes, lines, etc
 		-	make sure you can have point level precision with anything you might want to draw
 	-	page breaks
+	-	why does it not hanlde xml/html entities like &nbsp;
+	-	make sure that styles always apply to exactly what the dom indicates they should apply to
+	-	documentation
+		-	from the very beginning have a format for documenting the syntax of the xml
+		-	document first how you want it to work
+		-	then make it work like the docs say it will
+	-	css
+		-	there isn't much point in working towards compatibility with HTML if you don't have CSS support

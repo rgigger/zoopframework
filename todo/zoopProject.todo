@@ -115,3 +115,5 @@
 		-	for example zone params go in the zone not in some big master config file
 -	security
 	-	make sure you always do all validation
+-	utils
+	-	make them all static members of a class, also probably just move utils.php into the app module
