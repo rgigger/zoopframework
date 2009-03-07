@@ -78,3 +78,12 @@
 	-	create the options table (you could combine many into one table, then you could skip this step it the table exists)
 	-	insert all the options into the table
 -	various tree handling libraries
+-	map reduce implementation
+-	distributed non-relational system
+	-	uuid for every entity
+	-	automatic schema creation based on objects or put each field in it's own row
+	-	manage all connections transparently
+	-	partition all data across all servers
+	-	make sure every row is in at least two places
+	-	make it possible to replicate across the internet
+	-	

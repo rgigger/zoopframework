@@ -18,6 +18,9 @@
 	-	include small scripts and plugins
 	-	remove any major libraries already in there
 	-	try out Objective-J / Cappuccino
+	-	look into this project for handling many of these functions
+		-	http://ajaxian.com/archives/juicer-package-your-javascript-and-css
+		-	http://www.cjohansen.no/en/ruby/juicer_a_css_and_javascript_packaging_tool
 -	functions
 	-	tables
 		-	sortable (http://tablesorter.com/docs/)

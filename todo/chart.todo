@@ -1,16 +1,21 @@
 -	backends
-	-	google charts (http://code.google.com/apis/chart/)
-	-	open flash charts (http://teethgrinder.co.uk/open-flash-chart/tutorial.php)
-	-	PHP/SWF charts (http://www.maani.us/charts/index.php)
+	-	google charts (http://code.google.com/apis/chart/) (web service)
+	-	open flash charts (http://teethgrinder.co.uk/open-flash-chart-2/) (LGPL)
+	-	GraPHPite (http://graphpite.sourceforge.net/) (LGPL)
+	-	pChart (http://pchart.sourceforge.net/) (GPL)
 	-	maybe grab some stuff from here (http://www.hotscripts.com/PHP/Scripts_and_Programs/Graphs_and_Charts/index.html)
 	-	libchart (http://naku.dohcrew.com/libchart/pages/introduction/)
 	-	homebrewed svg charts
+	-	css charts
+	-	javascript charts
 	-	this place (http://www.developertutorials.com/scripts/3/72/)
 	-	and this place too (http://www.roscripts.com/CSS_PHP_flash_and_AJAX_charts-128.html)
 	-	dojo charting
 	-	home brewed with zoop graphics module
 		-	with html/css
 		-	with a graphic plugin with it's own xml tags and php code
+	-	gantt charts with (http://ganttproject.biz/license.php)
+	-	those timeline charts that scott showed me
 -	front ends
 	-	html/css/javascript
 		-	visual chart
@@ -27,3 +32,17 @@
 	-	create an xml parser for specifying the data as xml and displaying as a chart
 	-	create gui plugins for handling the xml data
 	-	allow the gui plugins and xml data to be used to create zoop graphics documents
+-	basic usage patterns
+	-	web api
+		-	define the data
+		-	create a url/other include markup
+		-	include it in html
+		-	chart is generated on and loaded from a remote site
+	-	all local
+		-	one page is same as web api
+		-	now page takes the data and generates and serves the chart
+	-	inline rendering with native browser features
+		-	define the data
+		-	create the inline markup
+		-	include it in html
+		-	issues with needing to insert markup/js code/css into different locations on the page
