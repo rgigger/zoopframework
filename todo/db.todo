@@ -28,6 +28,8 @@
 			+	basic functionality
 			+	mapped field paramater
 			-	allow you to specify an array for the mapped field paramter and have it organize it like the Sql*Map functions
+		+	one-to-many
+			-	allow you to auto-create x number of subordinate rows with given default values
 		+	many-to-one
 			+	belongsTo
 		+	and many-to-many
