@@ -117,3 +117,14 @@
 	-	make sure you always do all validation
 -	utils
 	-	make them all static members of a class, also probably just move utils.php into the app module
+-	gpl
+	-	have a way with integrating with GPL software without exposing yourself to it's licencing conditions
+		-	make these separate projects that 
+		-	create a chart server with open flash charts (http://teethgrinder.co.uk/open-flash-chart/tutorial.php) that 
+			adheres to some zoop specific API
+			-	actually only open flash charts one is GPL, version 2 is LGPL, the server might be useful on it's own
+				-	though it would abstract chart creation from the application and make it resuable
+		-	same for flowplayer (http://flowplayer.org/)
+		-	and pChart (http://pchart.sourceforge.net/)
+-	media
+	-	integrate with open source flash video viewer flowplayer

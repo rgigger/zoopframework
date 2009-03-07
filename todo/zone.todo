@@ -7,6 +7,8 @@
 			-	will it actually decrease latency
 		-	minifying of js/css/html
 -	key value params for zones and pages
+	-	if the item has a colon in it use everything before the colon as the name
+-	make it so you don't have to fix the number of zone paramaters for each zone
 -	get rid of the ambiguity between zone/default and zone/
 	-	zone/default should go to pageDefault
 	-	zone or zone/ should go to index (not pageIndex)
