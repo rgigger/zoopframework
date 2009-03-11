@@ -17,3 +17,6 @@
 		-	replace those components with your own Http reader and parser
 	-	session
 	-	sqlite
+-	system integreation
+	-	allow for daemons to be launched by launchd, xinetd, inted etc
+		-	this might make it so in many instances you don't have to write process management code just the socket code

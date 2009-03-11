@@ -1,0 +1,8 @@
+-	offer both swift mailer and an up to date phpmailer
+-	allow it to be configured in yaml
+-	have auto configuration settings for popular hosts that could be used to send mail
+	-	gmail
+	-	yahoo
+	-	hotmail/ms
+-	have configuration files for new hosts to specify what paramaters are needed and how they are to mapped
+	to the smtp paramaters

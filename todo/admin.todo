@@ -16,3 +16,6 @@
 			-	give a zone file and page / post function find it's template
 -	build system
 	-	setting perms to make stuff writable to the web server
+-	monitoring of system, scaling, performance, concurrency etc
+	-	performance log
+	-	

@@ -1,4 +1,19 @@
 -	turn smarty->use_sub_dirs on by default (set it equal to true)
+-	misc
+	-	fix html_dboptions
+		-	it is still using the old zoop db sql_fetch_simple_map
+		-	use the following to determine the dataset to use
+			-	query parts
+				-	tablename
+				-	idfield
+				-	namefield
+				-	orderby
+			-	result set
+			-	query object
+				-	chained sql generator object
+				-	some soft of object you create by just giving it sql and the escape vars
+			-	sql query string
+	-	identifiers in mssql: apparently it doesn't accept double quotes ""
 -	use smarty->default_modifiers to automatically escape all html by default
 	-	make sure it also applies to smarty functions and not just variables
 	-	make sure it runs it after it applies all other modifiers

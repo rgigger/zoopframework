@@ -337,7 +337,7 @@ abstract class DbConnection
 			}
 
 			if(isset($cur) && !empty($lastKey))
-				trigger_error("db::fetchSimpleMap : duplicate key in query: \n $inQuery \n");
+				trigger_error("db::fetchSimpleMap : duplicate key in query: \n $sql \n");
 
 			$cur = $row[ $valueField ];
 		}
