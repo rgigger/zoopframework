@@ -34,6 +34,10 @@
 		-	forms
 		-	finish the session code
 		-	request app
+		-	forms
+		-	finish the session code
+		-	request app
+		+	improved basic stationary
 		-	js/ajax/jquery examples
 		-	examples of how to use other js libs
 			-	including them in the public folder
