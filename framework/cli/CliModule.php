@@ -12,3 +12,4 @@ class CliModule extends ZoopModule
 		return array('CliApplication', 'Importer', 'CsvImporter');
 	}
 }
+
