@@ -107,3 +107,7 @@
 	-	partition all data across all servers
 	-	make sure every row is in at least two places
 	-	make it possible to replicate across the internet
+<<<<<<< HEAD:todo/db.todo
+=======
+	-	
+>>>>>>> updates to todos:todo/db.todo
