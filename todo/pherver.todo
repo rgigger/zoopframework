@@ -1,0 +1,16 @@
+-	create a generic server file
+	-	model it after ZoneApplication so you just do some inludes and say Pherver::run()
+	-	have a yaml configuration for indicating different server properties
+-	allow for these options
+	-	single-process vs multi-process
+	-	if multi-process
+		-	maximum number of requests before it starts to just lock people out
+		-	one or many requests per child process
+		-	max number of child processes (= max requests if one request per child)
+		-	min number of child processes
+	-	comet
+	-	server modules to load and what sockets they should listen on
+-	modules
+	-	http
+	-	session
+	-	sqlite
