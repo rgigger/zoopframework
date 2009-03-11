@@ -3,6 +3,7 @@
 	-	__isset
 	-	__unset
 -	error
+	-	optionally support the show errors stuff as defined in php.ini and the use of @ symbols
 	-	convert all errors to exceptions
 		-	create an error handler that throws an exception will all relevent info it in it
 		-	create a handler for any exception that doesn't get handled elsewhere that is the same as our current error handler
