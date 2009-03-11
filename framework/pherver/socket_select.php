@@ -5,5 +5,5 @@ define('app_dir', dirname(__file__));
 include(zoop_dir . '/Zoop.php');
 Zoop::loadLib('Pherver');
 
-$pherver = new Pherver();
-$pherver->run('127.0.0.1', 9050);
+$chatserver = new ChatServer();
+$chatserver->run('127.0.0.1', 9050);
