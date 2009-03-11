@@ -12,5 +12,8 @@
 	-	server modules to load and what sockets they should listen on
 -	modules
 	-	http
+		-	parse the request with pecl_http
+		-	create the response with Zoop Framework Http
+		-	replace those components with your own Http reader and parser
 	-	session
 	-	sqlite
