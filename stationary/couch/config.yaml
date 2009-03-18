@@ -1,0 +1,6 @@
+zoop:
+    couch:
+        default:
+            host: localhost
+            port: 5984
+            database: my_database_name
