@@ -1,10 +1,14 @@
 <?php
 class CouchDocument
 {
-	private $conn;
 	private $id;
 	private $rev;
-	public $data;
+	private $data;
+	
+	static function findAll()
+	{
+		return CouchModule::getConnection(self::getConnectionName())->getAllDocuments();
+	}
 	
 	function __construct($id, $rev = null)
 	{
@@ -34,8 +38,8 @@ class CouchDocument
 	
 	public function load()
 	{
-		$dbName = $this->getDb()->getName();
-		$resp = $this->getDb()->getHttp()->send("GET", "/$dbName/$this->id");
+		$dbName = $this->getDb()->getdbName();
+		$resp = $this->getDb()->getHttp()->send("GET", "/$dbName/{$this->id}");
 		foreach($resp as $key => $value)
 		{
 			if($key == '_id')
@@ -51,7 +55,7 @@ class CouchDocument
 	
 	public function save()
 	{
-		$dbName = $this->getDb()->getName();
+		$dbName = $this->getDb()->getDbName();
 		
 		$data->_id = $this->id;
 		if($this->rev)
@@ -64,9 +68,27 @@ class CouchDocument
 		$data = json_encode($data);
 		
 		$resp = $this->getDb()->getHttp()->send("PUT", "/$dbName/$this->id", $data);
+		
 		if($resp->ok != true)
 			trigger_error("saving document '{$this->id}:{$this->rev}' failed");
 		
 		$this->rev = $resp->rev;
 	}
+	
+	public function getData()
+	{
+		return $this->data();
+	}
+	
+	function __get($varname)
+	{
+		if(!isset($this->data->$varname))
+			trigger_error("field does not exist: $varname");
+		return $this->data->$varname;
+	}
+	
+	function __set($varname, $value)
+	{
+		$this->data->$varname = $value;
+	}	
 }

@@ -55,6 +55,11 @@ class CouchHttp
 		
 		list($headers, $body) = explode("\r\n\r\n", $response);
 		
-		return json_decode($body);
+		$bodyObject = json_decode($body);
+		
+		if(isset($bodyObject->error) && $bodyObject->error)
+			trigger_error("couchdb: {$bodyObject->error}: {$bodyObject->reason}");
+		
+		return $bodyObject;
 	}
 }
