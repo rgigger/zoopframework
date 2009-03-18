@@ -1,21 +1,44 @@
 -	backends
-	-	google charts (http://code.google.com/apis/chart/) (web service)
-	-	open flash charts (http://teethgrinder.co.uk/open-flash-chart-2/) (LGPL)
-	-	GraPHPite (http://graphpite.sourceforge.net/) (LGPL)
-	-	pChart (http://pchart.sourceforge.net/) (GPL)
-	-	maybe grab some stuff from here (http://www.hotscripts.com/PHP/Scripts_and_Programs/Graphs_and_Charts/index.html)
-	-	libchart (http://naku.dohcrew.com/libchart/pages/introduction/)
-	-	homebrewed svg charts
-	-	css charts
-	-	javascript charts
-	-	this place (http://www.developertutorials.com/scripts/3/72/)
-	-	and this place too (http://www.roscripts.com/CSS_PHP_flash_and_AJAX_charts-128.html)
-	-	dojo charting
+	-	flash
+		-	open flash charts (http://teethgrinder.co.uk/open-flash-chart-2/) (LGPL)
+	-	service
+		-	google charts (http://code.google.com/apis/chart/) (web service)
+	-	php server side
+		-	GraPHPite (http://graphpite.sourceforge.net/) (LGPL) now http://pear.php.net/package/Image_Graph
+		-	http://www.phpclasses.org/browse/package/2613.html (LGPL)
+		-	plchart (http://www.plchart.net/index.php/Main_Page) (LGPL)
+		-	advgraph (http://code.google.com/p/advgraph/) (BSD)
+	-	client side (html, css, js)
+		-	dojox charts (http://www.dojotoolkit.org/projects/dojox)
+		-	plotkit (http://www.liquidx.net/plotkit/)
+		-	WebFX chart (http://webfx.eae.net/dhtml/chart/chart.html)
+	-	GPL
+		-	pChart (http://pchart.sourceforge.net/) (GPL)
+		-	libchart (http://naku.dohcrew.com/libchart/pages/introduction/)
+	-	collections
+		-	maybe grab some stuff from here (http://www.hotscripts.com/PHP/Scripts_and_Programs/Graphs_and_Charts/index.html)
+		-	this place (http://www.developertutorials.com/scripts/3/72/)
+		-	and this place too (http://www.roscripts.com/CSS_PHP_flash_and_AJAX_charts-128.html)
 	-	home brewed with zoop graphics module
 		-	with html/css
 		-	with a graphic plugin with it's own xml tags and php code
-	-	gantt charts with (http://ganttproject.biz/license.php)
-	-	those timeline charts that scott showed me
+	-	exotic
+		-	gantt charts with (http://ganttproject.biz/license.php)
+		-	those timeline charts that scott showed me
+-	steps
+	-	define a standard api for defining a chart
+		-	look to google charts, open flash charts, and dojox.charts for examples of how to define the data
+	-	include each package that you want to use
+	-	write the wrapper that implements the api
+	-	write some glue and plugins for embedding the client side charts
+-	try to come up with an API to abstract the drawing
+	-	define basic drawing operations
+	-	define a data format in php that can be converted directly to ajax that defines a series of drawing operations
+	-	define an API of standard drawing operations
+	-	make the API write to different targets: PDF, GDLib, our data format, etc
+	-	try to get all the libs that do the drawing in PHP to use this API so you can write to any of the backends
+-	this is very cool
+	-	http://excanvas.sourceforge.net/
 -	front ends
 	-	html/css/javascript
 		-	visual chart
