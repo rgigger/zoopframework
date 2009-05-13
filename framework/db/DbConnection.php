@@ -174,7 +174,7 @@ abstract class DbConnection
 				$this->types[$parts[0]] = $parts[1];
 		}
 		// TODO: indication here how to escape options in here
-		$sql = preg_replace_callback("/:([[:alpha:]_\d]+):([[:alpha:]_]+)|:([[:alpha:]_\d]+)/", array($this, 'queryCallback'), $sql);
+		$sql = preg_replace_callback("/:([[:alpha:]_\d]+):([[:alpha:]_]+)|[^:]:([[:alpha:]_\d]+)/", array($this, 'queryCallback'), $sql);
 
 		if($this->echo)
 		{
