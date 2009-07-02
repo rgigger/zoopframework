@@ -719,12 +719,12 @@ abstract class DbConnection
 			$valuesClause = implode(', ', $valuesParts);
 
 			//	now put it all together
-			$insertSql = "INSERT INTO :tableName:keyword ($fieldClause) VALUES ($valuesClause)";
+			$insertSql = "INSERT INTO :tableName:identifier ($fieldClause) VALUES ($valuesClause)";
 			$insertParams['tableName'] = $tableName;
 		}
 		else
 		{
-			$insertSql = "INSERT INTO :tableName:keyword DEFAULT VALUES";
+			$insertSql = "INSERT INTO :tableName:identifier DEFAULT VALUES";
 			$insertParams['tableName'] = $tableName;
 		}
 
