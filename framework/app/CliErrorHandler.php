@@ -48,7 +48,7 @@ class CliErrorHandler
 			case E_CORE_WARNING:
 			case E_COMPILE_WARNING:
 			case E_STRICT:
-//			case E_RECOVERABLE_ERROR:
+			case E_RECOVERABLE_ERROR:
 				$line .= 'Error type not yet handled: ' . $errno . '';
 				break;
 			case E_WARNING:
@@ -57,14 +57,20 @@ class CliErrorHandler
 			case E_NOTICE:
 				$line .= 'Notice:';
 				break;
-			case E_USER_NOTICE:
-				$line .= 'User Notice:';
+			case E_DEPRECATED:
+				$line .= 'Deprecated:';
 				break;
 			case E_USER_ERROR:
 				$line .= 'User Error:';
 				break;
 			case E_USER_WARNING:
 				$line .= 'User Warning:';
+				break;
+			case E_USER_NOTICE:
+				$line .= 'User Notice:';
+				break;
+			case E_USER_DEPRECATED:
+				$line .= 'User Deprecated:';
 				break;
 			case 0:
 				$line .= 'Exception:';

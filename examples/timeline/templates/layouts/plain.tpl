@@ -1,0 +1,1 @@
+{include file=$TEMPLATE_CONTENT}

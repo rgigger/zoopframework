@@ -29,6 +29,10 @@
 	-	more advanced text features
 		-	alignment (left, center, right)
 		-	make all kinds of text styles work
+		-	have the ability to "fit" text to a space
+			-	for instance check it at a certain size and shrink the text size if it doesn't fit
+				-	you might need to be register callback to handle some situations that can't be described by data alone
+		-	automatic replacement of certain bad characters like the crazy dashes
 	-	release a new version for the Zend_Pdf people
 		-	update the front page to also refer people to Zend Framework
 		-	document our inclusion of some parts of Zend Framework

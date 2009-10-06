@@ -13,6 +13,11 @@ class DbRelationshipOptions extends DbRelationship
 		
 		if(isset($params['options']))
 		{
+			if(isset($params['localField']))
+				$this->localFieldName = $params['localField'];
+			else
+				$this->localFieldName = $name . '_id';
+			
 			$this->options = $params['options'];
 		}
 		else
@@ -47,7 +52,10 @@ class DbRelationshipOptions extends DbRelationship
 	
 	public function getOptions()
 	{
-		return SqlFetchSimpleMap("select {$this->remoteKeyField}, {$this->remoteValueField} from {$this->remoteTable}", $this->remoteKeyField, $this->remoteValueField, array());
+		if($this->options)
+			return $this->options;
+		else
+			return SqlFetchSimpleMap("select {$this->remoteKeyField}, {$this->remoteValueField} from {$this->remoteTable}", $this->remoteKeyField, $this->remoteValueField, array());
 	}
 	
 	public function getInfo()

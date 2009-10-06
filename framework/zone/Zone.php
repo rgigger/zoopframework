@@ -95,7 +95,7 @@ class Zone extends Object
 		//	if we found a page then run it
 		if( isset($foundPage) )
 		{
-			$postfix = $foundPage == 'pageDefault' ? array(0 => 'default', 1 => $originalPart) : array(0 => $originalPart);
+			$postfix = $foundPage == 'pageDefault' || $foundPage == 'postDefault' ? array(0 => 'default', 1 => $originalPart) : array(0 => $originalPart);
 			$pageParams = array_merge($postfix, $pathParts);
 			
 			if( $this->_methodExists('initPages') )
@@ -109,7 +109,6 @@ class Zone extends Object
 			if( RequestIsPost() && $this->_methodExists('closePosts') )
 				$this->closePosts($pageParams, $this->params);
 		}
-		
 	}
 	
 	
@@ -149,6 +148,18 @@ class Zone extends Object
 	function getUrl($extra = NULL, $numLevels = 0)
 	{
 		$url = script_url;
+		if($this->getRequestPath($numLevels))
+			$url .= '/' . $this->getRequestPath($numLevels);
+		
+		if($extra)
+			$url .= '/' . $extra;
+		
+		return $url;
+	}
+	
+	function getBackUrl($extra = NULL, $numLevels = 0)
+	{
+		$url = back_script_url;
 		if($this->getRequestPath($numLevels))
 			$url .= '/' . $this->getRequestPath($numLevels);
 		

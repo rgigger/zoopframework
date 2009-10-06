@@ -12,6 +12,8 @@ abstract class ZoopModule
 		//	get the module name
 		$this->name = $this->createName();
 		
+		// EchoBacktrace();
+		// var_dump($this->getDepends());
 		//	load any dependant modules
 		if($this->getDepends())
 			foreach($this->getDepends() as $thisDepends)

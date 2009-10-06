@@ -14,7 +14,7 @@ class FormBinding
 	
 	public function getName()
 	{
-		return "_zend_form_element[{$this->class}][{$this->id}][{$this->field}]";
+		return "_zoop_form_element[{$this->class}][{$this->id}][{$this->field}]";
 	}
 	
 	public function getString()

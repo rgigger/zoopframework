@@ -12,6 +12,8 @@
 		-	dojox charts (http://www.dojotoolkit.org/projects/dojox)
 		-	plotkit (http://www.liquidx.net/plotkit/)
 		-	WebFX chart (http://webfx.eae.net/dhtml/chart/chart.html)
+		-	jQuery visualizer (http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/)
+		-	Raphael (http://raphaeljs.com/)
 	-	GPL
 		-	pChart (http://pchart.sourceforge.net/) (GPL)
 		-	libchart (http://naku.dohcrew.com/libchart/pages/introduction/)
@@ -25,6 +27,7 @@
 	-	exotic
 		-	gantt charts with (http://ganttproject.biz/license.php)
 		-	those timeline charts that scott showed me
+	-	pdf, both as pdfs and in the browser (http://ajaxian.com/archives/wps-postscript-and-pdf-interpreter-for-html-5-canvas)
 -	steps
 	-	define a standard api for defining a chart
 		-	look to google charts, open flash charts, and dojox.charts for examples of how to define the data

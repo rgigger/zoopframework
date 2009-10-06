@@ -19,7 +19,7 @@ class DbObject extends Object implements Iterator
 	private $bound;
 	private $persisted;
 	private $scalars;
-	private $relationships;
+	protected $relationships;
 
 	const keyAssignedBy_db = 1;
 	const keyAssignedBy_dev = 2;

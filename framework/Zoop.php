@@ -1,4 +1,11 @@
 <?php
+
+function define_once($name, $value)
+{
+	if(!defined($name))
+		define($name, $value);
+}
+
 //	now we load the default config for zoop
 include(zoop_dir . '/config.php');	//	this file is now obsolete and depricated, in favor of the new config module
 include(zoop_dir . '/ZoopModule.php');
@@ -13,6 +20,8 @@ include(zoop_dir . '/app/Error.php');
  */
 class Zoop
 {
+	static $libList = array();
+	
 	/**
 	 * Key => Value list of registered classes and the full path of the file that contains them
 	 *
@@ -30,7 +39,7 @@ class Zoop
 	{
 		$this->classList = array();
 		
-		$this->loadLib('utils');
+		zoop::loadLib('utils');
 		DefineOnce('app_tmp_dir', app_dir . '/tmp');
 	}
 	
@@ -105,18 +114,21 @@ class Zoop
 	 *
 	 * @param string $name
 	 */
-	function loadLib($name)
+	static function loadLib($name)
 	{
 		//	allow static calls to use the singleton object
 		//	this is not the way to do this
-		if(!isset($this))
-		{
-			global $zoop;
-			$zoop->loadLib($name);
-			return;
-		}
+		// if(!isset($this))
+		// {
+		// 	global $zoop;
+		// 	$zoop->loadLib($name);
+		// 	return;
+		// }
 		
 		//	put some code in here to make sure we don't reload modules that have already been loaded
+		if(isset(self::$libList[$name]))
+			return;
+		self::$libList[$name] = 1;
 		
 		//	temporary measure so I can test without having to convert all of the modules over to the new format right away
 		if(file_exists(zoop_dir . "/$name/module.php"))

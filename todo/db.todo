@@ -18,6 +18,21 @@
 	-	settings
 	-	copy or exclude only specific tables, settings, other objects, data ranges, etc
 	-	copy linked data based on associations set up in DbObject or config files
+-	cheap multi-master support
+	-	make two connections
+	-	run a transaction on both connections
+	-	pre-commit both of them
+	-	commit both of them
+	-	document the fact that sequences between boxes won't be synced and your code will need to take that into account
+	-	create a uuid generator in php to compensate
+	-	build support into DbObject for this
+-	cheap paritioning across boxes
+	-	add support for DbObject to be tied to multiple servers
+	-	have some sort of partitioning function to determine which one new rows go to
+	-	for certain fields be able to use the partitioning function to know which box to get the data from
+	-	in other situations query each box and aggregate the results
+	-	make sure that DbObject doesn't try to do joins but rather always gets the objects from the correct box(es)
+		-	maybe allow it to do joins if you have set it up so you know all the relevant data will be on the same box
 -	enhance DbObject
 	-	relationships
 		+	one-to-one

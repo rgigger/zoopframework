@@ -1,7 +1,7 @@
 <?
 class PropertyList
 {
-	var $data;
+	public $data;
 	
 	function PropertyList($filename)
 	{

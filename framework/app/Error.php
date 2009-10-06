@@ -17,7 +17,7 @@ if(php_sapi_name() == "cli")
 else
 {
 	include(zoop_dir . '/app/WebErrorHandler.php');
-	// set_error_handler(array("WebErrorHandler", "throwException"), E_ALL);
+	set_error_handler(array("WebErrorHandler", "throwException"), E_ALL);
 	set_exception_handler(array("WebErrorHandler", "exceptionHandler"));
-	set_error_handler(array("WebErrorHandler", "handleError"), E_ALL);
+	// set_error_handler(array("WebErrorHandler", "handleError"), E_ALL);
 }

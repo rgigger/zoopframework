@@ -28,11 +28,24 @@ if(php_sapi_name() != "cli")
 	$host = $_SERVER['HTTP_HOST'];
 
 	$realPath = $_SERVER['SCRIPT_NAME'];
-
+	
 	$virtualPath = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
-
+	
 	define('root_url', $protocol . $host);
-	define('script_url', root_url . $realPath);
+	if(defined('script_url'))
+	{
+		define('back_script_url', root_url . $realPath);
+		define('back_virtual_url', back_script_url . $virtualPath);
+		define('back_pub_url', dirname(back_script_url) . '/public');
+	}
+	else
+	{
+		define('script_url', root_url . $realPath);
+	}
+	
 	define('virtual_path', $virtualPath);
 	define('virtual_url', script_url . virtual_path);
 }
+
+if(!defined('E_DEPRECATED'))
+	define('E_DEPRECATED', 8192);

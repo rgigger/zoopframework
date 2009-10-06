@@ -3,9 +3,11 @@ class WebErrorHandler
 {
 	static function throwException($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
+		// maybe we should use this here: http://us3.php.net/manual/en/class.errorexception.php
+		
 		$e = new Exception($errstr, $errno);
-		$e->setFile($errfile);
-		$e->setLine($errline);
+		// $e->setFile($errfile);
+		// $e->setLine($errline);
 		throw $e;
 	}
 	

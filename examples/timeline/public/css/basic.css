@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+	background: #fff url('../images/hedr33.jpg');
+	background-repeat: repeat-x;
+	font-family: "Trebuchet MS" Verdana, Arial, sans-serif;
+    font-size: .9em;
+}
+
+ul {
+	font-size: 1em;
+	margin:0;
+	padding:0;
+	color: #3B6EBF;
+}
+
+a {
+	color: #3B6EBF;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#header 
+{
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+#header h1 { padding-left: 16px; padding-top: 14px; font-size: 22px; color: #FFF; }
+#header h1 a { font-size: 22px; color: #FFF; text-decoration: none;}
+#header h2 { padding-left: 17px; padding-top: 0px; font-size: 17px; color: #FFF; }
+
+#wrap {
+    margin: 0 auto;
+    width: 77%;
+}
+.middle {
+	float: left;
+	width: 60%;
+	margin: 0 10px;
+	padding: 1% 1%;
+	text-align: justify;
+}
+
+.right {
+	float: left;
+	width: 25%;
+	margin: 0 10px;
+	padding: 1% 1%;
+}
+
+.right ul {
+	padding: 20px 0 15px 30px;
+	margin:0;
+}
+
+.right li {
+	margin-bottom:5px;
+	list-style-type: square;
+}
+
+.middle h2 { color: #3B6EBF; font-size: 16px; margin-bottom: 10px; margin-top: 10px;}
+.right h2 { color: #3B6EBF; font-size: 14px; margin-top: 15px;}
+
+#clear {
+	display: block;
+	clear: both;
+	width: 100%;
+	height:1px;
+	overflow:hidden;
+}
+
+#footer {
+    margin: 20px auto 0 auto;
+	text-align: center;
+	border-top: dotted 1px #ccc;
+	padding: 10px 0 10px 0;
+	color: #666;
+	background: #eee;
+}
+
+
+
+
+
+

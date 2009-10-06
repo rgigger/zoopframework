@@ -1,17 +1,17 @@
 <?php
 class FormModule extends ZoopModule
 {
-	protected function init()
+	public function init()
 	{
 	}
 	
-	protected function getDepends()
+	public function getDepends()
 	{
-		array('session', 'gui');
+		return array('session', 'gui');
 	}
 	
-	protected getClasses()
+	public function getClasses()
 	{
-		return array('Form', 'FormElement');
+		return array('Form', 'FormBinding');
 	}
 }
