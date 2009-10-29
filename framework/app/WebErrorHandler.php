@@ -4,8 +4,9 @@ class WebErrorHandler
 	static function throwException($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
 		// maybe we should use this here: http://us3.php.net/manual/en/class.errorexception.php
-		
 		$e = new Exception($errstr, $errno);
+		// echo_r($e);
+		// die();
 		// $e->setFile($errfile);
 		// $e->setLine($errline);
 		throw $e;
@@ -67,6 +68,9 @@ class WebErrorHandler
 				break;
 			case E_USER_NOTICE:
 				$line .= '<strong>User Notice:</strong>';
+				break;
+			case E_DEPRECATED:
+				$line .= '<strong>Depricated:</strong>';
 				break;
 			case E_USER_ERROR:
 				$line .= '<strong>User Error:</strong>';

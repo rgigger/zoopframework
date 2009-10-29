@@ -80,6 +80,7 @@
 				-	{name att1=value1 att2=value2}
 				-	<?name att1=value1 att2=value2?>
 				-	<?@name att1=value1 att2=value2?>
+				-	<#name att1=value1 att2=value2 #>
 			-	as funcions like in RoR
 		-	functions
 			-	creating links

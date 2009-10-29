@@ -33,6 +33,11 @@
 			-	for instance check it at a certain size and shrink the text size if it doesn't fit
 				-	you might need to be register callback to handle some situations that can't be described by data alone
 		-	automatic replacement of certain bad characters like the crazy dashes
+	-	repeating
+		-	allow you to repeat stuff in individual blocks/pages
+		-	allow you to skip certain pages
+		-	allow you to start on any page
+		-	have some facility for saying: Page curPage of totalPages
 	-	release a new version for the Zend_Pdf people
 		-	update the front page to also refer people to Zend Framework
 		-	document our inclusion of some parts of Zend Framework

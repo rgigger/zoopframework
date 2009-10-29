@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+include('config.php');
+ini_set('include_path', zoop_dir . ':' . get_include_path());
+include(zoop_dir . '/phing/bin/phing.php');

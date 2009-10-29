@@ -1,0 +1,45 @@
+-	form validation
+-	smarty replacement
+	-	lists
+		-	http://www.webresourcesdepot.com/19-promising-php-template-engines/
+		-	http://www.sitepoint.com/forums/showthread.php?threadid=123769
+		-	http://fabien.potencier.org/article/34/templating-engines-in-php
+	-	individual engines
+		-	H2O http://github.com/speedmax/h2o-php there are some interesting concepts here
+		-	twig: http://www.twig-project.org/
+	-	pure php caches
+		-	http://www.optimalworks.net/blog/2007/software/free-download/tacs-php-template
+	-	write your own
+	-	also see gui.todo
+	-	make it configurable so users can choose what they want
+	-	also look into other radical non-template type replacements
+		-	client side systems that just spit out static html/css and get their dynamic data through json and then put it in on the client side
+		-	systems that have static html that is manipulated outside the markup with css like selectors
+			-	http://tobiasz123.wordpress.com/2009/03/01/querytemplates-development-progress/ (I don't like this one very well but I think the concept could be done well)
+			-	http://querypath.org/
+		-	yaml based system that is just html but readable
+		-	php object based systes that use object and method calls to construct the markup
+	-	things that we need
+		-	complex expression evaluation in the template
+		-	good variable scoping
+		-	the ability to handle ordering issues
+			-	logical execution order and display order are not the same
+				-	for instance a display element below uses logic to calculate a value above
+				-	or you want to set the title of a page inside an include and then use it in the outer tempalte, possibly above where the include actually occured
+			-	see the concept of inheritance as implemented here http://github.com/speedmax/h2o-php
+		-	good control of output filtering on a per variable / per function basis
+			-	default to filtering
+			-	let you easily disable the filter for specific instnances or at the template level
+		-	easy debugging - making sure that line numbers in the compiled php match up with the template line numbers (nice to have)
+		-	whitespace control (nice to have)
+		-	php css extensions (exotic)
+			-	http://wiki.github.com/anthonyshort/csscaffold
+		-	translation integration (exotic)
+-	better authorization tools
+-	improved graphic module
+-	better charting / graphing module
+-	good logging framework
+-	good stuff for dynamically generating static files
+	-	proper caching
+	-	posibility of combining many files into one
+	-	optimize of content: minimize js, remove whitespace, etc

@@ -169,6 +169,8 @@ function FormatBacktraceFunctionCellHtml($lineInfo)
 	$call .= isset($lineInfo['class']) ? ($lineInfo['class'] . $lineInfo['type']) : '';
 	$call .= $lineInfo['function'] . '(';
 	$argStrings = array();
+	
+	if(isset($lineInfo['args']))
 	foreach($lineInfo['args'] as $thisArg)
 	{
 //		echo '<b>arg = ' . $thisArg . '</b><br>';

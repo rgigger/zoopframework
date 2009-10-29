@@ -1,5 +1,9 @@
+-	instance config
+	-	allow you to parse config files without using the static functions
+	-	allow an optional self referencing mechanism
+	-	make Config use an InstanceConfig
 -	make a ConfigException for handling problems with configuraion
-	-	DbConfig exception???
+	-	ConfigException
 -	Configurable interface
 	-	methods
 		-	getRequireds
