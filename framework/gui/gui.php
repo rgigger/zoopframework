@@ -49,6 +49,11 @@ class Gui extends Smarty
 		//$this->autoload_filters = array('pre' => array("strip_html"));
 	}
 	
+	function setTemplateDir($inDir)
+	{
+		$this->template_dir = $inDir;
+	}
+	
 	function addTemplateDir($inDir)
 	{
 		$this->template_dir[] = $inDir;
