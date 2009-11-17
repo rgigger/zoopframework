@@ -56,6 +56,7 @@
 		-	purposes
 			-	whether or not to print
 			-	whitespace control
+				-	indenting in the source for readability but removing them from the output
 			-	whether or not to escape the result string (always escape by default)
 	-	add a character somewhere in  such as +-/ etc in order to control whitespace properly
 	-	integration with text/translation system
