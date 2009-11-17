@@ -1,0 +1,10 @@
+project: name = clstalent
+    global:
+        assign: name = client, value = practical, templates = yes
+    target: name = bin
+        mkdir: path = /Users/rick/clients/practical, cd = yes
+        gen: template = "bin/applySql-perform.php.tpl", "bin/applySql-perform-{$status}.php"
+        gen: template = "bin/applySql-talent.php.tpl", filepath = "bin/applySql-talent-{$status}.php"
+    target: name = code
+        ln: target = "$codeDir/perform", link = "{$instanceCodeDir}/perform"
+        ln: target = "$codeDir/talent", link = "{$instanceCodeDir}/talent"

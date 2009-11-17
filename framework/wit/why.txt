@@ -1,0 +1,6 @@
+wit works well for
+	serializing objects
+		there could be trouble handling long and / or multiline attributes
+	documenting a structured set of simple procedures such as in a build system where you don't need a turing complete langugae
+		this means it will not have a complete set of structures like loops and conditionls
+		but if it did the syntax would actually be very interesting
