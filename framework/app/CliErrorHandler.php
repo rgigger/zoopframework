@@ -1,6 +1,17 @@
 <?php
 class CliErrorHandler
 {
+	static function throwException($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
+	{
+		// maybe we should use this here: http://us3.php.net/manual/en/class.errorexception.php
+		$e = new Exception($errstr, $errno);
+		// print_r($e);
+		// die();
+		// $e->setFile($errfile);
+		// $e->setLine($errline);
+		throw $e;
+	}
+	
 	static function handleError($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
 		switch(app_status)
@@ -28,7 +39,7 @@ class CliErrorHandler
 		$errorLine = self::formatErrorLine($errno, $errstr, $errfile, $errline, $context, $backtrace);
 		echo $errorLine . "\n";
 		$backtrace = $backtrace ? $backtrace : debug_backtrace();
-		array_shift($backtrace);
+		// array_shift($backtrace);
 		// FormatBacktraceCli($backtrace);
 		$backtraceView = new BacktraceViewCli($backtrace);
 		$backtraceView->display();
@@ -80,7 +91,7 @@ class CliErrorHandler
 			break;
 		}
 		
-		$line .= ' ' . $errstr . "\n";
+		$line .= ' ' . $errstr . "";
 		$line .= ' in file ' . $errfile;
 		$line .= ' ( on line  ' . $errline . ')';
 		
@@ -89,7 +100,17 @@ class CliErrorHandler
 	
 	function exceptionHandler($exception)
 	{
-		print_r($exception);
-		self::handleError(0, $exception->getMessage(), $exception->getFile(), $exception->getLine(), NULL, $exception->getTrace());
+//		print_r($exception->getCode());die();
+		$backtrace = $exception->getTrace();
+		$file = $exception->getFile();
+		$line = $exception->getLine();
+		if(isset($backtrace[0]['args']) && is_array($backtrace[0]['args']))
+			$backtrace[0]['args'] = array();
+		if(isset($backtrace[0]['file']))
+			$file = $backtrace[0]['file'];
+		if(isset($backtrace[0]['line']))
+			$line = $backtrace[0]['line'];
+//		print_r($backtrace[0]);
+		self::handleError($exception->getCode(), $exception->getMessage(), $file, $line, NULL, $backtrace);
 	}
 }

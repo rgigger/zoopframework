@@ -87,7 +87,7 @@ function _gen($path, $filePath = '', $params = array())
 	$content = $gui->fetch($templatePath . '.tpl');
 	_status("creating generated file '" . getcwd() . '/' . $filePath . "'");
 	if(file_exists($filePath))
-		die("file $filePath already exists\n");
+		trigger_error("file $filePath already exists");
 	file_put_contents($filePath, $content);
 }
 
