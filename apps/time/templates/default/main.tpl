@@ -1,4 +1,4 @@
-{assign var=entries value=$person->getMany('Entry')}
+{assign var=entries value=$person->Entry}
 <table border="1">
 	<tr>
 		<th>Start Date/Time</th>

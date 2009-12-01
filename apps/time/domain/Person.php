@@ -1,9 +1,8 @@
 <?php
 class Person extends DbObject
 {
-	function Person($init)
+	protected function init()
 	{
-		$this->DbObject($init);
 		$this->hasMany('Entry');
 	}
 	
