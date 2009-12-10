@@ -1,5 +1,5 @@
 <?php
-abstract class BuildProject
+abstract class BuildProject extends Object
 {
 	public function build($target)
 	{

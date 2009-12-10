@@ -64,9 +64,16 @@ function _chmod_r($path, $mode)
 			_chmod_r($path . '/' . $fileinfo->getFilename(), $mode);
 }
 
+//  this is a hack, we need to just set this up with proper OOP and conveninece functions
+function _forcegen()
+{
+    global $FORCEGEN;
+    $FORCEGEN = true;
+}
+
 function _gen($path, $filePath = '', $params = array())
 {
-	global $_assigns;
+	global $_assigns, $FORCEGEN;
 	
 	$templatePath = $path;
 	
@@ -86,8 +93,15 @@ function _gen($path, $filePath = '', $params = array())
 	
 	$content = $gui->fetch($templatePath . '.tpl');
 	_status("creating generated file '" . getcwd() . '/' . $filePath . "'");
-	if(file_exists($filePath))
+	
+	if(isset($FORCEGEN) && $FORCEGEN)
+	    $forcegen = true;
+	else
+	    $forcegen = false;
+	
+	if(file_exists($filePath) && !$forcegen)
 		trigger_error("file $filePath already exists");
+	
 	file_put_contents($filePath, $content);
 }
 
