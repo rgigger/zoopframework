@@ -34,13 +34,16 @@ class Object
 		trigger_error("I'm not even sure what this should do yet?  Do getters and setters count here or just adhoc attributes");
 	}
 	
-	public function __get($name)
+	public function &__get($name)
 	{
 		if(isset($this->getters[$name]))
 		{
 			$funcName = "get$name";
 			return $this->$funcName();
 		}
+		
+		if($this->mixinOwner && property_exists($this->mixinOwner, $name))
+			return $this->mixinOwner->$name;
 		
 		if($this->allowAdhocAttributes && isset($this->adhocAttributes[$name]))
 			return $this->adhocAttributes[$name];
@@ -57,6 +60,9 @@ class Object
 			return;
 		}
 		
+		if($this->mixinOwner && property_exists($this->mixinOwner, $name))
+		    return $this->mixinOwner->$name = $value;
+		
 		if(isset($this->getters[$name]))
 			trigger_error("attributes $name is read only");
 		else
@@ -70,9 +76,13 @@ class Object
 	
 	protected function mixin($className, $params = NULL)
 	{
+		if(isset($this->mixins[$className]))
+			return;
+		
 		$this->mixins[$className] = new $className();
 		$this->mixins[$className]->mixedInto($this);
-		$this->mixins[$className]->init($params);
+		if(method_exists($this->mixins[$className], 'init'))
+		    $this->mixins[$className]->init($params);
 		return $this->mixins[$className];
 	}
 	
@@ -104,13 +114,17 @@ class Object
 	
 	public function __call($methodName, $args)
 	{
+		// $t = microtime(1);
+		// foreach($this->mixins as $className => $thisMixin)
+		// 	echo get_class($this) . " $className $methodName $t<br>";
+		
 		foreach($this->mixins as $className => $thisMixin)
 		{
+			//	what is faster, ReflectionClass or method_exists
 			$class = new ReflectionClass($className);
 			if($class->hasMethod($methodName))
 			{
-				call_user_func_array(array($thisMixin, $methodName), $args);
-				return;
+				return call_user_func_array(array($thisMixin, $methodName), $args);
 			}
 		}
 		
