@@ -1,75 +1,98 @@
--	procedure
-	-	make sure all the examples work
-	-	update the api docs
-	-	export the code
-	-	tar.gz it up
-	-	upload it to google code
--	info
-	-	all info here is tentative and subject to change at any moment
--	releases
-	+	1.51.00
-		+	major overhaul of configuration system
-		+	complete rewrite of DbObject
-		+	mysql support
-		+	tons more examples
-		+	mixins
-		+	getters/setters
-	-	1.52.00
-		+	get rid of ext
-		+	get rid of yui
-		+	get rid of dojo
-		+	improved basic stationary
-		-	forms
-		-	finish the session code
-		-	request app
-		-	forms
-		-	finish the session code
-		-	request app
-		-	forms
-		-	finish the session code
-		-	request app
-		-	forms
-		-	finish the session code
-		-	request app
-		-	forms
-		-	finish the session code
-		-	request app
-		-	forms
-		-	finish the session code
-		-	request app
-		+	improved basic stationary
-		-	js/ajax/jquery examples
-		-	examples of how to use other js libs
-			-	including them in the public folder
-			-	hosting them externally
-			-	including them of other hosts (google, yahoo, amazon, etc)
-		-	ability to log errors, controlled by config
-		-	ability to turn display of errors on or off in config
-		-	make the error reporting good
-			-	html
-			-	cli
-		-	translate functions
-			-	basic api
-			-	smary prefilter plugin
-	-	beyond
-		-	cli
-		-	sql DSL
-		-	migrations
-		-	storage
-		-	permissions system
-		-	application stubs
-		-	krumo replacement
-			-	actually krumo might be fixable in php5 because you can do a === operator on two objects to determine if they
-				represent the same instance
-		-	log
-		-	GuiControls
-		-	xml graphics
-		-	examples of DbObject relationship functions
-		-	smarty replacement
-		-	auth
-		-	scaffolding
-		-	charts
-		-	rename mixins to delgates
-		-	log
-		-	xml graphics
-		-	rename mixins to delgates?
+-   current needs
+    -   get all the examples working out of the box
+        -   figure out how to get the permissions correct when they do the checkout from svn
+    -   make it easy to get the apps working
+        -   create build scripts
+        -   maybe make it so they can all work with sqlite
+    -   get the following modules ready
+        -   forms
+        -   cli
+            -   switch handling
+        -   permissions
+        -   build
+        -   storage
+        -   gui
+            -   allow multiple engines
+            -   include smarty 3
+        -   graphic
+            -   basic div rendering
+        -   log
+            -   error logging
+            -   event logging
+            -   performance logging
+        -   migration
+        -   scaffolding
+            -   create zone
+            -   create page
+            -   create migration
+    -   include the following apps and make them functional
+        -   issues
+        -   todo
+        -   content (wiki)
+    -   create examples for
+        -   multiple inheritance with Object
+        -   graphic
+        -   ...
+    -   change the name to zinc
+    -   do some basic marketing
+-   old stuff
+    -	procedure
+    	-	make sure all the examples work
+    	-	update the api docs
+    	-	export the code
+    	-	tar.gz it up
+    	-	upload it to google code
+    -	info
+    	-	all info here is tentative and subject to change at any moment
+    -	releases
+    	+	1.51.00
+    		+	major overhaul of configuration system
+    		+	complete rewrite of DbObject
+    		+	mysql support
+    		+	tons more examples
+    		+	mixins
+    		+	getters/setters
+    	-	1.52.00
+    		+	get rid of ext
+    		+	get rid of yui
+    		+	get rid of dojo
+    		+	improved basic stationary
+    		-	forms
+    		-	finish the session code
+    		-	request app
+    		+	improved basic stationary
+    		-	js/ajax/jquery examples
+    		-	examples of how to use other js libs
+    			-	including them in the public folder
+    			-	hosting them externally
+    			-	including them of other hosts (google, yahoo, amazon, etc)
+    		-	ability to log errors, controlled by config
+    		-	ability to turn display of errors on or off in config
+    		-	make the error reporting good
+    			-	html
+    			-	cli
+    		-	translate functions
+    			-	basic api
+    			-	smary prefilter plugin
+    	-	beyond
+    		-	cli
+    		-	sql DSL
+    		-	migrations
+    		-	storage
+    		-	permissions system
+    		-	application stubs
+    		-	krumo replacement
+    			-	actually krumo might be fixable in php5 because you can do a === operator on two objects to determine if they
+    				represent the same instance
+    		-	log
+    		-	GuiControls
+    		-	xml graphics
+    		-	examples of DbObject relationship functions
+    		-	smarty replacement
+    		-	auth
+    		-	scaffolding
+    		-	charts
+    		-	rename mixins to delgates
+    		-	log
+    		-	xml graphics
+    		-	rename mixins to delgates?

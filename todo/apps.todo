@@ -1,80 +1,99 @@
--	the new hotness
-	-	directory
-		-	use it to make a directory of zoop developers
-			-	only for online use?
-			-	or have everyone download it
-	-	fitness
-	-	todo
-		-	add in support for linking to other todo files so this can link to todo.todo
-	-	time
-		-	editing and deleting of items
-		-	projects
-		-	clients
-	-	issues
-		-	integrate with the time tracker you you can easily record where you are spending all of your time
-	-	checkin
-		-	send out email periodically to check in and see if you have completed a specific task
-		-	the email contains links to indicate if you did or didn't do it
-		-	your performance is recorded and reported on
-	-	tunnel
-		-	config file with tunnel info
-			-	section of tunnel servers including
-				-	name
-				-	host
-				-	port
-				-	username
-				-	forwards
-					-	local port
-					-	remote host
-					-	report port
-			-	section of servers that you want to connect to
-				-	name
-				-	tunnel name
-				-	port
-		-	script to
-			-	list open tunnels
-			-	open a new tunnel
-				-	make sure it's not already open
-					-	use grep -c ?
-			-	kill a tunnel
-			-	connect to a specific server
-				-	start the necessary tunnel if it's not already open
-		-	(or possibly try to use launchd to and ssh_config to accomplish having tunnels automatically open when you ssh to the server)
-	-	tag manager
-		-	detection code for Mac OS X
-		-	api
-			-	searches on tags
-		-	gui
-			-	search tags
-			-	change filenames
-			-	browse tags
-			-	save smart tag collections and open all of them in a browser
--	old and busted
-	-	duplicate google code?
-		-	wiki
-		-	bug tracker
-		-	improvements
-			-	manual creator
-		-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
-		-	same for design goals
-		-	relationship to stable zoop
-		-	make the front page really short with just some links to other wiki pages
-	-	manual creator
-	-	tool for generating .term files for terminal.app
-		-	have color schemes for each of the control tower defaults as well as some of your own
-	-	bachelor
-		-	food module
-			-	recipes
-			-	restaurants
-				-	ratings [1-5]
-					-	healthy
-					-	expensive
-					-	travel time
-					-	inside time
-			-	supermarket
-				-	standard food stock management
-				-	special food tobuy list
-		-	simple budgeting?
-	-	a group scheduling application
-	-	port translate to use zoop, then when we complete the translation module it can be an admin tool for it
-	-	a language aware diff tool that understands classes, functions etc
+-   setup for all apps
+    -   have a general config files for all builds
+        -   user the web server runs under
+        -   etc directory
+    -   create build files to
+        -   set the perms on the tmp directory
+        -   optionally setup a stub in the pub directory
+        -   optionally setup an etc file
+    -   let the build files edit the config file
+-	timeline
+    -   move from examples to apps
+    -   create a list of all relevant websites and put it in doc
+        -   http://code.google.com/p/simile-widgets/
+        -   http://www.simile-widgets.org/
+        -   http://simile-widgets.org/wiki/Main_Page
+    -   update the javascript include to correspond with:
+        -   http://code.google.com/p/simile-widgets/wiki/Timeline_GettingStarted
+        -   or http://simile-widgets.org/wiki/Getting_Started_with_Timeline
+        -   or ???
+    -   update it to use postgres instead of mysql
+    -   set up an instance and get some feedback
+	-	editing and deleting of items
+	-	projects
+	-	clients
+-	todo
+	-	add in support for linking to other todo files so this can link to todo.todo
+-	issues
+	-	integrate with the time tracker you you can easily record where you are spending all of your time
+-	directory
+	-	use it to make a directory of zoop developers
+		-	only for online use?
+		-	or have everyone download it
+-	fitness
+-	checkin
+	-	send out email periodically to check in and see if you have completed a specific task
+	-	the email contains links to indicate if you did or didn't do it
+	-	your performance is recorded and reported on
+-	tunnel
+	-	config file with tunnel info
+		-	section of tunnel servers including
+			-	name
+			-	host
+			-	port
+			-	username
+			-	forwards
+				-	local port
+				-	remote host
+				-	report port
+		-	section of servers that you want to connect to
+			-	name
+			-	tunnel name
+			-	port
+	-	script to
+		-	list open tunnels
+		-	open a new tunnel
+			-	make sure it's not already open
+				-	use grep -c ?
+			-   use -f to make it go to the background
+		-	kill a tunnel
+		-	connect to a specific server
+			-	start the necessary tunnel if it's not already open
+	-	(or possibly try to use launchd to and ssh_config to accomplish having tunnels automatically open when you ssh to the server)
+-	tag manager
+	-	detection code for Mac OS X
+	-	api
+		-	searches on tags
+	-	gui
+		-	search tags
+		-	change filenames
+		-	browse tags
+		-	save smart tag collections and open all of them in a browser
+-	duplicate google code?
+	-	wiki
+	-	bug tracker
+	-	improvements
+		-	manual creator
+	-	make a history page in the wiki, take any history info off of the front page, just link to the wiki page
+	-	same for design goals
+	-	relationship to stable zoop
+	-	make the front page really short with just some links to other wiki pages
+-	manual creator
+-	tool for generating .term files for terminal.app
+	-	have color schemes for each of the control tower defaults as well as some of your own
+-	bachelor
+	-	food module
+		-	recipes
+		-	restaurants
+			-	ratings [1-5]
+				-	healthy
+				-	expensive
+				-	travel time
+				-	inside time
+		-	supermarket
+			-	standard food stock management
+			-	special food tobuy list
+	-	simple budgeting?
+-	a group scheduling application
+-	port translate to use zoop, then when we complete the translation module it can be an admin tool for it
+-	a language aware diff tool that understands classes, functions etc

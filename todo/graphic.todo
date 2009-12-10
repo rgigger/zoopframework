@@ -62,14 +62,15 @@
 	-	css
 		-	parse css info in the header
 		-	apply styles to the DOM
+		-   make sure you follow proper cascading rules
 	-	then tables
 		-	borders, padding, margins, backgrounds, etc
 	-	column sets, document, 
-	...
+	-   ...
 	-	charts and graphs???
 -	controlled rendering
 	-	parse xml, yaml, html etc, but whitelist what tags/attributes will be preserved
-	-	then sent the results back to original form to be rendered by a browser or render them as is
+	-	then send the results back to original form to be rendered by a browser or render them as is
 -	performance
 	-	are HardBrokenLines broken into SoftBroken lines over and over again?  If so can you do it once and cache the results?
 	-	how intensive is calcing the char widths? can that be cached?
@@ -100,6 +101,7 @@
 		-	shapes, lines, etc
 		-	make sure you can have point level precision with anything you might want to draw
 	-	page breaks
+	    -   let you specify the page size for each page break
 	-	why does it not hanlde xml/html entities like &nbsp;
 	-	make sure that styles always apply to exactly what the dom indicates they should apply to
 	-	documentation
@@ -108,3 +110,8 @@
 		-	then make it work like the docs say it will
 	-	css
 		-	there isn't much point in working towards compatibility with HTML if you don't have CSS support
+-   test suites
+    -   http://www.w3.org/Style/CSS/Test/CSS1/current/
+    -   http://www.google.com/search?client=safari&rls=en&q=html+div+css+examples&ie=UTF-8&oe=UTF-8
+    -   http://www.google.com/search?client=safari&rls=en&q=css+test+suite&ie=UTF-8&oe=UTF-8
+    -   http://www.google.com/search?client=safari&rls=en&q=html+table+css+examples&ie=UTF-8&oe=UTF-8
