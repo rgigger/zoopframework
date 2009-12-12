@@ -1,5 +1,6 @@
 zoop:
     db:
         default:
-            driver: pdo
-            file: data.db
+            driver: php_pgsql
+            database: timeline
+            username: postgres

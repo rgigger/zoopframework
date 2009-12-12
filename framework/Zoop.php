@@ -152,6 +152,12 @@ class Zoop
 	 */
 	static function autoload($className)
 	{
+		if(headers_sent())
+		{
+			echo_r($className);
+			die('here');
+		}
+			
 		$classPath = Zoop::getClassPath($className);
 		if($classPath)
 		{
