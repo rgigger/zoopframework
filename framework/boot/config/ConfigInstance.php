@@ -1,4 +1,5 @@
 <?php
+die('I dont think that this file is actually being used at all')
 class ConfigInstance
 {
 	private $info = array();

@@ -16,15 +16,35 @@ class Config
 			$root = &self::getReference($prefix);
 		else
 			$root = &self::$info;
-		$root = array_merge(Yaml::read($file), $root);
+		
+		$root = self::mergeArray(Yaml::read($file), $root);
 	}
 	
 	static public function insist($file, $prefix = NULL)
 	{
 		$root = $prefix ? self::getReference($prefix) : self::$info;
-		self::$info = array_merge($root, Yaml::read($file));
+		self::$info = self::mergeArray($root, Yaml::read($file));
 	}
+	
+	static public function mergeArray($suggested, $insisted)
+	{
+		return self::_mergeArray($suggested, $insisted);
+	}
+	
+	static public function _mergeArray(&$suggested, &$insisted)
+	{
+		foreach($insisted as $key => $val)
+		{
+			assert(is_string($key));
+			if(is_array($val))
+				self::_mergeArray($suggested[$key], $insisted[$key]);
+			
+			$suggested[$key] = $val;
+		}
 		
+		return $suggested;
+	}
+	
 	/**
 	 * Specify configuration file to use
 	 *
@@ -41,9 +61,10 @@ class Config
 	 */
 	static function load()
 	{
+		self::suggest(zoop_dir . '/config.yaml', 'zoop');
+		
 		if(!self::$file)
 			self::setConfigFile(app_dir . '/config.yaml');
-		
 		self::insist(self::$file);
 		
 		if(defined('instance_config') && instance_config)
@@ -88,5 +109,12 @@ class Config
 		
 		return $cur;
 	}
-
+	
+	//	functions for getting scalar values and then formatting them
+	static public function getFilePath($configPath)
+	{
+		$config = self::get($configPath);
+		assert(is_string($config));
+		return Zoop::expandPath($config);
+	}
 }

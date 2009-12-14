@@ -3,24 +3,19 @@ class SessionModule extends ZoopModule
 {
 	private static $engine;
 	
-	static function getEngine()
-	{
-		return self::$engine;
-	}
-	
 	protected function init()
 	{
+		$this->addClass('Session');
+		$this->addClass('SessionPgsql');
+		$this->addClass('SessionDb');
+		$this->addClass('SessionFactory');
+		$this->depend('db');
 		$this->hasConfig = true;
 	}
 	
-	protected function getIncludes()
+	static function getEngine()
 	{
-		return array('SessionFactory.php');
-	}
-	
-	function getClasses()
-	{
-		return array('Session', 'SessionPgsql', 'SessionDb');
+		return self::$engine;
 	}
 	
 	protected function configure()
