@@ -1,8 +1,7 @@
 <?php
 include(zoop_dir . '/Zoop.php');
-Zoop::loadLib('zone');
-Zoop::loadLib('db');
-Zoop::loadLib('form');
+
+Zoop::loadMod('session');
 
 //	start the session
 session::start();

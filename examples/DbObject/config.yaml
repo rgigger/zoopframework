@@ -1,5 +1,6 @@
 zoop:
+    tmpDir: /tmp/zoop/examples/DbObject
     db:
         default:
             driver: pdo
-            file: data.db
+            file: /tmp/zoop/examples/DbObject/db/data.db
