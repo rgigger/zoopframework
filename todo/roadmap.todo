@@ -1,6 +1,7 @@
 -   current needs
     -   get all the examples working out of the box
         -   figure out how to get the permissions correct when they do the checkout from svn
+		-	see site.todo
     -   make it easy to get the apps working
         -   create build scripts
         -   maybe make it so they can all work with sqlite
@@ -34,6 +35,7 @@
         -   graphic
         -   ...
     -   change the name to zinc
+	-	straighten out the licencing
     -   do some basic marketing
 -   old stuff
     -	procedure
