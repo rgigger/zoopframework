@@ -71,14 +71,11 @@ function _forcegen()
     $FORCEGEN = true;
 }
 
-function _gen($path, $filePath = '', $params = array())
+function _fetch($path, $params = array())
 {
 	global $_assigns, $FORCEGEN;
 	
 	$templatePath = $path;
-	
-	if(!$filePath)
-		$filePath = $path;
 	
 	$gui = new gui();
 	if($_assigns)
@@ -91,7 +88,14 @@ function _gen($path, $filePath = '', $params = array())
 		$gui->assign($name, $value);
 	}
 	
-	$content = $gui->fetch($templatePath . '.tpl');
+	return $gui->fetch($templatePath . '.tpl');
+}
+
+function _gen($path, $filePath = '', $params = array())
+{
+	if(!$filePath)
+		$filePath = $path;
+	$content = _fetch($path, $params)
 	_status("creating generated file '" . getcwd() . '/' . $filePath . "'");
 	
 	if(isset($FORCEGEN) && $FORCEGEN)
