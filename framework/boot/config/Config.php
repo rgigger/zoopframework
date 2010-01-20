@@ -35,11 +35,10 @@ class Config
 	{
 		foreach($insisted as $key => $val)
 		{
-			assert(is_string($key));
 			if(is_array($val))
 				self::_mergeArray($suggested[$key], $insisted[$key]);
-			
-			$suggested[$key] = $val;
+			else
+				$suggested[$key] = $val;
 		}
 		
 		return $suggested;

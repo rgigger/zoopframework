@@ -1,3 +1,9 @@
+-	new stuff
+	-	have a multi-part-code
+		-	possibly IP address or host info of some kind
+		-	some hash of filename/line number/error string or something to match up multiple instances of the same error
+		-	a unique error instance code (this is probably all we need to show the user)
+		-	a custom code that we can put into errors that we trigger so we can search for them later or be alerted when they occur
 -	Object
 	-	__callStatic
 	-	__isset

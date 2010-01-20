@@ -2,6 +2,7 @@
 include(zoop_dir . '/Zoop.php');
 
 Zoop::loadMod('session');
+Zoop::loadMod('zone');
 
 //	start the session
 session::start();
