@@ -211,6 +211,29 @@ class Zoop
 	// 	}
 	// }
 	// 
+	
+	/**
+	 * Automatic class loading handler.  This automatically loads a class using the path
+	 * information that was registered using the Zoop::registerClass or ::registerDomain
+	 * method 
+	 *
+	 * @param string $className Name of the class to load
+	 */
+	static function autoload($className)
+	{
+		$classPath = Zoop::getClassPath($className);
+		if($classPath)
+		{
+			require_once($classPath);
+		}
+
+		if(substr($className, 0, 5) == 'Zend_')
+		{
+			$parts = explode('_', $className);
+			$modName = $parts[1];
+			require_once(zoop_dir . "/Zend/$modName.php");
+		}
+	}
 }
 
 Zoop::registerLib('boot');
