@@ -1,6 +1,3 @@
--   basic method for handling the main list
-    -   file:///Users/rick/Sites/lib/jquery/dev/demos/dialog/modal-form.html
-
 -	support
 	-	create a new module js
 		-	add tablesorter js, css, and images to js/public

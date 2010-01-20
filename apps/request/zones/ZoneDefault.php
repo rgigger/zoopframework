@@ -1,11 +1,11 @@
 <?php
 class ZoneDefault extends AppZone
 {
-	public function initPages($p)
+	public function initZone($p, $z)
 	{
 		$this->loggedInUser = RequestApp::getLoggedInUser();
 		if(!$this->loggedInUser && $p[0] != 'default')
-			$this->redirect('default');
+			BaseRedirect('default');
 	}
 	
 	public function pageDefault() {}
@@ -31,9 +31,19 @@ class ZoneDefault extends AppZone
 	
 	public function postEdit($p)
 	{
-		$request = isset($p[1]) && $p[1] ? new Request($p[1]) : new Request();
-		$request->setFields(array_merge($_POST['_record'], array('owner_id' => $this->loggedInUser->id)));
-		$request->save();
+		if($_POST['submitAction'] == 'Save')
+		{
+			$request = isset($p[1]) && $p[1] ? new Request($p[1]) : new Request();
+			$request->setFields(array_merge($_POST['_record'], array('owner_id' => $this->loggedInUser->id)));
+			$request->save();
+		}
+		else if($_POST['submitAction'] == 'Delete')
+		{
+			assert(isset($p[1]) && $p[1]);
+			$request = new Request($p[1]);
+			$request->destroy();
+		}
+		
 		$this->redirect('list');
 	}
 	

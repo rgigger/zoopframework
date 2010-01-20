@@ -3,6 +3,10 @@
 <head>
 
 <BASE HREF="{$scriptUrl}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+{*
+<script src="public/js/jquery.table.addrow.js"></script>
+*}
 <script>
 var scriptUrl = '{$scriptUrl}';
 var virtualUrl = '{$scriptUrl}';

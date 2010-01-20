@@ -12,3 +12,6 @@ Zoop::registerClass('AppGui', dirname(__file__) . '/extend/AppGui.php');
 Zoop::registerClass('RequestApp', dirname(__file__) . '/domain/RequestApp.php');
 Zoop::registerClass('Person', dirname(__file__) . '/domain/Person.php');
 Zoop::registerClass('Request', dirname(__file__) . '/domain/Request.php');
+
+//	register the zones
+Zoop::registerClass('ZoneFilter', dirname(__file__) . '/zones/ZoneFilter.php');
