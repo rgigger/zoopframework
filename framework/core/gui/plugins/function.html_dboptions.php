@@ -26,7 +26,7 @@ function smarty_function_html_dboptions($params, &$smarty)
     else
     	$nameField = 'name';
     
-    $params['options'] = SqlFetchSimpleMap("SELECT id, :nameField AS name FROM :tableName:identifier", 'id', 'name', 
+    $params['options'] = SqlFetchSimpleMap("SELECT id, :nameField AS name FROM :tableName:identifier order by id", 'id', 'name', 
 							array('nameField:identifier' => $nameField, 'tableName' => $tableName));
     
     return smarty_function_html_options($params, $smarty);

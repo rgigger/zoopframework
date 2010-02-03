@@ -1,5 +1,5 @@
 <?php
-class Zone extends Object
+abstract class Zone extends Object
 {
 	private	$requestInfo;
 	private $params;
@@ -19,6 +19,8 @@ class Zone extends Object
 		
 		$this->params = array();
 	}
+	
+	public function initZone($p, $z) {}
 	
 	//
 	//	methods to override
@@ -53,6 +55,7 @@ class Zone extends Object
 		//	next look for an existing zone that is not this class
 		if( !isset($foundPage) )
 		{
+			
 			if( $thisPart && class_exists($zoneName) )
 			{
 				$newZone = new $zoneName();
@@ -67,7 +70,8 @@ class Zone extends Object
 					$newZone->requestInfo[count($newZone->requestInfo) - 1]['params'][] = $thisParamName;
 					$newZone->params[$thisParamName] = $paramValue;
 				}
-
+				
+				$this->initZone($pathParts, $this->params);
 				$newZone->handleRequest($pathParts);
 			}
 			else
@@ -83,11 +87,11 @@ class Zone extends Object
 					if( $this->_methodExists($defaultName) )
 					{
 						$foundPage = $defaultName;
-						
 					}
-						
 					else
+					{
 						trigger_error("no valid page for $thisPart in " . get_class($this));
+					}
 				}
 			}
 		}
@@ -97,6 +101,8 @@ class Zone extends Object
 		{
 			$postfix = $foundPage == 'pageDefault' || $foundPage == 'postDefault' ? array(0 => 'default', 1 => $originalPart) : array(0 => $originalPart);
 			$pageParams = array_merge($postfix, $pathParts);
+			
+			$this->initZone($pageParams, $this->params);
 			
 			if( $this->_methodExists('initPages') )
 				$this->initPages($pageParams, $this->params);

@@ -14,6 +14,9 @@ class WebErrorHandler
 	
 	static function handleError($errno, $errstr, $errfile, $errline, $context, $backtrace = NULL)
 	{
+		if(!defined('app_status'))
+			define('app_status', 'dev');
+			
 		switch(app_status)
 		{
 			case 'dev':
