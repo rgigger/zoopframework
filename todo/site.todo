@@ -1,194 +1,204 @@
--	google code site
-	-	update the site to reflect the new roadmap and relationship with old zoop
-		-	reference the roadmap indicated on the zoopframework site
-			-	http://zoopframework.com/about/1.5/release-notes
-	-	show how to set up the apps, including zap?
-	-	wiki
-		-	new page: mvc, design patterns, architectures, etc.
-			-	we've been using the common web-MVC terminology because it has been convenient but it's time to get explicit
-			-	list all the articles
-			-	overview of mvc and pac
-			-	general concept of separation of concerns and other patterns
-			-	history of the evolution of zoop controllers, models, views, etc
-				-	crazy mess of everything mixed together, the PHP that everyone hates
-				-	breaking presentation (html generation) out into templates
-				-	trying to implement pretty urls drove me to develop a routing system for requests
-				-	having all of the logic in the zones was obviously terrible, we started to break things out into objects
-				-	it became apparent that almost all of these needed to do db acess and had similar needs, hence DbObject
-				-	so we have templates, zones, and DbObject, not Models, Views and Controller base classes
-				-	controller is such a generic term our zones could be called a front controller (insert the Harry Feuks 
-					rant of several years ago)
-				-	new name for this design pattern
-			-	elements of MVC
-				-	the view has direct access to the model
-					-	are we doing this?
-						-	we have the controller passing stuff in but it is passing in domain objects directly
-							not using some intermediary format
-				-	obsever pattern
-					-	obviously we don't generally do this on the web, zoop doesn't do this inherently, but it possible 
-						with comet and similar methods
-				-	the controller handles low level events and updates the model which in turn updates the views
-			-	history of MVC
-				-	smalltalk80
-				-	sun
-				-	next
-				-	the guys with the books
-				-	RoR
-				-	django
-				-	struts
-				-	etc
-			-	does anything adhere to strict MVC
-			-	can this work synchronously over the web
-			-	elements of a web app
-				-	routing requests
-					-	to the appropriate view
-					-	to modify the model
-				-	brokering between the view and the model (PAC style vs MVC style)
-					-	should this really be done by the controller?
-						-	one extreme: extract all data from the model in an intermediate format suitable for processing by the view
-						-	the middle ground: gathering appropriate model objects and passing them into the view
-						-	a little further: passing in a root app domain object and letting it get everything it wants from there
-						-	the other extreme: allowing the view to obtain all view objects itself
-					-	what good does the intermediate format do you
-						-	what works well with the templating language
-						-	how much work is done to reformat
-						-	if all data must be brokered it allows you to see exactly what data the view uses
-						-	if you only pass in root heirarchy objects though then you still won't be able to tell
-						-	is it easier to just look at the template to tell or to look at it here
-					-	where should authorization logic go
-						-	in the view?
-						-	in the broker?
-						-	in the model?
-					-	will allowing the view to access the model result in tight coupling
-						-	it didn't have that affect in desktop apps, why would it here
-						-	why would views need it in any way other than anything else
-						-	if the accessors are good then they should be good with everything
-						-	yes you could dump a bunch of view specific stuff in there but you can't prevent all bad behavior any more
-							than you can keep domain logic out of the template
-					-	decisions, decisions
-						-	if you opt for too little brokering you will sometimes have data that is too hard to format with the template 
-							language, or your templates will be have too much confusing logic that should be separated out
-							-	examples???
-						-	if you do too much brokering then you will do a ton of unnecessary work to reformat the data when it doesn't 
-							need to be reformatted
-							-	examples???
-						-	the awkwardness of the templating language is definitely a concern
-						-	should the reformatting of the info really be outside the view?
-						-	examples
-							-	putting data into a table
-								-	traverse it with DbObject accessors
-								-	have some utility for extracting the data in some format that a table object can understand
-							-	a heirarchical structure
-								-	same as table
-				-	handling events, changes to the model
-				-	navigation
-				-	authentication and authorization
-				-	authorization
-				-	validation
-			-	the main difference between a web app and a desktop app
-				-	there are two event loops
-					-	the request, response loop where events result in generating new views and altering the model
-					-	the local event loop that you handle with javascript that may update the current view or make new requests
-			-	TOC
-				-	Separation of Concerns
-				-	MVC
-				-	PAC and other relevant patterns
-				-	Evolution of Zoop, what Zoop allows you to do
-					-	include notes on how each element in zoop relates to the different patterns
-				-	Recommendation of a specific pattern
-		-	philosophy
-			-	speed (http://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html)
-				-	this works for developers as well as users
-			-	pain points
-		-	zoop is a distribution
-			-	we are not as opinionated as RoR
-			-	we don't want to reinvent every web component ever made
-			-	we want to take the best of what's out there and
-				-	aggreate it into a distrobution
-				-	wrap it up in the zoop stuff so it is easy to set up, configure and use
-				-	our setup provides sensible defaults
-				-	we try to allow you to swap components in and out as necessary
-				-	if new better stuff comes along you can use that
-	-	publish the release file
-		-	take the release info out and put it in release.todo
-		-	link it to the main project
-	-	downloads
-		-	set up scripts to create nightly snapshots
-			-	don't create the api docs anymore, put them online and let the user make them if he/she wants
-				-	create a wiki page on how to generate the docs yourself
-			-	create the new tarball
-			-	delete the previous days snapshot
-			-	upload the new snapshot
+-	new
+	-	figure out how to get file permissions to stick when you checkout/update zoop
+	-	get all of the examples working out of the box
+	-	set up a site where people can explore them
+		-	create a "zoop" app in apps that lets you
+			-	open up each example
+			-	browse it's code
+			-	same for apps
+			-	apps will require a build script to get them all set up though
+-	old
+	-	google code site
+		-	update the site to reflect the new roadmap and relationship with old zoop
+			-	reference the roadmap indicated on the zoopframework site
+				-	http://zoopframework.com/about/1.5/release-notes
+		-	show how to set up the apps, including zap?
+		-	wiki
+			-	new page: mvc, design patterns, architectures, etc.
+				-	we've been using the common web-MVC terminology because it has been convenient but it's time to get explicit
+				-	list all the articles
+				-	overview of mvc and pac
+				-	general concept of separation of concerns and other patterns
+				-	history of the evolution of zoop controllers, models, views, etc
+					-	crazy mess of everything mixed together, the PHP that everyone hates
+					-	breaking presentation (html generation) out into templates
+					-	trying to implement pretty urls drove me to develop a routing system for requests
+					-	having all of the logic in the zones was obviously terrible, we started to break things out into objects
+					-	it became apparent that almost all of these needed to do db acess and had similar needs, hence DbObject
+					-	so we have templates, zones, and DbObject, not Models, Views and Controller base classes
+					-	controller is such a generic term our zones could be called a front controller (insert the Harry Feuks 
+						rant of several years ago)
+					-	new name for this design pattern
+				-	elements of MVC
+					-	the view has direct access to the model
+						-	are we doing this?
+							-	we have the controller passing stuff in but it is passing in domain objects directly
+								not using some intermediary format
+					-	obsever pattern
+						-	obviously we don't generally do this on the web, zoop doesn't do this inherently, but it possible 
+							with comet and similar methods
+					-	the controller handles low level events and updates the model which in turn updates the views
+				-	history of MVC
+					-	smalltalk80
+					-	sun
+					-	next
+					-	the guys with the books
+					-	RoR
+					-	django
+					-	struts
+					-	etc
+				-	does anything adhere to strict MVC
+				-	can this work synchronously over the web
+				-	elements of a web app
+					-	routing requests
+						-	to the appropriate view
+						-	to modify the model
+					-	brokering between the view and the model (PAC style vs MVC style)
+						-	should this really be done by the controller?
+							-	one extreme: extract all data from the model in an intermediate format suitable for processing by the view
+							-	the middle ground: gathering appropriate model objects and passing them into the view
+							-	a little further: passing in a root app domain object and letting it get everything it wants from there
+							-	the other extreme: allowing the view to obtain all view objects itself
+						-	what good does the intermediate format do you
+							-	what works well with the templating language
+							-	how much work is done to reformat
+							-	if all data must be brokered it allows you to see exactly what data the view uses
+							-	if you only pass in root heirarchy objects though then you still won't be able to tell
+							-	is it easier to just look at the template to tell or to look at it here
+						-	where should authorization logic go
+							-	in the view?
+							-	in the broker?
+							-	in the model?
+						-	will allowing the view to access the model result in tight coupling
+							-	it didn't have that affect in desktop apps, why would it here
+							-	why would views need it in any way other than anything else
+							-	if the accessors are good then they should be good with everything
+							-	yes you could dump a bunch of view specific stuff in there but you can't prevent all bad behavior any more
+								than you can keep domain logic out of the template
+						-	decisions, decisions
+							-	if you opt for too little brokering you will sometimes have data that is too hard to format with the template 
+								language, or your templates will be have too much confusing logic that should be separated out
+								-	examples???
+							-	if you do too much brokering then you will do a ton of unnecessary work to reformat the data when it doesn't 
+								need to be reformatted
+								-	examples???
+							-	the awkwardness of the templating language is definitely a concern
+							-	should the reformatting of the info really be outside the view?
+							-	examples
+								-	putting data into a table
+									-	traverse it with DbObject accessors
+									-	have some utility for extracting the data in some format that a table object can understand
+								-	a heirarchical structure
+									-	same as table
+					-	handling events, changes to the model
+					-	navigation
+					-	authentication and authorization
+					-	authorization
+					-	validation
+				-	the main difference between a web app and a desktop app
+					-	there are two event loops
+						-	the request, response loop where events result in generating new views and altering the model
+						-	the local event loop that you handle with javascript that may update the current view or make new requests
+				-	TOC
+					-	Separation of Concerns
+					-	MVC
+					-	PAC and other relevant patterns
+					-	Evolution of Zoop, what Zoop allows you to do
+						-	include notes on how each element in zoop relates to the different patterns
+					-	Recommendation of a specific pattern
+			-	philosophy
+				-	speed (http://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html)
+					-	this works for developers as well as users
+				-	pain points
+			-	zoop is a distribution
+				-	we are not as opinionated as RoR
+				-	we don't want to reinvent every web component ever made
+				-	we want to take the best of what's out there and
+					-	aggreate it into a distrobution
+					-	wrap it up in the zoop stuff so it is easy to set up, configure and use
+					-	our setup provides sensible defaults
+					-	we try to allow you to swap components in and out as necessary
+					-	if new better stuff comes along you can use that
+		-	publish the release file
+			-	take the release info out and put it in release.todo
+			-	link it to the main project
+		-	downloads
+			-	set up scripts to create nightly snapshots
+				-	don't create the api docs anymore, put them online and let the user make them if he/she wants
+					-	create a wiki page on how to generate the docs yourself
+				-	create the new tarball
+				-	delete the previous days snapshot
+				-	upload the new snapshot
 						
 
 
 
 
 
--	google code site
-	-	differences betweenteen old zoop and new zoop page
-		-	differences
-			-	general naming conventions
-			-	include all outside dependencies
-			-	no pear
-			-	only support PHP 5.1.x and above
-			-	magic naming schemes
-				-	different magic naming conventions for zones and pages
-			-	api changes
-				-	and changes to class names and method names
-				-	new ways to access zone and page paramaters
-				-	new apis
-					-	view a colorized virtual path
-		-	link both to and from a topic on the users mailing list for people to discuss 
-	-	have a "magic" section for every place we use convention over configuration - try to have the best of both worlds
-	-	design goals page
-		-	provide a clear migration path to PHP 5
--	external site
-	-	set up a server for it
-	-	have a place to browse the source
-		-	allow you to specify a version number
-		-	use a checked out version
-		-	use syntax hilighting
-		-	maybe have a way to view just snippets of code
-			-	by line number
-			-	by by classs
-			-	by function
+	-	google code site
+		-	differences betweenteen old zoop and new zoop page
+			-	differences
+				-	general naming conventions
+				-	include all outside dependencies
+				-	no pear
+				-	only support PHP 5.1.x and above
+				-	magic naming schemes
+					-	different magic naming conventions for zones and pages
+				-	api changes
+					-	and changes to class names and method names
+					-	new ways to access zone and page paramaters
+					-	new apis
+						-	view a colorized virtual path
+			-	link both to and from a topic on the users mailing list for people to discuss 
+		-	have a "magic" section for every place we use convention over configuration - try to have the best of both worlds
+		-	design goals page
+			-	provide a clear migration path to PHP 5
+	-	external site
+		-	set up a server for it
+		-	have a place to browse the source
 			-	allow you to specify a version number
-		-	nice looking directory listings
-	-	set up all of the examples and example apps so that they work
-	-	eventually we may need to move the documentation there so we can add more structure to it
+			-	use a checked out version
+			-	use syntax hilighting
+			-	maybe have a way to view just snippets of code
+				-	by line number
+				-	by by classs
+				-	by function
+				-	allow you to specify a version number
+			-	nice looking directory listings
+		-	set up all of the examples and example apps so that they work
+		-	eventually we may need to move the documentation there so we can add more structure to it
 
--	google code site
-	-	overhaul the wiki and remove all the cruft
--	development web site
-	-	hosting
-		-	steves box
-		-	ryans box
-		-	google app hosting (if they support php someday)
-	-	content
-		-	examples and example apps
-			-	make sure that they all actually run
-			-	make them automatically clear that data at specified times and rebuild some sample data as a way of testing
-			-	set up usable installs of each
-			-	links to the code
-		-	all source code (including examples and docs)
-			-	syntax highlighted
-			-	pulled straight from subversion
-			-	allow you to specify the version
-			-	allow you to specify specific line numbers
-			-	allow you to put special comments delimiting code blocks you want to be able to pull out and display
-		-	current version of the docs
-		-	compare similar applications built with different frameworks
-			-	make some nice apps is the best way possible with zoop
-			-	invite other framework authors to come here and embarass us with how much better their framework is
-			-	have them write up articles on how much better theirs is
-			-	pick ideas that we really think improve on ours and add them to zoop
-			-	try to highlight ways that zoop is better
-		-	application framework comparison
-			-	structured info on the featuers, strenghts, and weaknesses of each framework
-				-	come up with a good list of things that a framework can / should do
-				-	have authors, experts, and users rate each framework
-				-	allow challenges to invite someone to give arguments as to why they deserved a higher score than someone else
-			-	use the application comparisons to highlight arguments
-			-	invite authors and experts from other frameworks to maintain info on their site
--	post an article on the future of zoop to the zoop users site
+	-	google code site
+		-	overhaul the wiki and remove all the cruft
+	-	development web site
+		-	hosting
+			-	steves box
+			-	ryans box
+			-	google app hosting (if they support php someday)
+		-	content
+			-	examples and example apps
+				-	make sure that they all actually run
+				-	make them automatically clear that data at specified times and rebuild some sample data as a way of testing
+				-	set up usable installs of each
+				-	links to the code
+			-	all source code (including examples and docs)
+				-	syntax highlighted
+				-	pulled straight from subversion
+				-	allow you to specify the version
+				-	allow you to specify specific line numbers
+				-	allow you to put special comments delimiting code blocks you want to be able to pull out and display
+			-	current version of the docs
+			-	compare similar applications built with different frameworks
+				-	make some nice apps is the best way possible with zoop
+				-	invite other framework authors to come here and embarass us with how much better their framework is
+				-	have them write up articles on how much better theirs is
+				-	pick ideas that we really think improve on ours and add them to zoop
+				-	try to highlight ways that zoop is better
+			-	application framework comparison
+				-	structured info on the featuers, strenghts, and weaknesses of each framework
+					-	come up with a good list of things that a framework can / should do
+					-	have authors, experts, and users rate each framework
+					-	allow challenges to invite someone to give arguments as to why they deserved a higher score than someone else
+				-	use the application comparisons to highlight arguments
+				-	invite authors and experts from other frameworks to maintain info on their site
+	-	post an article on the future of zoop to the zoop users site

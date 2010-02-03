@@ -66,6 +66,10 @@
 			-	add the entry to the database so it can be translated
 			-	enter a function into the template passing in the hash (constant) and languageId (variable) so it can pull the correct text
 			-	add heuristics to find when something was only slightly changed to possibly help with the translation
+		-	try to compile the code right into the smarty templates
+			-	use the smarty compile_id (http://www.smarty.net/manual/en/variable.compile.id.php)
+			-	combined with compiler functions (http://www.smarty.net/manual/en/plugins.compiler.functions.php)
+			-	if you do this you may need a way to trigger a recompile when the text changes
 	-	caching
 		-	compiled php code
 		-	content
