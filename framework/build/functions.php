@@ -73,7 +73,7 @@ function _forcegen()
 
 function _fetch($path, $params = array())
 {
-	global $_assigns, $FORCEGEN;
+	global $_assigns;
 	
 	$templatePath = $path;
 	
@@ -93,9 +93,10 @@ function _fetch($path, $params = array())
 
 function _gen($path, $filePath = '', $params = array())
 {
+	global $FORCEGEN;
 	if(!$filePath)
 		$filePath = $path;
-	$content = _fetch($path, $params)
+	$content = _fetch($path, $params);
 	_status("creating generated file '" . getcwd() . '/' . $filePath . "'");
 	
 	if(isset($FORCEGEN) && $FORCEGEN)
