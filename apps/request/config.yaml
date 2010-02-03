@@ -4,3 +4,92 @@ zoop:
             driver: php_pgsql
             database: request
             username: postgres
+app:
+    filter:
+        fields:
+            priority:
+                type: ordered
+                table: request
+                field: priority_id
+                list: {1: Low, 2: Medium, 3: High}
+                display: Priority
+            owner:
+                type: discreet
+                table: request
+                field: owner_id
+                references: person
+                display_field: username
+                display: Owner
+            completed:
+                type: discreet
+                table: request
+                field: completed
+                list: {t: "Yes", f: "No"}
+                display: Completed
+            last_update:
+                type: date
+                table: request
+                field: last_update
+                display: Last Update
+        types:
+            discreet: {operators: [is, in, is_not, not_in]}
+            ordered: {operators: [is, in, is_not, not_in, less_than, greater_than, less_than_equal, greater_than_equal, in_the_range]}
+            date: {operators: [is, is_not, in_the_range, not_in_the_range, after, before, in_the_last, not_in_the_last]}
+            # int: {optionalParam: units}
+        operators:
+            is: {display: is}
+            is_not: {display: "is not"}
+            in: {display: "in"}
+            not_in: {display: "not in"}
+            in_the_range: {display: "in the range"}
+            not_in_the_range: {display: "not in the range"}
+            after: {display: "after"}
+            before: {display: "before"}
+            in_the_last: {display: "in the last"}
+            not_in_the_last: {display: "not in the last"}
+            less_than: {display: "less than"}
+            greater_than: {display: "greater than"}
+            less_than_equal: {display: "less than or equal to"}
+            greater_than_equal: {display: "greater than or equal to"}
+        type_operator_map:
+            discreet:
+                is: {widgit: select}
+                is_not: {widgit: select}
+                in: {widgit: select_multiple}
+                not_in: {widgit: select_multiple}
+            ordered:
+                is: {widgit: select}
+                is_not: {widgit: select}
+                in: {widgit: select_multiple}
+                not_in: {widgit: select_multiple}
+                in_the_range: {widgit: select_range}
+                not_in_the_range: {widgit: select_range}
+                less_than: {widgit: select}
+                greater_than: {widgit: select}
+                less_than_equal: {widgit: select}
+                greater_than_equal: {widgit: select}
+            date:
+                is: {widgit: date}
+                is_not:  {widgit: date}
+                in_the_range: {widgit: date_range}
+                not_in_the_range: {widgit: date_range}
+                after: {widgit: date}
+                before: {widgit: date}
+                in_the_last: {widgit: int_menu}
+                not_in_the_last: {widgit: int_menu}
+        widgits:
+            date: {default_format: "99/99/9999"}
+            date_range: {default_format: "99/99/9999"}
+            select: {}
+            select_multiple: {}
+            select_range: {}
+            int_menu:
+                list: {hours: Hours, days: Days, weeks: Weeks, months: Months, years: Years}
+            
+        # operand_field_type:
+        #     menu: asdf
+        #     multiple_choice_menu: asdf
+        #     two_menus_ordered: asdf
+        #     date: asdf
+        #     two_range: asdf
+            

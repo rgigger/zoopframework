@@ -1,10 +1,10 @@
-{globalappend var=yuiModules value='event'}
-{globalappend var=yuiModules value='datatable'}
 <link rel="stylesheet" href="http://tablesorter.com/themes/blue/style.css" type="text/css" media="print, projection, screen" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 <script type="text/javascript" src="http://tablesorter.com/jquery.tablesorter.js"></script>
+{*
 <script type="text/javascript" src="http://localhost/~rick/jqplug/jquery.jeditable.pack.js"></script>
 <script type="text/javascript" src="http://localhost/~rick/jqplug/jquery.inplace.js"></script>
+*}
 
 <script type="text/javascript">
 {literal}
@@ -36,24 +36,25 @@ $(function() {
 		}
 	});
 	
-	$("#list_table tr").each(function() {
-		if(this.cells[this.cells.length - 1].tagName == 'TD')
-		{
-			var id = $(this.cells[0]).text();
-			$(this.cells[this.cells.length - 1]).editInPlace({
-				url: zoneUrl + '/setField',
-				params: "field=completed&id=" + id,
-				field_type: "select",
-				select_options: "yes,no"
-			});
-			$(this.cells[3]).editInPlace({
-				url: zoneUrl + '/setField',
-				params: "field=priority&id=" + id,
-				field_type: "select",
-				select_options: "Low,Medium,High"
-			});
-		}
-	});
+	
+	// $("#list_table tr").each(function() {
+	// 	if(this.cells[this.cells.length - 1].tagName == 'TD')
+	// 	{
+	// 		var id = $(this.cells[0]).text();
+	// 		$(this.cells[this.cells.length - 1]).editInPlace({
+	// 			url: zoneUrl + '/setField',
+	// 			params: "field=completed&id=" + id,
+	// 			field_type: "select",
+	// 			select_options: "yes,no"
+	// 		});
+	// 		$(this.cells[3]).editInPlace({
+	// 			url: zoneUrl + '/setField',
+	// 			params: "field=priority&id=" + id,
+	// 			field_type: "select",
+	// 			select_options: "Low,Medium,High"
+	// 		});
+	// 	}
+	// });
 });
 {/literal}
 
@@ -75,7 +76,7 @@ $(function() {
 	{foreach from=$requests item=thisRequest}
 		<tr>
 			<td>{$thisRequest->id}</td>
-			<td>{$thisRequest->name}</td>
+			<td><a href="{$zoneUrl}/edit/{$thisRequest->id}">{$thisRequest->name}</a></td>
 			<td>{$thisRequest->description}</td>
 			<td>{$thisRequest->priority}</td>
 			<td>{$thisRequest->Person->getName()}</td>

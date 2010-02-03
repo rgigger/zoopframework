@@ -1,7 +1,7 @@
 <?php
 class RequestApp
 {
-	public function auth($username, $password)
+	static public function auth($username, $password)
 	{
 		$id = SqlFetchCell("select id from person where username = :username and password = :password",
 				array('username' => $username, 'password' => $password));

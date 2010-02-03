@@ -46,23 +46,6 @@ p
 	color:#777777;
 }
 
-a:visited, a:link, a:hover
-{
-	font-family: arial;
-	text-decoration:none;
-	font-size: 14px;
-}
-
-a:visited, a:link
-{
-	color:#3748e5;
-}
-
-a:hover
-{
-	color:#ff0000;
-}
-
 .formPromptTd
 {
 	text-align:right;
