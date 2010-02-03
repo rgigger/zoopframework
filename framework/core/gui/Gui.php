@@ -8,6 +8,9 @@ class Gui extends Smarty
 {
 	function __construct()
 	{
+		$config = GuiModule::sGetConfig();
+		$tmpPath = Zoop::getTmpDir();
+		
 		//	call the parent contructor
 		$this->Smarty();
 		$this->template_dir = array();
@@ -21,11 +24,11 @@ class Gui extends Smarty
    		$this->addTemplateDir(gui_template_dir);
 		
 		//	set the compile directory
-		$this->setCompileDir(app_tmp_dir . "/gui");
+		$this->setCompileDir($tmpPath . "/gui");
 		
 		//	set the cache_dir directory
 		//	what does this even do?  I'm pretty sure that is not set up
-		$this->setCacheDir(app_tmp_dir . "/guicache");
+		$this->setCacheDir($tmpPath . "/guicache");
 		
 		//	set the config directory
 		//	what does this even do?  I'm pretty sure that is not set up
@@ -37,8 +40,8 @@ class Gui extends Smarty
 		
 		//	we shouldn't use the blanket app_status define any more, we should use specific varabiles
 		//	for each behavior, and it should use the new config system
-		$smarty->debugging = defined('app_status') && app_status == 'dev' ? true : false;
-		$smarty->compile_check = defined('app_status') && app_status == 'dev' ? true : false;
+		// $smarty->debugging = defined('app_status') && app_status == 'dev' ? true : false;
+		// $smarty->compile_check = defined('app_status') && app_status == 'dev' ? true : false;
 		
 		//	we want to run this filter on every single smarty script that we execute
 		//	it finds all places where we echo out a simple variable and escapes the html
@@ -78,50 +81,4 @@ class Gui extends Smarty
 	{
 		$this->plugins_dir[] = $inDir;
 	}
-}
-
-//	
-//		
-/**
- * Assigns a gui variable independant of a specific gui object
- * 
- * often we want to assign the variables before we know what type of gui we want so store the assigns
- * in a global array until we create the gui 
- * 
- * @param string $name the key that the gui object will use to identify this variable
- * @param mixed $value the value that should be associated with this key
- */
-function GuiAssign($name, $value)
-{
-	global $GuiVars;
-	$GuiVars[$name] = $value;
-	return;	
-}
-
-
-/**
- * Returns an array of gui variables for use with rendering a page
- *
- * @return unknown
- */
-function GuiGetAssigns()
-{
-	global $GuiVars;
-	if(!$GuiVars)
-		$GuiVars = array();
-	return $GuiVars;
-}
-
-function AddTemplateDir($dir)
-{
-	global $TemplateDirs;
-	$TemplateDirs[] = $dir;
-}
-
-function GetTemplateDirs()
-{
-	global $TemplateDirs;
-	if(!$TemplateDirs)	
-		$TemplateDirs = array();
-	return $TemplateDirs;
 }

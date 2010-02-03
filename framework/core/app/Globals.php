@@ -49,3 +49,6 @@ if(php_sapi_name() != "cli")
 
 if(!defined('E_DEPRECATED'))
 	define('E_DEPRECATED', 8192);
+
+define('version_53', version_compare(PHP_VERSION, '5.3.0') >= 0 ? true : false);
+	

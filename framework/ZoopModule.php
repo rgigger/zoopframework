@@ -1,39 +1,42 @@
 <?php
 abstract class ZoopModule
 {
-	private $name;
+	private $name, $path, $lib;
+	private $depends = array(), $includes = array(), $classes = array();
 	protected $hasConfig = false;
 	
-	final function __construct()
+	final function __construct($path, $lib)
 	{
 		//	second stage (module specific) construction
 		$this->init();
 		
-		//	get the module name
-		$this->name = $this->createName();
+		//	assign in the paramamters
+		$this->path = $path;
+		$this->lib = $lib;
+		$this->name = strtolower(str_replace('Module', '', get_class($this)));
 		
-		// EchoBacktrace();
-		// var_dump($this->getDepends());
+		$classname = get_class($this);
 		//	load any dependant modules
 		if($this->getDepends())
 			foreach($this->getDepends() as $thisDepends)
-				Zoop::loadLib($thisDepends);
+				$this->lib->loadMod($thisDepends);
 		
 		//	include any normal files that need to be included
 		if($this->getIncludes())
+		{
 			foreach($this->getIncludes() as $thisInclude)
 			{
 				if($thisInclude[0] == '/')
 					require($thisInclude);
 				else
-					require(zoop_dir . '/' . $this->name . '/' . $thisInclude);
+					require($this->path . '/' . $thisInclude);
 			}
-				
+		}
 		
 		//	register any class files
 		if($classes = $this->getClasses())
 			foreach($classes as $thisClass)
-				Zoop::registerClass($thisClass, zoop_dir . '/' . $this->name . '/' . $thisClass . '.php');
+				ZoopLoader::addClass($thisClass, $this->path . '/' . $thisClass . '.php');
 		
 		if($this->hasConfig)
 			$this->loadConfig();
@@ -63,7 +66,7 @@ abstract class ZoopModule
 	
 	private function loadConfig()
 	{
-		Config::suggest(zoop_dir . '/' . $this->name . '/' . 'config.yaml', 'zoop.' . $this->getConfigPath());
+		Config::suggest($this->path . '/' . 'config.yaml', 'zoop.' . $this->getConfigPath());
 	}
 	
 	/**
@@ -77,28 +80,41 @@ abstract class ZoopModule
 	function getConfig($path = '')
 	{
 		$config = Config::get('zoop.' . $this->getConfigPath() . $path);
-		// echo_r($config);
 		return $config;
 	}
 	
 	/**
-	 * This method should be overridden in the child class to return an array
-	 * of filenames that should be included when the module is loaded
+	 * stuff about this function
 	 *
-	 * @return array("key" => "value") or false;
+	 * @return array(list of files to include) or false;
 	 */
+	protected function addClass($className)
+	{
+		$this->classes[] = $className;
+	}
+	
+	protected function getClasses()
+	{
+		return $this->classes;
+	}
+	
+	protected function addInclude($include)
+	{
+		$this->includes[] = $include;
+	}
+	
 	protected function getIncludes()
 	{
-		return false;
+		return $this->includes;
 	}
 	
-	function getClasses()
+	protected function depend($module)
 	{
-		return false;
+		$this->depends[] = $module;
 	}
 	
-	function getDepends()
+	private function getDepends()
 	{
-		return false;
+		return $this->depends;
 	}
 }
