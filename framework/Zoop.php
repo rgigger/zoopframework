@@ -37,7 +37,6 @@ class Zoop
 		
 		if(isset(self::$libs[$libName]))
 			return;
-		
 		$libClassName = ucfirst($libName) . 'Library';
 		include("$path/$libClassName.php");
 		self::$libs[$libName] = new $libClassName($path);
@@ -109,7 +108,6 @@ class Zoop
 	{
 		self::registerClass($className, app_dir . '/domain/' . $className . '.php');
 	}
-	
 	
 	// static $libList = array();
 	// 
