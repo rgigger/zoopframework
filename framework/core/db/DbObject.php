@@ -535,7 +535,11 @@ class DbObject extends Object implements Iterator
 	 * @param string $varname Name of the database field to get the value of
 	 * @return mixed Value of the given database field
 	 */
+<<<<<<< HEAD
 	public function __get($varname)
+=======
+	public function &__get($varname)
+>>>>>>> reorganize the modules into libraries
 	{
 		if($this->hasRelationship($varname))
 			return $this->getRelationshipInfo($varname);

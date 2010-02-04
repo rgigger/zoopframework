@@ -35,10 +35,18 @@ class Config
 	{
 		foreach($insisted as $key => $val)
 		{
+<<<<<<< HEAD
 			if(is_array($val))
 				self::_mergeArray($suggested[$key], $insisted[$key]);
 			else
 				$suggested[$key] = $val;
+=======
+			assert(is_string($key));
+			if(is_array($val))
+				self::_mergeArray($suggested[$key], $insisted[$key]);
+			
+			$suggested[$key] = $val;
+>>>>>>> reorganize the modules into libraries
 		}
 		
 		return $suggested;
